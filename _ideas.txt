@@ -1,0 +1,14 @@
+Most urgent:
+
+- Prof P website introduction/guide to features/summary of features
+- Polish wordsearch game and make standalone
+- Clone other games
+- Building the blog
+
+Someday:
+
+- Diary project
+- Dotfiles
+- Vim extensions
+- Typing speed/typing cheats
+- Syncing setup

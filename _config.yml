@@ -10,3 +10,4 @@ github_username:  davidxmoody
 # Build settings
 markdown: kramdown
 permalink: "/:title/"
+future: false
