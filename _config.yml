@@ -9,4 +9,4 @@ github_username:  davidxmoody
 
 # Build settings
 markdown: kramdown
-permalink: "/:year/:title/"
+permalink: "/:title/"
