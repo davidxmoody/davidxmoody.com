@@ -1,5 +1,5 @@
 # Site settings
-title: David Moody's Blog
+title: David Moody's blog
 email: david.doomy@gmail.com
 description: "A blog about programming stuff"
 baseurl: ""
@@ -10,4 +10,4 @@ github_username:  davidxmoody
 # Build settings
 markdown: kramdown
 permalink: "/:title/"
-future: false
+#future: false
