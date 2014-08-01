@@ -5,16 +5,16 @@ title: Hello world
 
 *I'm starting a blog.* 
 
-I want to contribute something back to the world. I've learned a lot over the past few years and I want to start sharing it. I may someday post articles about what I've already done (or upload it to my [GitHub profile](https://github.com/davidxmoody)). But for now I am going to write about what I've been interested in most recently, **front end web development**. 
+I want to contribute something back to the world. I've learned a lot over the past few years and I want to start sharing it. I may someday post articles about what I've already done (or upload it to my [GitHub profile](https://github.com/davidxmoody)). For now though, I am going to write about what I've been interested in most recently: **front end web development**. 
 
 You can check out [professorp.co.uk](http://professorp.co.uk/) to see my last project ([GitHube repo here](https://github.com/davidxmoody/professorp.co.uk)). It is a website for the Professor P series of children's books and also includes [five JavaScript games](http://professorp.co.uk/games/). 
 
-Why now? I don't feel ready to start but [that doesn't mean I shouldn't start anyway](http://jamesclear.com/successful-people-start-before-they-feel-ready). I've spent the last week trying to decide about the trivial details of this blog. Things like what blogging platform to use and the visual style I want. I realised that none of that will ever matter if I don't create some decent content. The whole point of a blog is the content so that is what I will work on first. 
+Why now? I don't feel ready to start but [that doesn't mean I shouldn't start anyway](http://jamesclear.com/successful-people-start-before-they-feel-ready). I've spent the last week thinking about the trivial details of this blog. Things like what blogging platform to use and the visual style I want. However, I realised that none of that will ever matter if I don't create some decent content. The whole point of a blog is the content and so that is what I am going to work on first.
 
-I recently re-read [this excellent Coding Horror blog post](http://blog.codinghorror.com/how-to-achieve-ultimate-blog-success-in-one-easy-step/). I feel the most important point is:
+I recently re-read [this excellent Coding Horror blog post](http://blog.codinghorror.com/how-to-achieve-ultimate-blog-success-in-one-easy-step/). Here is a quote:
 
 > When people ask me for advice on blogging, I always respond with yet another form of the same advice: **pick a schedule you can live with, and stick to it. Until you do that, none of the other advice I could give you will matter.**
 
-My schedule will be **three blog posts per week** on *Mondays*, *Wednesdays* and *Fridays*. 
+My schedule will be **three blog posts per week**. On *Mondays*, *Wednesdays* and *Fridays* if possible but I don't really mind what day they are on as long as I stick to *three a week*. 
 
-I want this blog to *eventually* be great. The best way for that to happen is to practise writing good content and the best way for that to happen is to set myself a schedule. 
+I want this blog to *eventually* be great. The best way for me to make that happen is to practise writing good content and the best way for *that* to happen is to set myself a schedule. 
