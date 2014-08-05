@@ -5,7 +5,7 @@ title: Wordsearch game
 
 For my first proper post, I thought I would return to my wordsearch game. I made it for the [professorp.co.uk](http://professorp.co.uk/games/wordsearch/) website and I would say it's the game I'm proudest of. I really like the simplicity and style of it. 
 
-In this post I will take a look back at what I've already done and make a note of what I think could be improved. In subsequent posts I will make some improvements and also make it into a standalone game which can exist outside of the Professor P website. 
+In this post I will take a look back at what I've already done and make a note of what I think could be improved. In subsequent posts I plan to make some improvements and also make it into a standalone game which can exist outside of the Professor P website. 
 
 ## The game
 
@@ -17,7 +17,7 @@ I had recently played [this Android wordsearch game](https://play.google.com/sto
 
 I went through quite a lot of iterations of this game. Originally I made it using CoffeeScript and jQuery. Some time later, I started learning Angular.js and decided it would be a good exercise to re-write it. Later still, I realised I had to actually integrate it into the Professor P website. I made sure everything worked well with DocPad (the static site generator I was using) and changed some of the other elements to use the existing Bootstrap styles from the website.
 
-It's actually a very complex game. I'm not going to do a complete walkthrough of every line of code. Instead I'm going to pick out a handful of interesting design decisions and examine them further. 
+It's actually a very complex game. Instead of going through every line of code, I'm going to pick out a handful of interesting design decisions and examine them further. 
 
 ## Grid generation
 
@@ -37,7 +37,7 @@ I fixed that problem by forcing the "random" directions to be distributed evenly
 
 Another small detail is how to choose the random words. Again, I found that by choosing truly random words, the grid tended to fill up with many smaller words because those were least likely to cause conflicts. While not a huge problem, I felt the game was more fun with a mix of long and short words. To fix this, I simply forced longer words to be tried before shorter words. 
 
-I am pleased with the abstractions I created to reason about grid but I am not going to write about everything here. If you are interested you can read the [source code on GitHub](https://github.com/davidxmoody/professorp.co.uk/tree/master/src/documents/games/wordsearch), it comes with an [MIT licence](https://github.com/davidxmoody/professorp.co.uk/blob/master/LICENCE.md).
+I created several other abstractions to reason about grid but I am not going to write about everything here. If you are interested you can read the [source code on GitHub](https://github.com/davidxmoody/professorp.co.uk/tree/master/src/documents/games/wordsearch), it comes with an [MIT licence](https://github.com/davidxmoody/professorp.co.uk/blob/master/LICENCE.md).
 
 ## Colour highlighting
 
@@ -47,11 +47,38 @@ I made things difficult for myself when I was designing how the game should look
 2. The currently selected path should glow
 3. If the currently selected path is over a correct word then it should glow stronger
 4. Once a correct word has been found then it should stay highlighted
-5. After a word has been found the colour should change
+5. After finding a word, the active colour should cycle to the next in the sequence
 6. Overlapping highlights should blend nicely
 
-I implemented this by having one colour class on the grid itself to represent the current active colour. I then set classes on the cells in JavaScript whenever the mouse moved and the path information needed to be updated. 
+I took a long time tweaking everything but I think it works well. I had recently read [this article on a game design concept called juiciness](http://codeincomplete.com/posts/2013/12/11/javascript_game_foundations_juiciness/) and the [video it links to](https://www.youtube.com/watch?v=Fy0aCDmgnxg). I wanted to make it very clear to the player what was currently selected and give them a bit of positive feedback when they selected a correct word.
 
-Persistent highlights were implemented with separate div elements inside the cells. They have the same size as the parent cell and are absolutely positioned to overlap perfectly. I would have preferred a way to blend colours using CSS classes alone but that doesn't seem to be possible at the moment. 
+I implemented this with a bit of JavaScript to update the classes and some scss magic for changing the different colours and opacities. For the found word highlights, a new empty div element is added to the cells and the opacity takes care of the blending. 
 
-I also added some CSS background transitions to make it feel a bit smoother. 
+## Level progression
+
+This is something that I think could be improved further. Currently, when you finish the level you get a JavaScript alert saying congratulations. You can then select a different difficulty level from the menu to play again. I think this is one of the weaker areas of the game and needs to be improved. 
+
+I can think of a few different ways to make it feel like more of a proper game:
+
+- **Timer:** Each attempt is timed, try to beat your previous best (also some kind of high-score table)
+    - **Timer divided by number of words:** To adjust for easier/harder grids
+    - **Timer + daily challenge:** A new seeded grid every day/hour with a shared high-score table for multiple players
+- **Multiple stages:** Next stage only unlocked upon completion of the previous one, try to complete all stages
+    - **Time limit:** Stage is failed unless it is completed within a certain time
+    - **Word themes:** Each stage has a slightly different set of words (dinosaurs, sea creatures, plants, etc.)
+- **Large grid, time limit:** Huge grid with tons of words and a small time limit, find as many as you can instead of trying to find them all
+- **Scrolling grid:** As you find words, the grid partially scrolls down to reveal more letters and available words (tricky to implement)
+
+The simple timer approach sounds like the easiest to implement (and has been used in similar games before). A local high-score table would be required to give context to each individual attempt. The others would be interesting but more risky and may not be as fun. The advantage of the timer approach is that it requires virtually no extra balancing. You are always competing against your past self so there is always going to be a challenge. 
+
+## Technical issues
+
+There are a small number of other things I would like to tweak still:
+
+- Very very occasionally (~1/100 times) the grid will have five or fewer words on it, would be good if the grid could be regenerated in the event that this happens
+- Although the game is perfectly playable on mobile devices, the juicy colour styles don't work very well as you can't drag your finger
+- The grid gets a bit squashed when you have a 10x10 grid on a small screen
+
+## Conclusion
+
+This post introduced one of my previous projects. Although there are plenty of existing HTML wordsearch games available, none of them have quite the visual style that mine does. I am pleased with it. 
