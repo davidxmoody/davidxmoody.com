@@ -16,19 +16,21 @@ $header-shadow-color: #B52626;
 /* Site header */
 
 body > header {
-  padding: 10px;
   text-align: center;
   text-transform: uppercase;
+  padding-top: $computed-line-height;
   a {
     text-decoration: none;
     color: $header-color;
     text-shadow: 2px 2px 0 $header-background, 5px 5px 0 $header-shadow-color;
-    font-size: 60px;
   }
-  h1 { margin-top: 0; }
+  h1 {
+    @include rhythm(3, 0, 0);
+  }
   p {
-    margin-top: 0;
-    font-size: 18px;
+    padding-top: $computed-line-height/2;
+    padding-bottom: $computed-line-height/2;
+    margin-bottom: 0;
   }
 }
 
@@ -36,11 +38,11 @@ body > header,
 body > footer {
   background: $header-background;
   color: $header-color;
-  padding: 10px;
+  //padding: 10px;
 }
 
 article {
-  max-width: 680px;;
+  max-width: $body-font-size * 33;
   margin: auto;
 }
 
