@@ -5,15 +5,31 @@
 @import 'typography';
 @import 'highlight';
 
-$header-background: #3a3a3a;
-$header-color: #adadad;
+/* Colours based off of:
+ * http://www.paletton.com/#uid=1000u0kleqtbzEKgVuIpcmGtdhZ
+ */
 
-$body-background-top: rgba(38, 38, 38, 0.5);
-$body-background-bottom: rgba(38, 38, 38, 0);
+$header-background: #D34747;
+$header-color: white;
+$header-shadow-color: #B52626;
 
-article {
-  max-width: 680px;;
-  margin: auto;
+/* Site header */
+
+body > header {
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  a {
+    text-decoration: none;
+    color: $header-color;
+    text-shadow: 2px 2px 0 $header-background, 5px 5px 0 $header-shadow-color;
+    font-size: 60px;
+  }
+  h1 { margin-top: 0; }
+  p {
+    margin-top: 0;
+    font-size: 18px;
+  }
 }
 
 body > header, 
@@ -21,6 +37,11 @@ body > footer {
   background: $header-background;
   color: $header-color;
   padding: 10px;
+}
+
+article {
+  max-width: 680px;;
+  margin: auto;
 }
 
 /* Quick fix for images */
