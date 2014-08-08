@@ -69,6 +69,7 @@ $hover-link-color: $color-darker;
   h1, h2, h3, h4, h5, h6 {
     color: $content-header-color;
   }
+  padding-bottom: $computed-line-height * 2;
 }
 
 a {

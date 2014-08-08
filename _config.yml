@@ -10,5 +10,6 @@ github_username:  davidxmoody
 markdown: kramdown
 permalink: "/:title/"
 #future: false
+excerpt_separator: "\n\n\n"
 sass:
   style: :compressed

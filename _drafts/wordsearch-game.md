@@ -7,6 +7,7 @@ For my first proper post, I thought I would return to my wordsearch game. I made
 
 In this post I will take a look back at what I've already done and make a note of what I think could be improved. In subsequent posts I plan to make some improvements and also make it into a standalone game which can exist outside of the Professor P website. 
 
+
 ## The game
 
 You can play it [right now](http://professorp.co.uk/games/wordsearch/) but in case you don't want to, here is a screenshot:

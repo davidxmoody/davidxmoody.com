@@ -4,16 +4,23 @@ layout: default
 
 <div class="home">
 
-  <h1>Posts</h1>
+  {% for post in site.posts %}
 
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  {% assign total_paragraphs = post.content | split: '<p>' | size | minus: 1 %}
+  {% assign excerpt_paragraphs = post.excerpt | split: '<p>' | size | minus: 1 %}
+  {% assign remaining_paragraphs = total_paragraphs | minus: excerpt_paragraphs %}
+
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+  {{ post.excerpt }}
+  <p><a href="{{ post.url }}">
+    {% if remaining_paragraphs > 0 %}
+    Read {{ remaining_paragraphs }} remaining paragraphs...
+    {% else %}
+    View post on separate page
+    {% endif %}
+  </a></p>
+  {% endfor %}
 
   <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
 

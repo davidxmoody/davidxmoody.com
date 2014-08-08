@@ -9,6 +9,7 @@ I want to contribute something back to the world. I've learned a lot over the pa
 
 You can check out [professorp.co.uk](http://professorp.co.uk/) to see my last project ([GitHube repo here](https://github.com/davidxmoody/professorp.co.uk)). It is a website for the Professor P series of children's books and also includes [five JavaScript games](http://professorp.co.uk/games/). 
 
+
 Why now? I don't feel ready to start but [that doesn't mean I shouldn't start anyway](http://jamesclear.com/successful-people-start-before-they-feel-ready). I've spent the last week thinking about the trivial details of this blog. Things like what blogging platform to use and the visual style I want. However, I realised that none of that will ever matter if I don't create some decent content. The whole point of a blog is the content and so that is what I am going to work on first.
 
 I recently re-read [this excellent Coding Horror blog post](http://blog.codinghorror.com/how-to-achieve-ultimate-blog-success-in-one-easy-step/). Here is a quote:
