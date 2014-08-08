@@ -11,17 +11,26 @@
 </head>
 <body>
 
-<header>
-  <h1><a href="/">David Moody</a></h1>
-  <p><small>Another programming blog</small></p>
-</header>
+<div class="wrapper">
+  <header class="site-header">
+    <h1><a href="/">David Moody</a></h1>
+    <p>Another programming blog</p>
+  </header>
 
-<article>
-  {{ content }}
-</article>
+  <div class="content">
+    {{ content }}
+  </div>
+  
+  <div class="push"></div>
+</div>
 
-<footer>
-  <p>Created by David Moody</p>
+<footer class="site-footer">
+  <p>
+    <!--<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br>-->
+    <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">This blog</span> by 
+    <a xmlns:cc="http://creativecommons.org/ns#" href="davidxmoody.com" property="cc:attributionName" rel="cc:attributionURL">David Moody</a> is licensed under a 
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+  </p>
 </footer>
 
 </body>

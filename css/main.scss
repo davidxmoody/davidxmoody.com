@@ -4,22 +4,49 @@
 @import 'normalize';
 @import 'typography';
 @import 'highlight';
+@import 'stickyfooter';
 
 /* Colours based off of:
  * http://www.paletton.com/#uid=1000u0kleqtbzEKgVuIpcmGtdhZ
  */
 
-$header-background: #D34747;
+$color-base: #D34747;
+$color-light: #F57373;
+$color-lighter: #FFA3A3;
+$color-dark: #B52626;
+$color-darker: #8F0C0C;
+
+$content-text-color: #222;
+$content-header-color: #111;
+
+$header-background: $color-base;
 $header-color: white;
-$header-shadow-color: #B52626;
+$header-shadow-color: $color-dark;
+$link-color: $color-dark;
+$hover-link-color: $color-darker;
 
-/* Site header */
+/* Site header and footer */
 
-body > header {
+.site-header, 
+.site-footer {
+  background: $header-background;
+  color: $header-color;
   text-align: center;
   text-transform: uppercase;
-  padding-top: $computed-line-height;
+
+  p {
+    font-size: 80%;
+    font-weight: bold;
+  }
+
   a {
+    color: $header-color;
+  }
+}
+
+.site-header {
+  padding-top: $computed-line-height;
+  a, a:hover {
     text-decoration: none;
     color: $header-color;
     text-shadow: 2px 2px 0 $header-background, 5px 5px 0 $header-shadow-color;
@@ -28,22 +55,27 @@ body > header {
     @include rhythm(3, 0, 0);
   }
   p {
-    padding-top: $computed-line-height/2;
-    padding-bottom: $computed-line-height/2;
+    $upper-padding: round($computed-line-height / 3);
+    padding-top: $upper-padding;
+    padding-bottom: $computed-line-height - $upper-padding;
     margin-bottom: 0;
   }
 }
 
-body > header, 
-body > footer {
-  background: $header-background;
-  color: $header-color;
-  //padding: 10px;
-}
-
-article {
+.content {
   max-width: $body-font-size * 33;
   margin: auto;
+  color: $content-text-color;
+  h1, h2, h3, h4, h5, h6 {
+    color: $content-header-color;
+  }
+}
+
+a {
+  color: $link-color;
+}
+a:hover {
+  color: $hover-link-color;
 }
 
 /* Quick fix for images */

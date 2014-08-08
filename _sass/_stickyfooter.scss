@@ -1,0 +1,16 @@
+$footer-height: 100px;
+
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin-bottom: -1*$footer-height;
+}
+
+footer, .push {
+	height: $footer-height;
+}
