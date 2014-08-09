@@ -52,7 +52,7 @@ $hover-link-color: $color-darker;
     text-shadow: 2px 2px 0 $header-background, 5px 5px 0 $header-shadow-color;
   }
   h1 {
-    @include rhythm(3, 0, 0);
+    @include rhythm(4, 0, 0);
   }
   p {
     $upper-padding: round($computed-line-height / 3);
