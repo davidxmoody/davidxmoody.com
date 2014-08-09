@@ -114,3 +114,7 @@ sub {
   top: 0.4em;
 }
 {% endhighlight %}
+
+To be honest, I'm not completely happy with the grid system. I find that if you have a header which is slightly too big to fit in one row then it ends up requiring two rows and then leaving too much whitespace below and above it. 
+
+Still, I like the elegance of the grid system and it's good enough for now. 
