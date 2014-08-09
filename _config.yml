@@ -3,8 +3,6 @@ title: David Moody's blog
 email: david.doomy@gmail.com
 description: "A blog about programming"
 url: "http://davidxmoody.com"
-#twitter_username: davidxmoody
-#github_username:  davidxmoody
 
 # Build settings
 markdown: kramdown
@@ -12,5 +10,5 @@ permalink: "/:title/"
 excerpt_separator: "\n\n\n"
 sass:
   style: :compressed
-paginate: 2
+paginate: 5
 paginate_path: "/page:num/"
