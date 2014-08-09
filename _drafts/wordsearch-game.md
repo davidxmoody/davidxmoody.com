@@ -5,7 +5,7 @@ title: Wordsearch game
 
 For my first proper post, I thought I would return to my wordsearch game. I made it for the [professorp.co.uk](http://professorp.co.uk/games/wordsearch/) website and I would say it's the game I'm proudest of. I really like the simplicity and style of it. 
 
-In this post I will take a look back at what I've already done and make a note of what I think could be improved. In subsequent posts I plan to make some improvements and also make it into a standalone game which can exist outside of the Professor P website. 
+In this post, I will take a look back at what I've already done and make a note of what I think could be improved. In subsequent posts, I plan to make some improvements and also make it into a standalone game which can exist outside of the Professor P website. 
 
 
 ## The game
@@ -18,7 +18,7 @@ I had recently played [this Android wordsearch game](https://play.google.com/sto
 
 I went through quite a lot of iterations of this game. Originally I made it using CoffeeScript and jQuery. Some time later, I started learning Angular.js and decided it would be a good exercise to re-write it. Later still, I realised I had to actually integrate it into the Professor P website. I made sure everything worked well with DocPad (the static site generator I was using) and changed some of the other elements to use the existing Bootstrap styles from the website.
 
-It's actually a very complex game. Going through every line of code would be rather tedious so instead I'm going to pick out a handful of interesting design decisions and examine them further. 
+It's actually a very complex game. Going through every line of code would be rather tedious. Instead I'm going to pick out a handful of interesting design decisions and examine them further. 
 
 ## Grid generation
 
@@ -51,15 +51,15 @@ I made things difficult for myself when I was designing how the game should look
 5. After finding a word, the active colour should cycle to the next in the sequence
 6. Overlapping highlights should blend nicely
 
-I took a long time tweaking everything but I think it works well. I had recently read [this article on a game design concept called juiciness](http://codeincomplete.com/posts/2013/12/11/javascript_game_foundations_juiciness/) and the [video it links to](https://www.youtube.com/watch?v=Fy0aCDmgnxg). I wanted to make it very clear to the player what was currently selected and give them a bit of positive feedback when they selected a correct word.
+I took a long time tweaking everything but I think it works well. I had recently read [this article on a game design concept called juiciness](http://codeincomplete.com/posts/2013/12/11/javascript_game_foundations_juiciness/) and the [video it links to](https://www.youtube.com/watch?v=Fy0aCDmgnxg). I wanted to make it very clear what was currently selected and give some positive feedback when a correct word was found.
 
-I implemented this with a bit of JavaScript to update the classes and some scss magic for changing the different colours and opacities. For the found word highlights, a new empty div element is added to the cells and the opacity takes care of the blending. 
+I used JavaScript to listen for mouse events and update the classes. I then used some clever scss for changing colours and opacities. For the persistent highlights, some new empty div elements are added to the cells. They are absolutely positioned and sized to overlap perfectly with their parent cell. Their partial opacity takes care of the blending. 
 
 ## Level progression
 
-This is something that I think could be improved further. Currently, when you finish the level you get a JavaScript alert saying congratulations. You can then select a different difficulty level from the menu to play again. I think this is one of the weaker areas of the game and needs to be improved. 
+This is something that I think could be improved further. Currently, when you finish the level you get a JavaScript alert saying "Congratulations". You can then select a different difficulty level from the menu to play again. I think this is one of the weaker areas of the game and needs to be improved. 
 
-I can think of a few different ways to make it feel like more of a proper game:
+I can think of a few possibilities:
 
 - **Timer:** Each attempt is timed, try to beat your previous best (also some kind of high-score table)
 - **Time limit:** Stage is failed unless it is completed within a certain time
@@ -70,9 +70,9 @@ The simple timer approach sounds like the easiest to implement (and has been use
 
 ## Technical issues
 
-There are a small number of other things I would like to tweak still:
+There are a few other things I would like to tweak:
 
-- Very very occasionally (~1/100 times) the grid will have five or fewer words on it, would be good if the grid could be regenerated in the event that this happens
+- Very very occasionally (~1/100 times) the grid will have five or fewer words on it, the grid should be regenerated in the event that this happens
 - Although the game is perfectly playable on mobile devices, the juicy colour styles don't work very well as you can't drag your finger
 - The grid gets a bit squashed when you have a 10x10 grid on a small screen
 
