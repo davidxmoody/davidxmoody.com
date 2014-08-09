@@ -18,7 +18,7 @@ I had recently played [this Android wordsearch game](https://play.google.com/sto
 
 I went through quite a lot of iterations of this game. Originally I made it using CoffeeScript and jQuery. Some time later, I started learning Angular.js and decided it would be a good exercise to re-write it. Later still, I realised I had to actually integrate it into the Professor P website. I made sure everything worked well with DocPad (the static site generator I was using) and changed some of the other elements to use the existing Bootstrap styles from the website.
 
-It's actually a very complex game. Instead of going through every line of code, I'm going to pick out a handful of interesting design decisions and examine them further. 
+It's actually a very complex game. Going through every line of code would be rather tedious so instead I'm going to pick out a handful of interesting design decisions and examine them further. 
 
 ## Grid generation
 
@@ -62,15 +62,11 @@ This is something that I think could be improved further. Currently, when you fi
 I can think of a few different ways to make it feel like more of a proper game:
 
 - **Timer:** Each attempt is timed, try to beat your previous best (also some kind of high-score table)
-    - **Timer divided by number of words:** To adjust for easier/harder grids
-    - **Timer + daily challenge:** A new seeded grid every day/hour with a shared high-score table for multiple players
-- **Multiple stages:** Next stage only unlocked upon completion of the previous one, try to complete all stages
-    - **Time limit:** Stage is failed unless it is completed within a certain time
-    - **Word themes:** Each stage has a slightly different set of words (dinosaurs, sea creatures, plants, etc.)
+- **Time limit:** Stage is failed unless it is completed within a certain time
 - **Large grid, time limit:** Huge grid with tons of words and a small time limit, find as many as you can instead of trying to find them all
-- **Scrolling grid:** As you find words, the grid partially scrolls down to reveal more letters and available words (tricky to implement)
+- **Multiple stages:** Next stage only unlocked upon completion of the previous one, try to complete all stages
 
-The simple timer approach sounds like the easiest to implement (and has been used in similar games before). A local high-score table would be required to give context to each individual attempt. The others would be interesting but more risky and may not be as fun. The advantage of the timer approach is that it requires virtually no extra balancing. You are always competing against your past self so there is always going to be a challenge. 
+The simple timer approach sounds like the easiest to implement (and has been used in similar games before). A local high-score table would be required to give context to each individual attempt. The others would be interesting but riskier. The advantage of the timer approach is that it requires virtually no extra balancing. You are always competing against your past self so there is always going to be a challenge. 
 
 ## Technical issues
 
