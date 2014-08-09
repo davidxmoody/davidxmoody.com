@@ -22,7 +22,7 @@ Like his header, mine features my own name in large capitals with a drop shadow 
 
 ## Colours
 
-I did want my own colour scheme though. Alas, choosing a colour scheme is no simple task either. I used the excellent website [paletton.com](http://www.paletton.com/) to choose [this colour scheme](http://www.paletton.com/#uid=1000u0kleqtbzEKgVuIpcmGtdhZ) from the presets. 
+I did want my own colour scheme though. Alas, choosing a colour scheme is no simple task. I used the excellent website [paletton.com](http://www.paletton.com/) to choose [this colour scheme](http://www.paletton.com/#uid=1000u0kleqtbzEKgVuIpcmGtdhZ) from the presets. 
 
 I copy-pasted the RGB codes into my Sass variables. This way, I can change my colour scheme very easily (as long as I don't want to go beyond a simple monochromatic scheme).
 
@@ -54,7 +54,7 @@ I also found [another handy tutorial on creating a typographic boilerplate](http
 
 ## Gridlover
 
-After some more searching I found [Gridlover](http://www.gridlover.net/). It's based around the idea of laying out all the text on a page such that it aligns to an (imaginary) evenly spaced grid. It comes with an [incredibly useful app](http://www.gridlover.net/app/) which allows you to set the font size, line height and scale factor and view it all on a grid. 
+After some more searching, I found [Gridlover](http://www.gridlover.net/). It's based around the idea of laying out text such that it aligns to an (imaginary) evenly spaced grid. It comes with an [incredibly useful app](http://www.gridlover.net/app/) which allows you to set the font size, line height and scale factor on a visual grid.
 
 I'm not completely sold on this whole grid idea. For one thing, I notice that most other sites do not align with any kind of grid. Despite that, it's still pretty good and I decided to use it for my blog. 
 
