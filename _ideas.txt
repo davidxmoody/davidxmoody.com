@@ -1,15 +1,11 @@
-Most urgent:
+Prof P website introduction/guide to features/summary of features
 
-- Prof P website introduction/guide to features/summary of features
-- Building the blog
-
-Someday:
-
-- Diary project
-- Clone other games (Flappy Bird clone in 1 hour challenge?)
-- Dotfiles
-- Vim extensions
-- Typing speed/typing cheats
-- Syncing setup
-- Grunt
-- Useful CoffeeScript features I didn't notice first time
+Password scheme
+Diary project
+Clone other games (Flappy Bird clone in 1 hour challenge?)
+Dotfiles
+Vim extensions
+Typing speed/typing cheats
+Syncing setup
+Grunt
+Useful CoffeeScript features I didn't notice first time
