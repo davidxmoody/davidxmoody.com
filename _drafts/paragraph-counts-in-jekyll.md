@@ -3,29 +3,21 @@ layout: post
 title: Paragraph counts in jekyll
 ---
 
-I'm a big fan of [Ars Technica](http://arstechnica.com/). One thing I like about their RSS feed is that it shows the first few paragraphs of the article followed by a link saying "Read X remaining paragraphs". 
+I'm a big fan of [Ars Technica](http://arstechnica.com/). There is one thing I particularly like about their RSS feed. It shows the first few paragraphs of the article followed by a link saying "Read X remaining paragraphs". 
 
-I generally prefer to be able to read the entire article directly from the RSS feed but it's completely understandable for a site to not want to do that. 
+If I can't read the full article from an RSS feed, this is the next best option. It has two big advantages: 
+
+- It contains enough of the article to let you know if you will want to read the whole thing
+- It lets you know how long the entire article will be
 
 
-Some *bad* approaches I've seen include:
-
-- Nothing (beyond the title of the article)
-- Really generic description (that tells you nothing the title doesn't)
-- First paragraph only (acceptable but often isn't enough to decide if I want to read the whole thing)
-
-I love the Ars Technica approach because it:
-
-- Contains enough of the article to know if you are going to want to read it
-- Lets you know how long the entire article will be
-
-Despite this, I've never seen another site use this technique. 
+I've seen many *bad* approaches to the same problem. Some feeds contain very limited information, frequently just the first paragraph of the article. I feel that the first paragraph alone is not usually enough to decide if the entire article is worth reading. 
 
 ## Emulating it in Jekyll
 
 I wanted something like this for my blog. Both for the summary of all posts on the front page and also for the RSS feed. 
 
-Jekyll already contains support for excerpts (accessible with `post.excerpt`). By default the excerpt of a post will be the first paragraph. 
+Jekyll already contains support for excerpts (accessible with `post.excerpt`). By default, the excerpt of a post will be the first paragraph. 
 
 However, jekyll also supports setting a custom `excerpt_separator` variable in the `_config.yml` file. I changed mine to be two empty lines instead of the default of one. 
 
@@ -40,7 +32,7 @@ In each of my posts I then add an extra new line after the point I want the exce
 
 Now that we've defined a custom, multi-paragraph excerpt, we still need to count the number of *remaining* paragraphs in the post. 
 
-Liquid templates weren't really designed for this kind of stuff and they lack full regular expression support. However, they do have the very convenient `split` filter which we will be using. We can split the formatted HTML of the post on the `'<p>'` substring to break it into segments for each paragraph. One slight caveat is that there will be an empty string before the first paragraph so we also have to subtract one from the total count. 
+Liquid templates weren't really designed for this kind of stuff and they lack full regular expression support. However, they do have the very convenient `split` filter which we will be using. We can split the formatted HTML of the post on the `'<p>'` substring. This will break it into segments for each paragraph. One slight caveat is that there will be an empty string before the first paragraph.
 
 {% highlight html %}{% raw %}
 {% assign total_paragraphs = post.content | split: '<p>' | size | minus: 1 %}
@@ -51,7 +43,7 @@ Liquid templates weren't really designed for this kind of stuff and they lack fu
 
 ## Short posts
 
-What if you want to write a short post though? One which is short enough that you want the excerpt to equal the entire post. Not a problem. If you simply don't include the `excerpt_separator` in your post then the excerpt will be equal to the entire post's content. 
+What if you want to write a short post though? One where you want the excerpt to equal the entire post. Not a problem. If you simply don't include the `excerpt_separator` in your post then the excerpt will be equal to the full content of the post. 
 
 You could also change the wording a bit:
 
