@@ -1,4 +1,4 @@
-$footer-height: 135px;
+$footer-height: $computed-line-height * 6;
 
 html, body {
 	height: 100%;
