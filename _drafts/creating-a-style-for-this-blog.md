@@ -40,10 +40,77 @@ I wanted a footer in a similar style to the header. A banner of colour with some
 
 I didn't like how it floated half way up shorter pages though. A footer half way up the page isn't really a footer after all. 
 
-I used [this tutorial by Ryan Fait](http://ryanfait.com/html5-sticky-footer/) to achieve that. It makes the markup look a bit cluttered but it's good enough for now. 
-
-I don't have many short pages anyway so I may investigate removing or changing this in the future. 
+I used [this tutorial by Ryan Fait](http://ryanfait.com/html5-sticky-footer/) to achieve that. It makes the markup look a bit cluttered but it's good enough for now. I don't have many short pages anyway so I may investigate removing or changing this in the future. 
 
 ## Typography
 
 Most of the stuff on this blog is going to be text so it's pretty important not to screw it up. 
+
+I'm already using [normalize.css](http://necolas.github.io/normalize.css/) on this blog and I was interested to find out if there was something similar for laying out text. There kind of is with [typebase.css](http://devinhunt.github.io/typebase.css/). I tried it out but did not like the default settings at all. The headers appeared *way* too big for one thing. I played around with the settings but still did not like it that much. 
+
+There is also [Typeplate](http://typeplate.com/) which is similar in its goals. I tried that out too but again, the default settings looked very bad in my opinion. It also seemed needlessly complex and I decided I wanted something simpler. I did like the tutorial on the home page however. One thing I took from it was to not use the blackest colour for the text. I now use `#111` for headings and `#222` for body text. 
+
+I also found [another handy tutorial on creating a typographic boilerplate](http://webdesign.tutsplus.com/articles/a-web-designers-typographic-boilerplate--webdesign-15234). It contained a lot of useful information and the thing I really took from it was that there is no single standard, you just have to use what works for you. 
+
+## Gridlover
+
+After some more searching I found [Gridlover](http://www.gridlover.net/). It's based around the idea of laying out all the text on a page such that it aligns to an (imaginary) evenly spaced grid. It comes with an [incredibly useful app](http://www.gridlover.net/app/) which allows you to set the font size, line height and scale factor and view it all on a grid. 
+
+I'm not completely sold on this whole grid idea. For one thing, I notice that most other sites do not align with any kind of grid. Despite that, it's still pretty good and I decided to use it for my blog. 
+
+At first I simply copy-pasted the generated settings from the Gridlover app. It worked but it also felt very messy. Changing any of the variables would require opening my browser, re-entering the variables, copying the generated CSS and then figuring out exactly what I had to replace in my source files. 
+
+Thankfully, a better solution already exists: [a Gridlover Mixin on GitHub](https://github.com/sevenupcan/gridlover-mixin). Documentation wasn't great but it was good enough to figure it out eventually. There is one file called [rhythm.sass](https://github.com/sevenupcan/gridlover-mixin/blob/master/sass/rhythm.sass) which I copied directly into my Jekyll `_sass` directory. It contains a `rhythm` mixin which accepts three arguments. The first is the number of times the scale factor will be multiplied to the font size to produce the new font size. The second and third are the number of empty lines you want before and after the element. You can then `@include` the rhythm mixin in any other element. Here is an example of how it could be done:
+
+{% highlight scss %}
+// Gridlover variables go here
+$body-font-size: 18px;
+$body-line-height: 1.5;
+$scale-factor: 1.414;
+$computed-line-height: $body-line-height * $body-font-size;
+
+// Import the rhythm mixin
+@import 'rhythm';
+
+// Paragraphs and lists will not be scaled 
+// and will have one empty line after
+p, ul, ol {
+  @include rhythm(0, 0, 1);
+}
+
+// Level 1 headers will be scaled up three times,
+// have two empty lines before and one after
+h1 {
+  @include rhythm(3, 2, 1);
+}
+
+// Level 2 headers will be scaled up two times, 
+// have one empty line before and one after
+h2 {
+  @include rhythm(2, 1, 1);
+}
+
+// And so on for the other headers...
+
+// Also include this bit for sanitation of a 
+// few other elements
+hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+b, strong, em, small, code {
+  line-height: 1;
+}
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+sub {
+  top: 0.4em;
+}
+{% endhighlight %}
