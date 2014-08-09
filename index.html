@@ -4,7 +4,7 @@ layout: default
 
 <div class="home">
 
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
 
   {% assign total_paragraphs = post.content | split: '<p>' | size | minus: 1 %}
   {% assign excerpt_paragraphs = post.excerpt | split: '<p>' | size | minus: 1 %}
@@ -22,6 +22,33 @@ layout: default
   </a></p>
   {% endfor %}
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  {% if paginator.total_pages > 1 %}
+  <p class="pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | replace: 'index.html', '' }}">&laquo;</a>
+    {% else %}
+    <span>&laquo;</span>
+    {% endif %}
+
+    {% for page in (1..paginator.total_pages) %}
+    |
+    {% if page == paginator.page %}
+    <em>{{ page }}</em>
+    {% elsif page == 1 %}
+    <a href="/">1</a>
+    {% else %}
+    <a href="{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+    {% endfor %}
+    |
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}">&raquo;</a>
+    {% else %}
+    <span>&raquo;</span>
+    {% endif %}
+  </p>
+  {% endif %}
+
+  <!--<p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>-->
 
 </div>

@@ -88,3 +88,13 @@ img {
 html {
   overflow-y: scroll;
 }
+
+// Make small links a bit easier to click
+.pagination {
+  margin-top: $computed-line-height * 2;
+  text-align: center;
+  a, span, em {
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+  }
+}
