@@ -16,6 +16,6 @@ I recently re-read [this excellent Coding Horror blog post](http://blog.codingho
 
 > When people ask me for advice on blogging, I always respond with yet another form of the same advice: **pick a schedule you can live with, and stick to it. Until you do that, none of the other advice I could give you will matter.**
 
-My schedule will be **three blog posts per week**, on *Mondays*, *Wednesdays* and *Fridays*. My first proper post will be Monday 11 August and I will continue for the next four weeks before going on holiday. 
+My schedule will be **three blog posts per week**, on *Mondays*, *Wednesdays* and *Fridays*.
 
 I want this blog to *eventually* be great. The best way for me to make that happen is to practise writing good content and the best way for *that* to happen is to set myself a schedule. 
