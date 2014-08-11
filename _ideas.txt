@@ -1,11 +1,21 @@
 Prof P website introduction/guide to features/summary of features
-
-Password scheme
+Learn Git better
+Contribute to my first external GitHub repos
+Setting up Namecheap stuff
+Try Anki again
+Try Beeminder
+Try TagTime
 Diary project
-Clone other games (Flappy Bird clone in 1 hour challenge?)
 Dotfiles
+Clone other games (Flappy Bird clone in 1 hour challenge?)
 Vim extensions
+tmux
+Custom keyboard layout
+Review of programmer Dvorak after 3 years
 Typing speed/typing cheats
 Syncing setup
 Grunt
 Useful CoffeeScript features I didn't notice first time
+
+Favourite recipes
+Budgeting 
