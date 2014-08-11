@@ -1,8 +1,8 @@
 ## About
 
-This is the source code for my personal blog. View it at [davidxmoody.github.io](http://davidxmoody.github.io/). 
+This is the source code for my personal blog. View it at [davidxmoody.com](http://davidxmoody.com/). 
 
-It's mostly a blog about programming with some occasional other stuff. I have also written about designing the site itself, if you are interested. 
+It's mostly a blog about programming with some occasional other stuff. I have also written posts about designing the site itself.
 
 ## License
 
