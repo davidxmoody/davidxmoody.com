@@ -72,6 +72,11 @@ $hover-link-color: $color-darker;
   padding-bottom: $computed-line-height * 2;
 }
 
+// Dates under post titles
+.meta {
+  font-style: italic;
+}
+
 a {
   color: $link-color;
 }
