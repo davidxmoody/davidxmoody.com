@@ -14,17 +14,25 @@ A few months ago, when several high-profile websites were hacked, I decided I ne
 
 ## Correct horse battery staple
 
-There is plenty of good advice on creating strong passwords. My scheme is originally based on [this famous XKCD comic](http://xkcd.com/936/):
+There is plenty of good advice on creating strong passwords. My scheme is based on [this famous XKCD comic](http://xkcd.com/936/):
 
 [![correct horse battery staple comic](http://imgs.xkcd.com/comics/password_strength.png)](http://xkcd.com/936/)
 
-In other words, a short list of common words can be trivially easy for a human to remember yet essentially impossible for a computer to guess. 
+Thus, for each password I think of a short list of words or a short phrase. I then concatenate them together and remove all punctuation and whitespace to form the base of my password. 
+
+Here are a few tips to make it easier to remember:
+
+- Make it silly
+- Base it on a memory of something that happened to you
+- Try to invoke an emotional reaction when you think of the phrase
+
+You should also avoid including punctuation or variations on words that could be easily confused later on. For example "I am going to staple a battery to this horse" could easily become "**I'm** going to staple a battery to this horse" or "I am going to staple a battery to **a** horse".
 
 ## Double salting
 
-I have two modifications to that. The first is to choose a sequence of 8 easy to type characters and add it to the start of every password. For example, `lkjpoiuu`, or something like that. 
+I have two additions to that system. The first is to choose a sequence of 8 easy to type characters and add it to the start of every password. For example, `lkjpoiuu`, or something like that. 
 
-Why? As an analogy, consider the practise of [password salts](http://en.wikipedia.org/wiki/Salt_(cryptography)). The basic idea is to add on a small amount of random data to each password before hashing it. The random data is then stored along side the hashed password. One of the advantages of this is that, in the event that the entire (hashed) password database gets stolen, cracking the entire list of passwords becomes more time consuming as you must re-calculate every guess with each different salt. See [the Wikipedia article](http://en.wikipedia.org/wiki/Salt_(cryptography)#Benefits) for a better explanation. 
+Why? As an analogy, consider the practise of [password salts](http://en.wikipedia.org/wiki/Salt_(cryptography)). The basic idea is to add on a small amount of random data to each password before hashing it. The random data is then stored along side the hashed password. One of the advantages of this is that, in the event that the entire (hashed) password database gets stolen, cracking the entire list of passwords becomes more time consuming as you must re-calculate every guess with each different salt. See [the Wikipedia article](http://en.wikipedia.org/wiki/Salt_(cryptography)#Benefits) for a much better explanation. 
 
 Similarly, by adding on a constant "random" but easy to type sequence to all of your passwords, you make it much harder for someone with no particular knowledge of you to guess your password. Nobody will stumble across your password with a dictionary attack because your random string will not be in any dictionary. 
 
