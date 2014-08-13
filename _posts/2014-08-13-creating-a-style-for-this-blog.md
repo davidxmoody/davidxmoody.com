@@ -60,7 +60,7 @@ I'm not completely sold on this whole grid idea. For one thing, I notice that mo
 
 At first I simply copy-pasted the generated settings from the Gridlover app. It worked but it also felt very messy. Changing any of the variables would require opening my browser, re-entering the variables, copying the generated CSS and then figuring out exactly what I had to replace in my source files. 
 
-Thankfully, a better solution already exists: [a Gridlover Mixin on GitHub](https://github.com/sevenupcan/gridlover-mixin). Documentation wasn't great but it was good enough to figure it out eventually. There is one file called [rhythm.sass](https://github.com/sevenupcan/gridlover-mixin/blob/master/sass/rhythm.sass) which I copied directly into my Jekyll `_sass` directory. It contains a `rhythm` mixin which accepts three arguments. The first is the number of times the scale factor will be multiplied to the font size to produce the new font size. The second and third are the number of empty lines you want before and after the element. You can then `@include` the rhythm mixin in any other element. Here is an example of how it could be done:
+Thankfully, a better solution already exists: [a Gridlover Mixin on GitHub](https://github.com/sevenupcan/gridlover-mixin). Documentation isn't great but I was able to figure it out eventually. There is one file called [rhythm.sass](https://github.com/sevenupcan/gridlover-mixin/blob/master/sass/rhythm.sass) which I copied directly into my Jekyll `_sass` directory. It contains a `rhythm` mixin which accepts three arguments. The first is the number of times the scale factor will be multiplied to the font size to produce the new font size. The second and third are the number of empty lines you want before and after the element. You can then `@include` the rhythm mixin in any other element. Here is an example of how it could be done:
 
 {% highlight scss %}
 // Gridlover variables go here
@@ -115,6 +115,6 @@ sub {
 }
 {% endhighlight %}
 
-To be honest, I'm not completely happy with the grid system. I find that if you have a header which is slightly too big to fit in one row then it ends up requiring two rows and then leaving too much whitespace below and above it. 
+To be honest, I'm not completely happy with the grid system. I notice that if you have a header which is just a bit too big to fit in one row, it takes up two rows and has excessive whitespace above and below. 
 
 Still, I like the elegance of the grid system and it's good enough for now. 
