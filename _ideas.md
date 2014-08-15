@@ -13,11 +13,13 @@ New projects:
 - Clone other games (Flappy Bird clone in 1 hour challenge?)
 - iSketch clone
 - Improve wordsearch game
+- Python photo import script
 
 New tools:
 
 - Learn Git better
 - Contribute to my first external GitHub repos
+- Learn Linux tools better
 - Try Anki again
 - Try Beeminder
 - Try TagTime
