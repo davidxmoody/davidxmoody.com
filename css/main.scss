@@ -65,6 +65,7 @@ $hover-link-color: $color-darker;
 .content {
   max-width: $body-font-size * 33;
   margin: auto;
+  padding: 0 14px;
   color: $content-text-color;
   h1, h2, h3, h4, h5, h6 {
     color: $content-header-color;
