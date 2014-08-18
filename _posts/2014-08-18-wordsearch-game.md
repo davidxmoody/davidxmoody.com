@@ -3,22 +3,22 @@ layout: post
 title: Wordsearch game
 ---
 
-For my first proper post, I thought I would return to my wordsearch game. I made it for the [professorp.co.uk](http://professorp.co.uk/games/wordsearch/) website and I would say it's the game I'm proudest of. I really like the simplicity and style of it. 
+For my first post not about blogging, I thought I would return to my wordsearch game. I made it for the [professorp.co.uk](http://professorp.co.uk/games/wordsearch/) website and I would say it's the game I'm proudest of. I really like the simplicity and style of it. 
 
-In this post, I will take a look back at what I've already done and make a note of what I think could be improved. In subsequent posts, I plan to make some improvements and also make it into a standalone game which can exist outside of the Professor P website. 
+In this post, I will take a look back at what I've already done and make a note of what I think could be improved. In subsequent posts, I plan to make some improvements and also make it into a standalone game.
 
 
 ## The game
 
 You can play it [right now](http://professorp.co.uk/games/wordsearch/) but in case you don't want to, here is a screenshot:
 
-![Screenshot of the wordsearch game](/images/2014-08-04/wordsearch-screenshot.png)
+![Screenshot of the wordsearch game](/images/2014-08-18/wordsearch-screenshot.png)
 
-I had recently played [this Android wordsearch game](https://play.google.com/store/apps/details?I'd=com.melimots.WordSearch&hl=en) and liked the visual style of it. I wanted to make something similar but add my own touches. 
+I had recently played [this Android wordsearch game](https://play.google.com/store/apps/details?id=com.melimots.WordSearch&hl=en) and liked the visual style of it. I wanted to make something similar but add my own touches. 
 
-I went through quite a lot of iterations of this game. Originally I made it using CoffeeScript and jQuery. Some time later, I started learning Angular.js and decided it would be a good exercise to re-write it. Later still, I realised I had to actually integrate it into the Professor P website. I made sure everything worked well with DocPad (the static site generator I was using) and changed some of the other elements to use the existing Bootstrap styles from the website.
+I went through quite a lot of iterations of this game. Originally I made it using CoffeeScript and jQuery. Some time later, I started learning AngularJS and decided it would be a good exercise to re-write it. Later still, I realised I had to actually integrate it into the Professor P website. I made sure everything worked well with DocPad (the static site generator I was using). I also added some Bootstrap styles to some of the elements.
 
-It's actually a very complex game. Going through every line of code would be rather tedious. Instead I'm going to pick out a handful of interesting design decisions and examine them further. 
+It's actually a very complex game. Going through every line of code would be rather tedious. Instead I'm going to pick out a few of interesting design decisions and examine them further. 
 
 ## Grid generation
 
@@ -57,7 +57,7 @@ I used JavaScript to listen for mouse events and update the classes. I then used
 
 ## Level progression
 
-This is something that I think could be improved further. Currently, when you finish the level you get a JavaScript alert saying "Congratulations". You can then select a different difficulty level from the menu to play again. I think this is one of the weaker areas of the game and needs to be improved. 
+This is something that could be improved further. Currently, when you finish the level you get a JavaScript alert saying "Congratulations". You can then select a different difficulty level from the menu to play again. I think this is one of the weaker areas of the game and needs to be improved. 
 
 I can think of a few possibilities:
 
