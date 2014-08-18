@@ -20,7 +20,6 @@ New tools:
 - Learn Git better
 - Contribute to my first external GitHub repos
 - Learn Linux tools better
-- Try Anki again
 - Try Beeminder
 - Try TagTime
 - Vim extensions
@@ -35,3 +34,9 @@ Non-programming:
 - Budgeting 
 - Trackballs
 - Keyboards
+- Sleep tracking
+
+Blog tweaks:
+
+- Add FeedBurner links
+- Add index page description
