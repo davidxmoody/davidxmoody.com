@@ -1,9 +1,9 @@
 Projects I've already worked on:
 
-- Setting up Namecheap stuff
 - Prof P website introduction
 - Diary project
 - Dotfiles
+- Better Vim abbreviations
 - Review of programmer Dvorak after 3 years
 - Useful CoffeeScript features I didn't notice first time
 - Syncing setup
