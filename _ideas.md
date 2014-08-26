@@ -1,12 +1,10 @@
 Projects I've already worked on:
 
-- Prof P website introduction
 - Diary project
+- Prof P website introduction
 - Dotfiles
-- Better Vim abbreviations
 - Review of programmer Dvorak after 3 years
 - Useful CoffeeScript features I didn't notice first time
-- Syncing setup
 
 New projects:
 
@@ -27,6 +25,7 @@ New tools:
 - Custom keyboard layout
 - Typing speed/typing cheats
 - Grunt
+- Syncing setup
 
 Non-programming:
 
@@ -35,6 +34,7 @@ Non-programming:
 - Trackballs
 - Keyboards
 - Sleep tracking
+- Music for programming
 
 Blog tweaks:
 
