@@ -5,32 +5,75 @@ title: Better Vim abbreviations
 
 I've been using Vim, full-time, for nearly three years. I have written *a lot* of plain text in that time. 
 
-Pretty early on, I noticed I was wasting a lot of time with several common typing patterns. For example, to type "I've" requires `<Shift>+i ' v e`. That's 5 key strokes including two stretches of the little fingers. I replaced that with the abbreviation `iab iv I've`. That's only two keys instead of five and it doesn't put any unnecessary stress on the little fingers (which I sometimes have problems with). 
+Pretty early on, I noticed I was wasting a lot of time with several common typing patterns. For example, to type "I've" requires 5 key strokes including two stretches of the little fingers. I replaced that with the abbreviation `iab iv I've`. That's only two keys instead of five and it doesn't put any unnecessary stress on the little fingers (which I sometimes have problems with). 
 
 
-Similarly, I use several other abbreviations for common typing patterns (mostly avoiding having to type apostrophes and capital letters). Here is a small sample:
+I created several other abbreviations for common typing patterns (mostly avoiding having to type apostrophes and capital letters). Here is a small sample:
 
 {% highlight vim %}
 iab i I
 iab iv I've
 iab il I'll
 iab dont don't
-iab didnt didn't
-
-iab anki Anki
 iab youtube YouTube
-
 iab monday Monday
-iab tuesday Tuesday
-iab january January
 iab february February
-
-iab latek LaTeX
 iab cof CoffeeScript
 {% endhighlight %}
 
-I keep these English-only abbreviations in a separate file which gets sourced when editing Markdown or text files. 
+I keep these English-only abbreviations in a separate file (`~/.vim/abbreviations.vim`) which gets sourced when editing Markdown or text files. 
 
-Some people also like to add common typos to their list of abbreviations. 
+Some people also like to add common typos to their list of abbreviations. I have a few of those but I like to keep them to a minimum. When possible, I prefer to force myself to re-type the word correctly so that I actually learn how it is supposed to be spelled. 
 
+## Annoyances
 
+This worked well for me for a long time but it had two problems that kept bugging me. One was that I had to manually add the capitalized versions of all my abbreviations. For example `iab cant can't` as well as `iab Cant Can't`. This duplication of information was annoying and felt messy. 
+
+The other problem was that it was kind of a pain to add new abbreviations. I had to manually open up my abbreviations file every time. 
+
+I was about to start creating my own script to deal with this stuff. Thankfully, one already exists. It can handle the problems I've described nicely. It also does a bit more advanced stuff as well. 
+
+## Abolish plugin
+
+The [Vim Abolish plugin](https://github.com/tpope/vim-abolish) is pretty neat. Read the tutorial for a full walkthrough of the features. It lets you do stuff like this:
+
+{% highlight vim %}
+Abolish seperate separate
+" Results in:
+iabbrev seperate separate
+iabbrev Seperate Separate
+iabbrev SEPERATE SEPARATE
+{% endhighlight %}
+
+It also has plenty more advanced features which allow you to group together multiple related words:
+
+{% highlight vim %}
+Abolish cal{a,e}nder{,s} cal{e}ndar{}
+{% endhighlight %}
+
+Also, if you place a `!` at the end, you can add words to you abbreviations file easily:
+
+{% highlight vim %}
+" In ~/.vim/abbreviations.vim (or where-ever you like)
+
+" `expand('<sfile>:p')` gets the absolute path of the 
+" current file that this is being executed from
+let g:abolish_save_file = expand('<sfile>:p')
+
+if !exists(":Abolish")
+  finish
+endif
+
+" Typing `:Abolish! im I'm` will append the following
+" to the end of this file:
+Abolish im I'm
+{% endhighlight %}
+
+There is also a `Subvert` command for doing similar things in search and replace:
+
+{% highlight vim %}
+" Will replace "Facilities" with "Buildings", etc.
+:%Subvert/facilit{y,ies}/building{,s}/g
+{% endhighlight %}
+
+Again, check the [GitHub repo](https://github.com/tpope/vim-abolish) for more details. I haven't been using the plugin for long but I really like it so far. 
