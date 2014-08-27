@@ -23,15 +23,15 @@ iab cof CoffeeScript
 
 I keep these English-only abbreviations in a separate file (`~/.vim/abbreviations.vim`) which gets sourced when editing Markdown or text files. 
 
-Some people also like to add common typos to their list of abbreviations. I have a few of those but I like to keep them to a minimum. When possible, I prefer to force myself to re-type the word correctly so that I actually learn how it is supposed to be spelled. 
+Some people also like to add common typos to their list of abbreviations. I have a few of those but I like to keep them to a minimum. When possible, I prefer to force myself to re-type the word correctly so that I learn the proper spelling. 
 
 ## Annoyances
 
-This worked well for me for a long time but it had two problems that kept bugging me. One was that I had to manually add the capitalized versions of all my abbreviations. For example `iab cant can't` as well as `iab Cant Can't`. This duplication of information was annoying and felt messy. 
+This worked well for me for a long time but it had two problems that kept bugging me. One was that I had to manually add the capitalized versions of all my abbreviations. For example, `iab cant can't` as well as `iab Cant Can't`. This duplication of information was annoying and felt messy. 
 
-The other problem was that it was kind of a pain to add new abbreviations. I had to manually open up my abbreviations file every time. 
+The other problem was that it was a pain to add new abbreviations. I had to manually open up my abbreviations file every time. 
 
-I was about to start creating my own script to deal with this stuff. Thankfully, one already exists. It can handle the problems I've described nicely. It also does a bit more advanced stuff as well. 
+I was about to start creating my own script to deal with this stuff. Thankfully, one already exists. 
 
 ## Abolish plugin
 
@@ -45,7 +45,7 @@ iabbrev Seperate Separate
 iabbrev SEPERATE SEPARATE
 {% endhighlight %}
 
-It also has plenty more advanced features which allow you to group together multiple related words:
+It has more advanced features which allow you to group together related words:
 
 {% highlight vim %}
 Abolish cal{a,e}nder{,s} cal{e}ndar{}
