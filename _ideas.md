@@ -1,6 +1,5 @@
 Projects I've already worked on:
 
-- Diary project
 - Prof P website introduction
 - Dotfiles
 - Review of programmer Dvorak after 3 years
@@ -8,13 +7,16 @@ Projects I've already worked on:
 
 New projects:
 
-- Clone other games (Flappy Bird clone in 1 hour challenge?)
 - iSketch clone
+- Bookworm Adventures clone
+- Geometry Dash clone
 - Improve wordsearch game
 - Python photo import script
+- Trying out different keyboard layout ideas
 
 New tools:
 
+- Pomodoro command line tool
 - Learn Git better
 - Contribute to my first external GitHub repos
 - Learn Linux tools better
@@ -38,5 +40,6 @@ Non-programming:
 
 Blog tweaks:
 
-- Add FeedBurner links
 - Add index page description
+- hr lines between posts
+- different coloured code style
