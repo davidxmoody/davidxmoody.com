@@ -5,14 +5,12 @@ title: Vim auto-capitalisation
 
 Continuing in the same theme as my [last post](/better-vim-abbreviations/), I am going to write about another awesome Vim tip I found recently. That is: automatic capitalisation of the first letter of each sentence. 
 
+Many word processors already include this. For some reason, Vim and other text editors don't usually have the option. I don't know why. I feel that a lot of unnecessary key-strokes are wasted on the shift keys. It also stresses the little fingers and twists the wrists.
 
-Many word processors already include this. For some reason, Vim and other text editors don't usually have the option. I don't know why. I feel that a lot of unnecessary key strokes are wasted on the shift keys. 
-
-Also, not only does pressing the shift keys require an additional key stroke, it stresses the little fingers and also twists the wrists. I could write forever on the shortcomings of keyboards but for now, I am content to change this one thing. 
 
 ## The scripts
 
-There is surprisingly little available about this. The only decent thing I've ever found has been [this superuser question/answer](http://superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim). There are two answers, both of which I like.
+There is surprisingly little information available about this. The only decent thing I've ever found has been [this superuser question/answer](http://superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim). There are two answers, both of which I like:
 
 {% highlight vim %}
 for char in split('abcdefghijklmnopqrstuvwxyz', '\zs')
@@ -31,7 +29,9 @@ augroup SENTENCES
 augroup END
 {% endhighlight %}
 
-Here, instead of creating mappings, an auto-command is used. It "listens" for characters to be inserted and intercepts them. It searches backwards for punctuation and converts the character to be inserted (`v:char`) to upper-case. The `augroup` and `au!` stuff isn't terribly important.
+Here, instead of creating mappings, an auto-command is used. It "listens" for characters to be inserted and intercepts them. It searches backwards for punctuation and converts the character to be inserted (`v:char`) to upper-case. The `augroup` and `au!` stuff is just for grouping and isn't terribly important.
+
+If you want to bypass the script(s) and force a lower-case letter to be inserted, you can press Ctrl+V followed by the letter. 
 
 ## Customisation
 
@@ -46,7 +46,7 @@ Here is my tweaked script:
 {% highlight vim %}
 augroup SENTENCES
     au!
-    autocmd InsertCharPre * if search('\v(%^|[.!?]\_s*|\_^\-\s|\_^title\:\s|\n\n)%#', 'bcnw') != 0 | let v:char = toupper(v:char) | endif
+    autocmd InsertCharPre * if search('\v(%^|[.!?]\_s+|\_^\-\s|\_^title\:\s|\n\n)%#', 'bcnw') != 0 | let v:char = toupper(v:char) | endif
 augroup END
 {% endhighlight %}
 
@@ -54,7 +54,7 @@ It can be tricky to figure out what's going on in a regular expression like that
 
 - `\v` means that the following pattern is "very magic" so not as many characters need to be escaped
 - `%^` is the start of the file
-- `[.!?]\_s*` is a punctuation mark followed by any amount of whitespace which may or may not include newlines
+- `[.!?]\_s+` is a punctuation mark followed by some whitespace which may or may not include newlines
 - `\_^\-\s` is a dash at the start of a line followed by a whitespace character
 - `\_^title\:\s` is "title: " at the start of a line
 - `\n\n` matches two newlines
@@ -87,7 +87,7 @@ func! WordProcessorMode()
     " Auto-capitalize script
     augroup SENTENCES
         au!
-        autocmd InsertCharPre * if search('\v(%^|[.!?]\_s*|\_^\-\s|\_^title\:\s|\n\n)%#', 'bcnw') != 0 | let v:char = toupper(v:char) | endif
+        autocmd InsertCharPre * if search('\v(%^|[.!?]\_s+|\_^\-\s|\_^title\:\s|\n\n)%#', 'bcnw') != 0 | let v:char = toupper(v:char) | endif
     augroup END
 endfu
 
