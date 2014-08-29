@@ -12,7 +12,6 @@ New projects:
 - Geometry Dash clone
 - Improve wordsearch game
 - Python photo import script
-- Trying out different keyboard layout ideas
 
 New tools:
 
@@ -27,19 +26,18 @@ New tools:
 - Custom keyboard layout
 - Typing speed/typing cheats
 - Grunt
-- Syncing setup
 
 Non-programming:
 
 - Favourite recipes
 - Budgeting 
-- Trackballs
-- Keyboards
+- Trackballs/keyboards
 - Sleep tracking
 - Music for programming
+- Jobs
 
 Blog tweaks:
 
 - Add index page description
 - hr lines between posts
-- different coloured code style
+- Change background colour of code elements
