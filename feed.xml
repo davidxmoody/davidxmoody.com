@@ -1,8 +1,6 @@
 ---
 layout: none
 ---
-{% capture href_replacement %}href="{{ site.url }}/{% endcapture %}
-{% capture src_replacement %}src="{{ site.url }}/{% endcapture %}
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -16,7 +14,7 @@ layout: none
     {% for post in site.posts limit:10 %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | replace: 'href="/', href_replacement | replace: 'src="/', src_replacement | xml_escape }}</description>
+        {% capture href_replacement %}href="{{ site.url }}/{% endcapture %}{% capture src_replacement %}src="{{ site.url }}/{% endcapture %}<description>{{ post.content | replace: 'href="/', href_replacement | replace: 'src="/', src_replacement | xml_escape }}</description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.url }}</link>
         <guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
