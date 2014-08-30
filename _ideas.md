@@ -41,3 +41,5 @@ Blog tweaks:
 - Add index page description
 - hr lines between posts
 - Change background colour of code elements
+- Favicon
+- Google analytics
