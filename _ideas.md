@@ -41,5 +41,10 @@ Blog tweaks:
 - Add index page description
 - hr lines between posts
 - Change background colour of code elements
-- Favicon
+- Favicon (http://realfavicongenerator.net/)
 - Google analytics
+- Tags
+
+Vague ideas:
+
+- More images (hand-drawn graphs, generated graphs?)
