@@ -3,7 +3,7 @@ layout: post
 title: Music for programming
 ---
 
-Music is awesome. Music while programming is even more awesome. It reduces the effect of distracting background noise and helps get you into the right frame of mind. Without further ado, here are my recommendations.
+Music is awesome. Music while programming is even more awesome. It reduces the effect of distracting background noise and helps you get into the right frame of mind. Without further ado, here are my recommendations.
 
 
 ## Grooveshark broadcasts
