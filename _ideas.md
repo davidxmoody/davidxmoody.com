@@ -23,9 +23,10 @@ New tools:
 - Try TagTime
 - Vim extensions
 - tmux
-- Custom keyboard layout
+- Custom keyboard layout (also customise inputrc)
 - Typing speed/typing cheats
 - Grunt
+- Try Midnight Commander (or other command line navigation tool)
 
 Non-programming:
 
@@ -33,7 +34,6 @@ Non-programming:
 - Budgeting 
 - Trackballs/keyboards
 - Sleep tracking
-- Music for programming
 - Jobs
 
 Blog tweaks:
@@ -44,7 +44,4 @@ Blog tweaks:
 - Favicon (http://realfavicongenerator.net/)
 - Google analytics
 - Tags
-
-Vague ideas:
-
 - More images (hand-drawn graphs, generated graphs?)
