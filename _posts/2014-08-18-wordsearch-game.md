@@ -12,7 +12,7 @@ In this post, I will take a look back at what I've already done and make a note 
 
 You can play it [right now](http://professorp.co.uk/games/wordsearch/) but in case you don't want to, here is a screenshot:
 
-![Screenshot of the wordsearch game](/images/2014-08-18/wordsearch-screenshot.png)
+![Screenshot of the wordsearch game](/images/wordsearch-game/wordsearch-screenshot.png)
 
 I had recently played [this Android wordsearch game](https://play.google.com/store/apps/details?id=com.melimots.WordSearch&hl=en) and liked the visual style of it. I wanted to make something similar but add my own touches. 
 
