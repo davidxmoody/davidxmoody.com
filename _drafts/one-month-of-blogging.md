@@ -33,4 +33,5 @@ For my own benefit, here is a list of all my post with an approximate number of 
 - [My password generation scheme](/my-password-generation-scheme/) (13 days)
 - [Better Vim abbreviations](/better-vim-abbreviations/) (0 days)
 - [Vim auto-capitalisation](/vim-auto-capitalisation/) (1 day)
+- [Music for programming](/music-for-programming/) (0 days)
 - TODO

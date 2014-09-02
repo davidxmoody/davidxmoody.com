@@ -7,6 +7,7 @@ TODO add github link
 
 In this post, I'm going to talk about my longest running pet project. It started out as a simple set of Bash scripts (in 2011) and has gone through several major re-writes. It is now a complete Python command line application with many useful features. I use it every single day. 
 
+
 ## Motivation
 
 Back in September 2010 I read an excellent book called [59 Seconds by Richard Wiseman](http://www.amazon.co.uk/59-Seconds-Richard-Wiseman-ebook/dp/B003GUBINE/). One of the things it suggested was keeping a regular diary/journal. 
