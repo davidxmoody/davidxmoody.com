@@ -27,6 +27,7 @@ New tools:
 - Typing speed/typing cheats
 - Grunt
 - Try Midnight Commander (or other command line navigation tool)
+- Bash prompts
 
 Non-programming:
 
@@ -38,8 +39,10 @@ Non-programming:
 
 Blog tweaks:
 
+- Add comments (Disqus)
 - Add index page description
-- hr lines between posts
+- Add about-me page
+- hr lines between posts on home page(s)
 - Change background colour of code elements
 - Favicon (http://realfavicongenerator.net/)
 - Google analytics
