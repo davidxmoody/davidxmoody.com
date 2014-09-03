@@ -15,7 +15,6 @@ New projects:
 
 New tools:
 
-- Pomodoro command line tool
 - Learn Git better
 - Contribute to my first external GitHub repos
 - Learn Linux tools better
