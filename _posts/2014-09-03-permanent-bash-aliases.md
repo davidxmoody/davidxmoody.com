@@ -3,10 +3,10 @@ layout: post
 title: Permanent Bash aliases
 ---
 
-This post will introduce a handy little Bash tip. I created it over a year ago but many other people had already thought of variations on the same idea. 
-
+This post will introduce a handy little Bash tip. I created it over a year ago but many other people have already done similar things.
 
 Bash aliases are incredibly convenient. If, for some reason, you don't already use them then you should [read this tutorial](https://www.digitalocean.com/community/tutorials/an-introduction-to-useful-bash-aliases-and-functions). 
+
 
 Anyway, on to the function:
 
@@ -43,7 +43,7 @@ alias cdrc='cd /home/david/sync/dotfiles'
 $ mkalias cdrc='cd $RC_DIR'  # Should be quoted
 alias cdrc='cd $RC_DIR'
 
-$ mkalias lsl='ls | less' # Must be quoted
+$ mkalias lsl='ls | less'  # Must be quoted
 alias lsl='ls | less'
 
 $ bash  # Open new shell
@@ -51,7 +51,7 @@ $ hello  # Alias is remembered
 hello world
 {% endhighlight %}
 
-The function could be improved further. There are many possible incorrect inputs which could be handled more gracefully. It would also be nice to find a way to share aliases between *already running Bash instances*. 
+The function can still fail if you use the wrong syntax (e.g. by putting whitespace around the `=` character). It would also be nice to find a way to share aliases between *already running Bash instances*. 
 
 One final tip, if you create an alias that "overwrites" another command, you can precede it with a backslash to run the original command.
 
