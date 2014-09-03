@@ -3,7 +3,7 @@ layout: post
 title: One month of blogging
 ---
 
-I have now published three posts a week for the last four weeks. That's about 7,000 words. 
+I have now published three posts per week for the last four weeks. That's about 7,000 words. 
 
 When I started, I just wanted to start. I knew I would never be completely ready but I also knew it didn't matter. Now that I've been blogging for one month, it's time for a review. I want to take stock of what went well and what could have gone better. 
 
@@ -18,7 +18,7 @@ Things were easy in the beginning. As time passed, I became lazy. I relied on th
 
 The quality definitely suffered. Being able to leave your work for a day or two and revisit it with fresh eyes really helps. 
 
-For my own benefit, here is a list of every post on this blog with the number of days between the date it was finished and the date it was published. 
+For my own benefit, here is a list of every post on this blog, with the number of days between the date it was finished and the date it was published. 
 
 - [Hello world](/hello-world/) (10 days)
 - [Creating a style for this blog](/creating-a-style-for-this-blog/) (4 days)
@@ -39,14 +39,26 @@ One specific thing I have noticed is that I tend to talk about myself too much. 
 
 It kind of reminds me of [this LessWrong post on Trying to Try](http://lesswrong.com/lw/uh/trying_to_try/). This is my blog, it should be taken as granted that anything written here is my opinion. If I write "Vim is awesome" then that should be interpreted as my opinion of Vim. It's completely unnecessary to write "I think Vim is awesome". It adds more words and makes it feel like I'm not certain of my own opinion. I want to get myself to write "I think" and "I feel" less on this blog. 
 
+Despite my problems, I'm still proud that I actually did stick to my schedule. 
+
 ## A better schedule
 
 I've been thinking about this for a while. Most of my problems come from being too rushed. 
 
-When I know I have to publish a post in one day, I can't attempt anything too hard. 
+When I only have one or two days to write a post, I feel like I can't attempt more ambitious projects. I have lots of [ideas](https://github.com/davidxmoody/davidxmoody.github.io/blob/master/_ideas.md) for posts. However, I know that many of them will require a lot of time for research. I don't want to attempt something difficult if I'm not certain I can finish it on time.
 
-When I only have one or two days to write a post, I feel like I can't attempt more ambitious projects. I have lots of [ideas](https://github.com/davidxmoody/davidxmoody.github.io/blob/master/_ideas.md) for posts. However, I know that many of them will require a lot of time for research. I don't want to attempt something difficult if I don't think I can be certain of finishing it within the deadline. 
+I've been thinking about ways to fix this. I could reduce the number of posts to two per week. That would give me more time per post and allow me to attempt more ambitious projects. 
+
+I could also try a small adjustment to my schedule. Instead of publishing three posts per week on Mondays, Wednesdays and Fridays, I could say that I also have to finish a complete draft of the next post on the same day. It's a small change but I think it will force me to keep a longer buffer of posts and not run into problems like I have recently. 
+
+I'm going to attempt the second solution for now. If I still find myself being too rushed then I will change to fewer posts per week (in a month or so). But, not yet.
 
 ## A week's break
 
-## A new schedule
+I'm going on a family holiday next week so there will be no posts. I thought about pre-writing several posts and finding the time to publish them while I was away. That would be a bad idea. It would reduce the quality of my writing and make me even more rushed. I will continue the week after I get back. 
+
+## Publicity
+
+Nobody is reading this blog. That's fine. I knew right from the start that I just wanted to write. I didn't see the point in trying to get people to read a blog which had nothing on it yet. 
+
+Now that I've actually written some stuff, I think it's time to start drawing some attention to this blog. 
