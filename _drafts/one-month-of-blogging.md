@@ -31,7 +31,7 @@ For my own benefit, here is a list of every post on this blog, with the number o
 - [Vim auto-capitalisation](/vim-auto-capitalisation/) (1 day)
 - [Music for programming](/music-for-programming/) (0 days)
 - [Permanent Bash aliases](/permanent-bash-aliases/) (1 day)
-- [One month of blogging](/one-month-of-blogging/) (??? days)
+- [One month of blogging](/one-month-of-blogging/) (2 days)
 
 I really wish I'd given myself another couple of days for some of my later posts. Looking back at the Vim posts, there are a lot of small things I would change. 
 
@@ -45,7 +45,7 @@ Despite my problems, I'm still proud that I actually stuck to my schedule. I'm a
 
 I've been thinking about this for a while. Most of my problems come from being too rushed. 
 
-When I only have one or two days to write a post, I feel like I can't attempt more ambitious projects. I have lots of [ideas](https://github.com/davidxmoody/davidxmoody.github.io/blob/master/_ideas.md) for posts. However, I know that many of them will require a lot of time for research. I don't want to attempt something difficult if I'm not certain I can finish it on time.
+When I only have one or two days to write a post, I feel like I can't attempt more ambitious projects. I have lots of [ideas](https://github.com/davidxmoody/davidxmoody.github.io/blob/master/_ideas.md) for posts. However, I know that many of them will require a lot of research. I don't want to attempt something difficult if I don't think I can finish on time. 
 
 I've been thinking about ways to fix this. I could reduce the number of posts to two per week. That would give me more time per post and allow me to attempt more ambitious projects. 
 
@@ -63,7 +63,7 @@ I thought about pre-writing several posts and finding the time to publish them w
 
 *Nobody is reading this blog.* That's fine. I knew right from the start that I just wanted to write. I didn't see the point in trying to get people to read a blog which had nothing on it yet. 
 
-Now that I've actually written some stuff, I think it's time to start drawing some attention to this blog. I'm not sure how best to do that. I will probably create a few social media accounts and start tweeting about my posts or something. I can figure that out later. 
+Now that I've actually written some stuff, I think it's time to start drawing some attention to this blog. I'm not sure how best to do that. I will probably create a few social media accounts and start tweeting about my posts. I may also start posting a few comments on other blogs which address highly-similar topics. 
 
 I want to create a mailing list and add comments to this blog (probably with [Disqus](https://disqus.com/)). Also tags for better navigation. 
 
