@@ -46,6 +46,5 @@ Blog tweaks:
 - hr lines between posts on home page(s)
 - Change background colour of code elements
 - Favicon (http://realfavicongenerator.net/)
-- Google analytics
 - Tags
 - More images (hand-drawn graphs, generated graphs?)
