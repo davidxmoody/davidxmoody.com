@@ -1,13 +1,10 @@
 ---
 layout: default
 ---
-
 {% for post in paginator.posts %}
-
 {% assign total_paragraphs = post.content | split: '<p>' | size | minus: 1 %}
 {% assign excerpt_paragraphs = post.excerpt | split: '<p>' | size | minus: 1 %}
 {% assign remaining_paragraphs = total_paragraphs | minus: excerpt_paragraphs %}
-
 <div class="post excerpt">
 
   <header class="post-header">
