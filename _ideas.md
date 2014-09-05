@@ -27,6 +27,8 @@ New tools:
 - Grunt
 - Try Midnight Commander (or other command line navigation tool)
 - Bash prompts
+- Fix Markdown syntax highlighting 
+- Add Markdown header auto-capitalisation (edit post)
 
 Non-programming:
 
