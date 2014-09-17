@@ -7,6 +7,7 @@ Projects I've already worked on:
 
 New projects:
 
+- Typing/handwriting speeds comparison
 - iSketch clone
 - Bookworm Adventures clone
 - Geometry Dash clone
