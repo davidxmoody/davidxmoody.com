@@ -1,12 +1,7 @@
-Projects I've already worked on:
+### New projects
 
-- Prof P website introduction
-- Dotfiles
-- Review of programmer Dvorak after 3 years
-- Useful CoffeeScript features I didn't notice first time
-
-New projects:
-
+- Guide to Prof P website, what I learned
+- Dotfiles (how to set up + sync), useful scripts in dotfiles
 - Typing/handwriting speeds comparison
 - iSketch clone
 - Bookworm Adventures clone
@@ -14,7 +9,7 @@ New projects:
 - Improve wordsearch game
 - Python photo import script
 
-New tools:
+### New tools
 
 - Learn Git better
 - Contribute to my first external GitHub repos
@@ -24,22 +19,25 @@ New tools:
 - Vim extensions
 - tmux
 - Custom keyboard layout (also customise inputrc)
-- Typing speed/typing cheats
+- Typing speed comparisons (typing vs SwiftKey vs handwriting)
 - Grunt
 - Try Midnight Commander (or other command line navigation tool)
 - Bash prompts
 - Fix Markdown syntax highlighting 
 - Add Markdown header auto-capitalisation (edit post)
 
-Non-programming:
+### Non-programming
 
 - Favourite recipes
-- Budgeting 
 - Trackballs/keyboards
-- Sleep tracking
-- Jobs
 
-Blog tweaks:
+### Non-programming future topics
+
+- Jobs
+- Budgeting 
+- Sleep tracking
+
+### Blog tweaks
 
 - Add comments (Disqus)
 - Add index page description
