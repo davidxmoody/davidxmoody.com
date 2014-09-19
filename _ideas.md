@@ -16,6 +16,7 @@
 - Learn Linux tools better
 - Try Beeminder
 - Try TagTime
+- Try TagSpaces
 - Vim extensions
 - tmux
 - Custom keyboard layout (also customise inputrc)
@@ -30,6 +31,7 @@
 
 - Favourite recipes
 - Trackballs/keyboards
+- Shorthand abbreviations
 
 ### Non-programming future topics
 
