@@ -32,6 +32,7 @@
 - Favourite recipes
 - Trackballs/keyboards
 - Shorthand abbreviations
+- List of other blogs I like
 
 ### Non-programming future topics
 
