@@ -3,7 +3,7 @@ layout: post
 title: "The growth mindset applied to my life (part 2)"
 ---
 
-Continued from [part 1](/the-growth-mindset-applied-to-my-life-part-1/). This part will discuss what happened to me after I left university. Looking at how the growth and fixed mindsets have affected my life. 
+Continued from [part 1](/the-growth-mindset-applied-to-my-life-part-1/). This part will discuss how the different mindsets affected me after I left university.
 
 
 ## Post Cambridge
@@ -48,14 +48,8 @@ One specific decision I'm pleased I made was to only publish my "best" content. 
 
 ## The future
 
-Despite my success with blogging so far, it is too much of a "meta" activity. That is, I have to write *about* something else. Out of the 14 posts I've written so far, 5 have been about blogging or setting up this blog, 7 have been about things I had already done and only 2 have actually been about *new* things (which I had no experience with before writing the post). The problem is, I don't want to write about blogging too much and I will eventually run out of things which I have already done. I need some new projects to work on. 
+Despite my success with blogging so far, it is too much of a "meta" activity. That is, I have to write *about* something else. Out of the 14 posts I've written so far, 5 have been about blogging or setting up this blog, 7 have been about things I had already done and 2 have been about *new* things (which I had no experience with before writing the post). The problem is, I don't want to write about blogging too much and I will eventually run out of things which I have already done. I need some new projects to work on. 
 
 My blog is the perfect way to challenge myself in other areas. Public commitment is very powerful. It's been the main reason I have been able to stick to my blogging schedule so far. 
 
-In the future, I plan to set myself *specific challenges* and then write about them. There are many areas in which I want to improve myself so I have many ideas for challenges. Here is a quick list of things you might see on this blog soon:
-
-- Contributing to open source projects on GitHub
-- Creating and deploying a browser-based game with a significant *server side aspect*
-- Creating a CV and applying for jobs
-- Creating an online dating profile and going on dates
-- Forming exercise habits and meditation habits
+In the future, I plan to set myself *specific challenges* and then write about them. There are many areas in which I want to grow and I have lots of ideas for challenges. 
