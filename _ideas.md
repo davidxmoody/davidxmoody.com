@@ -2,7 +2,6 @@
 
 - Guide to Prof P website, what I learned
 - Dotfiles (how to set up + sync), useful scripts in dotfiles
-- Typing/handwriting speeds comparison
 - iSketch clone
 - Bookworm Adventures clone
 - Geometry Dash clone
@@ -27,16 +26,28 @@
 - Fix Markdown syntax highlighting 
 - Add Markdown header auto-capitalisation (edit post)
 
+### Easy one-off posts
+
+- Vim add-ons
+- List of other blogs I like
+- Shorthand abbreviations
+
 ### Non-programming
 
 - Favourite recipes
-- Trackballs/keyboards
-- Shorthand abbreviations
-- List of other blogs I like
+- Favourite photos
+- Meditation habit
+- Minimalism (count all possessions, under 300)
+- Experience selling on eBay and Amazon 
+- "About Me"
+- Croquet results and experience
+- Review of Frixion pens and notebooks
 
 ### Non-programming future topics
 
 - Jobs
+- Dating site profile
+- Day trips exploring cities
 - Budgeting 
 - Sleep tracking
 
