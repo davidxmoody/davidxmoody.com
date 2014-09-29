@@ -25,3 +25,10 @@ Typing: 3:54
 Handwriting (neat): 14:50
 SwiftKey: 7:40
 Handwriting (messy): 11:00
+
+## Second test results (growth post part 1, first four paragraphs)
+
+Handwriting (cursive): 8:56
+Handwriting (printed): 8:40
+SwiftKey: 5:19
+Typing: 2:56
