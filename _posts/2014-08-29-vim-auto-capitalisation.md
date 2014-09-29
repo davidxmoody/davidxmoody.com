@@ -61,6 +61,8 @@ It can be tricky to figure out what's going on in a regular expression like that
 - `%#` matches the cursor position
 - The `'b'` option means search backwards
 
+*[Edit on 2014-09-29: I somehow forgot to add Markdown headers to the list of capitalisation contexts. I will leave that as an exercise for the reader.]*
+
 ## Putting it all together
 
 Combining this with the rest of my configuration options gives the following section of my `.vimrc` file:
