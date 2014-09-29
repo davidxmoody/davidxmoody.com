@@ -10,7 +10,7 @@ There are plenty things in my life I want to improve. However, I'm going to star
 
 ## The plan
 
-There are lots of exercise plans out there. Far too many in fact. I once tried the [one hundred push ups training program](http://hundredpushups.com/) but never stuck to it. I could write a whole article on why new habits fail but I'll save that for later. Right now, I want to form the habit of doing push ups. I want it to be *simple*, *easy* and *repeatable daily*. 
+There are lots of exercise plans out there. Far too many in fact. I once tried the [one hundred push ups training program](http://hundredpushups.com/) but never stuck to it. I could write a whole article about why new habits fail. I'll save that for later. Right now, I want to form the habit of doing push ups. I want it to be *simple*, *easy* and *repeatable daily*. 
 
 My plan is to do *exactly two push ups* every single morning this week. Next week, I will do *exactly four push ups* every single morning. The week after, *exactly six push ups* every single morning. 
 
@@ -18,7 +18,7 @@ And so on. In just under a year, I will be doing 100 push ups a day (hence the t
 
 ## So easy I can't fail
 
-I can currently do *seven* good-form push ups before collapsing from exhaustion. In some ways, doing just two per day in the first week feels *too easy*. I already know that it's not going to be challenging. However, that's the point. *It's supposed to be easy*. 
+I can currently do *seven* good-form push ups. In some ways, doing just two per day in the first week feels *too easy*. I already know that it's not going to be challenging. However, that's the point. *It's supposed to be easy*. 
 
 I don't know if my plan will eventually become too hard. I might have to add rest days or short rests between sets of push ups. I'll just have to see how it goes. 
 
