@@ -3,32 +3,51 @@ layout: post
 title: Typing vs handwriting
 ---
 
-M starting a blog.
+I like to write a lot. I've already written over ten thousand words on this blog. Several of my previous posts have even been about how to write faster with Vim tricks. I also write a lot in my own diary and on paper to plan out my blog posts.
 
-I want to contribute something back to the world. I've learned a lot over the past few years and I want to start sharing it. I may someday post articles about what I've already done (or upload it to my GitHub profile). For now though, I am going to write about what I've been interested in most recently: front end web development. 
+For something I do so much of, there are incredible time savings to be had by making the process more efficient. I want to experiment and gather data about my writing in order to better understand the process. 
 
-You can check out professorp.co.uk to see my last project (GitHub repo here). It is a website for the Professor P series of children's books and also includes five JavaScript games. 
 
-Why now? I don't feel ready to start but that doesn't mean I shouldn't start anyway. I've spent a long time thinking about the trivial details of this blog. Things like what blogging platform to use and the visual style I want. However, I realised that none of that will ever matter if I don't create some decent content. I'm going to keep the style as simple as possible and focus on the content first. 
+## A brief history of my writing
 
-I recently re-read this excellent Coding Horror blog post. Here is a quote:
+My early history with writing is pretty much like everyone else. I went to primary school, secondary school, college and university. I did plenty of handwriting in each but only a little typing. I learned cursive handwriting in primary school and stuck with it the entire time because it was all I knew. 
 
-When people ask me for advice on blogging, I always respond with yet another form of the same advice: pick a schedule you can live with, and stick to it. Until you do that, none of the other advice I could give you will matter. 
+In my final year of university, I started keeping a diary. It was a slow start but I eventually fell in love with it and couldn't stop myself writing more and more. I switched from a hunt and peck Qwerty typing method to touch typing with Dvorak. I practised constantly and got faster and faster. As of right now, I have written 1,131,608 words in my diary. That's tons. At 40 words per minute, that's about 500 hours of typing practice from my diary alone. 
 
-My schedule will be three blog posts per week, on Mondays, Wednesdays and Fridays. 
+TODO: RSI paranoia?, handwriting styles, paper, SwiftKey
 
-I want this blog to eventually be great. The best way for me to make that happen is to practise writing good content and the best way for that to happen is to set myself a schedule. 
+In the future, I see most of my writing focussing around this blog. I've only been going a month and a half but I already know that I want to continue for the rest of my life. 
 
-## Results
+TODO: recent paper to text shift
 
-Typing: 3:54
-Handwriting (neat): 14:50
-SwiftKey: 7:40
-Handwriting (messy): 11:00
+## Let's experiment
 
-## Second test results (growth post part 1, first four paragraphs)
+I wanted to gather some data on my actual writing speeds in different formats. For my first experiment, I typed out the entire text of my [first ever entry](/hello-world/). Here are the results:
 
-Handwriting (cursive): 8:56
-Handwriting (printed): 8:40
-SwiftKey: 5:19
-Typing: 2:56
+- Typing: 3m 54s (**72 wpm**)
+- SwiftKey: 7m 40s (**37 wpm**)
+- Handwriting (messy): 11m 00s (**26 wpm**)
+- Handwriting (neat): 14m 50s (**19 wpm**)
+
+Obviously, typing in Dvorak and Vim blows everything else out of the water. With SwiftKey, I use the Dvorak layout with two thumbs and it's pretty quick. I was surprised at the difference between my "messy handwriting" and "neat handwriting". The first was mostly cursive with no care taken for readability. The second was printed very neatly (i.e. not joined up). 
+
+The difference between messy and neat handwriting surprised me. I was curious as to whether it was writing in cursive that was boosting my speed or simply writing with less care. I did another test, this time with the first four paragraphs of my [growth mindset post](/the-growth-mindset-applied-to-my-life-part-1/).
+
+- Typing: 2m 56s (**72 wpm**)
+- SwiftKey: 5m 19s (**40 wpm**)
+- Handwriting (printed): 8m 40s (**24 wpm**)
+- Handwriting (cursive): 8m 56s (**24 wpm**)
+
+TODO: make my history of cursive vs printed clearer
+
+TODO: purpose of writing on paper (ideas not final product)
+
+## Improvements
+
+Dvorak and Vim will always be my main method for writing. It's just so quick and efficient. I have previously written about [how to automatically capitalise the first letter in each sentence with Vim](/vim-auto-capitalisation/) and [how to use better Vim abbreviations](/better-vim-abbreviations/). I plan to continue investigating Vim add-ons and tips. For something I do so much of, these small gains really add up. 
+
+I'm pleasantly surprised at how fast SwiftKey is. It's also very easy to use, requiring less effort to type than a proper keyboard. However, it's very bad at certain types of task. For example, editing text or anything with complex punctuation. 
+
+TODO ^: SwiftKey plans? Good for email and messages...
+
+TODO: paper great still but abbreviations and diagrams focus for ideas, stick with messy printed
