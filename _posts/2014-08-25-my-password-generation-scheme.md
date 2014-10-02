@@ -14,7 +14,7 @@ A few months ago, when several high-profile websites were hacked, I decided I ne
 
 ## Correct horse battery staple
 
-There is plenty of good advice on creating strong passwords. My scheme is based on [this famous XKCD comic](http://xkcd.com/936/):
+There is plenty of good advice on creating strong passwords. My scheme is based on [this famous xkcd comic](http://xkcd.com/936/):
 
 [![correct horse battery staple comic](http://imgs.xkcd.com/comics/password_strength.png)](http://xkcd.com/936/)
 
