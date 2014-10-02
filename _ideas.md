@@ -28,7 +28,6 @@
 ### Easy one-off posts
 
 - Vim add-ons
-- List of other blogs I like
 - Shorthand abbreviations
 
 ### Non-programming
