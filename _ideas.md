@@ -10,36 +10,29 @@
 
 ### New tools
 
+- Vim plugins
 - Learn Git better
-- Contribute to my first external GitHub repos
-- Learn Linux tools better
+- Contribute to external GitHub repos
+- Linux command line tools (Midnight Commander, SSH)
 - Try Beeminder
 - Try TagTime
-- Try TagSpaces
-- Vim extensions
-- tmux
+- Switch from Terminator to tmux
 - Custom keyboard layout (also customise inputrc)
-- Typing speed comparisons (typing vs SwiftKey vs handwriting)
 - Grunt
-- Try Midnight Commander (or other command line navigation tool)
 - Bash prompts
 - Fix Markdown syntax highlighting 
 
-### Easy one-off posts
-
-- Vim add-ons
-- Shorthand abbreviations
-
 ### Non-programming
 
-- Favourite recipes
-- Favourite photos
+- Cooking (favourite recipes)
+- Photography (favourite photos)
 - Meditation habit
 - Minimalism (count all possessions, under 300)
 - Experience selling on eBay and Amazon 
 - "About Me"
 - Croquet results and experience
 - Review of Frixion pens and notebooks
+- Shorthand abbreviations
 
 ### Non-programming future topics
 
