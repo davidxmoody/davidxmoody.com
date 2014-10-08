@@ -1,18 +1,17 @@
 ### New projects
 
-- Guide to Prof P website, what I learned
+- Prof P website walkthrough, what I learned/code review
 - Dotfiles (how to set up + sync), useful scripts in dotfiles
-- iSketch clone
-- Bookworm Adventures clone
-- Geometry Dash clone
-- Improve wordsearch game
+- New game (iSketch clone, Bookworm Adventures clone, Geometry Dash clone)
+- Improve wordsearch game (make standalone server based project)
+- Contribute to external GitHub repos
 - Python photo import script
+- Write about 3rd year Poker AI project
 
 ### New tools
 
 - Vim plugins
 - Learn Git better
-- Contribute to external GitHub repos
 - Linux command line tools (Midnight Commander, SSH)
 - Try Beeminder
 - Try TagTime
@@ -32,15 +31,18 @@
 - "About Me"
 - Croquet results and experience
 - Review of Frixion pens and notebooks
-- Shorthand abbreviations
+- "Primal success story" (with photos)
+- Day/overnight trips to cities I'm thinking of moving to
 
 ### Non-programming future topics
 
-- Jobs
+- Jobs (interview practice)
 - Dating site profile
 - Day trips exploring cities
 - Budgeting 
 - Sleep tracking
+- Better time tracking
+- Shorthand abbreviations
 
 ### Blog tweaks
 

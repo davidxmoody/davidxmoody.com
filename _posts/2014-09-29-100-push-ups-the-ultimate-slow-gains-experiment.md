@@ -33,5 +33,5 @@ I'm also writing about it on this blog for public accountability. In fact, rathe
 | Week starting | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |---------------+-----+-----+-----+-----+-----+-----+-----|
 | 2014-09-29    |  2  |  2  |  2  |  2  |  2  |  2  |  2  |
-| 2014-10-06    |  4  |  -  |  -  |  -  |  -  |  -  |  -  |
+| 2014-10-06    |  4  |  4  |  4  |  -  |  -  |  -  |  -  |
 | 2014-10-13    |  -  |  -  |  -  |  -  |  -  |  -  |  -  |
