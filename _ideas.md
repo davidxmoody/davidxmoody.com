@@ -1,3 +1,5 @@
+## Programming
+
 ### New projects
 
 - Prof P website walkthrough, what I learned/code review
@@ -10,40 +12,15 @@
 
 ### New tools
 
-- Vim plugins
+- More Vim plugins
 - Learn Git better
 - Linux command line tools (Midnight Commander, SSH)
-- Try Beeminder
-- Try TagTime
 - Switch from Terminator to tmux
-- Custom keyboard layout (also customise inputrc)
+- Customise inputrc
 - Grunt
+- Advanced AngularJS features
 - Bash prompts
 - Fix Markdown syntax highlighting 
-
-### Non-programming
-
-- Cooking (favourite recipes)
-- Photography (favourite photos)
-- Meditation habit
-- Minimalism (count all possessions, under 300)
-- Experience selling on eBay and Amazon 
-- "About Me"
-- Croquet results and experience
-- Review of Frixion pens and notebooks
-- "Primal success story" (with photos)
-- Day/overnight trips to cities I'm thinking of moving to
-- StayFocusd 
-
-### Non-programming future topics
-
-- Jobs (interview practice)
-- Dating site profile
-- Day trips exploring cities
-- Budgeting 
-- Sleep tracking
-- Better time tracking
-- Shorthand abbreviations
 
 ### Blog tweaks
 
@@ -55,3 +32,27 @@
 - Favicon (http://realfavicongenerator.net/)
 - Tags
 - More images (hand-drawn graphs, generated graphs?)
+
+## Personal
+
+- Cooking (favourite recipes)
+- Photography (favourite photos)
+- Meditation habit
+- Minimalism (count all possessions, under 300)
+- Experience selling on eBay and Amazon 
+- "About Me"
+- Croquet results and experience
+- Review of Frixion pens and notebooks
+- "Primal success story" (with photos)
+- StayFocusd 
+- Try Beeminder
+- Try TagTime for better time tracking
+- Dating site profile
+- Budgeting 
+- Sleep tracking (past experiences and FitBit)
+- Shorthand abbreviations
+
+## Jobs
+
+- Day/overnight trips to cities I'm thinking of getting jobs in
+- Video self doing interview practice
