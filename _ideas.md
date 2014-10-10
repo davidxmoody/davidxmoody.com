@@ -33,6 +33,7 @@
 - Review of Frixion pens and notebooks
 - "Primal success story" (with photos)
 - Day/overnight trips to cities I'm thinking of moving to
+- StayFocusd 
 
 ### Non-programming future topics
 
