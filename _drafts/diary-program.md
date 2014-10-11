@@ -3,24 +3,28 @@ layout: post
 title: Lessons learned from a three year programming project
 ---
 
-TODO add github link, say what the project actually *is*
+TODO add github link
 
-For the last three years, I have been working on a little pet project. It has probably taught me more about software development than my entire time at university. Instead of covering every little detail of the project, I'm going to go through a few of the most important lessons it has taught me. 
+For the last three years, I have been working on a little pet project. It has probably taught me more about software development than my entire time at university. 
+
+It's a command line program for writing and organising a personal diary. I've spent hundreds of hours on it and have gone through many different designs. Instead of covering every little detail of the project, I'm going to go through a few of the most important lessons it has taught me. 
 
 
-## Early stages: Bash is really powerful
+## Bash is really powerful
 
-About four years ago, I started keeping a diary. Initially, I just wrote in a single text file. It was nice and simple and easy. After a few months, the file got a bit big and it was impossible to find anything. I also had problems with Dropbox syncing clashes. I experimented for a while keeping separate files but it was still really awkward to find anything. 
+I started keeping a diary about four years ago. Initially, I just wrote in a single text file. It was nice and simple and easy. After a few months, the file got a bit big and it was impossible to find anything. I experimented with splitting it into multiple files but that just made it even harder to find anything. 
 
-Then, three years ago, I started learning [Bash](http://en.wikipedia.org/wiki/Bash_(Unix_shell)). Bash is incredibly powerful. I kind of take it for granted now but back then, something as simple as [grepping](http://en.wikipedia.org/wiki/Grep) for keywords in multiple files was a revelation. 
+Then, three years ago, I started learning [Bash](http://en.wikipedia.org/wiki/Bash_(Unix_shell)). Bash is incredibly powerful. I take it for granted now but back then, something as simple as [grepping](http://en.wikipedia.org/wiki/Grep) for keywords in multiple files was a revelation. 
 
-I started experimenting with all kinds of ad-hoc scripts. I had a script to search for keywords and hashtags, a script to do a wordcount and a script to manage files and create new entries. I eventually settled on a new file format with one file per entry and the date embedded into the filename. 
+I started experimenting with all kinds of ad-hoc scripts. I had a script to search for keywords and hashtags, a script to do a wordcount and a script to create new entries. I eventually settled on a new file format with one file per entry and the date embedded into the filename. 
 
-All this time, I was learning about some incredibly useful command line tools. I was searching with `grep`, displaying results with `less`, doing wordcounts with `wc`, writing in `vim`, formatting and parsing dates with `date`, handling output redirection with pipes and doing lots of other stuff. 
+All this time, I was learning about some incredibly useful command line tools. `grep` to search. `less` to display results. `wc` to do a wordcount. `vim` to edit entries. `date` to format and parse dates. `fmt` to wrap text. There were many others too. 
 
-However, my scripts just kept growing and growing. They reached about 800 lines of code at their maximum. There was a lot of repeated code shared within the files for manipulating dates and looping through all entries. 
+However, my scripts just kept growing and growing. They reached about 800 lines of code at their maximum. There was a lot of repeated code and other poor design decisions. 
 
-Lesson 1: TODO
+I attempted to refactor my scripts with a more sane design. I made some progress but it was hard work. I eventually realised that Bash just wasn't the right language for the job. The lack of proper data-structures really hurt. So did the inability to properly share information between scripts. 
+
+Lesson 1: Choose the right language for the job. 
 
 ## Version control
 
@@ -67,3 +71,19 @@ It seems *obvious* now. However, at the time, it took me a long time to internal
 Lesson: TODO abstraction, small methods, single responsibility, DRY, find better terminology
 
 ## CLI and polish
+
+Later on in the development of the project, I added a complete [argparse](https://docs.python.org/3/library/argparse.html) command line parser. 
+
+I also experimented with using Markdown conversion on the text entries to create HTML pages for easier browsing. I briefly created a working Flask RESTful API for accessing the entries. I also created a very basic AngularJS web client for viewing and editing entries. It was all early prototype stages and not ready for proper use. 
+
+Eventually, I scrapped those and implemented a decent static HTML generator. In many ways, it's very similar to any other static website generator. It does incremental builds when entries change. 
+
+I realised that there was an infinite number of features that I *could* add to the program. However, they would all be a lot of work for little gain. 
+
+Lesson: TODO be good at one thing only
+
+
+
+TODO possible lesson, dogfooding 
+
+TODO possible lesson, release early
