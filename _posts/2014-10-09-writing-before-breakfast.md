@@ -40,6 +40,6 @@ Just like with my push ups post, I am going to log my progress right here. The f
 
 | Week starting | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |---------------+-----+-----+-----+-----+-----+-----+-----|
-| 2014-10-06    |  -  |  -  |  -  |  1  |  1  |  -  |  -  |
+| 2014-10-06    |  -  |  -  |  -  |  1  |  1  |  1  |  -  |
 | 2014-10-13    |  -  |  -  |  -  |  -  |  -  |  -  |  -  |
 | 2014-10-20    |  -  |  -  |  -  |  -  |  -  |  -  |  -  |
