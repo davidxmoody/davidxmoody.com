@@ -39,7 +39,6 @@
 - Photography (favourite photos)
 - Meditation habit
 - Minimalism (count all possessions, under 300)
-- Experience selling on eBay and Amazon 
 - "About Me"
 - Croquet results and experience
 - Review of Frixion pens and notebooks
