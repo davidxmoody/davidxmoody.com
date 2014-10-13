@@ -32,6 +32,7 @@
 - Favicon (http://realfavicongenerator.net/)
 - Tags
 - More images (hand-drawn graphs, generated graphs?)
+- Add second croquet final newspaper link
 
 ## Personal
 

@@ -2,7 +2,7 @@
 
 This is the source code for my personal blog. View it at [davidxmoody.com](http://davidxmoody.com/). 
 
-It's mostly a blog about programming with some occasional other stuff. I have also written posts about designing the site itself.
+It's mostly a blog about programming and my personal experiences. I have also written posts about designing the site itself.
 
 ## License
 
