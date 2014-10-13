@@ -20,17 +20,17 @@ It's a complex trade off between writing more posts and spending longer on each 
 
 ## What I've been doing when I haven't been blogging
 
-I've written a lot about myself this month. However, I still haven't said anything about what I've been doing when I haven't been blogging. 
+I've written a lot about myself this month. However, I have said nothing about what I've been doing when I haven't been blogging. 
 
 I'm still living at home with my parents. In the year before I started this blog, I was working on the [professorp.co.uk](http://www.professorp.co.uk/) website. 
 
-About six weeks ago, we found out that my Dad (author of the [Professor P books](http://www.professorp.co.uk/books/)) had to move out of his office. The plan was for him to take over my work room in the house. Unfortunately, we had a *lifetime* worth of possessions around the house which needed to be sorted. I've spent much of the last six weeks sorting through and selling everything we didn't need. Stuff like furniture, books, toys and everything that my family has bought over the last 25+ years.
+About two weeks after I started blogging, we found out that my Dad (author of the [Professor P books](http://www.professorp.co.uk/books/)) had to move out of his office. The plan was for him to take over my work room in the house and store the Professor P books in the garage. Unfortunately, we had a *lifetime's* worth of possessions around the house which needed to be sorted. I've spent much of the last six weeks sorting through and selling everything we didn't need. Stuff like furniture, books, toys and everything that my family has bought over the last 25+ years.
 
 Oh, and we also won two croquet league finals. I haven't written about croquet yet but I definitely plan to. Here is a [link to a newspaper article from the Association Croquet South West Federation final](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Federation/story-23026871-detail/story.html). We also won the Golf Croquet Handicap League final (will add a link when it becomes available). Naturally, croquet matches and practice have taken up a lot of my time lately. 
 
 ## My goals for the future
 
-Anyway, we have nearly finished sorting out the house and the croquet season has ended. That's going to leave me with a lot more free time. I've been thinking about it for a while and there is only one thing I should be working on: **getting a job**. 
+Anyway, we have nearly finished sorting out the house and the croquet season has ended. That's going to leave me with a lot more free time. I've been thinking about it and there is only one thing I should be working on: **getting a job**. 
 
 I've been procrastinating for three years. Admittedly, I have done some incredibly valuable stuff in that time but still. 
 
@@ -38,10 +38,10 @@ The power of public commitment is very strong. It's helped me stick to my bloggi
 
 ## A new schedule
 
-Two posts per week has been fine but I'm going to try something different for my next month of blogging. I want to bring this blog back to the topic of programming. I also want to start writing about jobs and I also want to continue writing about personal things. 
+Two posts per week has been fine but I'm going to try something different. I want to bring this blog back to the topic of programming. I also want to start writing about jobs and I also want to continue writing about personal things. 
 
 Starting *Wednesday 15 October 2014*, my new schedule will be:
 
-- **Mondays:** A post about my job search
-- **Wednesdays:** A post about programming
-- **Fridays:** A post about whatever I like
+- **Mondays:** A post about my *job search*
+- **Wednesdays:** A post about *programming*
+- **Fridays:** A post about *whatever I like*
