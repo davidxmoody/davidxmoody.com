@@ -58,11 +58,11 @@ My Bash scripts were becoming unwieldy. I was interested in learning a new progr
 
 I slowly started re-writing my Bash scripts one at a time. Once I had removed all traces of Bash, I switched to a proper Python module design. I made countless changes over a long period of time. I loved all the features of Python which Bash didn't have (like [generators](https://wiki.python.org/moin/Generators), [modules](https://docs.python.org/3.4/tutorial/modules.html) and proper [classes](https://docs.python.org/3.4/tutorial/classes.html)).
 
-I noticed that a lot of duplicated work was being done formatting entries. The text wrapping had to be re-calculated every time. I had recently read about Python [decorators](http://stackoverflow.com/questions/739654/how-can-i-make-a-chain-of-function-decorators-in-python/1594484#1594484) and the [pickle](https://docs.python.org/3.4/library/pickle.html) module and naively tried to use them to solve the problem.
+I noticed that a lot of duplicated work was being done when formatting entries. The text wrapping had to be re-calculated every time. I had recently read about Python [decorators](http://stackoverflow.com/questions/739654/how-can-i-make-a-chain-of-function-decorators-in-python/1594484#1594484) and the [pickle](https://docs.python.org/3.4/library/pickle.html) module. I naively tried to use them to solve the problem.
 
 I designed a very elaborate caching decorator function. It took a long time to write and debug but it did work. However, I had made a big error in judgement. For the text wrapping, I had inherited the rather lazy design of calling the `fmt` command line program from within Python. This was very slow. I later implemented text wrapping with the [textwrap](https://docs.python.org/3.4/library/textwrap.html) module which was about an order of magnitude faster. 
 
-With the faster text wrapping method, my caching was now *slower* than re-wrapping the text each time. I didn't like to do it but I eventually stripped out all caching behaviour, making the basic display functionality pretty much instant. At least I had learned how to use decorators and the pickle module. 
+With the faster text wrapping method, my caching was now *slower* than re-wrapping the text each time. I didn't like to do it but I eventually stripped out all caching behaviour, making the basic display functionality nearly instant. At least I had learned how to use decorators and the pickle module. 
 
 **Lesson 3:** Premature optimisation is bad.
 
