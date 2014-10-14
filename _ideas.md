@@ -38,7 +38,7 @@
 
 - Cooking (favourite recipes)
 - Photography (favourite photos)
-- Meditation habit
+- Meditation habit (or yoga/tai chi)
 - Minimalism (count all possessions, under 300)
 - "About Me"
 - Croquet results and experience
@@ -51,8 +51,11 @@
 - Budgeting 
 - Sleep tracking (past experiences and FitBit)
 - Shorthand abbreviations
+- Earplugs review
+- Write about how I use my diary
 
 ## Jobs
 
+- Post CV
 - Day/overnight trips to cities I'm thinking of getting jobs in
 - Video self doing interview practice
