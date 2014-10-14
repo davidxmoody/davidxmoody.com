@@ -8,34 +8,40 @@ Continued from [part 1](/lessons-learned-from-a-three-year-programming-project-p
 
 ## Abstraction and small methods
 
-This lesson was something I learned slowly over the course of the project. I always "knew" the advantages of hiding implementation details in small methods and creating classes for abstract concepts. I had been taught it in university after all. 
+This lesson was something I learned slowly over the course of the project. I always "knew" the advantages of hiding implementation details in small methods. I had been taught it in university after all. 
 
 However, when it came to actually write code, I consistently ended up with massive functions and huge amounts of repeated code. In my early Bash scripts for example, I had copy-pasted the code for iterating over all entries about 5 different times. 
 
 It took a while for me to intuitively understand the concepts but I slowly got better. In my early versions, every single script depended on the exact same filesystem layout. In my current version, every single file depends on one `Entry` class. That class could change the filesystem layout any time it wants and it wouldn't affect anything else. It could switch to a database or a remote filesystem and none of the other modules would notice.
 
-It seems *obvious* now. It still took me a long time to internalise what these vague concepts actually meant in terms of a real program. 
+The [don't repeat yourself](http://en.wikipedia.org/wiki/Don't_repeat_yourself) principle and its various corollaries feel so *obvious* now. However, in practice, it still took me a long time to actually get to grips with what they really meant.
 
-**Lesson 4:** TODO abstraction, small methods, single responsibility, DRY, find better terminology (add links)
+**Lesson 4:** Don't repeat yourself. 
 
 ## CLI and polish
 
-Later on in the development of the project, I added a complete [argparse](https://docs.python.org/3/library/argparse.html) command line parser. 
+Later on in development, I started thinking of new features to add. After creating the [professorp.co.uk](http://professorp.co.uk/) website, I became interested in making a "local web app". It would be a complete browser-based replacement for the command line app. 
 
-TODO delete above line? Or move later on
+I experimented with using Markdown conversion to create basic static HTML pages. I then created a working Flask RESTful API for manipulating entries as well as a very basic AngularJS client. 
 
-I also experimented with using Markdown conversion on the text entries to create HTML pages for easier browsing. I briefly created a working Flask RESTful API for accessing the entries. I also created a very basic AngularJS web client for viewing and editing entries. It was all early prototype stages and not ready for proper use. 
+I eventually decided to scrap those ideas. There were an infinite number of features that I *could* add to the program. However, they would be a lot of work for little gain. I realised I should focus on doing one thing and doing it well. 
 
-Eventually, I scrapped those and implemented a decent static HTML generator. In many ways, it's very similar to any other static website generator. It does incremental builds when entries change. 
+I cleaned up the code even more and implemented a complete [argparse](https://docs.python.org/3/library/argparse.html) command line parser. It ties together all the basic features of the program and adds just enough documentation that I think anyone could figure out how to use it. 
 
-I realised that there was an infinite number of features that I *could* add to the program. However, they would all be a lot of work for little gain. 
+I did eventually implement a better static HTML generator. It allows things like pictures and videos to be embedded in entries. It slightly contradicts what I just said but whatever. 
 
-**Lesson 5:** TODO be good at one thing only
+**Lesson 5:** Write programs that do one thing and do it well.
 
 ## Future plans
 
-I'm very proud of my current diary program. I've 
+I'm very proud of my current diary program. I use it literally every single day. If I want to find out about an event that happened two years ago then it can take me only a second. 
 
-TODO [dogfooding](http://blog.codinghorror.com/the-ultimate-dogfooding-story/) link
+In some ways, my constant [dogfooding](http://blog.codinghorror.com/the-ultimate-dogfooding-story/) has resulted in a very high quality program. However, in another way, it's probably doomed it to obscurity. The structure of the program is very closely tied to how I like to work. Although it's perfect for me, someone else might find it pointless. 
 
-**Lesson 6:** TODO Release early
+For the last three years, I have kept this project to myself. I've only just uploaded it to GitHub TODO: add link
+
+I guess time will tell whether anyone else is interested. Who knows, maybe it will become just as popular as [Todo.txt](http://todotxt.com/) but I somehow doubt that. 
+
+I guess the point I'm trying to make is that I should have sought external feedback much earlier. The project is mostly finished now and I don't expect to make many major changes. If I had gotten feedback earlier in development then I may have learned some useful information about what others wanted and how to improve the project. 
+
+**Lesson 6:** Release often and early.
