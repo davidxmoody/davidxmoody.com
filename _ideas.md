@@ -37,11 +37,10 @@
 ## Personal
 
 - Cooking (favourite recipes)
-- Photography (favourite photos)
+- Photography (favourite photos, challenges)
 - Meditation habit (or yoga/tai chi)
 - Minimalism (count all possessions, under 300)
 - "About Me"
-- Croquet results and experience
 - Review of Frixion pens and notebooks
 - "Primal success story" (with photos)
 - StayFocusd 
