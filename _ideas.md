@@ -52,6 +52,7 @@
 - Shorthand abbreviations
 - Earplugs review
 - Write about how I use my diary
+- Book reviews/recommendations 
 
 ## Jobs
 
