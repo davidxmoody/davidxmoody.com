@@ -26,7 +26,7 @@ I'm still living at home with my parents. In the year before I started this blog
 
 About two weeks after I started blogging, we found out that my Dad (author of the [Professor P books](http://www.professorp.co.uk/books/)) had to move out of his office. The plan was for him to take over my work room in the house and store the Professor P books in the garage. Unfortunately, we had a *lifetime's* worth of possessions around the house which needed to be sorted. I've spent much of the last six weeks sorting through and selling everything we didn't need. Stuff like furniture, books, toys and everything that my family has bought over the last 25+ years.
 
-Oh, and we also won two croquet league finals. I haven't written about croquet yet but I definitely plan to. Here is a [link to a newspaper article from the Association Croquet South West Federation final](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Federation/story-23026871-detail/story.html). We also won the Golf Croquet Handicap League final (will add a link when it becomes available). Naturally, croquet matches and practice have taken up a lot of my time lately. 
+Oh, and we also won two croquet league finals. I haven't written about croquet yet but I definitely plan to. Here are links to newspaper articles for the [Association Croquet South West Federation final](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Federation/story-23026871-detail/story.html) and the [Golf Croquet Handicap League final](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-triumph-South-West-Handicap/story-23184624-detail/story.html). Naturally, croquet matches and practice have taken up a lot of my time lately. 
 
 ## My goals for the future
 
