@@ -32,7 +32,6 @@
 - Favicon (http://realfavicongenerator.net/)
 - Tags
 - More images (hand-drawn graphs, generated graphs?)
-- Add second croquet final newspaper link
 
 ## Personal
 
@@ -44,8 +43,6 @@
 - Review of Frixion pens and notebooks
 - "Primal success story" (with photos)
 - StayFocusd 
-- Try Beeminder
-- Try TagTime for better time tracking
 - Dating site profile
 - Budgeting 
 - Sleep tracking (past experiences and FitBit)
