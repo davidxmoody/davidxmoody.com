@@ -6,7 +6,7 @@ permalink: /cv/
 
 # David Moody -- Web developer
 
-- Email: <david.doomy@gmail.com>
+- Email: <david@davidxmoody.com>
 - Blog: [davidxmoody.com](http://davidxmoody.com/)
 
 ## Education
