@@ -5,7 +5,7 @@ title: Lessons learned from a three year programming project (part 1)
 
 For the last three years, I have been working on a little pet project. It has probably taught me more about software development than my entire time at university. 
 
-It's a command line program for writing and organising a personal diary. I've spent hundreds of hours on it and have gone through many different designs. Instead of covering every little detail of the project, I'm going to write about some important lessons it has taught me. 
+It's a command line program for writing and organising a personal diary ([GitHub link](https://github.com/davidxmoody/diary)). I've spent hundreds of hours on it and have gone through many different designs. Instead of covering every little detail of the project, I'm going to write about some important lessons it has taught me. 
 
 
 ## Bash is really powerful
@@ -66,4 +66,4 @@ With the faster text wrapping method, my caching was now *slower* than re-wrappi
 
 **Lesson 3:** Premature optimisation is bad.
 
-*[Next Wednesday, I will post the second part of this post and upload the source code for the project in question.]*
+[Read part 2...](/lessons-learned-from-a-three-year-programming-project-part-2/)
