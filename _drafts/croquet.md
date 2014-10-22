@@ -36,31 +36,31 @@ I played in 4 matches that year. Out of my 12 singles games, I won 8, lost 2 and
 
 ## Second year of matches
 
-My second year was pretty similar to the first. I played well. Our team also practised constantly together and we all improved a lot. We won most of our matches and reached the semi-final and then the final. We won the league for the first time ever. 
+My second year was pretty similar to the first. I played well. Our team also practised constantly together and we all improved a lot. We won most of our matches and reached the semi-final and then the final. We won the league for the first time ever. In that year, I won 21, lost 11 and drew 4. My handicap dropped to a 4.
 
-TODO photo of Bath final
-
-In that year, I won 21, lost 11 and drew 4. My handicap dropped to a 4.
+![Abbey winning the Golf Handicap league in Bath](/images/croquet/bath-final.jpg)
 
 TODO what is AC
 
 That year, I had also started playing association croquet (a different variation to the golf croquet I had been playing before). I started playing in matches half way through the season. We did incredibly well in that too, also winning the final. 
 
-TODO photo of Sidmouth final
+![Abbey winning the AC Intermediate league in Sidmouth](/images/croquet/sidmouth-final.jpg)
 
 ## Third year of matches
 
 After being in the winning team twice, my confidence had gone up considerably. I don't think it's an exaggeration to say I was the best golf croquet player in our club. I had a lower handicap than almost everyone else I was playing. 
 
+TODO summarise the below in one sentence without going into details
+
 Additionally there was a new rule that year. It stated that a 3 handicap had to play off an effective handicap of 2 and a 2 had to play off a 0. That meant I was giving away one or two more free shots than normal and I was still doing very well. 
 
 Won 24, lost 5, drew 0
 
-TODO golf final photo
+![Abbey winning the Golf Handicap league in Taunton](/images/croquet/taunton-final.jpg)
 
 We won not only the golf croquet final but also the association croquet final. 
 
-TODO AC final photo
+![Abbey winning the AC Federation league in Taunton](/images/croquet/taunton-final.jpg)
 
 ## Future plans
 
