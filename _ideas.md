@@ -9,6 +9,7 @@
 - Contribute to external GitHub repos
 - Python photo import script
 - Write about 3rd year Poker AI project
+- Write about Vim emmet
 
 ### New tools
 
@@ -50,9 +51,9 @@
 - Earplugs review
 - Write about how I use my diary
 - Book reviews/recommendations 
+- Write about automatic webcam frame script
 
 ## Jobs
 
-- Post CV
 - Day/overnight trips to cities I'm thinking of getting jobs in
 - Video self doing interview practice
