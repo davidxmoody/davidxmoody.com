@@ -1,11 +1,17 @@
+## In progress
+
+- Improve wordsearch game (make standalone website)
+- Meditation habit (or yoga/tai chi)
+- Photography (favourite photos, challenges)
+- StayFocusd 
+
 ## Programming
 
 ### New projects
 
 - Prof P website walkthrough, what I learned/code review
-- Dotfiles (how to set up + sync), useful scripts in dotfiles
+- Dotfiles (how to set up + sync), more useful scripts in dotfiles
 - New game (iSketch clone, Bookworm Adventures clone, Geometry Dash clone)
-- Improve wordsearch game (make standalone server based project)
 - Contribute to external GitHub repos
 - Python photo import script
 - Write about 3rd year Poker AI project
@@ -37,13 +43,10 @@
 ## Personal
 
 - Cooking (favourite recipes)
-- Photography (favourite photos, challenges)
-- Meditation habit (or yoga/tai chi)
 - Minimalism (count all possessions, under 300)
 - "About Me"
 - Review of Frixion pens and notebooks
 - "Primal success story" (with photos)
-- StayFocusd 
 - Dating site profile
 - Budgeting 
 - Sleep tracking (past experiences and FitBit)
