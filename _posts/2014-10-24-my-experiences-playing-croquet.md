@@ -10,7 +10,7 @@ I haven't written about it before but I am a very keen croquet player. I thought
 
 My Dad first introduced me to croquet when I was about 15 years old. I started playing in my grandparents' garden with a very basic wooden mallet. I enjoyed it a lot. 
 
-![Croquet in my grandparents' garden](/images/croquet/croquet-in-garden.jpg)
+![Croquet in my grandparents' garden](/images/my-experiences-playing-croquet/croquet-in-garden.jpg)
 
 ## Abbey Croquet Club
 
@@ -36,7 +36,7 @@ I played in 4 matches that year. Out of my 12 singles games, I won 8, lost 2 and
 
 My second year of matches went very well. Our team practised together *constantly* and we all improved a lot. We won most of our matches and reached the semi-final and then the final. We won the South West Handicap League for the first time ever. In that year, I won 21, lost 11 and drew 4. My handicap dropped to a 4.
 
-[![Abbey winning the Golf Handicap League in Bath](/images/croquet/bath-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Handicap-Final/story-19912247-detail/story.html)
+[![Abbey winning the Golf Handicap League in Bath](/images/my-experiences-playing-croquet/bath-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Handicap-Final/story-19912247-detail/story.html)
 
 ## Association croquet
 
@@ -44,7 +44,7 @@ I should mention that all references to "croquet" so far have referring to "golf
 
 I started playing in matches about half way through the season. I was nervous at the beginning but picked it up very quickly. That year, we won the South West Intermediate League for the first time ever.
 
-[![Abbey winning the AC Intermediate League in Sidmouth](/images/croquet/sidmouth-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-beat-Bath-win-South-West-title/story-19849150-detail/story.html)
+[![Abbey winning the AC Intermediate League in Sidmouth](/images/my-experiences-playing-croquet/sidmouth-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-beat-Bath-win-South-West-title/story-19849150-detail/story.html)
 
 ## Third year of matches
 
@@ -54,20 +54,20 @@ Additionally, there was a new rule that year. It meant that lower handicap playe
 
 Our whole team practised together a lot and improved even more. We also got a new team member. For the second year in a row, we won the South West Handicap League.
 
-[![Abbey winning the Golf Handicap League in Taunton](/images/croquet/taunton-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-triumph-South-West-Handicap/story-23184624-detail/story.html)
+[![Abbey winning the Golf Handicap League in Taunton](/images/my-experiences-playing-croquet/taunton-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-triumph-South-West-Handicap/story-23184624-detail/story.html)
 
 Our association croquet team also continued to improve. That year, we won the South West Federation League. 
 
-[![Abbey winning the AC Federation League in Taunton](/images/croquet/cheltenham-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Federation/story-23026871-detail/story.html)
+[![Abbey winning the AC Federation League in Taunton](/images/my-experiences-playing-croquet/cheltenham-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Federation/story-23026871-detail/story.html)
 
 If I'm being completely honest, I was improving faster than my handicap was dropping. Association croquet games are longer than golf croquet games so you play fewer of them in a season. That meant my handicap was lagging behind my actual skill level. I do feel a bit guilty about that. Next year I plan to ask an official handicapper to drop my handicap to a more realistic level. 
 
 ## Future plans
 
-Unfortunately, the croquet season has ended. We still play on weekends but it's too cold and dark to play in the evenings. I am also planning to move away from Glastonbury before the beginning of next season so things must change. 
+Unfortunately, the croquet season has ended. We still play on weekends but it's too cold and dark to play in the evenings. I am also planning to move away from Glastonbury soon so things must change. 
 
 Next year, I plan to play in tournaments as well as club matches. I'm also thinking of upgrading my mallet and altering my technique. I still want to play in matches for Abbey but I am also planning to join a new club.
 
 I don't know what the future will hold. Croquet is important to me but it is not my highest priority. One of the unfortunate things about croquet is that most players are much older than me. According to the [2012 survey of croquet players](https://www.croquet.org.uk/ca/), the median age is 65. Only 1% of croquet players are in their 20s. 
 
-Nevertheless, I plan to keep playing croquet for a long time to come. It's a great game. If anything, the old age of an average croquet player just shows that you can still play however old you are. I've played against many excellent players in their 80s. I hope I'll still be playing when I'm 80 years old. 
+Nevertheless, I plan to keep playing croquet for a long time to come. It's a great game. 
