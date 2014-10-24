@@ -1,9 +1,8 @@
 ## In progress
 
 - Improve wordsearch game (make standalone website)
-- Meditation habit (or yoga/tai chi)
 - Photography (favourite photos, challenges)
-- StayFocusd 
+- StayFocusd and habit changes
 
 ## Programming
 
@@ -42,21 +41,27 @@
 
 ## Personal
 
-- Cooking (favourite recipes)
+### Easy posts
+
 - Minimalism (count all possessions, under 300)
-- "About Me"
+- Meditation habit (or yoga/tai chi)
 - Review of Frixion pens and notebooks
-- "Primal success story" (with photos)
-- Dating site profile
-- Budgeting 
 - Sleep tracking (past experiences and FitBit)
 - Shorthand abbreviations
 - Earplugs review
+- Write about automatic webcam frame script
 - Write about how I use my diary
 - Book reviews/recommendations 
-- Write about automatic webcam frame script
+
+### Harder/longer posts
+
+- Cooking (favourite recipes)
+- "About Me"
+- "Primal success story" (with photos)
+- Dating site profile
+- Budgeting 
 
 ## Jobs
 
-- Day/overnight trips to cities I'm thinking of getting jobs in
+- Day/overnight trips to cities I'm thinking of getting jobs in (take photos)
 - Video self doing interview practice
