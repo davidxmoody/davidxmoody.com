@@ -1,20 +1,17 @@
 ## In progress
 
 - Improve wordsearch game (make standalone website)
-- Photography (favourite photos, challenges)
 - StayFocusd and habit changes
 
 ## Programming
 
-### New projects
-
+- Write about 3rd year Poker AI project
+- Write about Vim emmet
 - Prof P website walkthrough, what I learned/code review
-- Dotfiles (how to set up + sync), more useful scripts in dotfiles
+- Dotfiles (publish on GitHub)
 - New game (iSketch clone, Bookworm Adventures clone, Geometry Dash clone)
 - Contribute to external GitHub repos
 - Python photo import script
-- Write about 3rd year Poker AI project
-- Write about Vim emmet
 
 ### New tools
 
@@ -41,27 +38,38 @@
 
 ## Personal
 
-### Easy posts
+### Filler posts
 
-- Minimalism (count all possessions, under 300)
-- Meditation habit (or yoga/tai chi)
-- Review of Frixion pens and notebooks
-- Sleep tracking (past experiences and FitBit)
+- Meditation habit
+- Review of Frixion pens
+- Sleep tracking
 - Shorthand abbreviations
 - Earplugs review
 - Write about automatic webcam frame script
 - Write about how I use my diary
-- Book reviews/recommendations 
+- Review of new phone and FitBit
+- Update list of blogs I like (or do another post)
 
 ### Harder/longer posts
 
+- Meetups
+- My current goals
+- Book reviews
+- Photography (favourite photos, challenges)
 - Cooking (favourite recipes)
 - "About Me"
 - "Primal success story" (with photos)
 - Dating site profile
 - Budgeting 
+- Lego memories
+- Plan to reach 12% body fat
+- Plan for a better sleep/nighttime routine
+- Better morning routine (with FitBit silent alarm)
+- Visit friends in London
+- Read and summarise social textbooks
 
 ## Jobs
 
+- Specific plan for what to do
 - Day/overnight trips to cities I'm thinking of getting jobs in (take photos)
 - Video self doing interview practice
