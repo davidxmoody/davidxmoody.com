@@ -1,7 +1,6 @@
 ## In progress
 
 - Improve wordsearch game (make standalone website)
-- StayFocusd and habit changes
 
 ## Programming
 
@@ -41,6 +40,7 @@
 ### Filler posts
 
 - Meditation habit
+- StayFocusd and habit changes
 - Review of Frixion pens
 - Sleep tracking
 - Shorthand abbreviations
@@ -48,6 +48,7 @@
 - Write about automatic webcam frame script
 - Write about how I use my diary
 - Review of new phone and FitBit
+- Review of my favourite Android apps
 - Update list of blogs I like (or do another post)
 
 ### Harder/longer posts
@@ -62,7 +63,6 @@
 - Dating site profile
 - Budgeting 
 - Lego memories
-- Plan to reach 12% body fat
 - Plan for a better sleep/nighttime routine
 - Better morning routine (with FitBit silent alarm)
 - Visit friends in London
