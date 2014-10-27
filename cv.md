@@ -84,7 +84,7 @@ permalink: /cv/
 
 ## Interests
 
-- Skilled croquet player, my team has won *four South West league finals* in the last two years
+- [Skilled croquet player](/my-experiences-playing-croquet/), my team has won *four South West league finals* in the last two years
 - Amateur photographer
 - Amateur chef 
 
