@@ -76,7 +76,7 @@ permalink: /cv/
 - Over 330 commits, [available on GitHub](https://github.com/davidxmoody/diary)
 - Implemented a basic **Flask RESTful API** and later a static HTML generator using **Jinja2** templates
 
-### Linux skills and other stuff
+### Linux and other skills
 
 - **Mercurial** user (2011 - 2014), now learning **Git**
 - Knowledge and experience with many **Unix command line tools**
