@@ -11,7 +11,7 @@ permalink: /cv/
 
 ## Education
 
-### University of Cambridge (2008 - 2011)
+### Christ's College, Cambridge (2008 - 2011)
 
 - B.A. Computer Science (2:1)
 
