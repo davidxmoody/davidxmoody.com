@@ -12,7 +12,7 @@ This week, I have uploaded my 3rd year Cambridge University dissertation project
 
 My poker-bot runs as a plugin to [Poker Academy Pro](http://www.poker-academy.com/poker-software/), a commercial program which can run custom bots written in Java. It also came with a nice little example poker-bot called SimpleBot. I based most of my dissertation around how well my poker-bot (MCTSBot) could play against SimpleBot. 
 
-![Screenshot of Poker Academy Pro](/images/mcts-in-texas-hold-em-poker-a-retrospective/PAP1.png)
+![Screenshot of Poker Academy Pro](/images/mcts-in-texas-hold-em-poker-a-retrospective/PAP1-800x.png)
 
 I'm not going to write a complete description of the Monte Carlo Tree Search algorithm in this post. If you are interested, you can check out chapters 2.4 and 2.5 of [my dissertation (PDF)][diss].
 
