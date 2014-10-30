@@ -1,13 +1,12 @@
 ## In progress
 
 - Improve wordsearch game (make standalone website)
+- Write about dotfiles (and publish on GitHub)
 
 ## Programming
 
-- Write about 3rd year Poker AI project
 - Write about Vim emmet
 - Prof P website walkthrough, what I learned/code review
-- Dotfiles (publish on GitHub)
 - New game (iSketch clone, Bookworm Adventures clone, Geometry Dash clone)
 - Contribute to external GitHub repos
 - Python photo import script
@@ -34,6 +33,7 @@
 - Favicon (http://realfavicongenerator.net/)
 - Tags
 - More images (hand-drawn graphs, generated graphs?)
+- Downscale poker post graphs to 800px (and edit poker post?)
 
 ## Personal
 
