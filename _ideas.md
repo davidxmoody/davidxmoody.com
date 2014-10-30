@@ -57,6 +57,7 @@
 - My current goals
 - Book reviews
 - Photography (favourite photos, challenges)
+- Favourite photos for desktop backgrounds
 - Cooking (favourite recipes)
 - "About Me"
 - "Primal success story" (with photos)
