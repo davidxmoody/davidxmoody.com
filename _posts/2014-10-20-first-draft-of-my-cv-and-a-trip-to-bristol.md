@@ -16,13 +16,9 @@ Anyway, [here is a link to my CV](/cv/).
 
 ## A trip to Bristol
 
-I don't usually get out much by myself. I experience a lot of social anxiety and usually choose the easy option of staying at home. Recently, I've come to realise just how harmful this is. I'm never going to move on with my life unless I face up to my fears. I've written a lot about [the growth mindset](/the-growth-mindset-applied-to-my-life-part-1/) recently. It's made me realise that there is only one way to improve. I have to start going out into the world and meeting people. 
+It's been a while since I've done any travelling by myself. Whenever I go anywhere, I'm usually with someone who knows what they are doing. Applying for jobs is probably going to involve getting to a lot of interviews. I thought it would be a good idea to re-familiarise myself with travelling by bus. 
 
-However, I also want to break it down into small steps. Each step should be only slightly challenging but together they should accomplish something huge. For my first step, I thought I would re-familiarise myself with travelling by bus. 
-
-I'd done three major bus trips by myself. One to Bristol to take my driving theory test. One bus and train trip to Hull to visit my grandparents. The final one was a bus trip to Bristol to go to a LessWrong meetup, about a year and a half ago. They were all pretty major events in my life, each doing something new which I was afraid of. 
-
-Last Friday, I went to Bristol on the bus (from Glastonbury). I'm pleased to say that it went incredibly well. Despite it being a long time since I'd last been on the bus, I found the whole experience very relaxing and not at all stressful. I was not at all anxious which was pleasantly surprising. I think the reason for my lack of anxiety was the knowledge that I had done everything before, despite it being a while ago. 
+Last Friday, I went to Bristol on the bus (from Glastonbury). It went incredibly well. I found the whole experience very relaxing and not at all stressful. 
 
 ## Getting lost
 
@@ -50,4 +46,4 @@ A direct route to the bridge would have taken me just over an hour. However, I p
 
 Overall, I really enjoyed this trip. I'm pleased with how it went. It's purpose was to re-introduce myself to travelling alone and in that respect it was a complete success. However, I realise that I can't continue repeating the exact same trip. I want to make things difficult for myself. Now that I know I can easily handle the travelling, I want to start doing some more challenging activities. 
 
-Specifically, I want to start going to some social events. I don't know exactly what yet. I'm thinking something similar to the previous LessWrong meetup I went to. I've been browsing [meetup.com](http://www.meetup.com/) and have lots of ideas already. 
+Specifically, I want to start going to some social events. I don't know exactly what yet. I've been browsing [meetup.com](http://www.meetup.com/) and have lots of ideas already. 
