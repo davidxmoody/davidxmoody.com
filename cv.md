@@ -51,12 +51,13 @@ permalink: /cv/
 - Simple responsive design and typography with **Sass**
 - {{ num_posts }} posts ({{ num_words }} words) written since 11 August 2014 on a **regular&nbsp;schedule**
 - I have written about: Vim plugins, website design, the Pomodoro Technique, misc tech stuff and almost everything else on this CV
-- Over 160 commits, [available on GitHub](https://github.com/davidxmoody/davidxmoody.github.io)
+- Over 190 commits, [available on GitHub](https://github.com/davidxmoody/davidxmoody.github.io)
 
-### Monte Carlo Tree Search in Texas Hold 'em Poker (2011)
+### [Monte Carlo Tree Search in Texas Hold 'em Poker](/mcts-in-texas-hold-em-poker-a-retrospective/) (2011)
 
 - 3rd year dissertation project written in **Java**
 - Built a **working poker-bot** with a complex AI search algorithm
+- [Available on GitHub](https://github.com/davidxmoody/mctsbot)
 
 ### Project Kilo: recognising molecules from photographs (2010)
 
@@ -69,7 +70,7 @@ permalink: /cv/
 - Simple web scraper written in Java using regular expressions
 - Exports schools' contact info to a database, saving a lot of time for a small publishing company
 
-### Diary program (2011 - 2014)
+### [Diary program](/lessons-learned-from-a-three-year-programming-project-part-1/) (2011 - 2014)
 
 - 3 year personal project written in **Bash** and then **Python**
 - Learned many Python features including: generators, regular expressions, file manipulation, module structure, decorators, subprocesses, logging, etc.
@@ -85,7 +86,7 @@ permalink: /cv/
 ## Interests
 
 - [Skilled croquet player](/my-experiences-playing-croquet/), my team has won *four South West league finals* in the last two years
-- Amateur photographer
+- [Amateur photographer](/my-10-best-tenerife-photos/)
 - Amateur chef 
 
 ## References
