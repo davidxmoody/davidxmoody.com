@@ -1,17 +1,21 @@
-## In progress
+## Mondays
 
-- Improve wordsearch game (make standalone website)
+- Believable one month plan
+- Day/overnight trips to cities I'm thinking of getting jobs in (take photos)
+- Meetups
+- Look at job ads and places to work
+- Video self doing interview practice
+
+## Wednesdays
+
 - Write about dotfiles (and publish on GitHub)
-
-## Programming
-
-- Write about Vim emmet
+- Standalone wordsearch game
+- Write about emmet-vim
 - Prof P website walkthrough, what I learned/code review
+
 - New game (iSketch clone, Bookworm Adventures clone, Geometry Dash clone)
 - Contribute to external GitHub repos
 - Python photo import script
-
-### New tools
 
 - More Vim plugins
 - Learn Git better
@@ -23,7 +27,43 @@
 - Bash prompts
 - Fix Markdown syntax highlighting 
 
-### Blog tweaks
+## Fridays
+
+- Book reviews
+- Meditation habit
+- Cooking (favourite recipes, photos, combine with primal story)
+- More photos (see below)
+- "About Me"
+- Read and summarise social textbooks
+- Pomodoro todo.txt combination
+
+### Photography
+
+- Bath gardens
+- Bideford Bay
+- Caravan
+- Tor (snow, mist, sunset, sunrise)
+- Floods
+- Woolacombe
+- Favourite photos for desktop backgrounds
+- One photo per post challenge idea
+
+### Future topics (non-urgent and best delayed)
+
+- "Primal success story" (with photos)
+- StayFocusd and habit changes
+- Shorthand abbreviations
+- Earplugs review
+- Write about how I use my diary
+- Review of Frixion pens
+- Lego memories
+- Plan for a better sleep/nighttime routine (+ sleep tracking)
+- Better morning routine (with FitBit silent alarm)
+- Dating site profile
+- Visit friends in London
+- Write about automatic webcam frame script
+
+## Blog tweaks
 
 - Add comments (Disqus)
 - Add index page description
@@ -32,45 +72,6 @@
 - Change background colour of code elements
 - Favicon (http://realfavicongenerator.net/)
 - Tags
+- Update list of blogs I like (or do another post)
 - More images (hand-drawn graphs, generated graphs?)
 - Downscale poker post graphs to 800px (and edit poker post?)
-
-## Personal
-
-### Filler posts
-
-- Meditation habit
-- StayFocusd and habit changes
-- Review of Frixion pens
-- Sleep tracking
-- Shorthand abbreviations
-- Earplugs review
-- Write about automatic webcam frame script
-- Write about how I use my diary
-- Review of new phone and FitBit
-- Review of my favourite Android apps
-- Update list of blogs I like (or do another post)
-
-### Harder/longer posts
-
-- Meetups
-- My current goals
-- Book reviews
-- Photography (favourite photos, challenges)
-- Favourite photos for desktop backgrounds
-- Cooking (favourite recipes)
-- "About Me"
-- "Primal success story" (with photos)
-- Dating site profile
-- Budgeting 
-- Lego memories
-- Plan for a better sleep/nighttime routine
-- Better morning routine (with FitBit silent alarm)
-- Visit friends in London
-- Read and summarise social textbooks
-
-## Jobs
-
-- Specific plan for what to do
-- Day/overnight trips to cities I'm thinking of getting jobs in (take photos)
-- Video self doing interview practice
