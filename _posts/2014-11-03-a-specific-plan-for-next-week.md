@@ -16,7 +16,7 @@ The following steps are what I think are *required* for me to get a job:
 
 1. Look at job ads and agencies and identify several places where I would like to work
 2. Apply to those places
-3. Go for interviews
+3. Go to interviews
 
 Additionally, there are a few *bonus* steps which I think will increase the chances of me getting a better job:
 
