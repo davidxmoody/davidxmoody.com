@@ -8,7 +8,6 @@
 
 ## Wednesdays
 
-- Write about dotfiles (and publish on GitHub)
 - Standalone wordsearch game
 - Write about emmet-vim
 - Prof P website walkthrough, what I learned/code review
@@ -16,6 +15,7 @@
 - New game (iSketch clone, Bookworm Adventures clone, Geometry Dash clone)
 - Contribute to external GitHub repos
 - Python photo import script
+- Make and publish a Vim auto-capitalisation plugin
 
 - More Vim plugins
 - Learn Git better
@@ -34,8 +34,6 @@
 - Cooking (favourite recipes, photos, combine with primal story)
 - More photos (see below)
 - "About Me"
-- Read and summarise social textbooks
-- Pomodoro todo.txt combination
 
 ### Photography
 
@@ -48,20 +46,22 @@
 - Favourite photos for desktop backgrounds
 - One photo per post challenge idea
 
-### Future topics (non-urgent and best delayed)
+### Future topics (non-urgent or best delayed)
 
 - "Primal success story" (with photos)
-- StayFocusd and habit changes
+- Pomodoro todo.txt combination
+- StayFocusd and other habit changes
 - Shorthand abbreviations
 - Earplugs review
 - Write about how I use my diary
-- Review of Frixion pens
+- Review of Frixion pens and notebooks
 - Lego memories
 - Plan for a better sleep/nighttime routine (+ sleep tracking)
 - Better morning routine (with FitBit silent alarm)
 - Dating site profile
 - Visit friends in London
-- Write about automatic webcam frame script
+- Write about automatic webcamframe script
+- Read and summarise social textbooks
 
 ## Blog tweaks
 
