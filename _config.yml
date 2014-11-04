@@ -1,6 +1,6 @@
 # Site settings
 title: David Moody's blog
-email: david.doomy@gmail.com
+email: david@davidxmoody.com
 description: "A blog about programming"
 url: "http://davidxmoody.com"
 
@@ -10,5 +10,5 @@ permalink: "/:title/"
 excerpt_separator: "\n\n\n"
 sass:
   style: :compressed
-paginate: 5
+paginate: 6
 paginate_path: "/page:num/"

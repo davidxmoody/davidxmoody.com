@@ -29,10 +29,10 @@
 
 ## Fridays
 
+- Cooking (history)
 - Book reviews
 - Meditation habit
-- Cooking (favourite recipes, photos, combine with primal story)
-- More photos (see below)
+- More photography (see below)
 - "About Me"
 
 ### Photography
@@ -49,6 +49,7 @@
 ### Future topics (non-urgent or best delayed)
 
 - "Primal success story" (with photos)
+- Favourite recipes
 - Pomodoro todo.txt combination
 - StayFocusd and other habit changes
 - Shorthand abbreviations
