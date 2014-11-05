@@ -34,6 +34,7 @@
 - Meditation habit
 - More photography (see below)
 - "About Me"
+- Write about automatic webcamframe script
 
 ### Photography
 
@@ -61,7 +62,6 @@
 - Better morning routine (with FitBit silent alarm)
 - Dating site profile
 - Visit friends in London
-- Write about automatic webcamframe script
 - Read and summarise social textbooks
 
 ## Blog tweaks
@@ -71,8 +71,9 @@
 - Add about-me page
 - hr lines between posts on home page(s)
 - Change background colour of code elements
+- Reduce text size on mobile devices
 - Favicon (http://realfavicongenerator.net/)
 - Tags
-- Update list of blogs I like (or do another post)
-- More images (hand-drawn graphs, generated graphs?)
+- Update list of blogs I like (with http://mindingourway.com/ and http://messymatters.com/)
 - Downscale poker post graphs to 800px (and edit poker post?)
+- Add blockquote styling 
