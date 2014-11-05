@@ -10,13 +10,13 @@ You can [view them on GitHub](https://github.com/davidxmoody/dotfiles). I wanted
 
 There are about 200 commits, spanning three years. I don't pretend to be an expert in these things but I still feel my dotfiles reflect a lot of experience over that time.
 
-It's slightly messy at the moment. I would like to organise them better someday. I recently found [GitHub does dotfiles](http://dotfiles.github.io/). It has some very interesting links to other dotfile repositories and frameworks. It has given me some inspiration which I will pursue later. 
+It's slightly messy at the moment. I would like to organise them better someday. I recently found [GitHub does dotfiles](http://dotfiles.github.io/). It has some very interesting links to other dotfile repositories and frameworks. 
 
 In the rest of this post, I am going to highlight a few of the most interesting things in my dotfiles.
 
 ## `mkalias`
 
-I have [already written a blog post on this function](/permanent-bash-aliases/) which you should check out. The gist of it is that it takes too long to open up your `.bash_aliases` file just to create a new alias. My simple Bash function works just like the normal `alias` command except it makes the alias "permanent" by placing it into your alias file. 
+I have [already written a blog post on this function](/permanent-bash-aliases/) which you should check out. The gist of it is that it takes too long to open up your `.bash_aliases` file just to create a new alias. My simple Bash function works just like the normal `alias` command except it makes the alias "permanent" by placing it into your aliases file. 
 
 {% highlight bash %}
 mkalias() {
