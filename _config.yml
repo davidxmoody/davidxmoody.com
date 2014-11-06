@@ -12,3 +12,4 @@ sass:
   style: :compressed
 paginate: 6
 paginate_path: "/page:num/"
+exclude: ["publish.sh", "README.md"]
