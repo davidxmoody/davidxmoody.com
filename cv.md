@@ -51,7 +51,7 @@ permalink: /cv/
 - Simple responsive design and typography with **Sass**
 - {{ num_posts }} posts ({{ num_words }} words) written since 11 August 2014 on a **regular&nbsp;schedule**
 - I have written about: Vim plugins, website design, the Pomodoro Technique, misc tech stuff and almost everything else on this CV
-- Over 190 commits, [available on GitHub](https://github.com/davidxmoody/davidxmoody.github.io)
+- Over 200 commits, [available on GitHub](https://github.com/davidxmoody/davidxmoody.github.io)
 
 ### [Monte Carlo Tree Search in Texas Hold 'em Poker](/mcts-in-texas-hold-em-poker-a-retrospective/) (2011)
 
