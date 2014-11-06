@@ -82,6 +82,7 @@ permalink: /cv/
 - **Mercurial** user (2011 - 2014), now learning **Git**
 - Knowledge and experience with many **Unix command line tools**
 - **Fast typist** with Dvorak and Vim (~80wpm)
+- My dotfiles are [available on GitHub](https://github.com/davidxmoody/dotfiles)
 
 ## Interests
 
