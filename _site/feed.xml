@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>David Moody's blog</title>
+    <description>A blog about programming</description>
+    <link>http://davidxmoody.com/</link>
+    <atom:link href="http://davidxmoody.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 06 Nov 2014 11:33:40 +0000</pubDate>
+    <lastBuildDate>Thu, 06 Nov 2014 11:33:40 +0000</lastBuildDate>
+    <generator>Jekyll v2.2.0</generator>
+    
+      <item>
+        <title>Here are my dotfiles</title>
+        <description>&lt;p&gt;I’ve recently been uploading a lot of my old projects to GitHub. There is only one left: &lt;strong&gt;my dotfiles&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can &lt;a href=&quot;https://github.com/davidxmoody/dotfiles&quot;&gt;view them on GitHub&lt;/a&gt;. I wanted to upload them because I think there are a few interesting fragments in there. Someone might find something they need. It also makes it easier for me to clone them from another machine, should the need ever arise. &lt;/p&gt;
+
+&lt;p&gt;There are about 200 commits, spanning three years. I don’t pretend to be an expert in these things but I still feel my dotfiles reflect a lot of experience over that time.&lt;/p&gt;
+
+&lt;p&gt;It’s slightly messy at the moment. I would like to organise them better someday. I recently found &lt;a href=&quot;http://dotfiles.github.io/&quot;&gt;GitHub does dotfiles&lt;/a&gt;. It has some very interesting links to other dotfile repositories and frameworks. &lt;/p&gt;
+
+&lt;p&gt;In the rest of this post, I am going to highlight a few of the most interesting things in my dotfiles.&lt;/p&gt;
+
+&lt;h2 id=&quot;mkalias&quot;&gt;&lt;code&gt;mkalias&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;I have &lt;a href=&quot;http://davidxmoody.com/permanent-bash-aliases/&quot;&gt;already written a blog post on this function&lt;/a&gt; which you should check out. The gist of it is that it takes too long to open up your &lt;code&gt;.bash_aliases&lt;/code&gt; file just to create a new alias. My simple Bash function works just like the normal &lt;code&gt;alias&lt;/code&gt; command except it makes the alias “permanent” by placing it into your aliases file. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;mkalias&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# Flatten arguments into one string&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;full_string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$*&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;# Extract the first and last parts&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;alias_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;full_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%%=*&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;alias_result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;full_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;#*=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;# Construct the new command&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;alias_command&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;alias $alias_name=&amp;#39;$alias_result&amp;#39;&amp;quot;&lt;/span&gt;
+
+  &lt;span class=&quot;c&quot;&gt;# Execute the command, if successful then print &lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;# out the alias and add it to ~/.bash_aliases&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$alias_command&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$alias_name&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; tee -a &lt;span class=&quot;s2&quot;&gt;&amp;quot;$HOME/.bash_aliases&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;jpeg-metadata-stripping-and-resizing&quot;&gt;JPEG metadata stripping and resizing&lt;/h2&gt;
+
+&lt;p&gt;When you take a photo, a lot of extra data is created. Stuff like the date, camera model, exposure and whatnot. However, when you are creating a website, there is no point downloading all that data along with the image. It can often take up around 20KB of extra space. &lt;/p&gt;
+
+&lt;p&gt;I use this handy &lt;code&gt;stripjpg&lt;/code&gt; alias to strip out all Exif data. I also use &lt;code&gt;convert&lt;/code&gt; to downscale images to 800px wide (for this blog). It’s not a perfect responsive image setup but it works for now. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;stripjpg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;exiftool -all= &amp;#39;&lt;/span&gt;
+resize800&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  stripjpg &lt;span class=&quot;s2&quot;&gt;&amp;quot;$@&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; f in &lt;span class=&quot;s2&quot;&gt;&amp;quot;$@&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    convert &lt;span class=&quot;s2&quot;&gt;&amp;quot;$f&amp;quot;&lt;/span&gt; -resize 800x &lt;span class=&quot;s2&quot;&gt;&amp;quot;$f&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;word-frequency-script&quot;&gt;Word frequency script&lt;/h2&gt;
+
+&lt;p&gt;A little something I created when I wanted to find the number of occurrences of common words in a large corpus of text split across multiple files. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python3&quot; data-lang=&quot;python3&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env python3&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;fileinput&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;word_tallies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fileinput&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;word_tallies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word_tallies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most_common&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;vim-writing-tricks&quot;&gt;Vim writing tricks&lt;/h2&gt;
+
+&lt;p&gt;Again, I have already written about &lt;a href=&quot;http://davidxmoody.com/vim-auto-capitalisation/&quot;&gt;Vim auto-capitalisation&lt;/a&gt; and &lt;a href=&quot;http://davidxmoody.com/better-vim-abbreviations/&quot;&gt;better Vim abbreviations&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;Two months later, I still love them both. They both save me several minutes daily. Not having to press the shift key so much also makes my little fingers very happy. &lt;/p&gt;
+
+&lt;h2 id=&quot;home-setup-script&quot;&gt;&lt;code&gt;home-setup&lt;/code&gt; script&lt;/h2&gt;
+
+&lt;p&gt;I’ve gone through some very complex and messy dotfile setups in the last three years. I finally settled upon a very simple script. It simply symlinks everything in &lt;code&gt;dotfiles&lt;/code&gt; to my home directory. &lt;/p&gt;
+
+&lt;p&gt;It also appends a dot to the names (because I don’t like hidden files in a project directory specifically meant for dotfiles). Additionally, it backs up anything that was already in my home directory with the same name (but avoids creating backed up duplicate links).&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; file in dotfiles/*&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$HOME/.${file#dotfiles/}&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;target_canon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;readlink -f &lt;span class=&quot;s2&quot;&gt;&amp;quot;$target&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;file_canon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;readlink -f &lt;span class=&quot;s2&quot;&gt;&amp;quot;$file&amp;quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$target_canon&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$file_canon&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
+    ln -sbv &lt;span class=&quot;s2&quot;&gt;&amp;quot;$file_canon&amp;quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$target&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;tons-of-short-aliases&quot;&gt;Tons of short aliases&lt;/h2&gt;
+
+&lt;p&gt;There are too many to go over and most aren’t that novel. However, they all represent small time and effort savings which quickly add up. Here is a small sample.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;alias  &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;ls -F --group-directories-first --color=auto&amp;#39;&lt;/span&gt;
+
+greppy&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; grep -n &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt; *.py&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+grepc&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; grep -n &lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt; *.coffee&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;up&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;cd ..&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;cdt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;cd ~/tmp&amp;#39;&lt;/span&gt;
+cdl&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$@&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; l&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+mkcd&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; mkdir &lt;span class=&quot;s2&quot;&gt;&amp;quot;$@&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;$@&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;vimrc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;vim ~/.vimrc&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;vba&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;vim ~/.bash_aliases&amp;#39;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;git status&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;git commit&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;gl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;git log&amp;#39;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;jeks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;jekyll server --watch --port 4000 --drafts&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;simplehttp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;python -m SimpleHTTPServer&amp;#39;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;py&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;python3&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;pyi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;python3 -i&amp;#39;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;op&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;xdg-open&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 05 Nov 2014 00:00:00 +0000</pubDate>
+        <link>http://davidxmoody.com/here-are-my-dotfiles/</link>
+        <guid isPermaLink="true">http://davidxmoody.com/here-are-my-dotfiles/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>A specific plan for next week</title>
+        <description>&lt;p&gt;Three weeks ago, I wrote a &lt;a href=&quot;http://davidxmoody.com/two-months-of-blogging/&quot;&gt;two month review&lt;/a&gt;. I said that I wanted to focus on &lt;strong&gt;getting a job&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;I have certainly made some progress. I have written &lt;a href=&quot;http://davidxmoody.com/cv/&quot;&gt;my CV&lt;/a&gt; (which I’m very pleased with). I have also written a lot of blog posts which &lt;em&gt;support my CV&lt;/em&gt;. By that, I mean I have written about many of the projects mentioned on my CV. I wanted to provide evidence that I’d actually done them and show more examples of my work. &lt;/p&gt;
+
+&lt;p&gt;I’m pleased with what I’ve done but my job search is still going slower than I would like. I feel like I’ve been procrastinating more than usual this last week because I &lt;strong&gt;didn’t have a clear plan&lt;/strong&gt;. I had finished writing my CV and didn’t know what to do next. Simply saying “get a job” is far too vague. I need a better plan. &lt;/p&gt;
+
+&lt;h2 id=&quot;a-better-plan&quot;&gt;A better plan&lt;/h2&gt;
+
+&lt;p&gt;The following steps are what I think are &lt;em&gt;required&lt;/em&gt; for me to get a job:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Look at job ads and agencies and identify several places where I would like to work&lt;/li&gt;
+  &lt;li&gt;Apply to those places&lt;/li&gt;
+  &lt;li&gt;Go to interviews&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Additionally, there are a few &lt;em&gt;bonus&lt;/em&gt; steps which I think will increase the chances of me getting a better job:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Continue blogging (about programming topics in particular)&lt;/li&gt;
+  &lt;li&gt;“Interview practice” (i.e. practise talking about my recent projects in front of a camera)&lt;/li&gt;
+  &lt;li&gt;Continue travelling to Bristol and start going to meetups&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;the-next-step&quot;&gt;The next step&lt;/h2&gt;
+
+&lt;p&gt;From the above plan, the clear and unambiguous next step is:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Look at job ads and agencies and identify several places where I would like to work&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That will be the focus of this week. I am going to do a minimum of one Pomodoro per day on this task. By next week’s post, I want to have a better understanding of what types of jobs are available in my field. I also want to identify 5 specific job openings that I could apply for. &lt;/p&gt;
+</description>
+        <pubDate>Mon, 03 Nov 2014 00:00:00 +0000</pubDate>
+        <link>http://davidxmoody.com/a-specific-plan-for-next-week/</link>
+        <guid isPermaLink="true">http://davidxmoody.com/a-specific-plan-for-next-week/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>My 10 best Tenerife photos</title>
+        <description>&lt;p&gt;In March of this year, I went on a family holiday with my parents to Tenerife. It was fantastic, one of the best holidays we have ever had. &lt;/p&gt;
+
+&lt;p&gt;That was also around the time I was getting into photography. I had just bought a second hand Fujifilm X10 and this was the first chance I had to really use it. I wanted to share some of my favourite photos. I’ve probably got about 50 very good ones but that’s too many for one blog post. So, here are my 10 best Tenerife photos.&lt;/p&gt;
+
+&lt;h2 id=&quot;botanical-gardens&quot;&gt;Botanical gardens&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-10-best-tenerife-photos/2014-03-10_13-54-37_x10.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-10-best-tenerife-photos/2014-03-10_13-55-26_x10.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-10-best-tenerife-photos/2014-03-10_15-53-09_x10.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-coast&quot;&gt;The coast&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-10-best-tenerife-photos/2014-03-11_16-00-23_x10_v1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-10-best-tenerife-photos/2014-03-13_17-17-20_x10_v1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;more-gardens&quot;&gt;More gardens&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-10-best-tenerife-photos/2014-03-12_14-45-56_x10.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-10-best-tenerife-photos/2014-03-12_14-51-42_x10.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;loro-park&quot;&gt;Loro Park&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-10-best-tenerife-photos/2014-03-14_16-07-04_x10.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-10-best-tenerife-photos/2014-03-14_17-04-00_x10.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;out-of-the-airplane-window&quot;&gt;Out of the airplane window&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-10-best-tenerife-photos/2014-03-15_18-37-51_dmc-fs30.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 31 Oct 2014 00:00:00 +0000</pubDate>
+        <link>http://davidxmoody.com/my-10-best-tenerife-photos/</link>
+        <guid isPermaLink="true">http://davidxmoody.com/my-10-best-tenerife-photos/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>MCTS in Texas Hold 'em Poker: A retrospective</title>
+        <description>&lt;p&gt;I’ve recently been uploading a lot of my old projects. Both to prove I’ve actually done them and also in case someone might be interested.&lt;/p&gt;
+
+&lt;p&gt;This week, I have uploaded my 3rd year Cambridge University dissertation project. It is a &lt;strong&gt;Texas Hold ‘em poker-bot&lt;/strong&gt; which uses the &lt;strong&gt;Monte Carlo Tree Search algorithm&lt;/strong&gt;. You can &lt;a href=&quot;https://github.com/davidxmoody/mctsbot&quot;&gt;view the source on GitHub&lt;/a&gt;. In this post, I am going to give a very brief summary of the project and make notes on how I could have done better.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-build-a-poker-bot&quot;&gt;How to build a poker-bot&lt;/h2&gt;
+
+&lt;p&gt;My poker-bot runs as a plugin to &lt;a href=&quot;http://www.poker-academy.com/poker-software/&quot;&gt;Poker Academy Pro&lt;/a&gt;, a commercial program which can run custom bots written in Java. It also came with a nice little example poker-bot called SimpleBot. I based most of my dissertation around how well my poker-bot (MCTSBot) could play against SimpleBot. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/mcts-in-texas-hold-em-poker-a-retrospective/PAP1-800x.png&quot; alt=&quot;Screenshot of Poker Academy Pro&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’m not going to write a complete description of the Monte Carlo Tree Search algorithm in this post. If you are interested, you can check out chapters 2.4 and 2.5 of &lt;a href=&quot;https://github.com/davidxmoody/mctsbot/raw/master/Dissertation.pdf&quot;&gt;my dissertation (PDF)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For now, I’ll just say that it uses random simulations to gradually build up a partial game tree. It uses advanced strategies to find a balance between &lt;em&gt;exploring&lt;/em&gt; new branches and &lt;em&gt;exploiting&lt;/em&gt; the most promising branches.&lt;/p&gt;
+
+&lt;p&gt;I discovered that a decent &lt;strong&gt;opponent model&lt;/strong&gt; was vital to the success of the program. An opponent model helps to predict what moves an opponent will make and increases the accuracy of simulations. To create one, I used &lt;a href=&quot;http://www.cs.waikato.ac.nz/ml/weka/&quot;&gt;Weka&lt;/a&gt;, a handy set of open source machine learning algorithms. I would have loved to create my own machine learning algorithms but it would have been well beyond the scope of the project. &lt;/p&gt;
+
+&lt;p&gt;I also spent a lot of time creating tools to extract and analyse the data. I even wrote a simple graphical user interface which ran beside Poker Academy Pro. It displayed a &lt;em&gt;live view&lt;/em&gt; of the expected values of each possible move as it was calculating them. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/mcts-in-texas-hold-em-poker-a-retrospective/GUI.png&quot; alt=&quot;Screenshot of my GUI&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;results&quot;&gt;Results&lt;/h2&gt;
+
+&lt;p&gt;The purpose of my dissertation was not only to build a working poker-bot but also to analyse its performance in different situations. Again, I recommend you check out chapter 4 of &lt;a href=&quot;https://github.com/davidxmoody/mctsbot/raw/master/Dissertation.pdf&quot;&gt;my full dissertation (PDF)&lt;/a&gt; for a proper explanation. &lt;/p&gt;
+
+&lt;p&gt;By the end of the project, my poker-bot was consistently able to beat SimpleBot. However, it was a tough battle to get there. The following graph shows MCTSBot’s performance with and without the two different opponent models I used (&lt;strong&gt;H&lt;/strong&gt;and &lt;strong&gt;R&lt;/strong&gt;ank &lt;strong&gt;O&lt;/strong&gt;pponent &lt;strong&gt;M&lt;/strong&gt;odel and &lt;strong&gt;N&lt;/strong&gt;ext &lt;strong&gt;M&lt;/strong&gt;ove &lt;strong&gt;O&lt;/strong&gt;pponent &lt;strong&gt;M&lt;/strong&gt;odel). It shows that both models were required to turn a positive average profit. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/mcts-in-texas-hold-em-poker-a-retrospective/SBvMB-oppmodels-v2.png&quot; alt=&quot;Graph showing the effectiveness of different opponent models&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I also explored how other parameters affected performance. Here is a quick graph of MCTSBot’s performance as its thinking time is varied.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/mcts-in-texas-hold-em-poker-a-retrospective/SBvMB-time.png&quot; alt=&quot;Graph showing the effects of varying thinking time&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Again, this blog post really isn’t meant to be a complete summary of the project. If you are interested, I recommend reading chapters 2 and 4 of &lt;a href=&quot;https://github.com/davidxmoody/mctsbot/raw/master/Dissertation.pdf&quot;&gt;my full dissertation (PDF)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;advice-for-my-past-self&quot;&gt;Advice for my past-self&lt;/h2&gt;
+
+&lt;p&gt;Over three terms, my time log shows that I spent about &lt;em&gt;300 hours&lt;/em&gt; on the project. I got a grade of &lt;em&gt;69/100&lt;/em&gt; for my dissertation which I was pleased with. &lt;/p&gt;
+
+&lt;p&gt;However, I still made plenty of mistakes. By far my biggest problem was &lt;em&gt;overconfidence&lt;/em&gt;. I had completed almost the entire program by the half-way point. I thought the data collection and analysis would be easy. I didn’t even start it until the beginning of the final term. &lt;/p&gt;
+
+&lt;p&gt;Of course, it wasn’t easy. It was one of the hardest and most time consuming parts of the project. Running simulations was a very slow process. My computer was probably running at max capacity for about three weeks straight. I did a pretty good job but I still feel that with a week extra, I could have gotten another 5-10 marks easily. &lt;/p&gt;
+
+&lt;p&gt;Another thing I noticed about my dissertation is that plain English is &lt;em&gt;very bad&lt;/em&gt; for describing program structure. My project supervisor urged me to include some diagrams but I just ran out of time. I should have heeded his advice earlier and included a few really good diagrams to explain the MCTS algorithm. &lt;/p&gt;
+
+&lt;p&gt;Looking through the source code, I also notice a lot of &lt;a href=&quot;http://blog.codinghorror.com/code-smells/&quot;&gt;code smells&lt;/a&gt;. Things like long methods, duplicated code, commented out code and lots of methods which do very similar things.&lt;/p&gt;
+
+&lt;p&gt;Looking back at it now, I do feel slightly embarrassed. It was my first ever major project and I didn’t really know what I was doing. At least I know better now, at least I like to think I do :)&lt;/p&gt;
+
+&lt;p&gt;If I could only give one piece of advice to my past-self, it would be this: &lt;em&gt;Get it done ASAP&lt;/em&gt;. &lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 29 Oct 2014 00:00:00 +0000</pubDate>
+        <link>http://davidxmoody.com/mcts-in-texas-hold-em-poker-a-retrospective/</link>
+        <guid isPermaLink="true">http://davidxmoody.com/mcts-in-texas-hold-em-poker-a-retrospective/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Changing my email address and updates to my CV</title>
+        <description>&lt;p&gt;I have a &lt;em&gt;new email address&lt;/em&gt;: &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#100;&amp;#097;&amp;#118;&amp;#105;&amp;#100;&amp;#064;&amp;#100;&amp;#097;&amp;#118;&amp;#105;&amp;#100;&amp;#120;&amp;#109;&amp;#111;&amp;#111;&amp;#100;&amp;#121;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;&amp;#100;&amp;#097;&amp;#118;&amp;#105;&amp;#100;&amp;#064;&amp;#100;&amp;#097;&amp;#118;&amp;#105;&amp;#100;&amp;#120;&amp;#109;&amp;#111;&amp;#111;&amp;#100;&amp;#121;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I have been running this blog for two and a half months but was still using my old Gmail address. Now that I’m thinking of applying for jobs, I want something that looks a bit more &lt;strong&gt;professional&lt;/strong&gt;. I think my new email address makes it pretty obvious that I have my own personal domain. I’m hoping that people will see it and think &lt;em&gt;“I guess that guy must know what he’s doing”&lt;/em&gt;. &lt;/p&gt;
+
+&lt;p&gt;Setting it up was pretty easy. I’m already registered with &lt;a href=&quot;https://www.namecheap.com/&quot;&gt;Namecheap&lt;/a&gt; and they offer a relatively cheap email service. &lt;/p&gt;
+
+&lt;p&gt;I did have one slight problem. I had &lt;a href=&quot;https://github.com/davidxmoody&quot;&gt;about 800 commits on my GitHub profile&lt;/a&gt; with my old Gmail address. I could have left them as they were (GitHub allows you to associate more than one email address with your account). However, I don’t think anyone else has cloned them yet and I wanted to have some degree of &lt;em&gt;consistency&lt;/em&gt; across all of my public commits. &lt;/p&gt;
+
+&lt;p&gt;Thankfully, GitHub provide instructions on how to &lt;a href=&quot;https://help.github.com/articles/changing-author-info/&quot;&gt;change author info in published repositories&lt;/a&gt;. Their instructions were easy to follow and worked perfectly. &lt;/p&gt;
+
+&lt;p&gt;I also made some minor modifications to &lt;a href=&quot;http://davidxmoody.com/cv/&quot;&gt;my CV&lt;/a&gt;. Nothing major. I just showed it to my Dad who gave me a few suggestions. I also added some more links to other posts on this blog. &lt;a href=&quot;http://davidxmoody.com/my-experiences-playing-croquet/&quot;&gt;I wrote about croquet on Friday&lt;/a&gt; and added a link to it in the “interests” section. Croquet has been a pretty big part of my life recently. I didn’t want to just say that without any &lt;em&gt;evidence&lt;/em&gt; to back it up. &lt;/p&gt;
+
+&lt;p&gt;Over the next few weeks, I plan to write about my two other major hobbies which I have yet to write about: cooking and photography. I have loads of photos to share (from both) and several interesting stories. &lt;/p&gt;
+
+&lt;p&gt;I could have done more this week. I feel mildly guilty about it. However, slow progress is far better than no progress and I can live with it. I have plans for this week including finally adding comments to this blog and going to Bristol again. I’ll write about that next week. &lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Oct 2014 00:00:00 +0000</pubDate>
+        <link>http://davidxmoody.com/changing-my-email-address-and-updates-to-my-cv/</link>
+        <guid isPermaLink="true">http://davidxmoody.com/changing-my-email-address-and-updates-to-my-cv/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>My experiences playing croquet</title>
+        <description>&lt;p&gt;I haven’t written about it before but I am a very keen croquet player. I thought I would share some of my experiences playing in matches over the last few years. &lt;/p&gt;
+
+&lt;h2 id=&quot;early-introduction-to-the-game&quot;&gt;Early introduction to the game&lt;/h2&gt;
+
+&lt;p&gt;My Dad first introduced me to croquet when I was about 15 years old. I started playing in my grandparents’ garden with a very basic wooden mallet. I enjoyed it a lot. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-experiences-playing-croquet/croquet-in-garden.jpg&quot; alt=&quot;Croquet in my grandparents' garden&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;abbey-croquet-club&quot;&gt;Abbey Croquet Club&lt;/h2&gt;
+
+&lt;p&gt;Around 2005, the Abbey Croquet Club formed in Glastonbury Abbey. My Dad went along and encouraged me to go. I enjoyed it and was persuaded to play in two matches. The first was at home, I think I won all of my games and was very pleased. Unfortunately, the second match was away (at Wells) and I lost all of my games. &lt;/p&gt;
+
+&lt;p&gt;I think that second match really shattered my confidence. I stopped playing croquet for quite a while. I didn’t play at Cambridge even though I could have. &lt;/p&gt;
+
+&lt;h2 id=&quot;abbey-croquet-club-again&quot;&gt;Abbey Croquet Club again&lt;/h2&gt;
+
+&lt;p&gt;When I graduated from university and came back home, I re-joined the club. It had moved from Glastonbury Abbey to Street (but kept the name). I played with my Dad and his friends for a while. &lt;/p&gt;
+
+&lt;p&gt;I then entered an inter-club tournament. I was starting to play well at that point and came in second place. That really boosted my confidence. I decided to buy my own mallet that year.&lt;/p&gt;
+
+&lt;h2 id=&quot;first-year-of-matches&quot;&gt;First year of matches&lt;/h2&gt;
+
+&lt;p&gt;In 2012, I started playing in matches again. I was very nervous. Thankfully, my first match of the season went very well. My Dad and I won our first two doubles games together which put me in good spirits. I then proceeded to win one and lose one game on my own. I felt like I had played well so I was content. &lt;/p&gt;
+
+&lt;p&gt;I should also mention that I started off playing with a handicap of 6 (minimum is 0 and maximum is 12). In the matches we were playing, the higher handicapped player gets a number of “free shots” equal to the difference in handicaps. It’s a relatively fair way of balancing games.&lt;/p&gt;
+
+&lt;p&gt;I played in 4 matches that year. Out of my 12 singles games, I won 8, lost 2 and drew 2. I was very pleased with that. I was also improving constantly because of all the practice. &lt;/p&gt;
+
+&lt;h2 id=&quot;second-year-of-matches&quot;&gt;Second year of matches&lt;/h2&gt;
+
+&lt;p&gt;My second year of matches went very well. Our team practised together &lt;em&gt;constantly&lt;/em&gt; and we all improved a lot. We won most of our matches and reached the semi-final and then the final. We won the South West Handicap League for the first time ever. In that year, I won 21, lost 11 and drew 4. My handicap dropped to a 4.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Handicap-Final/story-19912247-detail/story.html&quot;&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-experiences-playing-croquet/bath-final.jpg&quot; alt=&quot;Abbey winning the Golf Handicap League in Bath&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;association-croquet&quot;&gt;Association croquet&lt;/h2&gt;
+
+&lt;p&gt;I should mention that all references to “croquet” so far have referring to “golf croquet”. There is another variation on the game called “association croquet”. I started playing association croquet that year. My Dad had taught me the basics a while ago and my golf croquet skills transferred across nicely. &lt;/p&gt;
+
+&lt;p&gt;I started playing in matches about half way through the season. I was nervous at the beginning but picked it up very quickly. That year, we won the South West Intermediate League for the first time ever.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-beat-Bath-win-South-West-title/story-19849150-detail/story.html&quot;&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-experiences-playing-croquet/sidmouth-final.jpg&quot; alt=&quot;Abbey winning the AC Intermediate League in Sidmouth&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;third-year-of-matches&quot;&gt;Third year of matches&lt;/h2&gt;
+
+&lt;p&gt;After being in the winning team twice, my confidence had gone up considerably. I don’t think it’s an exaggeration to say I was the best golf croquet player in our club. I had a lower handicap than almost everyone else I was playing. &lt;/p&gt;
+
+&lt;p&gt;Additionally, there was a new rule that year. It meant that lower handicap players (like myself) had to give away even more free shots than normal. Despite the additional difficulty, I had my best season yet. I won 24 games and only lost 5. I also dropped to a 2 handicap.&lt;/p&gt;
+
+&lt;p&gt;Our whole team practised together a lot and improved even more. We also got a new team member. For the second year in a row, we won the South West Handicap League.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-triumph-South-West-Handicap/story-23184624-detail/story.html&quot;&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-experiences-playing-croquet/taunton-final.jpg&quot; alt=&quot;Abbey winning the Golf Handicap League in Taunton&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Our association croquet team also continued to improve. That year, we won the South West Federation League. &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Federation/story-23026871-detail/story.html&quot;&gt;&lt;img src=&quot;http://davidxmoody.com/images/my-experiences-playing-croquet/cheltenham-final.jpg&quot; alt=&quot;Abbey winning the AC Federation League in Taunton&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If I’m being completely honest, I was improving faster than my handicap was dropping. Association croquet games are longer than golf croquet games so you play fewer of them in a season. That meant my handicap was lagging behind my actual skill level. I do feel a bit guilty about that. Next year I plan to ask an official handicapper to drop my handicap to a more realistic level. &lt;/p&gt;
+
+&lt;h2 id=&quot;future-plans&quot;&gt;Future plans&lt;/h2&gt;
+
+&lt;p&gt;Unfortunately, the croquet season has ended. We still play on weekends but it’s too cold and dark to play in the evenings. I am also planning to move away from Glastonbury soon so things must change. &lt;/p&gt;
+
+&lt;p&gt;Next year, I plan to play in tournaments as well as club matches. I’m also thinking of upgrading my mallet and altering my technique. I still want to play in matches for Abbey but I am also planning to join a new club.&lt;/p&gt;
+
+&lt;p&gt;I don’t know what the future will hold. Croquet is important to me but it is not my highest priority. One of the unfortunate things about croquet is that most players are much older than me. According to the &lt;a href=&quot;https://www.croquet.org.uk/ca/&quot;&gt;2012 survey of croquet players&lt;/a&gt;, the median age is 65. Only 1% of croquet players are in their 20s. &lt;/p&gt;
+
+&lt;p&gt;Nevertheless, I plan to keep playing croquet for a long time to come. It’s a great game. &lt;/p&gt;
+</description>
+        <pubDate>Fri, 24 Oct 2014 00:00:00 +0100</pubDate>
+        <link>http://davidxmoody.com/my-experiences-playing-croquet/</link>
+        <guid isPermaLink="true">http://davidxmoody.com/my-experiences-playing-croquet/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Lessons learned from a three year programming project (part 2)</title>
+        <description>&lt;p&gt;Continued from &lt;a href=&quot;http://davidxmoody.com/lessons-learned-from-a-three-year-programming-project-part-1/&quot;&gt;part 1&lt;/a&gt;. You can also &lt;a href=&quot;https://github.com/davidxmoody/diary&quot;&gt;view the project on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;abstraction-and-small-methods&quot;&gt;Abstraction and small methods&lt;/h2&gt;
+
+&lt;p&gt;This lesson was something I learned slowly over the course of the project. I always “knew” the advantages of hiding implementation details in small methods. I had been taught it in university after all. &lt;/p&gt;
+
+&lt;p&gt;However, when it came to actually writing code, I consistently ended up with massive unreadable functions. In my early Bash scripts for example, I had copy-pasted the code for iterating over all entries about &lt;em&gt;five different times&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;It took a while for me to &lt;em&gt;intuitively understand&lt;/em&gt; the concepts but I slowly got better. In my early versions, every single script depended on the exact same filesystem layout. In my current version, every single file depends on one &lt;code&gt;Entry&lt;/code&gt; class which has many smaller methods. That class could change the filesystem layout any time it wants and it wouldn’t affect anything else. It could switch to a database or a remote filesystem and none of the other modules would notice.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://en.wikipedia.org/wiki/Don't_repeat_yourself&quot;&gt;don’t repeat yourself&lt;/a&gt; principle (and its various corollaries) feels so &lt;em&gt;obvious&lt;/em&gt; now. However, in practice, it still took me a long time to actually get to grips with what it really meant.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lesson 4:&lt;/strong&gt; Don’t repeat yourself. &lt;/p&gt;
+
+&lt;h2 id=&quot;cli-and-polish&quot;&gt;CLI and polish&lt;/h2&gt;
+
+&lt;p&gt;Later on in development, I started thinking of new features to add. After creating the &lt;a href=&quot;http://professorp.co.uk/&quot;&gt;professorp.co.uk&lt;/a&gt; website, I became interested in making a “local web app”. It would be a complete browser-based replacement for the command line app. &lt;/p&gt;
+
+&lt;p&gt;I experimented with using Markdown conversion to create static HTML pages. I then created a working Flask RESTful API for manipulating entries as well as a very basic AngularJS web client. &lt;/p&gt;
+
+&lt;p&gt;I eventually decided to scrap those ideas. There were an infinite number of features that I &lt;em&gt;could&lt;/em&gt; add. However, they would all be a lot of work for little benefit. I realised I should focus on doing one thing and doing it well (the &lt;a href=&quot;http://en.wikipedia.org/wiki/Unix_philosophy&quot;&gt;Unix philosophy&lt;/a&gt;). &lt;/p&gt;
+
+&lt;p&gt;I cleaned up the code even more and implemented a complete &lt;a href=&quot;https://docs.python.org/3/library/argparse.html&quot;&gt;argparse&lt;/a&gt; command line parser. It ties together all the basic features of the program. It also adds enough documentation so that anyone could figure out how to use it. &lt;/p&gt;
+
+&lt;p&gt;I did eventually adapt my previous ideas and implement a better static HTML generator. It allows things like pictures and videos to be embedded in entries. Its features slightly overlap with the basic command line functionality but not by as much. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lesson 5:&lt;/strong&gt; Write programs that do one thing and do it well.&lt;/p&gt;
+
+&lt;h2 id=&quot;future-plans&quot;&gt;Future plans&lt;/h2&gt;
+
+&lt;p&gt;I’m very proud of my current diary program. I use it literally every single day. If I want to find out about some event that happened two years ago then I can often do it in a couple of seconds. &lt;/p&gt;
+
+&lt;p&gt;In some ways, my constant &lt;a href=&quot;http://blog.codinghorror.com/the-ultimate-dogfooding-story/&quot;&gt;dogfooding&lt;/a&gt; has resulted in a very high quality program. However, in another way, it’s probably doomed it to obscurity. The structure of the program is very closely tied to how I like to work. Although it’s perfect for me, someone else might find it pointless or hard to use.&lt;/p&gt;
+
+&lt;p&gt;For the last three years, I have kept the project to myself. I have only just &lt;a href=&quot;https://github.com/davidxmoody/diary&quot;&gt;uploaded it to GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I guess time will tell whether anyone else is interested. Who knows, maybe it will become just as popular as &lt;a href=&quot;http://todotxt.com/&quot;&gt;Todo.txt&lt;/a&gt; but I somehow doubt that. &lt;/p&gt;
+
+&lt;p&gt;The point I’m trying to make is that I should have sought external feedback much earlier. The project is mostly finished now. I don’t expect to make many major changes. If I had gotten feedback earlier in development then I may have learned some useful information about what others wanted and how to improve the project. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lesson 6:&lt;/strong&gt; Release often and early.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 22 Oct 2014 00:00:00 +0100</pubDate>
+        <link>http://davidxmoody.com/lessons-learned-from-a-three-year-programming-project-part-2/</link>
+        <guid isPermaLink="true">http://davidxmoody.com/lessons-learned-from-a-three-year-programming-project-part-2/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>First draft of my CV and a trip to Bristol</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://davidxmoody.com/two-months-of-blogging/&quot;&gt;Last week&lt;/a&gt;, I said that Mondays would be about my job search. Here’s what I’ve done so far.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-first-draft-of-my-cv&quot;&gt;The first draft of my CV&lt;/h2&gt;
+
+&lt;p&gt;Honestly, it was easier than I thought it would be. It took me 8 Pomodoros (3 hours 20 minutes) to plan out and write. &lt;/p&gt;
+
+&lt;p&gt;I ended up having more to put on than I thought. However, I’m still anxious that I don’t have &lt;em&gt;enough&lt;/em&gt; to show for my three years at home. Compared to any other recent graduate, I think I should look very good. However, compared to someone who graduated three years ago, I’m not so sure. &lt;/p&gt;
+
+&lt;p&gt;Anyway, &lt;a href=&quot;http://davidxmoody.com/cv/&quot;&gt;here is a link to my CV&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-trip-to-bristol&quot;&gt;A trip to Bristol&lt;/h2&gt;
+
+&lt;p&gt;It’s been a while since I’ve done any travelling by myself. Whenever I go anywhere, I’m usually with someone who knows what they are doing. Applying for jobs is probably going to involve getting to a lot of interviews. I thought it would be a good idea to re-familiarise myself with travelling by bus. &lt;/p&gt;
+
+&lt;p&gt;Last Friday, I went to Bristol on the bus (from Glastonbury). It went incredibly well. I found the whole experience very relaxing and not at all stressful. &lt;/p&gt;
+
+&lt;h2 id=&quot;getting-lost&quot;&gt;Getting lost&lt;/h2&gt;
+
+&lt;p&gt;Before I went, I looked at a map of Bristol. I set myself the “goal” of walking to the Clifton Suspension Bridge from the Bus Station. Approx 35 minutes walk according to Google Maps. &lt;/p&gt;
+
+&lt;p&gt;I decided to just set off and try to find my way there with nothing but my memory. In terms of actually navigating, it was a complete failure. I got pretty lost. I had printed out a map in case of emergencies but couldn’t even locate myself on it because it wasn’t detailed enough. &lt;/p&gt;
+
+&lt;p&gt;I wondered, quite by accident, into a lovely little area called Brandon Hill Park. There was a tall tower with a winding staircase which I went up (Cabot Tower). For some reason, there were tons of ladybugs at the top. I spent a little while photographing them. Although I was totally lost, I was still having a great time. I had all day so I was happy to go slowly. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/first-draft-of-my-cv-and-a-trip-to-bristol/ladybugs-cabot-tower.jpg&quot; alt=&quot;Ladybugs at the top of Cabot Tower&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Although I had read signposts telling me I was in Brandon Hill Park, I still had no idea where that was on the map. I thought I had wondered too far north. To find my way back, I headed towards the only major landmark I recognised: the river. Although it was fun just trying to use my own memory to navigate by, I had already been walking for over an hour and just wanted to get there. I figured out where I was on my map and planned a more direct route to the Clifton Suspension Bridge.&lt;/p&gt;
+
+&lt;p&gt;The Bridge was a pretty awesome sight. Very high above the river. I walked across it and back again and then sat down and rested on a nearby bench.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/first-draft-of-my-cv-and-a-trip-to-bristol/clifton-suspension-bridge.jpg&quot; alt=&quot;The Clifton Suspension Bridge&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I planned a more direct route back and set off. I got a sandwich to eat and had a brief look in the shops before catching the bus back home. &lt;/p&gt;
+
+&lt;p&gt;A direct route to the bridge would have taken me just over an hour. However, I probably spent more like three and a half hours walking. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://davidxmoody.com/images/first-draft-of-my-cv-and-a-trip-to-bristol/bristol-map-walk.jpg&quot; alt=&quot;Map of my walk through Bristol&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;Overall, I really enjoyed this trip. I’m pleased with how it went. It’s purpose was to re-introduce myself to travelling alone and in that respect it was a complete success. However, I realise that I can’t continue repeating the exact same trip. I want to make things difficult for myself. Now that I know I can easily handle the travelling, I want to start doing some more challenging activities. &lt;/p&gt;
+
+&lt;p&gt;Specifically, I want to start going to some social events. I don’t know exactly what yet. I’ve been browsing &lt;a href=&quot;http://www.meetup.com/&quot;&gt;meetup.com&lt;/a&gt; and have lots of ideas already. &lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Oct 2014 00:00:00 +0100</pubDate>
+        <link>http://davidxmoody.com/first-draft-of-my-cv-and-a-trip-to-bristol/</link>
+        <guid isPermaLink="true">http://davidxmoody.com/first-draft-of-my-cv-and-a-trip-to-bristol/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Selling my childhood toys on eBay and Amazon</title>
+        <description>&lt;p&gt;I mentioned in my &lt;a href=&quot;http://davidxmoody.com/two-months-of-blogging/#what-ive-been-doing-when-i-havent-been-blogging&quot;&gt;two months of blogging post&lt;/a&gt; that I’ve been selling my family’s old possessions on eBay and Amazon. Over the last couple of years, I have sold literally 144 things on eBay and 153 things on Amazon. I thought I’d share a few of my thoughts on how it’s gone.&lt;/p&gt;
+
+&lt;h2 id=&quot;when-is-it-worth-it&quot;&gt;When is it worth it?&lt;/h2&gt;
+
+&lt;p&gt;Selling on eBay and Amazon is pretty efficient. The eBay Android app is very good and creating a listing on Amazon takes no time at all. However, when you are selling a lot of things, the time quickly adds up. &lt;/p&gt;
+
+&lt;p&gt;When things go well, it can take about 3 minutes to list something on Amazon or 10 for eBay. It takes about 3 minutes to print a shipping label and package something up. Sending it via the post office or Collect+ can take only a few minutes if I was passing by anyway. For more complex items, those estimates could be doubled or maybe quadrupled. &lt;/p&gt;
+
+&lt;p&gt;You could calculate an effective “hourly wage” if you wanted to. Personally, I find it quite satisfying to get rid of something I don’t need and give it to someone who wants it. Still, as a rule of thumb, I don’t even consider selling anything worth less than £5. It goes straight to the charity shop or gets bundled together with similar items. &lt;/p&gt;
+
+&lt;h2 id=&quot;pricing-strategies&quot;&gt;Pricing strategies&lt;/h2&gt;
+
+&lt;p&gt;For Amazon, I always price everything just under the next lowest price. If I don’t do that, I find that things can sit on Amazon for ages without selling. If there are no other used versions of the product for sale then I usually go for around 75% of the new price. &lt;/p&gt;
+
+&lt;p&gt;Over half of my Amazon sales were for used games from the N64 to GameCube era. I found they were especially easy to sell, probably because you can’t buy them new any more. I clearly remember several occasions where I had piles of 10+ packages ready to go to the Post Office.&lt;/p&gt;
+
+&lt;p&gt;For eBay, I put almost everything on for 99p. It leads to a fair sale price in 95% of cases. For very rare or unusual items I occasionally put higher starting prices. The situation you don’t want to occur is for only one person to be interested but also willing to pay a high amount. Even if they bid £50, you may only end up with 99p if no-one else bid anything. &lt;/p&gt;
+
+&lt;h2 id=&quot;collection-in-person&quot;&gt;Collection in person&lt;/h2&gt;
+
+&lt;p&gt;I was pretty nervous about selling things with local collection on eBay. However, I’ve had a lot of positive experiences and no negative ones. In most cases, the buyer just rings your bell and takes the item. &lt;/p&gt;
+
+&lt;p&gt;I’ve also had several occasions when the buyer buys some other stuff I wanted to sell. When I sold an old record player, I also ended up selling a bunch of records. When I sold some furniture, I also sold some curtains and some other furniture. &lt;/p&gt;
+
+&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
+
+&lt;p&gt;It’s been a good experience. It’s also made me realise that buying used can be just as good as buying new. My current laptop, phone and camera were all bought used for about half of the new price. They have all been working perfectly for over a year.&lt;/p&gt;
+
+&lt;p&gt;It makes me think how wasteful always buying the newest and greatest thing can be. I’ll leave you with a &lt;a href=&quot;http://www.raptitude.com/2010/07/your-lifestyle-has-already-been-designed/&quot;&gt;link to this article on the culture of unnecessaries&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 17 Oct 2014 00:00:00 +0100</pubDate>
+        <link>http://davidxmoody.com/selling-my-childhood-toys-on-ebay-and-amazon/</link>
+        <guid isPermaLink="true">http://davidxmoody.com/selling-my-childhood-toys-on-ebay-and-amazon/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Lessons learned from a three year programming project (part 1)</title>
+        <description>&lt;p&gt;For the last three years, I have been working on a little pet project. It has probably taught me more about software development than my entire time at university. &lt;/p&gt;
+
+&lt;p&gt;It’s a command line program for writing and organising a personal diary (&lt;a href=&quot;https://github.com/davidxmoody/diary&quot;&gt;GitHub link&lt;/a&gt;). I’ve spent hundreds of hours on it and have gone through many different designs. Instead of covering every little detail of the project, I’m going to write about some important lessons it has taught me. &lt;/p&gt;
+
+&lt;h2 id=&quot;bash-is-really-powerful&quot;&gt;Bash is really powerful&lt;/h2&gt;
+
+&lt;p&gt;I started keeping a diary about four years ago. Initially, I just wrote in a single text file. It was nice and simple and easy. After a few months, the file got a bit big and it was impossible to find anything. I experimented with splitting it into multiple files but that just made the problem worse.&lt;/p&gt;
+
+&lt;p&gt;Then, three years ago, I started learning &lt;a href=&quot;http://en.wikipedia.org/wiki/Bash_(Unix_shell)&quot;&gt;Bash&lt;/a&gt;. Bash is incredibly powerful. I take it for granted now. At the time, something as simple as &lt;a href=&quot;http://en.wikipedia.org/wiki/Grep&quot;&gt;grepping&lt;/a&gt; for keywords in multiple files was a revelation. &lt;/p&gt;
+
+&lt;p&gt;I started experimenting with all kinds of ad-hoc scripts. I had a script to search for keywords, a script to do a wordcount and a script to create new entries. I eventually settled on a new file format with one file per entry and the date embedded in the filename. &lt;/p&gt;
+
+&lt;p&gt;All this time, I was learning about some incredibly useful command line tools:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;grep&lt;/code&gt; to search&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;less&lt;/code&gt; to display results&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;wc&lt;/code&gt; to do a wordcount&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;vim&lt;/code&gt; to edit entries&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;date&lt;/code&gt; to format and parse dates&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;fmt&lt;/code&gt; to wrap text&lt;/li&gt;
+  &lt;li&gt;And many more…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However, my scripts just kept growing and growing. They reached about 800 lines of code at their maximum. There was a lot of repeated code and other poor design decisions. &lt;/p&gt;
+
+&lt;p&gt;I used many elaborate work-arounds to attempt to fix some of the problems with Bash. However, the lack of proper data-structures really hurt. So did the inability to properly share information between scripts. &lt;/p&gt;
+
+&lt;p&gt;Although I don’t regret starting off with Bash, I should have realised that it just wasn’t suitable for such a large project. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lesson 1:&lt;/strong&gt; Choose the right language for the job. &lt;/p&gt;
+
+&lt;h2 id=&quot;version-control&quot;&gt;Version control&lt;/h2&gt;
+
+&lt;p&gt;My very early attempts were a &lt;em&gt;complete mess&lt;/em&gt;. I had scripts stored in multiple different directories and dotfiles and my changes frequently broke stuff.&lt;/p&gt;
+
+&lt;p&gt;Thankfully, I found this &lt;a href=&quot;http://hginit.com/&quot;&gt;excellent Hg Init tutorial&lt;/a&gt;. Even though I’m now switching to &lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt;, I still love &lt;a href=&quot;http://mercurial.selenic.com/&quot;&gt;Mercurial&lt;/a&gt;. I learned the basics and continuously practised them. &lt;/p&gt;
+
+&lt;p&gt;Although I had &lt;em&gt;technically&lt;/em&gt; been using Mercurial in university, it had always been a chore. I felt like it was something I was supposed to do and I used it grudgingly. This time, I actually understood what was going on and enjoyed using it. &lt;/p&gt;
+
+&lt;p&gt;Even though I was using version control, I was still making one big mistake. I was directly symlinking to my scripts for everyday use. This meant that whenever I was in the process of making changes, I completely broke my ability to use my diary normally. &lt;/p&gt;
+
+&lt;p&gt;One particular incident really opened my eyes. I was in the process of changing the file storage format. I was changing each file to be stored in a month-based subdirectory as opposed to one big directory. I had manually migrated my data to the new format and was in the process of re-writing my scripts. &lt;/p&gt;
+
+&lt;p&gt;Unfortunately, it took rather longer than expected. For almost a week, I had to manually type in the filenames for new entries. This taught me to separate my wild refactoring attempts from my working stable scripts. It also taught me to keep a separate set of “test entries” for use with that development branch. &lt;/p&gt;
+
+&lt;p&gt;I eventually read &lt;a href=&quot;http://thedailywtf.com/Articles/Source-Control-Done-Right.aspx&quot;&gt;this great article on source control&lt;/a&gt;. I adopted the “branching by exception” strategy and haven’t looked back since. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lesson 2:&lt;/strong&gt; Keep development and stable branches separate.&lt;/p&gt;
+
+&lt;h2 id=&quot;python-is-awesome&quot;&gt;Python is awesome&lt;/h2&gt;
+
+&lt;p&gt;My Bash scripts were becoming unwieldy. I was interested in learning a new programming language and Python 3 seemed perfect. For a short while, I was completely obsessed with Python. I read everything I could and practised on &lt;a href=&quot;https://projecteuler.net/&quot;&gt;Project Euler&lt;/a&gt; problems. &lt;/p&gt;
+
+&lt;p&gt;I slowly started re-writing my Bash scripts one at a time. Once I had removed all traces of Bash, I switched to a proper Python module design. I made countless changes over a long period of time. I loved all the features of Python which Bash didn’t have (like &lt;a href=&quot;https://wiki.python.org/moin/Generators&quot;&gt;generators&lt;/a&gt;, &lt;a href=&quot;https://docs.python.org/3.4/tutorial/modules.html&quot;&gt;modules&lt;/a&gt; and proper &lt;a href=&quot;https://docs.python.org/3.4/tutorial/classes.html&quot;&gt;classes&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;I noticed that a lot of duplicated work was being done when formatting entries. The text wrapping had to be re-calculated every time. I had recently read about Python &lt;a href=&quot;http://stackoverflow.com/questions/739654/how-can-i-make-a-chain-of-function-decorators-in-python/1594484#1594484&quot;&gt;decorators&lt;/a&gt; and the &lt;a href=&quot;https://docs.python.org/3.4/library/pickle.html&quot;&gt;pickle&lt;/a&gt; module. I naively tried to use them to solve the problem.&lt;/p&gt;
+
+&lt;p&gt;I designed a very elaborate caching decorator function. It took a long time to write and debug but it did work. However, I had made a big error in judgement. For the text wrapping, I had inherited the rather lazy design of calling the &lt;code&gt;fmt&lt;/code&gt; command line program from within Python. This was very slow. I later implemented text wrapping with the &lt;a href=&quot;https://docs.python.org/3.4/library/textwrap.html&quot;&gt;textwrap&lt;/a&gt; module which was about an order of magnitude faster. &lt;/p&gt;
+
+&lt;p&gt;With the faster text wrapping method, my caching was now &lt;em&gt;slower&lt;/em&gt; than re-wrapping the text each time. I didn’t like to do it but I eventually stripped out all caching behaviour, making the basic display functionality nearly instant. At least I had learned how to use decorators and the pickle module. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lesson 3:&lt;/strong&gt; Premature optimisation is bad.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://davidxmoody.com/lessons-learned-from-a-three-year-programming-project-part-2/&quot;&gt;Read part 2…&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 15 Oct 2014 00:00:00 +0100</pubDate>
+        <link>http://davidxmoody.com/lessons-learned-from-a-three-year-programming-project-part-1/</link>
+        <guid isPermaLink="true">http://davidxmoody.com/lessons-learned-from-a-three-year-programming-project-part-1/</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
