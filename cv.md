@@ -88,7 +88,7 @@ permalink: /cv/
 
 - [Skilled croquet player](/my-experiences-playing-croquet/), my team has won *four South West league finals* in the last two years
 - [Amateur photographer](/my-10-best-tenerife-photos/)
-- Amateur chef 
+- [Amateur chef](/20-of-my-favourite-cooking-photos/)
 
 ## References
 
