@@ -29,23 +29,10 @@
 
 ## Fridays
 
-- Cooking (history)
 - Book reviews
 - Meditation habit
-- More photography (see below)
 - "About Me"
 - Write about automatic webcamframe script
-
-### Photography
-
-- Bath gardens
-- Bideford Bay
-- Caravan
-- Tor (snow, mist, sunset, sunrise)
-- Floods
-- Woolacombe
-- Favourite photos for desktop backgrounds
-- One photo per post challenge idea
 
 ### Future topics (non-urgent or best delayed)
 
@@ -63,6 +50,8 @@
 - Dating site profile
 - Visit friends in London
 - Read and summarise social textbooks
+- One photo per post challenge
+- More favourite photos (various holidays, themes, desktop backgrounds)
 
 ## Blog tweaks
 
