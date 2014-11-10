@@ -14,9 +14,9 @@ I'm very pleased with every post I've written over the last month. I notice that
 
 ## Last week
 
-Overall the last month has been excellent for me. However, the last week has been an exception. 
+Overall, the last month has been excellent for me. However, the last week has been an exception. 
 
-Last Monday, I wrote a [specific plan](/a-specific-plan-for-next-week/). I said I wanted to *"Look at job ads and agencies and identify several places where I would like to work"*. I also said I would do one Pomodoro on the task daily. 
+Last Monday, I wrote a [specific plan](/a-specific-plan-for-next-week/). I said I wanted to *"Look at job ads and agencies and identify several places where I would like to work"*. I also said I would do one Pomodoro on the task every day.
 
 I made it the first two days before realising that it really wasn't getting me anywhere. I already know the exact type of job I want (web development, matching my existing skills). I also know that there are many such jobs available. What I really need to do is get to the point where I can actually apply for them. 
 
@@ -30,7 +30,7 @@ I really should have just started on the above list but instead I ran into anoth
 
 ## Focus for next month
 
-Last month, I mostly focused on writing about my past experiences. However, I've now written about most of them. I have a few more left but not enough to continue for another month. I *must* change my writing focus because I have nothing else to write about. 
+Last month, I mostly focused on writing about my past experiences. However, I've now written about most of them. I have a few more left but not enough to continue for another month.
 
 The obvious focus for this month is the same as for last month: **getting a job**. I certainly made some progress last month with writing my CV and writing about my previous projects. I still could have done more. 
 

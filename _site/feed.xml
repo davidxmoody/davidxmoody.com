@@ -5,9 +5,62 @@
     <description>A blog about programming</description>
     <link>http://davidxmoody.com/</link>
     <atom:link href="http://davidxmoody.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 07 Nov 2014 13:25:11 +0000</pubDate>
-    <lastBuildDate>Fri, 07 Nov 2014 13:25:11 +0000</lastBuildDate>
+    <pubDate>Mon, 10 Nov 2014 17:52:22 +0000</pubDate>
+    <lastBuildDate>Mon, 10 Nov 2014 17:52:22 +0000</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Three months of blogging</title>
+        <description>&lt;p&gt;This will be my third monthly review. Yet again, I am going to look back at the last month and create a plan for the next one. &lt;/p&gt;
+
+&lt;h2 id=&quot;a-better-spread-of-topics&quot;&gt;A better spread of topics&lt;/h2&gt;
+
+&lt;p&gt;For the first month of this blog, I wrote mostly about programming topics. For the second month, I switched to writing mostly about personal topics. In &lt;a href=&quot;http://davidxmoody.com/two-months-of-blogging/&quot;&gt;my previous monthly review&lt;/a&gt;, I noticed this. I set myself a more specific schedule in order to focus my writing on &lt;em&gt;a better spread of topics&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;I’m very pleased with every post I’ve written over the last month. I notice that most of them were about the major experiences of my life so far. The reason for that is that I was in the process of writing my CV and realised I had no &lt;em&gt;evidence&lt;/em&gt; to support my claims. Most of what I’ve written this month was written to support the main points of &lt;a href=&quot;http://davidxmoody.com/cv/&quot;&gt;my CV&lt;/a&gt;. &lt;/p&gt;
+
+&lt;h2 id=&quot;last-week&quot;&gt;Last week&lt;/h2&gt;
+
+&lt;p&gt;Overall, the last month has been excellent for me. However, the last week has been an exception. &lt;/p&gt;
+
+&lt;p&gt;Last Monday, I wrote a &lt;a href=&quot;http://davidxmoody.com/a-specific-plan-for-next-week/&quot;&gt;specific plan&lt;/a&gt;. I said I wanted to &lt;em&gt;“Look at job ads and agencies and identify several places where I would like to work”&lt;/em&gt;. I also said I would do one Pomodoro on the task every day.&lt;/p&gt;
+
+&lt;p&gt;I made it the first two days before realising that it really wasn’t getting me anywhere. I already know the exact type of job I want (web development, matching my existing skills). I also know that there are many such jobs available. What I really need to do is get to the point where I can actually apply for them. &lt;/p&gt;
+
+&lt;p&gt;There are still a few things to do before then:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Convert my CV to PDF for sending with applications&lt;/li&gt;
+  &lt;li&gt;Write a covering letter&lt;/li&gt;
+  &lt;li&gt;Make my blog more presentable (currently the good stuff is too hard to find and the home page isn’t very helpful)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I really should have just started on the above list but instead I ran into another problem. That problem was &lt;a href=&quot;http://bindingofisaac.com/&quot;&gt;The Binding of Isaac: Rebirth&lt;/a&gt;. It was released Tuesday night and I’ve spent &lt;em&gt;far too much time&lt;/em&gt; playing it over the last week. I managed to stick to my blogging schedule but I didn’t get much else done. I definitely regret spending so much time on it. I’m pleased to say that I feel like I’m over it now. I might play it occasionally but I’m not going to obsess over it like I have this week. &lt;/p&gt;
+
+&lt;h2 id=&quot;focus-for-next-month&quot;&gt;Focus for next month&lt;/h2&gt;
+
+&lt;p&gt;Last month, I mostly focused on writing about my past experiences. However, I’ve now written about most of them. I have a few more left but not enough to continue for another month.&lt;/p&gt;
+
+&lt;p&gt;The obvious focus for this month is the same as for last month: &lt;strong&gt;getting a job&lt;/strong&gt;. I certainly made some progress last month with writing my CV and writing about my previous projects. I still could have done more. &lt;/p&gt;
+
+&lt;p&gt;However, I still don’t feel that writing about getting a job is really going to be that interesting. What I actually want to write about is &lt;strong&gt;programming&lt;/strong&gt;. I want to continue learning about web development and then blog about what I learn. &lt;/p&gt;
+
+&lt;p&gt;For the next month, my main focus will be on getting a job. However, I will continue to write about programming on this blog as my secondary aim. &lt;/p&gt;
+
+&lt;h2 id=&quot;a-new-schedule&quot;&gt;A new schedule&lt;/h2&gt;
+
+&lt;p&gt;For my first month, I consistently published three posts per week. For my second month, I went down to two and then for my third month I went back up to three. It has been incredibly successful for me so far but I still want to try something new. &lt;/p&gt;
+
+&lt;p&gt;For the next month, I am going to publish one post every Monday (about my progress that week). Additionally, I will write about whatever programming projects I’m learning about. However, I won’t schedule those. I’m going to try simply publishing them whenever it is convenient for me. &lt;/p&gt;
+
+&lt;p&gt;This goes against everything that has worked for me so far. However, I think it could be a good move. It gives me more &lt;em&gt;flexibility&lt;/em&gt; to work on what is most important at the time. Of course, I could be wrong and it could be a terrible idea. However, I’m viewing it as an &lt;strong&gt;experiment&lt;/strong&gt;. After one month, I’ll see how it has gone and decide whether or not I want to continue. &lt;/p&gt;
+</description>
+        <pubDate>Mon, 10 Nov 2014 00:00:00 +0000</pubDate>
+        <link>http://davidxmoody.com/three-months-of-blogging/</link>
+        <guid isPermaLink="true">http://davidxmoody.com/three-months-of-blogging/</guid>
+        
+        
+      </item>
     
       <item>
         <title>20 of my favourite cooking photos</title>
@@ -571,45 +624,6 @@ mkcd&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;
         <pubDate>Mon, 20 Oct 2014 00:00:00 +0100</pubDate>
         <link>http://davidxmoody.com/first-draft-of-my-cv-and-a-trip-to-bristol/</link>
         <guid isPermaLink="true">http://davidxmoody.com/first-draft-of-my-cv-and-a-trip-to-bristol/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Selling my childhood toys on eBay and Amazon</title>
-        <description>&lt;p&gt;I mentioned in my &lt;a href=&quot;http://davidxmoody.com/two-months-of-blogging/#what-ive-been-doing-when-i-havent-been-blogging&quot;&gt;two months of blogging post&lt;/a&gt; that I’ve been selling my family’s old possessions on eBay and Amazon. Over the last couple of years, I have sold literally 144 things on eBay and 153 things on Amazon. I thought I’d share a few of my thoughts on how it’s gone.&lt;/p&gt;
-
-&lt;h2 id=&quot;when-is-it-worth-it&quot;&gt;When is it worth it?&lt;/h2&gt;
-
-&lt;p&gt;Selling on eBay and Amazon is pretty efficient. The eBay Android app is very good and creating a listing on Amazon takes no time at all. However, when you are selling a lot of things, the time quickly adds up. &lt;/p&gt;
-
-&lt;p&gt;When things go well, it can take about 3 minutes to list something on Amazon or 10 for eBay. It takes about 3 minutes to print a shipping label and package something up. Sending it via the post office or Collect+ can take only a few minutes if I was passing by anyway. For more complex items, those estimates could be doubled or maybe quadrupled. &lt;/p&gt;
-
-&lt;p&gt;You could calculate an effective “hourly wage” if you wanted to. Personally, I find it quite satisfying to get rid of something I don’t need and give it to someone who wants it. Still, as a rule of thumb, I don’t even consider selling anything worth less than £5. It goes straight to the charity shop or gets bundled together with similar items. &lt;/p&gt;
-
-&lt;h2 id=&quot;pricing-strategies&quot;&gt;Pricing strategies&lt;/h2&gt;
-
-&lt;p&gt;For Amazon, I always price everything just under the next lowest price. If I don’t do that, I find that things can sit on Amazon for ages without selling. If there are no other used versions of the product for sale then I usually go for around 75% of the new price. &lt;/p&gt;
-
-&lt;p&gt;Over half of my Amazon sales were for used games from the N64 to GameCube era. I found they were especially easy to sell, probably because you can’t buy them new any more. I clearly remember several occasions where I had piles of 10+ packages ready to go to the Post Office.&lt;/p&gt;
-
-&lt;p&gt;For eBay, I put almost everything on for 99p. It leads to a fair sale price in 95% of cases. For very rare or unusual items I occasionally put higher starting prices. The situation you don’t want to occur is for only one person to be interested but also willing to pay a high amount. Even if they bid £50, you may only end up with 99p if no-one else bid anything. &lt;/p&gt;
-
-&lt;h2 id=&quot;collection-in-person&quot;&gt;Collection in person&lt;/h2&gt;
-
-&lt;p&gt;I was pretty nervous about selling things with local collection on eBay. However, I’ve had a lot of positive experiences and no negative ones. In most cases, the buyer just rings your bell and takes the item. &lt;/p&gt;
-
-&lt;p&gt;I’ve also had several occasions when the buyer buys some other stuff I wanted to sell. When I sold an old record player, I also ended up selling a bunch of records. When I sold some furniture, I also sold some curtains and some other furniture. &lt;/p&gt;
-
-&lt;h2 id=&quot;closing-thoughts&quot;&gt;Closing thoughts&lt;/h2&gt;
-
-&lt;p&gt;It’s been a good experience. It’s also made me realise that buying used can be just as good as buying new. My current laptop, phone and camera were all bought used for about half of the new price. They have all been working perfectly for over a year.&lt;/p&gt;
-
-&lt;p&gt;It makes me think how wasteful always buying the newest and greatest thing can be. I’ll leave you with a &lt;a href=&quot;http://www.raptitude.com/2010/07/your-lifestyle-has-already-been-designed/&quot;&gt;link to this article on the culture of unnecessaries&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 17 Oct 2014 00:00:00 +0100</pubDate>
-        <link>http://davidxmoody.com/selling-my-childhood-toys-on-ebay-and-amazon/</link>
-        <guid isPermaLink="true">http://davidxmoody.com/selling-my-childhood-toys-on-ebay-and-amazon/</guid>
         
         
       </item>
