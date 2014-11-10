@@ -45,3 +45,7 @@ Just like with my push ups post, I am going to log my progress right here. The f
 | 2014-10-20    |  1  |  1  |  1  |  1  |  1  |  1  |  1  |
 | 2014-10-27    |  1  |  1  |  1  |  1  |  1  |  1  |  2  |
 | 2014-11-03    |  1  |  1  |  1  |  1  |  1  |  1  |  2  |
+
+## Update on 2014-11-10
+
+After just over one month of continuing this habit, I have decided to stop. I'm glad I tried it out. It had many positive points. I feel it helped me to write better posts in the time I was doing it. However, I simply feel that it doesn't quite fit with my current goals. I want to try experimenting with different ways to spend my time in the morning. I'll write about them soon. 
