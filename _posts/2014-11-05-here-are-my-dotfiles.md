@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Here are my dotfiles
+tags: Bash
 ---
 
 I've recently been uploading a lot of my old projects to GitHub. There is only one left: **my dotfiles**.

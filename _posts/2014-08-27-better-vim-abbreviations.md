@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Better Vim abbreviations
+tags: Vim
 ---
 
 I've been using Vim, full-time, for nearly three years. I have written *a lot* of plain text in that time. 

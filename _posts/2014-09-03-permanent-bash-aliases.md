@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Permanent Bash aliases
+tags: Bash
 ---
 
 This post will introduce a handy little Bash tip. I created it over a year ago but many other people have already done similar things.
