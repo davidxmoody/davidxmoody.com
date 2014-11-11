@@ -1,30 +1,30 @@
 ---
 layout: default
 ---
+
 {% for post in paginator.posts %}
+
 {% assign total_paragraphs = post.content | split: '<p>' | size | minus: 1 %}
 {% assign excerpt_paragraphs = post.excerpt | split: '<p>' | size | minus: 1 %}
 {% assign remaining_paragraphs = total_paragraphs | minus: excerpt_paragraphs %}
-<div class="post excerpt">
 
-  <article>
-    <header>
-      <h1>{{ post.title }}</h1>
-      <p><em>{{ post.date | date: "%b %-d, %Y" }}</em></p>
-    </header>
+<article>
+  <header>
+    <h1>{{ post.title }}</h1>
+    <p><em>{{ post.date | date: "%b %-d, %Y" }}</em></p>
+  </header>
 
-    {{ post.excerpt }}
+  {{ post.excerpt }}
 
-    <p><a href="{{ post.url }}">
-      {% if remaining_paragraphs > 0 %}
-      Read {{ remaining_paragraphs }} remaining paragraphs...
-      {% else %}
-      View post on separate page
-      {% endif %}
-    </a></p>
-  </article>
+  <p><a href="{{ post.url }}">
+    {% if remaining_paragraphs > 0 %}
+    Read {{ remaining_paragraphs }} remaining paragraphs...
+    {% else %}
+    View post on separate page
+    {% endif %}
+  </a></p>
+</article>
 
-</div>
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
