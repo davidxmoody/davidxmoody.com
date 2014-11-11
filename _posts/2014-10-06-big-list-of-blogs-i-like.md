@@ -30,6 +30,7 @@ I don't have time to write a proper post right now so here is a big list of some
 - [You Are Not So Smart](http://youarenotsosmart.com/): Some brilliantly written articles on psychological biases (check the archives) 
 - [The Ancient Wisdom Project](http://theancientwisdomproject.com/): The author is in the process of choosing one of the major religions to follow for a month and writing about what he learns
 - [Less Wrong](http://lesswrong.com/): A community blog about the art of human rationality
+- [Minding our way](http://mindingourway.com/): Some excellent posts on rationality and mental models
 - [Dr. Bunsen](http://www.drbunsen.org/): Occasional very interesting articles about statistics, Vim and other things 
 - [David R. MacIver](http://www.drmaciver.com/): Just a blog by a guy who's interested in similar things to me
 - [xkcd](http://xkcd.com/): The best web comic ever

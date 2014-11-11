@@ -63,6 +63,5 @@
 - Reduce text size on mobile devices
 - Favicon (http://realfavicongenerator.net/)
 - Tags
-- Update list of blogs I like (with http://mindingourway.com/ and http://messymatters.com/)
 - Downscale poker post graphs to 800px (and edit poker post?)
 - Add blockquote styling 
