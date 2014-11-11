@@ -7,13 +7,14 @@ layout: default
 {% assign remaining_paragraphs = total_paragraphs | minus: excerpt_paragraphs %}
 <div class="post excerpt">
 
-  <header class="post-header">
-    <h1>{{ post.title }}</h1>
-    <p class="meta">{{ post.date | date: "%b %-d, %Y" }}</p>
-  </header>
+  <article>
+    <header>
+      <h1>{{ post.title }}</h1>
+      <p><em>{{ post.date | date: "%b %-d, %Y" }}</em></p>
+    </header>
 
-  <article class="post-content">
     {{ post.excerpt }}
+
     <p><a href="{{ post.url }}">
       {% if remaining_paragraphs > 0 %}
       Read {{ remaining_paragraphs }} remaining paragraphs...
