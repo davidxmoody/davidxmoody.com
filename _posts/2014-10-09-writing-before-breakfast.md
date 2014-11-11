@@ -36,8 +36,6 @@ I hope that starting as early as possible will help prevent procrastination late
 
 Just like with my push ups post, I am going to log my progress right here. The following table shows the number of Pomodoro sessions completed *before breakfast* on each day.
 
-*[Note that I might not get around to pushing updates every single day so expect this graph to lag behind a little bit. Dashes represent no record and zeros represent no Pomodoro sessions that day.]*
-
 | Week starting | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |---------------+-----+-----+-----+-----+-----+-----+-----|
 | 2014-10-06    |  -  |  -  |  -  |  1  |  1  |  1  |  2  |
