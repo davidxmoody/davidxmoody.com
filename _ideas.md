@@ -63,5 +63,4 @@
 - Reduce text size on mobile devices
 - Favicon (http://realfavicongenerator.net/)
 - Tags
-- Downscale poker post graphs to 800px (and edit poker post?)
 - Add blockquote styling 

@@ -30,11 +30,11 @@ The purpose of my dissertation was not only to build a working poker-bot but als
 
 By the end of the project, my poker-bot was consistently able to beat SimpleBot. However, it was a tough battle to get there. The following graph shows MCTSBot's performance with and without the two different opponent models I used (**H**and **R**ank **O**pponent **M**odel and **N**ext **M**ove **O**pponent **M**odel). It shows that both models were required to turn a positive average profit. 
 
-![Graph showing the effectiveness of different opponent models](/images/mcts-in-texas-hold-em-poker-a-retrospective/SBvMB-oppmodels-v2.png)
+![Graph showing the effectiveness of different opponent models](/images/mcts-in-texas-hold-em-poker-a-retrospective/SBvMB-oppmodels-v2-800x.png)
 
 I also explored how other parameters affected performance. Here is a quick graph of MCTSBot's performance as its thinking time is varied.
 
-![Graph showing the effects of varying thinking time](/images/mcts-in-texas-hold-em-poker-a-retrospective/SBvMB-time.png)
+![Graph showing the effects of varying thinking time](/images/mcts-in-texas-hold-em-poker-a-retrospective/SBvMB-time-800x.png)
 
 Again, this blog post really isn't meant to be a complete summary of the project. If you are interested, I recommend reading chapters 2 and 4 of [my full dissertation (PDF)][diss].
 
