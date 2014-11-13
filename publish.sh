@@ -7,6 +7,6 @@ set -e
 
 git branch -D master
 git checkout -b master
-git filter-branch --subdirectory-filter _site/ -f
+git filter-branch --subdirectory-filter build/ -f
 git checkout source
 git push --all origin
