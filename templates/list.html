@@ -8,7 +8,7 @@
 
   {{title}}
 
-  <p><a href="{{permalink}}">
+  <p><a href="{{url}}">
     View post on separate page
   </a></p>
 </article>
@@ -16,5 +16,5 @@
 {{/pagination.files}}
 
 <!-- TODO add better pagination matching my previous version -->
-<a href="/{{pagination.next.path}}">next</a>
-<a href="/{{pagination.previous.path}}">prev</a>
+<a href="{{pagination.next.url}}">next</a>
+<a href="{{pagination.previous.url}}">prev</a>

@@ -58,6 +58,10 @@ Metalsmith(__dirname)
     }
   }))
 
+  .use(each(function(file, filename) {
+    file.url = '/' + filename.replace(/index.html$/, '');
+  }))
+
   // Use templates once then once again to wrap *every file* in default.html
   .use(templates('mustache'))
   .use(each(function(file) {
