@@ -10,6 +10,7 @@ var paginate = require('metalsmith-pagination');
 var serve = require('metalsmith-serve');
 var sass = require('metalsmith-sass');
 var ignore = require('metalsmith-ignore');
+var marked = require('marked');
 
 Metalsmith(__dirname)
   .clean(true)
@@ -35,9 +36,9 @@ Metalsmith(__dirname)
     }
   }))
   .use(function(files, metalsmith) {
-    // Set default templates
     metalsmith.metadata().posts.forEach(function(post) {
       post.template = 'post.html';
+      post.extract = marked(post.contents.toString().split('\n\n\n', 2)[0]);
     });
   })
 
