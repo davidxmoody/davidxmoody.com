@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <title>{{ title }}</title>
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="{{ site.description }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
-  <link rel="stylesheet" href="{{ "/css/main.css" }}">
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ url }}">
+  <link rel="stylesheet" href="/css/main.css">
   <meta name="wot-verification" content="fdff4a26070b9df2fd1a"/>
 </head>
 <body>
@@ -19,7 +19,7 @@
   </header>
 
   <div class="content">
-    {{ content }}
+    {{ contents }}
   </div>
   
   <div class="push"></div>
@@ -38,6 +38,6 @@
   </p>
 </footer>
 
-{% include analytics.html %}
+<!-- TODO add back Google Analytics -->
 </body>
 </html>
