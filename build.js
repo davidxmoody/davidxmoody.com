@@ -1,3 +1,4 @@
+var moment = require('moment');
 var Metalsmith = require('metalsmith');
 var markdown = require('metalsmith-markdown');
 var templates = require('metalsmith-templates');
@@ -8,6 +9,7 @@ var dateInFilename = require('metalsmith-date-in-filename');
 var paginate = require('metalsmith-pagination');
 var serve = require('metalsmith-serve');
 var sass = require('metalsmith-sass');
+var ignore = require('metalsmith-ignore');
 
 Metalsmith(__dirname)
   .clean(true)
@@ -16,7 +18,14 @@ Metalsmith(__dirname)
     description: "A blog about programming"
   })
 
+  .use(ignore([
+        "css/_*.sass"
+  ]))
+
   .use(dateInFilename())
+  .use(each(function(file) {
+    file.formattedDate = moment(file.date).format('ll');
+  }))
 
   .use(collections({
     posts: {

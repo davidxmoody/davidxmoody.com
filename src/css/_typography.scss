@@ -10,8 +10,6 @@ $body-line-height: 1.5;
 $scale-factor: 1.3;
 $computed-line-height: $body-line-height * $body-font-size;
 
-@import 'rhythm';
-
 body {
   @include rhythm(0);
 }
