@@ -6,7 +6,7 @@ var permalinks = require('metalsmith-permalinks');
 var collections = require('metalsmith-collections');
 var each = require('metalsmith-each');
 var dateInFilename = require('metalsmith-date-in-filename');
-var paginate = require('metalsmith-pagination');
+var pagination = require('metalsmith-pagination');
 var serve = require('metalsmith-serve');
 var sass = require('metalsmith-sass');
 var ignore = require('metalsmith-ignore');
@@ -47,9 +47,9 @@ Metalsmith(__dirname)
     pattern: ':title'
   }))
 
-  .use(paginate({
+  .use(pagination({
     'collections.posts': {
-      perPage: 5,
+      perPage: 8,
       template: 'list.html',
       first: 'index.html',
       path: 'page:num/index.html',
@@ -64,11 +64,11 @@ Metalsmith(__dirname)
   }))
 
   // Use templates once then once again to wrap *every file* in default.html
-  .use(templates('mustache'))
+  .use(templates('handlebars'))
   .use(each(function(file) {
     file.template = 'default.html';
   }))
-  .use(templates('mustache'))
+  .use(templates('handlebars'))
 
   .use(sass())
 
