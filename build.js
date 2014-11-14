@@ -6,6 +6,8 @@ var collections = require('metalsmith-collections');
 var each = require('metalsmith-each');
 var dateInFilename = require('metalsmith-date-in-filename');
 var paginate = require('metalsmith-pagination');
+var serve = require('metalsmith-serve');
+var sass = require('metalsmith-sass');
 
 Metalsmith(__dirname)
   .clean(true)
@@ -53,6 +55,10 @@ Metalsmith(__dirname)
     file.template = 'default.html';
   }))
   .use(templates('mustache'))
+
+  .use(sass())
+
+  .use(serve())
 
   .build(function(err) {
     if (err) throw err;
