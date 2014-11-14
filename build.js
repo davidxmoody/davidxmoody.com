@@ -4,6 +4,7 @@ var templates = require('metalsmith-templates');
 var permalinks = require('metalsmith-permalinks');
 var collections = require('metalsmith-collections');
 var each = require('metalsmith-each');
+var dateInFilename = require('metalsmith-date-in-filename');
 
 Metalsmith(__dirname)
   .clean(true)
@@ -12,9 +13,14 @@ Metalsmith(__dirname)
     description: "A blog about programming"
   })
 
+  .use(dateInFilename())
+
   .use(collections({
-    posts: 'posts/*.md',
-    pages: 'pages/*.md'
+    posts: {
+      pattern: 'posts/*.md',
+      sortBy: 'date',
+      reverse: true
+    }
   }))
   .use(function(files, metalsmith) {
     // Set default templates
