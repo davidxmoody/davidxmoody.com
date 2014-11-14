@@ -5,6 +5,7 @@ var permalinks = require('metalsmith-permalinks');
 var collections = require('metalsmith-collections');
 var each = require('metalsmith-each');
 var dateInFilename = require('metalsmith-date-in-filename');
+var paginate = require('metalsmith-pagination');
 
 Metalsmith(__dirname)
   .clean(true)
@@ -32,6 +33,18 @@ Metalsmith(__dirname)
   .use(markdown())
   .use(permalinks({
     pattern: ':title'
+  }))
+
+  .use(paginate({
+    'collections.posts': {
+      perPage: 5,
+      template: 'list.html',
+      first: 'index.html',
+      path: 'page:num/index.html',
+      pageMetadata: {
+        title: 'All posts'
+      }
+    }
   }))
 
   // Use templates once then once again to wrap *every file* in default.html

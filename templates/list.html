@@ -1,0 +1,20 @@
+{{#pagination.files}}
+
+<article>
+  <header>
+    <h1>{{title}}</h1>
+    <p><em>{{date}}</em></p>
+  </header>
+
+  {{title}}
+
+  <p><a href="{{permalink}}">
+    View post on separate page
+  </a></p>
+</article>
+
+{{/pagination.files}}
+
+<!-- TODO add better pagination matching my previous version -->
+<a href="/{{pagination.next.path}}">next</a>
+<a href="/{{pagination.previous.path}}">prev</a>

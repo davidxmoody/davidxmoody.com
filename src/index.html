@@ -1,7 +1,3 @@
----
-layout: default
----
-
 {% for post in paginator.posts %}
 
 {% assign total_paragraphs = post.content | split: '<p>' | size | minus: 1 %}
