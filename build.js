@@ -227,7 +227,7 @@ Metalsmith(__dirname)
   .use(function(files) {
     data = files['feed.xml'];
     //console.log(data.contents.toString());
-    data.contents = new Buffer(data.contents.toString().replace(/(src|href)="\//g, '\\1="http://davidxmoody.com/'));
+    data.contents = new Buffer(data.contents.toString().replace(/src="\//g, 'src="http://davidxmoody.com/').replace(/href="\//g, 'href="http://davidxmoody.com/'));
     //console.log(data.contents.toString());
   })
 
