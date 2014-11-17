@@ -11,6 +11,7 @@ var serve = require('metalsmith-serve');
 var sass = require('metalsmith-sass');
 var ignore = require('metalsmith-ignore');
 var beautify = require('metalsmith-beautify');
+var feed = require('metalsmith-feed');
 var marked = require('marked');
 var basename = require('path').basename;
 var dirname = require('path').dirname;
@@ -45,7 +46,8 @@ Metalsmith(__dirname)
   .clean(true)
   .metadata({
     title: "David Moody's Blog",
-    description: "A blog about programming"
+    description: "A blog about programming",
+    site: { url: "http://davidxmoody.com" }
   })
 
   .use(each(function(file, filename) {
@@ -205,6 +207,17 @@ Metalsmith(__dirname)
     wrap_line_length: 79,
     indent_size: 2,
     indent_char: ' '
+  }))
+
+  //TODO this is duplicated and silly, change it
+  .use(each(function(file, filename) {
+    file.url = 'http://davidxmoody.com/' + filename.replace(/index.html$/, '');
+    file.excerpt += '<p><a href="' + file.url + '">' + file.readMoreText + '</a></p>"';
+  }))
+  .use(feed({
+    collection: 'posts',
+    limit: 10,
+    destination: 'feed.xml'
   }))
 
   .use(serve())
