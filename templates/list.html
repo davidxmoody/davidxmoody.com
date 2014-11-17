@@ -1,4 +1,5 @@
-{{#pagination.files}}
+{{#pagination}}
+{{#files}}
 
 <article>
   <header>
@@ -11,10 +12,7 @@
   <p><a href="{{url}}">{{readMoreText}}</a></p>
 </article>
 
-{{/pagination.files}}
+{{/files}}
 
-<p class="pagination">
-  <a href="{{pagination.previous.url}}">&laquo;</a>
-  |
-  <a href="{{pagination.next.url}}">&raquo;</a>
-</p>
+<p class="pagination">{{{previousHTML}}}{{#pagesHTML}}{{{.}}}{{/pagesHTML}}{{{nextHTML}}}</p>
+{{/pagination}}
