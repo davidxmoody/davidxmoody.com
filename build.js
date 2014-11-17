@@ -212,7 +212,7 @@ Metalsmith(__dirname)
   //TODO this is duplicated and silly, change it
   .use(each(function(file, filename) {
     file.url = 'http://davidxmoody.com/' + filename.replace(/index.html$/, '');
-    file.excerpt += '<p><a href="' + file.url + '">' + file.readMoreText + '</a></p>"';
+    file.excerpt += '<p><a href="' + file.url + '">' + file.readMoreText + '</a></p>';
   }))
   .use(feed({
     collection: 'posts',
