@@ -50,8 +50,7 @@ Metalsmith(__dirname)
     description: "A blog about programming",
     site: {
       url: "http://davidxmoody.com",
-      title: "David Moody's Blog",
-      author: "David Moody"
+      title: "David Moody's Blog"
     }
   })
 
