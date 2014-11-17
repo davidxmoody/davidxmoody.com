@@ -37,7 +37,7 @@ I hope that starting as early as possible will help prevent procrastination late
 Just like with my push ups post, I am going to log my progress right here. The following table shows the number of Pomodoro sessions completed *before breakfast* on each day.
 
 | Week starting | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
-|---------------+-----+-----+-----+-----+-----+-----+-----|
+|---------------|-----|-----|-----|-----|-----|-----|-----|
 | 2014-10-06    |  -  |  -  |  -  |  1  |  1  |  1  |  2  |
 | 2014-10-13    |  1  |  1  |  1  |  1  |  1  |  1  |  1  |
 | 2014-10-20    |  1  |  1  |  1  |  1  |  1  |  1  |  1  |

@@ -26,13 +26,13 @@ I did want my own colour scheme though. Alas, choosing a colour scheme is no sim
 
 I copy-pasted the RGB codes into my Sass variables. This way, I can change my colour scheme very easily (as long as I don't want to go beyond a simple monochromatic scheme).
 
-{% highlight scss %}
+```scss
 $color-base: #D34747;
 $color-light: #F57373;
 $color-lighter: #FFA3A3;
 $color-dark: #B52626;
 $color-darker: #8F0C0C;
-{% endhighlight %}
+```
 
 ## Sticky footer
 
@@ -62,7 +62,7 @@ At first I simply copy-pasted the generated settings from the Gridlover app. It 
 
 Thankfully, a better solution already exists: [a Gridlover Mixin on GitHub](https://github.com/sevenupcan/gridlover-mixin). Documentation isn't great but I was able to figure it out eventually. There is one file called [rhythm.sass](https://github.com/sevenupcan/gridlover-mixin/blob/master/sass/rhythm.sass) which I copied directly into my Jekyll `_sass` directory. It contains a `rhythm` mixin which accepts three arguments. The first is the number of times the scale factor will be multiplied to the font size to produce the new font size. The second and third are the number of empty lines you want before and after the element. You can then `@include` the rhythm mixin in any other element. Here is an example of how it could be done:
 
-{% highlight scss %}
+```scss
 // Gridlover variables go here
 $body-font-size: 18px;
 $body-line-height: 1.5;
@@ -113,7 +113,7 @@ sup, sub {
 sub {
   top: 0.4em;
 }
-{% endhighlight %}
+```
 
 To be honest, I'm not completely happy with the grid system. I notice that if you have a header which is just a bit too big to fit in one row, it takes up two rows and has excessive whitespace above and below. 
 

@@ -21,10 +21,10 @@ Jekyll already contains support for excerpts (accessible with `post.excerpt`). B
 
 However, jekyll also supports setting a custom `excerpt_separator` variable in the `_config.yml` file. I changed mine to be two empty lines instead of the default of one. 
 
-{% highlight yaml %}
+```yaml
 excerpt_separator: "\n\n"    # Default
 excerpt_separator: "\n\n\n"  # My version
-{% endhighlight %}
+```
 
 In each of my posts I then add an extra new line after the point I want the excerpt to end. You could choose anything for the excerpt separator but I like this because it is simple and doesn't mess with the Markdown processing. 
 
@@ -34,12 +34,12 @@ Now that we've defined a custom, multi-paragraph excerpt, we still need to count
 
 Liquid templates weren't really designed for this kind of stuff and they lack full regular expression support. However, they do have the very convenient `split` filter which we will be using. We can split the formatted HTML of the post on the `'<p>'` substring. This will break it into segments for each paragraph. One slight caveat is that there will be an empty string before the first paragraph.
 
-{% highlight html %}{% raw %}
+```html
 {% assign total_paragraphs = post.content | split: '<p>' | size | minus: 1 %}
 {% assign excerpt_paragraphs = post.excerpt | split: '<p>' | size | minus: 1 %}
 {% assign remaining_paragraphs = total_paragraphs | minus: excerpt_paragraphs %}
 <p><a href="{{ post.url }}">Read {{ remaining_paragraphs }} remaining paragraphs...</a></p>
-{% endraw %}{% endhighlight %}
+```
 
 ## Short posts
 
@@ -47,7 +47,7 @@ What if you want to write a short post though? One where you want the excerpt to
 
 You could also change the wording a bit:
 
-{% highlight html %}{% raw %}
+```html
 <p><a href="{{ post.url }}">
   {% if remaining_paragraphs > 0 %}
   Read {{ remaining_paragraphs }} remaining paragraphs...
@@ -55,4 +55,4 @@ You could also change the wording a bit:
   View post on separate page
   {% endif %}
 </a></p>
-{% endraw %}{% endhighlight %}
+```

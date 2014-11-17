@@ -19,7 +19,7 @@ In the rest of this post, I am going to highlight a few of the most interesting 
 
 I have [already written a blog post on this function](/permanent-bash-aliases/) which you should check out. The gist of it is that it takes too long to open up your `.bash_aliases` file just to create a new alias. My simple Bash function works just like the normal `alias` command except it makes the alias "permanent" by placing it into your aliases file. 
 
-{% highlight bash %}
+```bash
 mkalias() {
   # Flatten arguments into one string
   local full_string=$*
@@ -36,7 +36,7 @@ mkalias() {
   eval "$alias_command" && \
   alias "$alias_name" | tee -a "$HOME/.bash_aliases"
 }
-{% endhighlight %}
+```
 
 ## JPEG metadata stripping and resizing
 
@@ -44,7 +44,7 @@ When you take a photo, a lot of extra data is created. Stuff like the date, came
 
 I use this handy `stripjpg` alias to strip out all Exif data. I also use `convert` to downscale images to 800px wide (for this blog). It's not a perfect responsive image setup but it works for now. 
 
-{% highlight bash %}
+```bash
 alias stripjpg='exiftool -all= '
 resize800() {
   stripjpg "$@" && \
@@ -52,13 +52,13 @@ resize800() {
     convert "$f" -resize 800x "$f"
   done
 }
-{% endhighlight %}
+```
 
 ## Word frequency script
 
 A little something I created when I wanted to find the number of occurrences of common words in a large corpus of text split across multiple files. 
 
-{% highlight python3 %}
+```python3
 #!/usr/bin/env python3
 
 from collections import Counter
@@ -71,7 +71,7 @@ for line in fileinput.input():
 
 for word, count in word_tallies.most_common(2000):
     print(count, word)
-{% endhighlight %}
+```
 
 ## Vim writing tricks
 
@@ -85,7 +85,7 @@ I've gone through some very complex and messy dotfile setups in the last three y
 
 It also appends a dot to the names (because I don't like hidden files in a project directory specifically meant for dotfiles). Additionally, it backs up anything that was already in my home directory with the same name (but avoids creating backed up duplicate links).
 
-{% highlight bash %}
+```bash
 for file in dotfiles/*; do
     target="$HOME/.${file#dotfiles/}"
     target_canon=$(readlink -f "$target")
@@ -93,13 +93,13 @@ for file in dotfiles/*; do
     [ "$target_canon" = "$file_canon" ] && continue
     ln -sbv "$file_canon" "$target"
 done
-{% endhighlight %}
+```
 
 ## Tons of short aliases
 
 There are too many to go over and most aren't that novel. However, they all represent small time and effort savings which quickly add up. Here is a small sample.
 
-{% highlight bash %}
+```bash
 alias  ls='ls -F --group-directories-first --color=auto'
 
 greppy() { grep -n "$1" *.py; }
@@ -124,4 +124,4 @@ alias py='python3'
 alias pyi='python3 -i'
 
 alias op='xdg-open'
-{% endhighlight %}
+```

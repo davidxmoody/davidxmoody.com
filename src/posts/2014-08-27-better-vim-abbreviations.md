@@ -11,7 +11,7 @@ Pretty early on, I noticed I was wasting a lot of time with several common typin
 
 I created several other abbreviations for common typing patterns (mostly avoiding having to type apostrophes and capital letters). Here is a small sample:
 
-{% highlight vim %}
+```vim
 iab i I
 iab iv I've
 iab il I'll
@@ -20,7 +20,7 @@ iab youtube YouTube
 iab monday Monday
 iab february February
 iab cof CoffeeScript
-{% endhighlight %}
+```
 
 I keep these English-only abbreviations in a separate file (`~/.vim/abbreviations.vim`) which gets sourced when editing Markdown or text files. 
 
@@ -38,23 +38,23 @@ I was about to start creating my own script to deal with this stuff. Thankfully,
 
 The [Vim Abolish plugin](https://github.com/tpope/vim-abolish) is pretty neat. Read the tutorial for a full walkthrough of the features. It lets you do stuff like this:
 
-{% highlight vim %}
+```vim
 Abolish seperate separate
 " Results in:
 iabbrev seperate separate
 iabbrev Seperate Separate
 iabbrev SEPERATE SEPARATE
-{% endhighlight %}
+```
 
 It has more advanced features which allow you to group together related words:
 
-{% highlight vim %}
+```vim
 Abolish cal{a,e}nder{,s} cal{e}ndar{}
-{% endhighlight %}
+```
 
 Also, if you place a `!` at the end, you can add words to you abbreviations file easily:
 
-{% highlight vim %}
+```vim
 " In ~/.vim/abbreviations.vim (or where-ever you like)
 
 " `expand('<sfile>:p')` gets the absolute path of the 
@@ -68,13 +68,13 @@ endif
 " Typing `:Abolish! im I'm` will append the following
 " to the end of this file:
 Abolish im I'm
-{% endhighlight %}
+```
 
 There is also a `Subvert` command for doing similar things in search and replace:
 
-{% highlight vim %}
+```vim
 " Will replace "Facilities" with "Buildings", etc.
 :%Subvert/facilit{y,ies}/building{,s}/g
-{% endhighlight %}
+```
 
 Again, check the [GitHub repo](https://github.com/tpope/vim-abolish) for more details. I haven't been using the plugin for long but I really like it so far. 

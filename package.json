@@ -15,7 +15,8 @@
     "metalsmith-sass": "^0.5.0",
     "metalsmith-serve": "0.0.1",
     "metalsmith-templates": "^0.6.0",
-    "moment": "^2.8.3"
+    "moment": "^2.8.3",
+    "pygmentize-bundled": "^2.2.0"
   },
   "scripts": {
     "build": "metalsmith"

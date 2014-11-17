@@ -11,6 +11,33 @@ var serve = require('metalsmith-serve');
 var sass = require('metalsmith-sass');
 var ignore = require('metalsmith-ignore');
 var marked = require('marked');
+var basename = require('path').basename;
+var dirname = require('path').dirname;
+var extname = require('path').extname;
+
+EXCERPT_SEPARATOR = '\n\n\n';
+
+function isMarkdown(file){
+  return /\.md|\.markdown/.test(extname(file));
+}
+
+function isHTML(file){
+  return /\.html/.test(extname(file));
+}
+
+var markedOptions = {
+  gfm: true,
+  tables: true,
+  highlight: function (code, lang, callback) {
+    //console.log(code,lang,callback);
+    require('pygmentize-bundled')({ lang: lang, format: 'html' }, code, function (err, result) {
+      var str = result.toString();
+      //str = str.replace(/^<div class="highlight"><pre>/, '<div class="highlight">');
+      //str = str.replace(/<\/pre><\/div>\n$/, '</div>');
+      callback(err, str);
+    });
+  }
+};
 
 Metalsmith(__dirname)
   .clean(true)
@@ -18,6 +45,10 @@ Metalsmith(__dirname)
     title: "David Moody's Blog",
     description: "A blog about programming"
   })
+
+  .use(each(function(file, filename) {
+    //console.log(filename);
+  }))
 
   .use(ignore([
         "css/_*.sass"
@@ -35,14 +66,66 @@ Metalsmith(__dirname)
       reverse: true
     }
   }))
-  .use(function(files, metalsmith) {
-    metalsmith.metadata().posts.forEach(function(post) {
-      post.template = 'post.html';
-      post.extract = marked(post.contents.toString().split('\n\n\n', 2)[0]);
+  .use(function(files, metalsmith, done) {
+    var toProcess = [];
+
+    Object.keys(files).forEach(function(file) {
+      if (!isMarkdown(file)) return;
+      var data = files[file];
+      var dir = dirname(file);
+      var html = basename(file, extname(file)) + '.html';
+      if ('.' != dir) html = dir + '/' + html;
+
+      var raw_str = data.contents.toString();
+
+      toProcess.push(function(callback) {
+        marked(raw_str, markedOptions, function(err, result) {
+          //TODO is in necessary to create a new buffer?
+          data.contents = new Buffer(result.toString());
+          //console.log(data.contents.toString().substr(0, 20));
+          callback();
+        });
+      });
+
+      //TODO check for being in not the first
+      if (data.collection && data.collection[0] === 'posts') {
+        var raw_excerpt = raw_str.split(EXCERPT_SEPARATOR, 2)[0];
+        //console.log(raw_excerpt);
+        toProcess.push(function(callback) {
+          marked(raw_excerpt, markedOptions, function(err, results) {
+            //console.log(results.toString());
+            data.excerpt = results.toString();
+            callback();
+          });
+        });
+      }
+
+      delete files[file];
+      files[html] = data;
     });
+
+    var numToProcess = toProcess.length;
+    toProcess.forEach(function(func) {
+      func(function() {
+        numToProcess--;
+        //console.log("remaining:", numToProcess);
+        if (numToProcess === 0) {
+          done();
+        }
+      });
+    });
+
   })
 
-  .use(markdown())
+  .use(each(function(file) {
+    //console.log(file.collection);
+    //TODO check for being in not the first
+    if (file.collection[0] === 'posts') {
+      file.template = 'post.html';
+    }
+  }))
+
+  //.use(markdown(markedOptions))
   .use(permalinks({
     pattern: ':title'
   }))
@@ -63,10 +146,10 @@ Metalsmith(__dirname)
     file.url = '/' + filename.replace(/index.html$/, '');
   }))
 
-  // Use templates once then once again to wrap *every file* in default.html
+  // Use templates once then once again to wrap *every HTML file* in default.html
   .use(templates('handlebars'))
-  .use(each(function(file) {
-    file.template = 'default.html';
+  .use(each(function(file, filename) {
+    if (isHTML(filename)) file.template = 'default.html';
   }))
   .use(templates('handlebars'))
 

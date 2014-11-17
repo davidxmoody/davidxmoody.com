@@ -13,22 +13,22 @@ Many word processors already include this. For some reason, Vim and other text e
 
 There is surprisingly little information available about this. The only decent thing I've ever found has been [this superuser question/answer](http://superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim). There are two answers, both of which I like:
 
-{% highlight vim %}
+```vim
 for char in split('abcdefghijklmnopqrstuvwxyz', '\zs')
     exe printf("inoremap <expr> %s search('[.!?]\\_s\\+\\%%#', 'bcnw') ? '%s' : '%s'", char, toupper(char), char)
 endfor
-{% endhighlight %}
+```
 
 The above script creates insert mode mappings for every lower-case letter. It uses the `<expr>` option to evaluate an expression instead of mapping directly to another key. That expression then searches backwards to check for certain punctuation. It then returns either the original character or the upper-case version of the character if a match was found. 
 
 I like it but I prefer the second answer:
 
-{% highlight vim %}
+```vim
 augroup SENTENCES
     au!
     autocmd InsertCharPre * if search('\v(%^|[.!?]\_s)\_s*%#', 'bcnw') != 0 | let v:char = toupper(v:char) | endif
 augroup END
-{% endhighlight %}
+```
 
 Here, instead of creating mappings, an auto-command is used. It "listens" for characters to be inserted and intercepts them. It searches backwards for punctuation and converts the character to be inserted (`v:char`) to upper-case. The `augroup` and `au!` stuff is just for grouping and isn't terribly important.
 
@@ -44,12 +44,12 @@ I'll be the first to admit that my Vimscript isn't the best. Nevertheless, I sti
 
 Here is my tweaked script:
 
-{% highlight vim %}
+```vim
 augroup SENTENCES
     au!
     autocmd InsertCharPre * if search('\v(%^|[.!?]\_s+|\_^\-\s|\_^title\:\s|\n\n)%#', 'bcnw') != 0 | let v:char = toupper(v:char) | endif
 augroup END
-{% endhighlight %}
+```
 
 It can be tricky to figure out what's going on in a regular expression like that. I think the [Vim documentation on patterns](http://vimdoc.sourceforge.net/htmldoc/pattern.html#pattern-overview) is pretty helpful. Here is a *very brief* summary of what's going on:
 
@@ -68,7 +68,7 @@ It can be tricky to figure out what's going on in a regular expression like that
 
 Combining this with the rest of my configuration options gives the following section of my `.vimrc` file:
 
-{% highlight vim %}
+```vim
 func! WordProcessorMode()
     " Load Markdown syntax highlighting but with custom hashtag support
     set filetype=mkd
@@ -98,4 +98,4 @@ com! WP call WordProcessorMode()
 au BufNewFile,BufRead *.mkd call WordProcessorMode()
 au BufNewFile,BufRead *.md call WordProcessorMode()
 au BufNewFile,BufRead diary-*.txt call WordProcessorMode()
-{% endhighlight %}
+```
