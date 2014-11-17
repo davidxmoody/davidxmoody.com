@@ -17,11 +17,10 @@ body {
 // This is a crappy fix to the double pre element bug
 // TODO fix this properly
 pre {
-  margin: 0;
   white-space: normal;
+  @include rhythm(0, 0, 1);
 }
 pre pre {
-  @include rhythm(0, 0, 1);
   white-space: pre;
   margin: 0;
 }
