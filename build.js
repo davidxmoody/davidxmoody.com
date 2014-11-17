@@ -219,6 +219,12 @@ Metalsmith(__dirname)
     limit: 10,
     destination: 'feed.xml'
   }))
+  .use(function(files) {
+    data = files['feed.xml'];
+    console.log(data.contents.toString());
+    data.contents = new Buffer(data.contents.toString().replace(/(src|href)="\//g, '\\1="http://davidxmoody.com/'));
+    console.log(data.contents.toString());
+  })
 
   .use(serve())
 
