@@ -44,10 +44,15 @@ var markedOptions = {
 
 Metalsmith(__dirname)
   .clean(true)
+  //TODO tidy this up, remove duplicated stuff
   .metadata({
     title: "David Moody's Blog",
     description: "A blog about programming",
-    site: { url: "http://davidxmoody.com" }
+    site: {
+      url: "http://davidxmoody.com",
+      title: "David Moody's Blog",
+      author: "David Moody"
+    }
   })
 
   .use(each(function(file, filename) {
@@ -221,9 +226,9 @@ Metalsmith(__dirname)
   }))
   .use(function(files) {
     data = files['feed.xml'];
-    console.log(data.contents.toString());
+    //console.log(data.contents.toString());
     data.contents = new Buffer(data.contents.toString().replace(/(src|href)="\//g, '\\1="http://davidxmoody.com/'));
-    console.log(data.contents.toString());
+    //console.log(data.contents.toString());
   })
 
   .use(serve())
