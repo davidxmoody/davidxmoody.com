@@ -16,7 +16,7 @@ var basename = require('path').basename;
 var dirname = require('path').dirname;
 var extname = require('path').extname;
 
-EXCERPT_SEPARATOR = '\n\n\n';
+var EXCERPT_SEPARATOR = '\n\n\n';
 
 function isMarkdown(file){
   return /\.md|\.markdown/.test(extname(file));
@@ -160,13 +160,11 @@ Metalsmith(__dirname)
 
   .use(pagination({
     'collections.posts': {
-      perPage: 8,
+      perPage: 6,
       template: 'list.html',
       first: 'index.html',
       path: 'page:num/index.html',
-      pageMetadata: {
-        title: 'All posts'
-      }
+      pageMetadata: { }
     }
   }))
   // Don't include the first page (use the regular "/index.html" instead)
