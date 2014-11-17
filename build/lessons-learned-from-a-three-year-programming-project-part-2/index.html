@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Lessons learned from a three year programming project (part 2)</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="A blog about programming">
+  <link rel="canonical" href="http://davidxmoody.com/lessons-learned-from-a-three-year-programming-project-part-2/">
+  <link rel="stylesheet" href="/css/main.css">
+  <meta name="wot-verification" content="fdff4a26070b9df2fd1a" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/">David Moody</a></h1>
+      <p>A blog about programming</p>
+    </header>
+
+    <div class="content">
+      <article>
+        <header>
+          <h1>Lessons learned from a three year programming project (part 2)</h1>
+          <p><em>Oct 22, 2014</em>
+          </p>
+        </header>
+
+        <p>Continued from <a href="/lessons-learned-from-a-three-year-programming-project-part-1/">part 1</a>.
+          You can also <a href="https://github.com/davidxmoody/diary">view the project on GitHub</a>.</p>
+        <h2 id="abstraction-and-small-methods">Abstraction and small methods</h2>
+        <p>This lesson was something I learned slowly over the course of the project.
+          I always &quot;knew&quot; the advantages of hiding implementation details
+          in small methods. I had been taught it in university after all. </p>
+        <p>However, when it came to actually writing code, I consistently ended up
+          with massive unreadable functions. In my early Bash scripts for example,
+          I had copy-pasted the code for iterating over all entries about <em>five different times</em>.</p>
+        <p>It took a while for me to <em>intuitively understand</em> the concepts but
+          I slowly got better. In my early versions, every single script depended
+          on the exact same filesystem layout. In my current version, every single
+          file depends on one <code>Entry</code> class which has many smaller methods.
+          That class could change the filesystem layout any time it wants and it
+          wouldn&#39;t affect anything else. It could switch to a database or a
+          remote filesystem and none of the other modules would notice.</p>
+        <p>The <a href="http://en.wikipedia.org/wiki/Don&#39;t_repeat_yourself">don&#39;t repeat yourself</a>          principle (and its various corollaries) feels so <em>obvious</em> now.
+          However, in practice, it still took me a long time to actually get to
+          grips with what it really meant.</p>
+        <p><strong>Lesson 4:</strong> Don&#39;t repeat yourself. </p>
+        <h2 id="cli-and-polish">CLI and polish</h2>
+        <p>Later on in development, I started thinking of new features to add. After
+          creating the <a href="http://professorp.co.uk/">professorp.co.uk</a> website,
+          I became interested in making a &quot;local web app&quot;. It would be
+          a complete browser-based replacement for the command line app. </p>
+        <p>I experimented with using Markdown conversion to create static HTML pages.
+          I then created a working Flask RESTful API for manipulating entries as
+          well as a very basic AngularJS web client. </p>
+        <p>I eventually decided to scrap those ideas. There were an infinite number
+          of features that I <em>could</em> add. However, they would all be a lot
+          of work for little benefit. I realised I should focus on doing one thing
+          and doing it well (the <a href="http://en.wikipedia.org/wiki/Unix_philosophy">Unix philosophy</a>).
+          </p>
+        <p>I cleaned up the code even more and implemented a complete <a href="https://docs.python.org/3/library/argparse.html">argparse</a>          command line parser. It ties together all the basic features of the program.
+          It also adds enough documentation so that anyone could figure out how
+          to use it. </p>
+        <p>I did eventually adapt my previous ideas and implement a better static HTML
+          generator. It allows things like pictures and videos to be embedded in
+          entries. Its features slightly overlap with the basic command line functionality
+          but not by as much. </p>
+        <p><strong>Lesson 5:</strong> Write programs that do one thing and do it well.</p>
+        <h2 id="future-plans">Future plans</h2>
+        <p>I&#39;m very proud of my current diary program. I use it literally every
+          single day. If I want to find out about some event that happened two years
+          ago then I can often do it in a couple of seconds. </p>
+        <p>In some ways, my constant <a href="http://blog.codinghorror.com/the-ultimate-dogfooding-story/">dogfooding</a>          has resulted in a very high quality program. However, in another way,
+          it&#39;s probably doomed it to obscurity. The structure of the program
+          is very closely tied to how I like to work. Although it&#39;s perfect
+          for me, someone else might find it pointless or hard to use.</p>
+        <p>For the last three years, I have kept the project to myself. I have only
+          just <a href="https://github.com/davidxmoody/diary">uploaded it to GitHub</a>.</p>
+        <p>I guess time will tell whether anyone else is interested. Who knows, maybe
+          it will become just as popular as <a href="http://todotxt.com/">Todo.txt</a>          but I somehow doubt that. </p>
+        <p>The point I&#39;m trying to make is that I should have sought external feedback
+          much earlier. The project is mostly finished now. I don&#39;t expect to
+          make many major changes. If I had gotten feedback earlier in development
+          then I may have learned some useful information about what others wanted
+          and how to improve the project. </p>
+        <p><strong>Lesson 6:</strong> Release often and early.</p>
+
+      </article>
+
+    </div>
+
+    <div class="push"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <br>
+      <a href="http://feeds.feedburner.com/davidxmoody">RSS</a> |
+      <a href="https://github.com/davidxmoody">GitHub</a> |
+      <a href="mailto:david@davidxmoody.com">Email</a>
+    </p>
+    <p>
+      This blog is available under a
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a>
+    </p>
+  </footer>
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+    ga('create', 'UA-54505873-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>

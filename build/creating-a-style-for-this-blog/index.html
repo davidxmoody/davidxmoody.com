@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Creating a style for this blog</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="A blog about programming">
+  <link rel="canonical" href="http://davidxmoody.com/creating-a-style-for-this-blog/">
+  <link rel="stylesheet" href="/css/main.css">
+  <meta name="wot-verification" content="fdff4a26070b9df2fd1a" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/">David Moody</a></h1>
+      <p>A blog about programming</p>
+    </header>
+
+    <div class="content">
+      <article>
+        <header>
+          <h1>Creating a style for this blog</h1>
+          <p><em>Aug 13, 2014</em>
+          </p>
+        </header>
+
+        <p>I didn&#39;t want to use an existing template for this blog. As a web programmer/designer,
+          it would feel wrong not to make my own. </p>
+        <p>However, I&#39;m not an artist. I&#39;ve struggled with creating visually
+          attractive content in the past. For my last project, <a href="http://professorp.co.uk/">professorp.co.uk</a>,
+          I opted to use the default Bootstrap theme. I just wanted to get something
+          up and running quickly.</p>
+        <p>This post will describe some of the things I&#39;ve learned while creating
+          this blog. </p>
+        <h2 id="great-artists-steal">Great artists steal</h2>
+        <p>I&#39;m reasonably confident in my ability to implement any given design
+          with CSS/HTML. However, as I&#39;ve discovered, <em>implementing</em>          a given design requires <em>having</em> a design first.</p>
+        <p>It&#39;s a trap I&#39;ve fallen into far too often. I spend twenty minutes
+          implementing some layout, getting all the elements to be perfectly centered
+          or aligned. Then I step back to look at it and realise I don&#39;t like
+          it at all. </p>
+        <p>For this blog, I&#39;m completely ripping off many design elements from
+          another blog by <a href="http://tommyjohncreenan.com/">Tommy John Creenan</a>.
+          I really liked the header design and simple colour scheme of his site.
+          </p>
+        <p>Like his header, mine features my own name in large capitals with a drop
+          shadow and then a subtitle below. </p>
+        <h2 id="colours">Colours</h2>
+        <p>I did want my own colour scheme though. Alas, choosing a colour scheme is
+          no simple task. I used the excellent website <a href="http://www.paletton.com/">paletton.com</a>          to choose <a href="http://www.paletton.com/#uid=1000u0kleqtbzEKgVuIpcmGtdhZ">this colour scheme</a>          from the presets. </p>
+        <p>I copy-pasted the RGB codes into my Sass variables. This way, I can change
+          my colour scheme very easily (as long as I don&#39;t want to go beyond
+          a simple monochromatic scheme).</p>
+        <pre><code class="lang-scss"><div class="highlight"><pre><span class="nv">$color-base</span><span class="o">:</span> <span class="mh">#D34747</span><span class="p">;</span>
+<span class="nv">$color-light</span><span class="o">:</span> <span class="mh">#F57373</span><span class="p">;</span>
+<span class="nv">$color-lighter</span><span class="o">:</span> <span class="mh">#FFA3A3</span><span class="p">;</span>
+<span class="nv">$color-dark</span><span class="o">:</span> <span class="mh">#B52626</span><span class="p">;</span>
+<span class="nv">$color-darker</span><span class="o">:</span> <span class="mh">#8F0C0C</span><span class="p">;</span>
+</pre>
+    </div>
+
+    </code>
+    </pre>
+    <h2 id="sticky-footer">Sticky footer</h2>
+    <p>I wanted a footer in a similar style to the header. A banner of colour with
+      some simple text. That wasn&#39;t too tricky and I also decided to put a Creative
+      Commons license in there too. </p>
+    <p>I didn&#39;t like how it floated half way up shorter pages though. A footer
+      half way up the page isn&#39;t really a footer after all. </p>
+    <p>I used <a href="http://ryanfait.com/html5-sticky-footer/">this tutorial by Ryan Fait</a>      to achieve that. It makes the markup look a bit cluttered but it&#39;s good
+      enough for now. I don&#39;t have many short pages anyway so I may investigate
+      removing or changing this in the future. </p>
+    <h2 id="typography">Typography</h2>
+    <p>Most of the stuff on this blog is going to be text so it&#39;s pretty important
+      not to screw it up. </p>
+    <p>I&#39;m already using <a href="http://necolas.github.io/normalize.css/">normalize.css</a>      on this blog and I was interested to find out if there was something similar
+      for laying out text. There kind of is with <a href="http://devinhunt.github.io/typebase.css/">typebase.css</a>.
+      I tried it out but did not like the default settings at all. The headers appeared
+      <em>way</em> too big for one thing. I played around with the settings but
+      still did not like it that much. </p>
+    <p>There is also <a href="http://typeplate.com/">Typeplate</a> which is similar
+      in its goals. I tried that out too but again, the default settings looked
+      very bad in my opinion. It also seemed needlessly complex and I decided I
+      wanted something simpler. I did like the tutorial on the home page however.
+      One thing I took from it was to not use the blackest colour for the text.
+      I now use <code>#111</code> for headings and <code>#222</code> for body text.
+      </p>
+    <p>I also found <a href="http://webdesign.tutsplus.com/articles/a-web-designers-typographic-boilerplate--webdesign-15234">another handy tutorial on creating a typographic boilerplate</a>.
+      It contained a lot of useful information and the thing I really took from
+      it was that there is no single standard, you just have to use what works for
+      you. </p>
+    <h2 id="gridlover">Gridlover</h2>
+    <p>After some more searching, I found <a href="http://www.gridlover.net/">Gridlover</a>.
+      It&#39;s based around the idea of laying out text such that it aligns to an
+      (imaginary) evenly spaced grid. It comes with an <a href="http://www.gridlover.net/app/">incredibly useful app</a>      which allows you to set the font size, line height and scale factor on a visual
+      grid.</p>
+    <p>I&#39;m not completely sold on this whole grid idea. For one thing, I notice
+      that most other sites do not align with any kind of grid. Despite that, it&#39;s
+      still pretty good and I decided to use it for my blog. </p>
+    <p>At first I simply copy-pasted the generated settings from the Gridlover app.
+      It worked but it also felt very messy. Changing any of the variables would
+      require opening my browser, re-entering the variables, copying the generated
+      CSS and then figuring out exactly what I had to replace in my source files.
+      </p>
+    <p>Thankfully, a better solution already exists: <a href="https://github.com/sevenupcan/gridlover-mixin">a Gridlover Mixin on GitHub</a>.
+      Documentation isn&#39;t great but I was able to figure it out eventually.
+      There is one file called <a href="https://github.com/sevenupcan/gridlover-mixin/blob/master/sass/rhythm.sass">rhythm.sass</a>      which I copied directly into my Jekyll <code>_sass</code> directory. It contains
+      a <code>rhythm</code> mixin which accepts three arguments. The first is the
+      number of times the scale factor will be multiplied to the font size to produce
+      the new font size. The second and third are the number of empty lines you
+      want before and after the element. You can then <code>@include</code> the
+      rhythm mixin in any other element. Here is an example of how it could be done:</p>
+    <pre><code class="lang-scss"><div class="highlight"><pre><span class="c1">// Gridlover variables go here</span>
+<span class="nv">$body-font-size</span><span class="o">:</span> <span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+<span class="nv">$body-line-height</span><span class="o">:</span> <span class="mi">1</span><span class="mf">.5</span><span class="p">;</span>
+<span class="nv">$scale-factor</span><span class="o">:</span> <span class="mi">1</span><span class="mf">.414</span><span class="p">;</span>
+<span class="nv">$computed-line-height</span><span class="o">:</span> <span class="nv">$body-line-height</span> <span class="o">*</span> <span class="nv">$body-font-size</span><span class="p">;</span>
+
+<span class="c1">// Import the rhythm mixin</span>
+<span class="k">@import</span> <span class="s1">&#39;</span><span class="s2">rhythm&#39;</span><span class="p">;</span>
+
+<span class="c1">// Paragraphs and lists will not be scaled </span>
+<span class="c1">// and will have one empty line after</span>
+<span class="nt">p</span><span class="o">,</span> <span class="nt">ul</span><span class="o">,</span> <span class="nt">ol</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> rhythm</span><span class="p">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Level 1 headers will be scaled up three times,</span>
+<span class="c1">// have two empty lines before and one after</span>
+<span class="nt">h1</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> rhythm</span><span class="p">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Level 2 headers will be scaled up two times, </span>
+<span class="c1">// have one empty line before and one after</span>
+<span class="nt">h2</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> rhythm</span><span class="p">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// And so on for the other headers...</span>
+
+<span class="c1">// Also include this bit for sanitation of a </span>
+<span class="c1">// few other elements</span>
+<span class="nt">hr</span> <span class="p">{</span>
+  <span class="na">border</span><span class="o">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="no">solid</span><span class="p">;</span>
+  <span class="na">margin</span><span class="o">:</span> <span class="mi">-1</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">ul</span> <span class="nt">ul</span><span class="o">,</span> <span class="nt">ol</span> <span class="nt">ol</span><span class="o">,</span> <span class="nt">ul</span> <span class="nt">ol</span><span class="o">,</span> <span class="nt">ol</span> <span class="nt">ul</span> <span class="p">{</span>
+  <span class="na">margin-top</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="na">margin-bottom</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">b</span><span class="o">,</span> <span class="nt">strong</span><span class="o">,</span> <span class="nt">em</span><span class="o">,</span> <span class="nt">small</span><span class="o">,</span> <span class="nt">code</span> <span class="p">{</span>
+  <span class="na">line-height</span><span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">sup</span><span class="o">,</span> <span class="nt">sub</span> <span class="p">{</span>
+  <span class="na">vertical-align</span><span class="o">:</span> <span class="no">baseline</span><span class="p">;</span>
+  <span class="na">position</span><span class="o">:</span> <span class="no">relative</span><span class="p">;</span>
+  <span class="na">top</span><span class="o">:</span> <span class="mi">-0</span><span class="mf">.4</span><span class="kt">em</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">sub</span> <span class="p">{</span>
+  <span class="na">top</span><span class="o">:</span> <span class="mi">0</span><span class="mf">.4</span><span class="kt">em</span><span class="p">;</span>
+<span class="p">}</span>
+</pre>
+  </div>
+
+  </code>
+  </pre>
+  <p>To be honest, I&#39;m not completely happy with the grid system. I notice that
+    if you have a header which is just a bit too big to fit in one row, it takes
+    up two rows and has excessive whitespace above and below. </p>
+  <p>Still, I like the elegance of the grid system and it&#39;s good enough for now.
+    </p>
+
+  </article>
+
+  </div>
+
+  <div class="push"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <br>
+      <a href="http://feeds.feedburner.com/davidxmoody">RSS</a> |
+      <a href="https://github.com/davidxmoody">GitHub</a> |
+      <a href="mailto:david@davidxmoody.com">Email</a>
+    </p>
+    <p>
+      This blog is available under a
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a>
+    </p>
+  </footer>
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+    ga('create', 'UA-54505873-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>

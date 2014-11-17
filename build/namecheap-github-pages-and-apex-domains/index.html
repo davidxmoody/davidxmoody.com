@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Namecheap, GitHub Pages and apex domains</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="A blog about programming">
+  <link rel="canonical" href="http://davidxmoody.com/namecheap-github-pages-and-apex-domains/">
+  <link rel="stylesheet" href="/css/main.css">
+  <meta name="wot-verification" content="fdff4a26070b9df2fd1a" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/">David Moody</a></h1>
+      <p>A blog about programming</p>
+    </header>
+
+    <div class="content">
+      <article>
+        <header>
+          <h1>Namecheap, GitHub Pages and apex domains</h1>
+          <p><em>Aug 20, 2014</em>
+          </p>
+        </header>
+
+        <p>When I was setting up this blog, I was excited to learn that <a href="https://github.com/blog/1715-faster-more-awesome-github-pages">GitHub Pages runs on a fast Content Delivery Network</a>.
+          But there is a problem. It does not work with apex domains (i.e. <a href="http://davidxmoody.com/">davidxmoody.com</a>          instead of <a href="http://www.davidxmoody.com/">www.davidxmoody.com</a>).</p>
+        <p>Well, it doesn&#39;t work with apex domains on <a href="https://www.namecheap.com/">Namecheap</a>          (which I had already registered with). But it does work on other services
+          like <a href="https://dnsimple.com/">DNSimple</a>. This really annoyed
+          me. </p>
+        <p>As I saw it, there were three possibilities:</p>
+        <ol>
+          <li>Use a &quot;www&quot; subdomain</li>
+          <li>Switch to DNSimple</li>
+          <li>Don&#39;t take advantage of GitHub&#39;s CDN</li>
+        </ol>
+        <p>I really wanted to stick with <a href="http://davidxmoody.com/">davidxmoody.com</a>          instead of <a href="http://www.davidxmoody.com/">www.davidxmoody.com</a>.
+          There are arguments <a href="http://www.yes-www.org/">for</a> and <a href="http://no-www.org/">against</a>          using &quot;www&quot;. For a simple blog, I feel that not using it is
+          far superior. </p>
+        <p>I could have switched to DNSimple (or one of the few other services which
+          could do the same thing). That would be complicated though. I&#39;m also
+          very very happy with Namecheap in every other way.</p>
+        <p>It would also be more expensive because DNSimple requires a &quot;membership&quot;
+          fee in addition to the cost for registering each domain name. I estimated
+          that Namecheap would cost me £8 yearly whereas DNSimple would cost me
+          £31 yearly. Also, if you want more than two domains, DNSimple requires
+          $80 yearly for Silver membership instead of the $30 for Bronze. That pushes
+          the price way up and given that Namecheap was already working well for
+          me, I decided it wasn&#39;t worth it. </p>
+        <p>In the end, I went for option number three. My blog does not currently use
+          GitHub&#39;s CDN. It&#39;s still pretty quick so I don&#39;t really mind.</p>
+        <p>Besides, this idea of using <code>ALIAS</code> records to point an apex
+          domain to another domain is still relatively new. DNSimple have had it
+          for <a href="http://blog.dnsimple.com/2011/11/introducing-alias-record/">about two and a half years</a>          and CloudFlare only added <a href="https://support.cloudflare.com/hc/en-us/articles/200169056-CNAME-Flattening-RFC-compliant-support-for-CNAME-at-the-root">CNAME Flattening earlier this year</a>.
+          I would be surprised if Namecheap doesn&#39;t add something similar in
+          the next couple of years. I can wait for it. </p>
+
+      </article>
+
+    </div>
+
+    <div class="push"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <br>
+      <a href="http://feeds.feedburner.com/davidxmoody">RSS</a> |
+      <a href="https://github.com/davidxmoody">GitHub</a> |
+      <a href="mailto:david@davidxmoody.com">Email</a>
+    </p>
+    <p>
+      This blog is available under a
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a>
+    </p>
+  </footer>
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+    ga('create', 'UA-54505873-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>

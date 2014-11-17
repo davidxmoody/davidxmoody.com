@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Lessons learned from a three year programming project (part 1)</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="A blog about programming">
+  <link rel="canonical" href="http://davidxmoody.com/lessons-learned-from-a-three-year-programming-project-part-1/">
+  <link rel="stylesheet" href="/css/main.css">
+  <meta name="wot-verification" content="fdff4a26070b9df2fd1a" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/">David Moody</a></h1>
+      <p>A blog about programming</p>
+    </header>
+
+    <div class="content">
+      <article>
+        <header>
+          <h1>Lessons learned from a three year programming project (part 1)</h1>
+          <p><em>Oct 15, 2014</em>
+          </p>
+        </header>
+
+        <p>For the last three years, I have been working on a little pet project. It
+          has probably taught me more about software development than my entire
+          time at university. </p>
+        <p>It&#39;s a command line program for writing and organising a personal diary
+          (<a href="https://github.com/davidxmoody/diary">GitHub link</a>). I&#39;ve
+          spent hundreds of hours on it and have gone through many different designs.
+          Instead of covering every little detail of the project, I&#39;m going
+          to write about some important lessons it has taught me. </p>
+        <h2 id="bash-is-really-powerful">Bash is really powerful</h2>
+        <p>I started keeping a diary about four years ago. Initially, I just wrote
+          in a single text file. It was nice and simple and easy. After a few months,
+          the file got a bit big and it was impossible to find anything. I experimented
+          with splitting it into multiple files but that just made the problem worse.</p>
+        <p>Then, three years ago, I started learning <a href="http://en.wikipedia.org/wiki/Bash_(Unix_shell">Bash</a>).
+          Bash is incredibly powerful. I take it for granted now. At the time, something
+          as simple as <a href="http://en.wikipedia.org/wiki/Grep">grepping</a>          for keywords in multiple files was a revelation. </p>
+        <p>I started experimenting with all kinds of ad-hoc scripts. I had a script
+          to search for keywords, a script to do a wordcount and a script to create
+          new entries. I eventually settled on a new file format with one file per
+          entry and the date embedded in the filename. </p>
+        <p>All this time, I was learning about some incredibly useful command line
+          tools:</p>
+        <ul>
+          <li><code>grep</code> to search</li>
+          <li><code>less</code> to display results</li>
+          <li><code>wc</code> to do a wordcount</li>
+          <li><code>vim</code> to edit entries</li>
+          <li><code>date</code> to format and parse dates</li>
+          <li><code>fmt</code> to wrap text</li>
+          <li>And many more...</li>
+        </ul>
+        <p>However, my scripts just kept growing and growing. They reached about 800
+          lines of code at their maximum. There was a lot of repeated code and other
+          poor design decisions. </p>
+        <p>I used many elaborate work-arounds to attempt to fix some of the problems
+          with Bash. However, the lack of proper data-structures really hurt. So
+          did the inability to properly share information between scripts. </p>
+        <p>Although I don&#39;t regret starting off with Bash, I should have realised
+          that it just wasn&#39;t suitable for such a large project. </p>
+        <p><strong>Lesson 1:</strong> Choose the right language for the job. </p>
+        <h2 id="version-control">Version control</h2>
+        <p>My very early attempts were a <em>complete mess</em>. I had scripts stored
+          in multiple different directories and dotfiles and my changes frequently
+          broke stuff.</p>
+        <p>Thankfully, I found this <a href="http://hginit.com/">excellent Hg Init tutorial</a>.
+          Even though I&#39;m now switching to <a href="http://git-scm.com/">Git</a>,
+          I still love <a href="http://mercurial.selenic.com/">Mercurial</a>. I
+          learned the basics and continuously practised them. </p>
+        <p>Although I had <em>technically</em> been using Mercurial in university,
+          it had always been a chore. I felt like it was something I was supposed
+          to do and I used it grudgingly. This time, I actually understood what
+          was going on and enjoyed using it. </p>
+        <p>Even though I was using version control, I was still making one big mistake.
+          I was directly symlinking to my scripts for everyday use. This meant that
+          whenever I was in the process of making changes, I completely broke my
+          ability to use my diary normally. </p>
+        <p>One particular incident really opened my eyes. I was in the process of changing
+          the file storage format. I was changing each file to be stored in a month-based
+          subdirectory as opposed to one big directory. I had manually migrated
+          my data to the new format and was in the process of re-writing my scripts.
+          </p>
+        <p>Unfortunately, it took rather longer than expected. For almost a week, I
+          had to manually type in the filenames for new entries. This taught me
+          to separate my wild refactoring attempts from my working stable scripts.
+          It also taught me to keep a separate set of &quot;test entries&quot; for
+          use with that development branch. </p>
+        <p>I eventually read <a href="http://thedailywtf.com/Articles/Source-Control-Done-Right.aspx">this great article on source control</a>.
+          I adopted the &quot;branching by exception&quot; strategy and haven&#39;t
+          looked back since. </p>
+        <p><strong>Lesson 2:</strong> Keep development and stable branches separate.</p>
+        <h2 id="python-is-awesome">Python is awesome</h2>
+        <p>My Bash scripts were becoming unwieldy. I was interested in learning a new
+          programming language and Python 3 seemed perfect. For a short while, I
+          was completely obsessed with Python. I read everything I could and practised
+          on <a href="https://projecteuler.net/">Project Euler</a> problems. </p>
+        <p>I slowly started re-writing my Bash scripts one at a time. Once I had removed
+          all traces of Bash, I switched to a proper Python module design. I made
+          countless changes over a long period of time. I loved all the features
+          of Python which Bash didn&#39;t have (like <a href="https://wiki.python.org/moin/Generators">generators</a>,
+          <a href="https://docs.python.org/3.4/tutorial/modules.html">modules</a>          and proper <a href="https://docs.python.org/3.4/tutorial/classes.html">classes</a>).</p>
+        <p>I noticed that a lot of duplicated work was being done when formatting entries.
+          The text wrapping had to be re-calculated every time. I had recently read
+          about Python <a href="http://stackoverflow.com/questions/739654/how-can-i-make-a-chain-of-function-decorators-in-python/1594484#1594484">decorators</a>          and the <a href="https://docs.python.org/3.4/library/pickle.html">pickle</a>          module. I naively tried to use them to solve the problem.</p>
+        <p>I designed a very elaborate caching decorator function. It took a long time
+          to write and debug but it did work. However, I had made a big error in
+          judgement. For the text wrapping, I had inherited the rather lazy design
+          of calling the <code>fmt</code> command line program from within Python.
+          This was very slow. I later implemented text wrapping with the <a href="https://docs.python.org/3.4/library/textwrap.html">textwrap</a>          module which was about an order of magnitude faster. </p>
+        <p>With the faster text wrapping method, my caching was now <em>slower</em>          than re-wrapping the text each time. I didn&#39;t like to do it but I
+          eventually stripped out all caching behaviour, making the basic display
+          functionality nearly instant. At least I had learned how to use decorators
+          and the pickle module. </p>
+        <p><strong>Lesson 3:</strong> Premature optimisation is bad.</p>
+        <p><a href="/lessons-learned-from-a-three-year-programming-project-part-2/">Read part 2...</a>
+        </p>
+
+      </article>
+
+    </div>
+
+    <div class="push"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <br>
+      <a href="http://feeds.feedburner.com/davidxmoody">RSS</a> |
+      <a href="https://github.com/davidxmoody">GitHub</a> |
+      <a href="mailto:david@davidxmoody.com">Email</a>
+    </p>
+    <p>
+      This blog is available under a
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a>
+    </p>
+  </footer>
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+    ga('create', 'UA-54505873-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>

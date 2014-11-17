@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Wordsearch game</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="A blog about programming">
+  <link rel="canonical" href="http://davidxmoody.com/wordsearch-game/">
+  <link rel="stylesheet" href="/css/main.css">
+  <meta name="wot-verification" content="fdff4a26070b9df2fd1a" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/">David Moody</a></h1>
+      <p>A blog about programming</p>
+    </header>
+
+    <div class="content">
+      <article>
+        <header>
+          <h1>Wordsearch game</h1>
+          <p><em>Aug 18, 2014</em>
+          </p>
+        </header>
+
+        <p>For my first post not about blogging, I thought I would return to my wordsearch
+          game. I made it for the <a href="http://professorp.co.uk/games/wordsearch/">professorp.co.uk</a>          website and I would say it&#39;s the game I&#39;m proudest of. I really
+          like the simplicity and style of it. </p>
+        <p>In this post, I will take a look back at what I&#39;ve already done and
+          make a note of what I think could be improved. In subsequent posts, I
+          plan to make some improvements and also make it into a standalone game.</p>
+        <h2 id="the-game">The game</h2>
+        <p>You can play it <a href="http://professorp.co.uk/games/wordsearch/">right now</a>          but in case you don&#39;t want to, here is a screenshot:</p>
+        <p><img src="/images/wordsearch-game/wordsearch-screenshot.png" alt="Screenshot of the wordsearch game">
+        </p>
+        <p>I had recently played <a href="https://play.google.com/store/apps/details?id=com.melimots.WordSearch&amp;hl=en">this Android wordsearch game</a>          and liked the visual style of it. I wanted to make something similar but
+          add my own touches. </p>
+        <p>I went through quite a lot of iterations of this game. Originally I made
+          it using CoffeeScript and jQuery. Some time later, I started learning
+          AngularJS and decided it would be a good exercise to re-write it. Later
+          still, I realised I had to actually integrate it into the Professor P
+          website. I made sure everything worked well with DocPad (the static site
+          generator I was using). I also added some Bootstrap styles to some of
+          the elements.</p>
+        <p>It&#39;s actually a very complex game. Going through every line of code
+          would be rather tedious. Instead I&#39;m going to pick out a few of interesting
+          design decisions and examine them further. </p>
+        <h2 id="grid-generation">Grid generation</h2>
+        <p>My algorithm for generating the wordsearch grid basically comes down to
+          the following steps:</p>
+        <ol>
+          <li>Choose a random word</li>
+          <li>Choose a random starting position and direction</li>
+          <li>Attempt to place the word into the grid at that position, if that won&#39;t
+            work because of a conflicting word then do nothing</li>
+          <li>Repeat 1-3 a bunch of times</li>
+          <li>Fill in the rest with random letters</li>
+        </ol>
+        <p>In practice there are a bunch of other minor details: For example, I found
+          that by choosing a truly random starting direction for each word, almost
+          all of the words ended up in the same direction. Sometimes all horizontally
+          and sometimes all vertically but rarely an even mixture. I felt this made
+          for a bit of an unsatisfying game; it was just too easy to find subsequent
+          words after you had spotted the pattern. </p>
+        <p>This happened because once the first few words had been placed, it became
+          much harder for words in a perpendicular direction to be placed into the
+          grid without conflict (relative to parallel words).</p>
+        <p>I fixed that problem by forcing the &quot;random&quot; directions to be
+          distributed evenly. A list of all eight directions was shuffled at the
+          start. Words were only allowed to move on to a new direction after a successful
+          fit. Overall, this worked very well.</p>
+        <p>Another small detail is how to choose the random words. Again, I found that
+          by choosing truly random words, the grid tended to fill up with many smaller
+          words because those were least likely to cause conflicts. While not a
+          huge problem, I felt the game was more fun with a mix of long and short
+          words. To fix this, I simply forced longer words to be tried before shorter
+          words. </p>
+        <p>I created several other abstractions to reason about grid but I am not going
+          to write about everything here. If you are interested you can read the
+          <a href="https://github.com/davidxmoody/professorp.co.uk/tree/master/src/documents/games/wordsearch">source code on GitHub</a>,
+          it comes with an <a href="https://github.com/davidxmoody/professorp.co.uk/blob/master/LICENCE.md">MIT licence</a>.</p>
+        <h2 id="colour-highlighting">Colour highlighting</h2>
+        <p>I made things difficult for myself when I was designing how the game should
+          look. I wanted some very specific things:</p>
+        <ol>
+          <li>Grid cells under the cursor should glow</li>
+          <li>The currently selected path should glow</li>
+          <li>If the currently selected path is over a correct word then it should glow
+            stronger</li>
+          <li>Once a correct word has been found then it should stay highlighted</li>
+          <li>After finding a word, the active colour should cycle to the next in the
+            sequence</li>
+          <li>Overlapping highlights should blend nicely</li>
+        </ol>
+        <p>I took a long time tweaking everything but I think it works well. I had
+          recently read <a href="http://codeincomplete.com/posts/2013/12/11/javascript_game_foundations_juiciness/">this article on a game design concept called juiciness</a>          and the <a href="https://www.youtube.com/watch?v=Fy0aCDmgnxg">video it links to</a>.
+          I wanted to make it very clear what was currently selected and give some
+          positive feedback when a correct word was found.</p>
+        <p>I used JavaScript to listen for mouse events and update the classes. I then
+          used some clever scss for changing colours and opacities. For the persistent
+          highlights, some new empty div elements are added to the cells. They are
+          absolutely positioned and sized to overlap perfectly with their parent
+          cell. Their partial opacity takes care of the blending. </p>
+        <h2 id="level-progression">Level progression</h2>
+        <p>This is something that could be improved further. Currently, when you finish
+          the level you get a JavaScript alert saying &quot;Congratulations&quot;.
+          You can then select a different difficulty level from the menu to play
+          again. I think this is one of the weaker areas of the game and needs to
+          be improved. </p>
+        <p>I can think of a few possibilities:</p>
+        <ul>
+          <li><strong>Timer:</strong> Each attempt is timed, try to beat your previous
+            best (also some kind of high-score table)</li>
+          <li><strong>Time limit:</strong> Stage is failed unless it is completed within
+            a certain time</li>
+          <li><strong>Large grid, time limit:</strong> Huge grid with tons of words
+            and a small time limit, find as many as you can instead of trying to
+            find them all</li>
+          <li><strong>Multiple stages:</strong> Next stage only unlocked upon completion
+            of the previous one, try to complete all stages</li>
+        </ul>
+        <p>The simple timer approach sounds like the easiest to implement (and has
+          been used in similar games before). A local high-score table would be
+          required to give context to each individual attempt. The others would
+          be interesting but riskier. The advantage of the timer approach is that
+          it requires virtually no extra balancing. You are always competing against
+          your past self so there is always going to be a challenge. </p>
+        <h2 id="technical-issues">Technical issues</h2>
+        <p>There are a few other things I would like to tweak:</p>
+        <ul>
+          <li>Very very occasionally (~1/100 times) the grid will have five or fewer
+            words on it, the grid should be regenerated in the event that this happens</li>
+          <li>Although the game is perfectly playable on mobile devices, the juicy colour
+            styles don&#39;t work very well as you can&#39;t drag your finger</li>
+          <li>The grid gets a bit squashed when you have a 10x10 grid on a small screen</li>
+        </ul>
+        <h2 id="conclusion">Conclusion</h2>
+        <p>This post introduced one of my previous projects. Although there are plenty
+          of existing HTML wordsearch games available, none of them have quite the
+          visual style that mine does. I am pleased with it. </p>
+
+      </article>
+
+    </div>
+
+    <div class="push"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <br>
+      <a href="http://feeds.feedburner.com/davidxmoody">RSS</a> |
+      <a href="https://github.com/davidxmoody">GitHub</a> |
+      <a href="mailto:david@davidxmoody.com">Email</a>
+    </p>
+    <p>
+      This blog is available under a
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a>
+    </p>
+  </footer>
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+    ga('create', 'UA-54505873-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>

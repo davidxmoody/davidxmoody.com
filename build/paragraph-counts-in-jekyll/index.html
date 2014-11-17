@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Paragraph counts in jekyll</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="A blog about programming">
+  <link rel="canonical" href="http://davidxmoody.com/paragraph-counts-in-jekyll/">
+  <link rel="stylesheet" href="/css/main.css">
+  <meta name="wot-verification" content="fdff4a26070b9df2fd1a" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/">David Moody</a></h1>
+      <p>A blog about programming</p>
+    </header>
+
+    <div class="content">
+      <article>
+        <header>
+          <h1>Paragraph counts in jekyll</h1>
+          <p><em>Aug 15, 2014</em>
+          </p>
+        </header>
+
+        <p>I&#39;m a big fan of <a href="http://arstechnica.com/">Ars Technica</a>.
+          There is one thing I particularly like about their RSS feed. It shows
+          the first few paragraphs of the article followed by a link saying &quot;Read
+          X remaining paragraphs&quot;. </p>
+        <p>If I can&#39;t read the full article from an RSS feed, this is the next
+          best option. It has two big advantages: </p>
+        <ul>
+          <li>It contains enough of the article to let you know if you will want to
+            read the whole thing</li>
+          <li>It lets you know how long the entire article will be</li>
+        </ul>
+        <p>I&#39;ve seen many <em>bad</em> approaches to the same problem. Some feeds
+          contain very limited information, frequently just the first paragraph
+          of the article. I feel that the first paragraph alone is not usually enough
+          to decide if the entire article is worth reading. </p>
+        <h2 id="emulating-it-in-jekyll">Emulating it in Jekyll</h2>
+        <p>I wanted something like this for my blog. Both for the summary of all posts
+          on the front page and also for the RSS feed. </p>
+        <p>Jekyll already contains support for excerpts (accessible with <code>post.excerpt</code>).
+          By default, the excerpt of a post will be the first paragraph. </p>
+        <p>However, jekyll also supports setting a custom <code>excerpt_separator</code>          variable in the <code>_config.yml</code> file. I changed mine to be two
+          empty lines instead of the default of one. </p>
+        <pre><code class="lang-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">excerpt_separator</span><span class="p-Indicator">:</span> <span class="s">&quot;\n\n&quot;</span>    <span class="c1"># Default</span>
+<span class="l-Scalar-Plain">excerpt_separator</span><span class="p-Indicator">:</span> <span class="s">&quot;\n\n\n&quot;</span>  <span class="c1"># My version</span>
+</pre>
+    </div>
+
+    </code>
+    </pre>
+    <p>In each of my posts I then add an extra new line after the point I want the
+      excerpt to end. You could choose anything for the excerpt separator but I
+      like this because it is simple and doesn&#39;t mess with the Markdown processing.
+      </p>
+    <h2 id="counting-paragraphs">Counting paragraphs</h2>
+    <p>Now that we&#39;ve defined a custom, multi-paragraph excerpt, we still need
+      to count the number of <em>remaining</em> paragraphs in the post. </p>
+    <p>Liquid templates weren&#39;t really designed for this kind of stuff and they
+      lack full regular expression support. However, they do have the very convenient
+      <code>split</code> filter which we will be using. We can split the formatted
+      HTML of the post on the <code>&#39;&lt;p&gt;&#39;</code> substring. This will
+      break it into segments for each paragraph. One slight caveat is that there
+      will be an empty string before the first paragraph.</p>
+    <pre><code class="lang-html"><div class="highlight"><pre>{% assign total_paragraphs = post.content | split: &#39;<span class="nt">&lt;p&gt;</span>&#39; | size | minus: 1 %}
+{% assign excerpt_paragraphs = post.excerpt | split: &#39;<span class="nt">&lt;p&gt;</span>&#39; | size | minus: 1 %}
+{% assign remaining_paragraphs = total_paragraphs | minus: excerpt_paragraphs %}
+<span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ post.url }}&quot;</span><span class="nt">&gt;</span>Read {{ remaining_paragraphs }} remaining paragraphs...<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+</pre>
+  </div>
+
+  </code>
+  </pre>
+  <h2 id="short-posts">Short posts</h2>
+  <p>What if you want to write a short post though? One where you want the excerpt
+    to equal the entire post. Not a problem. If you simply don&#39;t include the
+    <code>excerpt_separator</code> in your post then the excerpt will be equal to
+    the full content of the post. </p>
+  <p>You could also change the wording a bit:</p>
+  <pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ post.url }}&quot;</span><span class="nt">&gt;</span>
+  {% if remaining_paragraphs &gt; 0 %}
+  Read {{ remaining_paragraphs }} remaining paragraphs...
+  {% else %}
+  View post on separate page
+  {% endif %}
+<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+</pre>
+  </div>
+
+  </code>
+  </pre>
+
+  </article>
+
+  </div>
+
+  <div class="push"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <br>
+      <a href="http://feeds.feedburner.com/davidxmoody">RSS</a> |
+      <a href="https://github.com/davidxmoody">GitHub</a> |
+      <a href="mailto:david@davidxmoody.com">Email</a>
+    </p>
+    <p>
+      This blog is available under a
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a>
+    </p>
+  </footer>
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+    ga('create', 'UA-54505873-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>

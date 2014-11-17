@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Better Vim abbreviations</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="A blog about programming">
+  <link rel="canonical" href="http://davidxmoody.com/better-vim-abbreviations/">
+  <link rel="stylesheet" href="/css/main.css">
+  <meta name="wot-verification" content="fdff4a26070b9df2fd1a" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/">David Moody</a></h1>
+      <p>A blog about programming</p>
+    </header>
+
+    <div class="content">
+      <article>
+        <header>
+          <h1>Better Vim abbreviations</h1>
+          <p><em>Aug 27, 2014</em>
+          </p>
+        </header>
+
+        <p>I&#39;ve been using Vim, full-time, for nearly three years. I have written
+          <em>a lot</em> of plain text in that time. </p>
+        <p>Pretty early on, I noticed I was wasting a lot of time with several common
+          typing patterns. For example, to type &quot;I&#39;ve&quot; requires 5
+          key strokes including two stretches of the little fingers. I replaced
+          that with the abbreviation <code>iab iv I&#39;ve</code>. That&#39;s only
+          two keys instead of five and it doesn&#39;t put any unnecessary stress
+          on the little fingers (which I sometimes have problems with). </p>
+        <p>I created several other abbreviations for common typing patterns (mostly
+          avoiding having to type apostrophes and capital letters). Here is a small
+          sample:</p>
+        <pre><code class="lang-vim"><div class="highlight"><pre>iab <span class="k">i</span> I
+iab iv I&#39;<span class="k">ve</span>
+iab <span class="k">il</span> I&#39;<span class="k">ll</span>
+iab dont don&#39;<span class="k">t</span>
+iab youtube YouTube
+iab monday Monday
+iab february February
+iab cof CoffeeScript
+</pre>
+    </div>
+
+    </code>
+    </pre>
+    <p>I keep these English-only abbreviations in a separate file (<code>~/.vim/abbreviations.vim</code>)
+      which gets sourced when editing Markdown or text files. </p>
+    <p>Some people also like to add common typos to their list of abbreviations. I
+      have a few of those but I like to keep them to a minimum. When possible, I
+      prefer to force myself to re-type the word correctly so that I learn the proper
+      spelling. </p>
+    <h2 id="annoyances">Annoyances</h2>
+    <p>This worked well for me for a long time but it had two problems that kept bugging
+      me. One was that I had to manually add the capitalized versions of all my
+      abbreviations. For example, <code>iab cant can&#39;t</code> as well as <code>iab Cant Can&#39;t</code>.
+      This duplication of information was annoying and felt messy. </p>
+    <p>The other problem was that it was a pain to add new abbreviations. I had to
+      manually open up my abbreviations file every time. </p>
+    <p>I was about to start creating my own script to deal with this stuff. Thankfully,
+      one already exists. </p>
+    <h2 id="abolish-plugin">Abolish plugin</h2>
+    <p>The <a href="https://github.com/tpope/vim-abolish">Vim Abolish plugin</a> is
+      pretty neat. Read the tutorial for a full walkthrough of the features. It
+      lets you do stuff like this:</p>
+    <pre><code class="lang-vim"><div class="highlight"><pre>Abolish seperate separate
+<span class="c">&quot; Results in:</span>
+iabbrev seperate separate
+iabbrev Seperate Separate
+iabbrev SEPERATE SEPARATE
+</pre>
+  </div>
+
+  </code>
+  </pre>
+  <p>It has more advanced features which allow you to group together related words:</p>
+  <pre><code class="lang-vim"><div class="highlight"><pre>Abolish <span class="k">cal</span>{<span class="k">a</span><span class="p">,</span><span class="k">e</span>}nder{<span class="p">,</span><span class="k">s</span>} <span class="k">cal</span>{<span class="k">e</span>}ndar{}
+</pre>
+  </div>
+
+  </code>
+  </pre>
+  <p>Also, if you place a <code>!</code> at the end, you can add words to you abbreviations
+    file easily:</p>
+  <pre><code class="lang-vim"><div class="highlight"><pre><span class="c">&quot; In ~/.vim/abbreviations.vim (or where-ever you like)</span>
+
+<span class="c">&quot; `expand(&#39;&lt;sfile&gt;:p&#39;)` gets the absolute path of the </span>
+<span class="c">&quot; current file that this is being executed from</span>
+<span class="k">let</span> <span class="k">g</span>:abolish_save_file <span class="p">=</span> expand<span class="p">(</span><span class="s1">&#39;&lt;sfile&gt;:p&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">!</span>exists<span class="p">(</span><span class="s2">&quot;:Abolish&quot;</span><span class="p">)</span>
+  <span class="k">finish</span>
+<span class="k">endif</span>
+
+<span class="c">&quot; Typing `:Abolish! im I&#39;m` will append the following</span>
+<span class="c">&quot; to the end of this file:</span>
+Abolish <span class="nb">im</span> I&#39;<span class="k">m</span>
+</pre>
+  </div>
+
+  </code>
+  </pre>
+  <p>There is also a <code>Subvert</code> command for doing similar things in search
+    and replace:</p>
+  <pre><code class="lang-vim"><div class="highlight"><pre><span class="c">&quot; Will replace &quot;Facilities&quot; with &quot;Buildings&quot;, etc.</span>
+<span class="p">:</span>%Subvert<span class="sr">/facilit{y,ies}/</span>building{<span class="p">,</span><span class="k">s</span>}/<span class="k">g</span>
+</pre>
+  </div>
+
+  </code>
+  </pre>
+  <p>Again, check the <a href="https://github.com/tpope/vim-abolish">GitHub repo</a>    for more details. I haven&#39;t been using the plugin for long but I really
+    like it so far. </p>
+
+  </article>
+
+  </div>
+
+  <div class="push"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <br>
+      <a href="http://feeds.feedburner.com/davidxmoody">RSS</a> |
+      <a href="https://github.com/davidxmoody">GitHub</a> |
+      <a href="mailto:david@davidxmoody.com">Email</a>
+    </p>
+    <p>
+      This blog is available under a
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a>
+    </p>
+  </footer>
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+    ga('create', 'UA-54505873-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>

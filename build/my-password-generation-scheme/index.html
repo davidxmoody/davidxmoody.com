@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My password generation scheme</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="A blog about programming">
+  <link rel="canonical" href="http://davidxmoody.com/my-password-generation-scheme/">
+  <link rel="stylesheet" href="/css/main.css">
+  <meta name="wot-verification" content="fdff4a26070b9df2fd1a" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/">David Moody</a></h1>
+      <p>A blog about programming</p>
+    </header>
+
+    <div class="content">
+      <article>
+        <header>
+          <h1>My password generation scheme</h1>
+          <p><em>Aug 25, 2014</em>
+          </p>
+        </header>
+
+        <p>I&#39;ve been using computers for a long time. Way back in the days of Windows
+          95 I had a tremendously insecure password. I think it was <code>1234</code>.
+          I later upgraded to <code>123456</code> and then the (clearly far superior)
+          <code>654321</code>. </p>
+        <p>At one point I used my mothers maiden name and later my cat&#39;s name.
+          When I ran across sites that required numbers in the password, I simply
+          added a <code>1</code> to the end.</p>
+        <p>As I became more tech-savvy, I slowly started strengthening my passwords.
+          For a long time I had a scheme which consisted of eight &quot;random&quot;
+          seeming characters, followed by two letters corresponding to the name
+          of the website. While <em>technically</em> making every password different,
+          it would not have fooled anyone who knew what they were doing. </p>
+        <p>A few months ago, when several high-profile websites were hacked, I decided
+          I needed something better. It took a while but I think I&#39;ve finally
+          stumbled across the perfect system. </p>
+        <h2 id="correct-horse-battery-staple">Correct horse battery staple</h2>
+        <p>There is plenty of good advice on creating strong passwords. My scheme is
+          based on <a href="http://xkcd.com/936/">this famous xkcd comic</a>:</p>
+        <p>
+          <a href="http://xkcd.com/936/"><img src="http://imgs.xkcd.com/comics/password_strength.png" alt="correct horse battery staple comic">
+          </a>
+        </p>
+        <p>Thus, for each password I think of a short list of words or a short phrase.
+          I then concatenate them together and remove all punctuation and whitespace
+          to form the base of my password. </p>
+        <p>I find that silly or weird passphrases are easier to remember. Sometimes,
+          I also base the phrase on a memory of something that happened to me. Even
+          better if that memory is related to the website the password is for. For
+          example, my current eBay passphrase is loosely based on the memory of
+          an interaction I had with someone who bought something from me. Nobody
+          could possibly guess it but I will never forget it. </p>
+        <p>You should also avoid including punctuation or variations on words that
+          could be easily confused later on. For example &quot;I am going to staple
+          a battery to this horse&quot; could easily become &quot;<strong>I&#39;m</strong>          going to staple a battery to this horse&quot; or &quot;I am going to staple
+          a battery to <strong>a</strong> horse&quot;.</p>
+        <h2 id="double-salting">Double salting</h2>
+        <p>I have two additions to that system. The first is to choose a sequence of
+          8 easy to type characters and add it to the start of every password. For
+          example, <code>lkjpoiuu</code>, or something like that. </p>
+        <p>Why? As an analogy, consider the practise of <a href="http://en.wikipedia.org/wiki/Salt_(cryptography">password salts</a>).
+          The basic idea is to add on a small amount of random data to each password
+          before hashing it. The random data is then stored along side the hashed
+          password. One of the advantages of this is that, in the event that the
+          entire (hashed) password database gets stolen, cracking the entire list
+          of passwords becomes more time consuming (as you must re-calculate every
+          guess with each different salt). See <a href="http://en.wikipedia.org/wiki/Salt_(cryptography">the Wikipedia article</a>#Benefits)
+          for a much better explanation. </p>
+        <p>Similarly, by adding on a constant &quot;random&quot; sequence to every
+          password, you make it much harder for someone with no particular knowledge
+          of you to guess your password. Nobody will stumble across your password
+          with a dictionary attack because your random string will not be in any
+          dictionary. </p>
+        <p>Of course, if someone was <em>specifically targeting you</em> and they also
+          knew your &quot;salt&quot; then it would do little good. The purpose is
+          to help protect against <em>untargeted</em> attacks. </p>
+        <h2 id="numbers-and-caps">Numbers and caps</h2>
+        <p>Additionally, many sites require passwords to contain at least one number
+          and/or at least one capital letter. It can be really annoying to have
+          to remember which passwords require this. </p>
+        <p>To get around this, I use the convention of choosing a memorable phrase
+          which contains either the word &quot;to&quot;, &quot;too&quot; or &quot;for&quot;.
+          I replace that word with the corresponding number, <code>2</code> or <code>4</code>.
+          I then <strong>always capitalise the next letter</strong>, without exception.
+          </p>
+        <p>By doing this, as long as you can remember the memorable phrase, you will
+          never have to struggle to remember whether it contains numbers or capitals.
+          This also won&#39;t weaken your password (even if somebody knows you are
+          doing it) because the strength of the password lies in the passphrase
+          you chose. </p>
+
+      </article>
+
+    </div>
+
+    <div class="push"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <br>
+      <a href="http://feeds.feedburner.com/davidxmoody">RSS</a> |
+      <a href="https://github.com/davidxmoody">GitHub</a> |
+      <a href="mailto:david@davidxmoody.com">Email</a>
+    </p>
+    <p>
+      This blog is available under a
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a>
+    </p>
+  </footer>
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+    ga('create', 'UA-54505873-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Here are my dotfiles</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="A blog about programming">
+  <link rel="canonical" href="http://davidxmoody.com/here-are-my-dotfiles/">
+  <link rel="stylesheet" href="/css/main.css">
+  <meta name="wot-verification" content="fdff4a26070b9df2fd1a" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/">David Moody</a></h1>
+      <p>A blog about programming</p>
+    </header>
+
+    <div class="content">
+      <article>
+        <header>
+          <h1>Here are my dotfiles</h1>
+          <p><em>Nov 5, 2014</em>
+          </p>
+        </header>
+
+        <p>I&#39;ve recently been uploading a lot of my old projects to GitHub. There
+          is only one left: <strong>my dotfiles</strong>.</p>
+        <p>You can <a href="https://github.com/davidxmoody/dotfiles">view them on GitHub</a>.
+          I wanted to upload them because I think there are a few interesting fragments
+          in there. Someone might find something they need. It also makes it easier
+          for me to clone them from another machine, should the need ever arise.
+          </p>
+        <p>There are about 200 commits, spanning three years. I don&#39;t pretend to
+          be an expert in these things but I still feel my dotfiles reflect a lot
+          of experience over that time.</p>
+        <p>It&#39;s slightly messy at the moment. I would like to organise them better
+          someday. I recently found <a href="http://dotfiles.github.io/">GitHub does dotfiles</a>.
+          It has some very interesting links to other dotfile repositories and frameworks.
+          </p>
+        <p>In the rest of this post, I am going to highlight a few of the most interesting
+          things in my dotfiles.</p>
+        <h2 id="-mkalias-"><code>mkalias</code></h2>
+        <p>I have <a href="/permanent-bash-aliases/">already written a blog post on this function</a>          which you should check out. The gist of it is that it takes too long to
+          open up your <code>.bash_aliases</code> file just to create a new alias.
+          My simple Bash function works just like the normal <code>alias</code>          command except it makes the alias &quot;permanent&quot; by placing it
+          into your aliases file. </p>
+        <pre><code class="lang-bash"><div class="highlight"><pre>mkalias<span class="o">()</span> <span class="o">{</span>
+  <span class="c"># Flatten arguments into one string</span>
+  <span class="nb">local </span><span class="nv">full_string</span><span class="o">=</span><span class="nv">$*</span>
+
+  <span class="c"># Extract the first and last parts</span>
+  <span class="nb">local </span><span class="nv">alias_name</span><span class="o">=</span><span class="k">${</span><span class="nv">full_string</span><span class="p">%%=*</span><span class="k">}</span>
+  <span class="nb">local </span><span class="nv">alias_result</span><span class="o">=</span><span class="k">${</span><span class="nv">full_string</span><span class="p">#*=</span><span class="k">}</span>
+
+  <span class="c"># Construct the new command</span>
+  <span class="nb">local </span><span class="nv">alias_command</span><span class="o">=</span><span class="s2">&quot;alias $alias_name=&#39;$alias_result&#39;&quot;</span>
+
+  <span class="c"># Execute the command, if successful then print </span>
+  <span class="c"># out the alias and add it to ~/.bash_aliases</span>
+  <span class="nb">eval</span> <span class="s2">&quot;$alias_command&quot;</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">alias</span> <span class="s2">&quot;$alias_name&quot;</span> <span class="p">|</span> tee -a <span class="s2">&quot;$HOME/.bash_aliases&quot;</span>
+<span class="o">}</span>
+</pre>
+    </div>
+
+    </code>
+    </pre>
+    <h2 id="jpeg-metadata-stripping-and-resizing">JPEG metadata stripping and resizing</h2>
+    <p>When you take a photo, a lot of extra data is created. Stuff like the date,
+      camera model, exposure and whatnot. However, when you are creating a website,
+      there is no point downloading all that data along with the image. It can often
+      take up around 20KB of extra space. </p>
+    <p>I use this handy <code>stripjpg</code> alias to strip out all Exif data. I also
+      use <code>convert</code> to downscale images to 800px wide (for this blog).
+      It&#39;s not a perfect responsive image setup but it works for now. </p>
+    <pre><code class="lang-bash"><div class="highlight"><pre><span class="nb">alias </span><span class="nv">stripjpg</span><span class="o">=</span><span class="s1">&#39;exiftool -all= &#39;</span>
+resize800<span class="o">()</span> <span class="o">{</span>
+  stripjpg <span class="s2">&quot;$@&quot;</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="k">for</span> f in <span class="s2">&quot;$@&quot;</span><span class="p">;</span> <span class="k">do</span>
+    convert <span class="s2">&quot;$f&quot;</span> -resize 800x <span class="s2">&quot;$f&quot;</span>
+  <span class="k">done</span>
+<span class="o">}</span>
+</pre>
+  </div>
+
+  </code>
+  </pre>
+  <h2 id="word-frequency-script">Word frequency script</h2>
+  <p>A little something I created when I wanted to find the number of occurrences of
+    common words in a large corpus of text split across multiple files. </p>
+  <pre><code class="lang-python3"><div class="highlight"><pre><span class="c">#!/usr/bin/env python3</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Counter</span>
+<span class="kn">import</span> <span class="nn">fileinput</span>
+
+<span class="n">word_tallies</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">input</span><span class="p">():</span>
+    <span class="n">word_tallies</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">word_tallies</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">2000</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+</pre>
+  </div>
+
+  </code>
+  </pre>
+  <h2 id="vim-writing-tricks">Vim writing tricks</h2>
+  <p>Again, I have already written about <a href="/vim-auto-capitalisation/">Vim auto-capitalisation</a>    and <a href="/better-vim-abbreviations/">better Vim abbreviations</a>. </p>
+  <p>Two months later, I still love them both. They both save me several minutes daily.
+    Not having to press the shift key so much also makes my little fingers very
+    happy. </p>
+  <h2 id="-home-setup-script"><code>home-setup</code> script</h2>
+  <p>I&#39;ve gone through some very complex and messy dotfile setups in the last three
+    years. I finally settled upon a very simple script. It simply symlinks everything
+    in <code>dotfiles</code> to my home directory. </p>
+  <p>It also appends a dot to the names (because I don&#39;t like hidden files in a
+    project directory specifically meant for dotfiles). Additionally, it backs up
+    anything that was already in my home directory with the same name (but avoids
+    creating backed up duplicate links).</p>
+  <pre><code class="lang-bash"><div class="highlight"><pre><span class="k">for</span> file in dotfiles/*<span class="p">;</span> <span class="k">do</span>
+    <span class="nv">target</span><span class="o">=</span><span class="s2">&quot;$HOME/.${file#dotfiles/}&quot;</span>
+    <span class="nv">target_canon</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="s2">&quot;$target&quot;</span><span class="k">)</span>
+    <span class="nv">file_canon</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="s2">&quot;$file&quot;</span><span class="k">)</span>
+    <span class="o">[</span> <span class="s2">&quot;$target_canon&quot;</span> <span class="o">=</span> <span class="s2">&quot;$file_canon&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="k">continue</span>
+    ln -sbv <span class="s2">&quot;$file_canon&quot;</span> <span class="s2">&quot;$target&quot;</span>
+<span class="k">done</span>
+</pre>
+  </div>
+
+  </code>
+  </pre>
+  <h2 id="tons-of-short-aliases">Tons of short aliases</h2>
+  <p>There are too many to go over and most aren&#39;t that novel. However, they all
+    represent small time and effort savings which quickly add up. Here is a small
+    sample.</p>
+  <pre><code class="lang-bash"><div class="highlight"><pre><span class="nb">alias  </span><span class="nv">ls</span><span class="o">=</span><span class="s1">&#39;ls -F --group-directories-first --color=auto&#39;</span>
+
+greppy<span class="o">()</span> <span class="o">{</span> grep -n <span class="s2">&quot;$1&quot;</span> *.py<span class="p">;</span> <span class="o">}</span>
+grepc<span class="o">()</span> <span class="o">{</span> grep -n <span class="s2">&quot;$1&quot;</span> *.coffee<span class="p">;</span> <span class="o">}</span>
+
+<span class="nb">alias </span><span class="nv">up</span><span class="o">=</span><span class="s1">&#39;cd ..&#39;</span>
+<span class="nb">alias </span><span class="nv">cdt</span><span class="o">=</span><span class="s1">&#39;cd ~/tmp&#39;</span>
+cdl<span class="o">()</span> <span class="o">{</span> <span class="nb">cd</span> <span class="s2">&quot;$@&quot;</span> <span class="o">&amp;&amp;</span> l<span class="p">;</span> <span class="o">}</span>
+mkcd<span class="o">()</span> <span class="o">{</span> mkdir <span class="s2">&quot;$@&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="s2">&quot;$@&quot;</span><span class="p">;</span> <span class="o">}</span>
+
+<span class="nb">alias </span><span class="nv">vimrc</span><span class="o">=</span><span class="s1">&#39;vim ~/.vimrc&#39;</span>
+<span class="nb">alias </span><span class="nv">vba</span><span class="o">=</span><span class="s1">&#39;vim ~/.bash_aliases&#39;</span>
+
+<span class="nb">alias </span><span class="nv">gs</span><span class="o">=</span><span class="s1">&#39;git status&#39;</span>
+<span class="nb">alias </span><span class="nv">gc</span><span class="o">=</span><span class="s1">&#39;git commit&#39;</span>
+<span class="nb">alias </span><span class="nv">gl</span><span class="o">=</span><span class="s1">&#39;git log&#39;</span>
+
+<span class="nb">alias </span><span class="nv">jeks</span><span class="o">=</span><span class="s1">&#39;jekyll server --watch --port 4000 --drafts&#39;</span>
+<span class="nb">alias </span><span class="nv">simplehttp</span><span class="o">=</span><span class="s1">&#39;python -m SimpleHTTPServer&#39;</span>
+
+<span class="nb">alias </span><span class="nv">py</span><span class="o">=</span><span class="s1">&#39;python3&#39;</span>
+<span class="nb">alias </span><span class="nv">pyi</span><span class="o">=</span><span class="s1">&#39;python3 -i&#39;</span>
+
+<span class="nb">alias </span><span class="nv">op</span><span class="o">=</span><span class="s1">&#39;xdg-open&#39;</span>
+</pre>
+  </div>
+
+  </code>
+  </pre>
+
+  </article>
+
+  </div>
+
+  <div class="push"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <br>
+      <a href="http://feeds.feedburner.com/davidxmoody">RSS</a> |
+      <a href="https://github.com/davidxmoody">GitHub</a> |
+      <a href="mailto:david@davidxmoody.com">Email</a>
+    </p>
+    <p>
+      This blog is available under a
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a>
+    </p>
+  </footer>
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+    ga('create', 'UA-54505873-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>

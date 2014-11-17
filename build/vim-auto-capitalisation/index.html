@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Vim auto-capitalisation</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="A blog about programming">
+  <link rel="canonical" href="http://davidxmoody.com/vim-auto-capitalisation/">
+  <link rel="stylesheet" href="/css/main.css">
+  <meta name="wot-verification" content="fdff4a26070b9df2fd1a" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/">David Moody</a></h1>
+      <p>A blog about programming</p>
+    </header>
+
+    <div class="content">
+      <article>
+        <header>
+          <h1>Vim auto-capitalisation</h1>
+          <p><em>Aug 29, 2014</em>
+          </p>
+        </header>
+
+        <p>Continuing in the same theme as my <a href="/better-vim-abbreviations/">last post</a>,
+          I am going to write about another awesome Vim tip I found recently. That
+          is: automatic capitalisation of the first letter of each sentence. </p>
+        <p>Many word processors already include this. For some reason, Vim and other
+          text editors don&#39;t usually have the option. I don&#39;t know why.
+          I feel that a lot of unnecessary key-strokes are wasted on the shift keys.
+          It also stresses the little fingers and twists the wrists.</p>
+        <h2 id="the-scripts">The scripts</h2>
+        <p>There is surprisingly little information available about this. The only
+          decent thing I&#39;ve ever found has been <a href="http://superuser.com/questions/737130/automatically-capitalize-the-first-letter-of-sentence-in-vim">this superuser question/answer</a>.
+          There are two answers, both of which I like:</p>
+        <pre><code class="lang-vim"><div class="highlight"><pre><span class="k">for</span> char <span class="k">in</span> split<span class="p">(</span><span class="s1">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span><span class="p">,</span> <span class="s1">&#39;\zs&#39;</span><span class="p">)</span>
+    exe printf<span class="p">(</span><span class="s2">&quot;inoremap &lt;expr&gt; %s search(&#39;[.!?]\\_s\\+\\%%#&#39;, &#39;bcnw&#39;) ? &#39;%s&#39; : &#39;%s&#39;&quot;</span><span class="p">,</span> char<span class="p">,</span> toupper<span class="p">(</span>char<span class="p">),</span> char<span class="p">)</span>
+<span class="k">endfor</span>
+</pre>
+    </div>
+
+    </code>
+    </pre>
+    <p>The above script creates insert mode mappings for every lower-case letter. It
+      uses the <code>&lt;expr&gt;</code> option to evaluate an expression instead
+      of mapping directly to another key. That expression then searches backwards
+      to check for certain punctuation. It then returns either the original character
+      or the upper-case version of the character if a match was found. </p>
+    <p>I like it but I prefer the second answer:</p>
+    <pre><code class="lang-vim"><div class="highlight"><pre>augroup SENTENCES
+    <span class="k">au</span><span class="p">!</span>
+    <span class="k">autocmd</span> <span class="nb">InsertCharPre</span> * <span class="k">if</span> search<span class="p">(</span><span class="s1">&#39;\v(%^|[.!?]\_s)\_s*%#&#39;</span><span class="p">,</span> <span class="s1">&#39;bcnw&#39;</span><span class="p">)</span> <span class="p">!=</span> <span class="m">0</span> <span class="p">|</span> <span class="k">let</span> <span class="k">v</span>:char <span class="p">=</span> toupper<span class="p">(</span><span class="k">v</span>:char<span class="p">)</span> <span class="p">|</span> <span class="k">endif</span>
+augroup END
+</pre>
+  </div>
+
+  </code>
+  </pre>
+  <p>Here, instead of creating mappings, an auto-command is used. It &quot;listens&quot;
+    for characters to be inserted and intercepts them. It searches backwards for
+    punctuation and converts the character to be inserted (<code>v:char</code>)
+    to upper-case. The <code>augroup</code> and <code>au!</code> stuff is just for
+    grouping and isn&#39;t terribly important.</p>
+  <p>If you want to bypass the script(s) and force a lower-case letter to be inserted,
+    you can press Ctrl+V followed by the letter. </p>
+  <h2 id="customisation">Customisation</h2>
+  <p>I&#39;ll be the first to admit that my Vimscript isn&#39;t the best. Nevertheless,
+    I still wanted to change a few things based on the way I type. I wanted to add
+    a few more contexts in which letters get capitalised:</p>
+  <ul>
+    <li>Markdown list items</li>
+    <li>YAML front matter titles</li>
+    <li>New paragraphs (which happen to come after something that doesn&#39;t end in
+      a punctuation mark)</li>
+  </ul>
+  <p>Here is my tweaked script:</p>
+  <pre><code class="lang-vim"><div class="highlight"><pre>augroup SENTENCES
+    <span class="k">au</span><span class="p">!</span>
+    <span class="k">autocmd</span> <span class="nb">InsertCharPre</span> * <span class="k">if</span> search<span class="p">(</span><span class="s1">&#39;\v(%^|[.!?]\_s+|\_^\-\s|\_^title\:\s|\n\n)%#&#39;</span><span class="p">,</span> <span class="s1">&#39;bcnw&#39;</span><span class="p">)</span> <span class="p">!=</span> <span class="m">0</span> <span class="p">|</span> <span class="k">let</span> <span class="k">v</span>:char <span class="p">=</span> toupper<span class="p">(</span><span class="k">v</span>:char<span class="p">)</span> <span class="p">|</span> <span class="k">endif</span>
+augroup END
+</pre>
+  </div>
+
+  </code>
+  </pre>
+  <p>It can be tricky to figure out what&#39;s going on in a regular expression like
+    that. I think the <a href="http://vimdoc.sourceforge.net/htmldoc/pattern.html#pattern-overview">Vim documentation on patterns</a>    is pretty helpful. Here is a <em>very brief</em> summary of what&#39;s going
+    on:</p>
+  <ul>
+    <li><code>\v</code> means that the following pattern is &quot;very magic&quot; so
+      not as many characters need to be escaped</li>
+    <li><code>%^</code> is the start of the file</li>
+    <li><code>[.!?]\_s+</code> is a punctuation mark followed by some whitespace which
+      may or may not include newlines</li>
+    <li><code>\_^\-\s</code> is a dash at the start of a line followed by a whitespace
+      character</li>
+    <li><code>\_^title\:\s</code> is &quot;title: &quot; at the start of a line</li>
+    <li><code>\n\n</code> matches two newlines</li>
+    <li><code>%#</code> matches the cursor position</li>
+    <li>The <code>&#39;b&#39;</code> option means search backwards</li>
+  </ul>
+  <p><em>[Edit on 2014-09-29: I somehow forgot to add Markdown headers to the list of capitalisation contexts. I will leave that as an exercise for the reader.]</em>
+  </p>
+  <h2 id="putting-it-all-together">Putting it all together</h2>
+  <p>Combining this with the rest of my configuration options gives the following section
+    of my <code>.vimrc</code> file:</p>
+  <pre><code class="lang-vim"><div class="highlight"><pre>func<span class="p">!</span> WordProcessorMode<span class="p">()</span>
+<span class="c">    &quot; Load Markdown syntax highlighting but with custom hashtag support</span>
+    <span class="k">set</span> <span class="k">filetype</span><span class="p">=</span>mkd
+    <span class="k">syn</span> <span class="k">match</span> htmlBoldItalic <span class="s2">&quot;#[-_a-zA-Z0-9]\+&quot;</span>
+
+<span class="c">    &quot; Other options</span>
+    <span class="k">set</span> <span class="nb">nonumber</span>
+    <span class="k">set</span> <span class="nb">wrap</span>
+    <span class="k">set</span> <span class="nb">linebreak</span>
+    <span class="k">set</span> <span class="nb">breakat</span><span class="p">=</span>\ 
+    <span class="k">set</span> <span class="nb">display</span><span class="p">=</span>lastline
+    <span class="k">set</span> <span class="nb">tabstop</span><span class="p">=</span><span class="m">4</span>
+    <span class="k">set</span> <span class="nb">softtabstop</span><span class="p">=</span><span class="m">4</span>
+    <span class="k">set</span> <span class="nb">shiftwidth</span><span class="p">=</span><span class="m">4</span>
+    <span class="k">set</span> <span class="nb">formatoptions</span><span class="p">=</span>
+    <span class="k">set</span> <span class="k">spell</span> <span class="nb">spelllang</span><span class="p">=</span>en_gb
+    source <span class="p">~</span><span class="sr">/.vim/</span>abbreviations.<span class="k">vim</span>
+
+<span class="c">    &quot; Auto-capitalize script</span>
+    augroup SENTENCES
+        <span class="k">au</span><span class="p">!</span>
+        <span class="k">autocmd</span> <span class="nb">InsertCharPre</span> * <span class="k">if</span> search<span class="p">(</span><span class="s1">&#39;\v(%^|[.!?]\_s+|\_^\-\s|\_^title\:\s|\n\n)%#&#39;</span><span class="p">,</span> <span class="s1">&#39;bcnw&#39;</span><span class="p">)</span> <span class="p">!=</span> <span class="m">0</span> <span class="p">|</span> <span class="k">let</span> <span class="k">v</span>:char <span class="p">=</span> toupper<span class="p">(</span><span class="k">v</span>:char<span class="p">)</span> <span class="p">|</span> <span class="k">endif</span>
+    augroup END
+endfu
+
+<span class="k">com</span><span class="p">!</span> WP <span class="k">call</span> WordProcessorMode<span class="p">()</span>
+<span class="k">au</span> <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> *.mkd <span class="k">call</span> WordProcessorMode<span class="p">()</span>
+<span class="k">au</span> <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> *.md <span class="k">call</span> WordProcessorMode<span class="p">()</span>
+<span class="k">au</span> <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> diary<span class="p">-</span>*.txt <span class="k">call</span> WordProcessorMode<span class="p">()</span>
+</pre>
+  </div>
+
+  </code>
+  </pre>
+
+  </article>
+
+  </div>
+
+  <div class="push"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <br>
+      <a href="http://feeds.feedburner.com/davidxmoody">RSS</a> |
+      <a href="https://github.com/davidxmoody">GitHub</a> |
+      <a href="mailto:david@davidxmoody.com">Email</a>
+    </p>
+    <p>
+      This blog is available under a
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a>
+    </p>
+  </footer>
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+    ga('create', 'UA-54505873-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
