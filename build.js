@@ -1,6 +1,5 @@
 var moment = require('moment');
 var Metalsmith = require('metalsmith');
-var markdown = require('metalsmith-markdown');
 var templates = require('metalsmith-templates');
 var permalinks = require('metalsmith-permalinks');
 var collections = require('metalsmith-collections');
@@ -159,7 +158,6 @@ Metalsmith(__dirname)
     }
   }))
 
-  //.use(markdown(markedOptions))
   .use(permalinks({
     pattern: ':title'
   }))
