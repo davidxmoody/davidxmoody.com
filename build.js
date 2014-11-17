@@ -32,6 +32,7 @@ var markedOptions = {
     //console.log(code,lang,callback);
     require('pygmentize-bundled')({ lang: lang, format: 'html' }, code, function (err, result) {
       var str = result.toString();
+      //TODO fix the double pre element bug properly
       //str = str.replace(/^<div class="highlight"><pre>/, '<div class="highlight">');
       //str = str.replace(/<\/pre><\/div>\n$/, '</div>');
       callback(err, str);
@@ -117,11 +118,37 @@ Metalsmith(__dirname)
 
   })
 
-  .use(each(function(file) {
+  .use(each(function(file, filename) {
     //console.log(file.collection);
     //TODO check for being in not the first
     if (file.collection[0] === 'posts') {
       file.template = 'post.html';
+
+      function paraCount(text) {
+        return text.match(/<(p|ul|ol|pre|table)>[\s\S]*?<\/\1>/g).length;
+      }
+
+      // Paragraph count
+      var count = paraCount(file.contents.toString());
+      var excerptCount = paraCount(file.excerpt);
+      var remainingCount = count - excerptCount;
+
+      if (remainingCount === 0) {
+        file.readMoreText = "View post on separate page";
+      } else if (remainingCount === 1) {
+        file.readMoreText = "Read 1 remaining paragraph...";
+      } else {
+        file.readMoreText = "Read " + remainingCount + " remaining paragraphs...";
+      }
+  //TODO put this in the template
+
+
+
+      //if (filename === 'posts/2014-11-05-here-are-my-dotfiles.html') {
+        //console.log(filename, count);
+        //console.log(file.contents.toString().match(/<(p|ul|ol|pre)>[\s\S]*?<\/\1>/g));
+      //}
+
     }
   }))
 
