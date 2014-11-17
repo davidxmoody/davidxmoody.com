@@ -38,17 +38,10 @@ permalink: /cv/
 
 ### [davidxmoody.com](http://davidxmoody.com/) (2014)
 
-{% assign num_posts = site.posts | size %}
-{% assign num_words = 0 %}
-{% for post in site.posts %}
-  {% assign post_words = post.content | number_of_words %}
-  {% assign num_words = num_words | plus: post_words %}
-{% endfor %}
-
 - My personal blog
 - Static site generated with **Jekyll** and hosted with **GitHub Pages**
 - Simple responsive design and typography with **Sass**
-- {{ num_posts }} posts ({{ num_words }} words) written since 11 August 2014 on a **regular&nbsp;schedule**
+- 33 posts (20,000 words) written since 11 August 2014 on a **regular&nbsp;schedule**
 - I have written about: Vim plugins, website design, the Pomodoro Technique, misc tech stuff and almost everything else on this CV
 - Over 200 commits, [available on GitHub](https://github.com/davidxmoody/davidxmoody.github.io)
 
