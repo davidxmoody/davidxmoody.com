@@ -10,6 +10,7 @@ var pagination = require('metalsmith-pagination');
 var serve = require('metalsmith-serve');
 var sass = require('metalsmith-sass');
 var ignore = require('metalsmith-ignore');
+var beautify = require('metalsmith-beautify');
 var marked = require('marked');
 var basename = require('path').basename;
 var dirname = require('path').dirname;
@@ -201,6 +202,12 @@ Metalsmith(__dirname)
   .use(templates('handlebars'))
 
   .use(sass())
+
+  .use(beautify({
+    wrap_line_length: 79,
+    indent_size: 2,
+    indent_char: ' '
+  }))
 
   .use(serve())
 
