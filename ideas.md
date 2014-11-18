@@ -64,3 +64,4 @@
 - Favicon (http://realfavicongenerator.net/)
 - Tags
 - Add blockquote styling 
+- Optimize images, make them more responsive

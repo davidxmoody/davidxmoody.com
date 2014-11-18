@@ -11,6 +11,7 @@ var sass = require('metalsmith-sass');
 var ignore = require('metalsmith-ignore');
 var beautify = require('metalsmith-beautify');
 var feed = require('metalsmith-feed');
+var fingerprint = require('metalsmith-fingerprint');
 var marked = require('marked');
 var basename = require('path').basename;
 var dirname = require('path').dirname;
@@ -56,10 +57,6 @@ Metalsmith(__dirname)
   .use(each(function(file, filename) {
     //console.log(filename);
   }))
-
-  .use(ignore([
-        "css/_*.sass"
-  ]))
 
   .use(dateInFilename())
   .use(each(function(file) {
@@ -196,14 +193,21 @@ Metalsmith(__dirname)
     }
   }))
 
+  .use(sass())
+  .use(fingerprint({
+    pattern: 'css/main.css'
+  }))
+  .use(ignore([
+        'css/_*.sass',
+        'css/main.css'
+  ]))
+
   // Use templates once then once again to wrap *every HTML file* in default.html
   .use(templates('handlebars'))
   .use(each(function(file, filename) {
     if (isHTML(filename)) file.template = 'default.html';
   }))
   .use(templates('handlebars'))
-
-  .use(sass())
 
   .use(beautify({
     wrap_line_length: 79,
