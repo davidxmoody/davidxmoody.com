@@ -65,3 +65,5 @@
 - Tags
 - Add blockquote styling 
 - Optimize images, make them more responsive
+- Image caching and/or hashes, maybe hash and commit hashed images to filesystem, run as a separate Metalsmith branch which is launched manually
+- Change repo name from .GitHub.io to .com

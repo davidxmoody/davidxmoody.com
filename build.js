@@ -27,16 +27,16 @@ function isHTML(file){
   return /\.html/.test(extname(file));
 }
 
+function paraCount(text) {
+  return text.match(/<(p|ul|ol|pre|table)>[\s\S]*?<\/\1>/g).length;
+}
+
 var markedOptions = {
   gfm: true,
   tables: true,
   highlight: function (code, lang, callback) {
-    //console.log(code,lang,callback);
     require('pygmentize-bundled')({ lang: lang, format: 'html' }, code, function (err, result) {
       var str = result.toString();
-      //TODO fix the double pre element bug properly
-      //str = str.replace(/^<div class="highlight"><pre>/, '<div class="highlight">');
-      //str = str.replace(/<\/pre><\/div>\n$/, '</div>');
       callback(err, str);
     });
   }
@@ -54,13 +54,9 @@ Metalsmith(__dirname)
     }
   })
 
-  .use(each(function(file, filename) {
-    //console.log(filename);
-  }))
-
   .use(dateInFilename())
   .use(each(function(file) {
-    file.formattedDate = moment(file.date).format('ll');
+    if (file.date) file.formattedDate = moment(file.date).format('ll');
   }))
 
   .use(collections({
@@ -86,7 +82,6 @@ Metalsmith(__dirname)
         marked(raw_str, markedOptions, function(err, result) {
           //TODO is in necessary to create a new buffer?
           data.contents = new Buffer(result.toString());
-          //console.log(data.contents.toString().substr(0, 20));
           callback();
         });
       });
@@ -112,7 +107,6 @@ Metalsmith(__dirname)
     toProcess.forEach(function(func) {
       func(function() {
         numToProcess--;
-        //console.log("remaining:", numToProcess);
         if (numToProcess === 0) {
           done();
         }
@@ -121,17 +115,12 @@ Metalsmith(__dirname)
 
   })
 
-  .use(each(function(file, filename) {
-    //console.log(file.collection);
-    //TODO check for being in not the first
-    if (file.collection[0] === 'posts') {
+  .use(function(files, metalsmith) {
+    metalsmith.metadata().posts.forEach(function(file) {
+      // Set default template
       file.template = 'post.html';
 
-      function paraCount(text) {
-        return text.match(/<(p|ul|ol|pre|table)>[\s\S]*?<\/\1>/g).length;
-      }
-
-      // Paragraph count
+      // Paragraph counts
       var count = paraCount(file.contents.toString());
       var excerptCount = paraCount(file.excerpt);
       var remainingCount = count - excerptCount;
@@ -143,17 +132,8 @@ Metalsmith(__dirname)
       } else {
         file.readMoreText = "Read " + remainingCount + " remaining paragraphs...";
       }
-  //TODO put this in the template
-
-
-
-      //if (filename === 'posts/2014-11-05-here-are-my-dotfiles.html') {
-        //console.log(filename, count);
-        //console.log(file.contents.toString().match(/<(p|ul|ol|pre)>[\s\S]*?<\/\1>/g));
-      //}
-
-    }
-  }))
+    });
+  })
 
   .use(permalinks({
     pattern: ':title'
@@ -226,10 +206,9 @@ Metalsmith(__dirname)
     destination: 'feed.xml'
   }))
   .use(function(files) {
+    // Make all relative links and images into absolute links and images
     data = files['feed.xml'];
-    //console.log(data.contents.toString());
     data.contents = new Buffer(data.contents.toString().replace(/src="\//g, 'src="http://davidxmoody.com/').replace(/href="\//g, 'href="http://davidxmoody.com/'));
-    //console.log(data.contents.toString());
   })
 
   .use(serve())
