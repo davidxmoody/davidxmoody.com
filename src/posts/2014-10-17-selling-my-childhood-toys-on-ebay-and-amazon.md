@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Selling my childhood toys on eBay and Amazon
 ---
 

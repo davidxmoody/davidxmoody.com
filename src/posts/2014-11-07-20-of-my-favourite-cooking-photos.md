@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 20 of my favourite cooking photos
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Permanent Bash aliases
 tags: Bash
 ---

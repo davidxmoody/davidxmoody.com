@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Music for programming
 ---
 

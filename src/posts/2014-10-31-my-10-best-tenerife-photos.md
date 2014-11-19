@@ -1,5 +1,4 @@
 ---
-layout: post
 title: My 10 best Tenerife photos
 ---
 

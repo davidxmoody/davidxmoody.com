@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Lessons learned from a three year programming project (part 2)
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: A specific plan for next week
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: First draft of my CV and a trip to Bristol
 ---
 

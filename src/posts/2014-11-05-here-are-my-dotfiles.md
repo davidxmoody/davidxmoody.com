@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Here are my dotfiles
 tags: Bash
 ---

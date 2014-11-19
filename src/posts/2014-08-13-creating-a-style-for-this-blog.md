@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Creating a style for this blog
 ---
 

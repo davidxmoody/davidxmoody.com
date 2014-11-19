@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Big list of blogs I like
 ---
 

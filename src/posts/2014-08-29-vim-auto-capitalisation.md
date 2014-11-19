@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Vim auto-capitalisation
 tags: Vim
 ---

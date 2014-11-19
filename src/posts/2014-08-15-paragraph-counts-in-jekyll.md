@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Paragraph counts in jekyll
 ---
 

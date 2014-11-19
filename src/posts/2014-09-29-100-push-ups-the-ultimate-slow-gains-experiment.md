@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "100 push ups: the ultimate slow gains experiment"
 ---
 

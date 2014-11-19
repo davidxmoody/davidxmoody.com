@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Namecheap, GitHub Pages and apex domains
 ---
 

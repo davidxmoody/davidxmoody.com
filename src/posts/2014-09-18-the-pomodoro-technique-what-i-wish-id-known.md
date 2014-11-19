@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "The Pomodoro Technique: What I wish I'd known"
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Better Vim abbreviations
 tags: Vim
 ---

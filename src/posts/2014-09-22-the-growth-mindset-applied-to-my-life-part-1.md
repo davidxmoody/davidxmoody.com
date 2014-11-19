@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "The growth mindset applied to my life (part 1)"
 ---
 

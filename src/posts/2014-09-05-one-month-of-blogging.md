@@ -1,5 +1,4 @@
 ---
-layout: post
 title: One month of blogging
 ---
 

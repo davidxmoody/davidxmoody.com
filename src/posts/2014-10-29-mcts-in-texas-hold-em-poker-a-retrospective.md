@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "MCTS in Texas Hold 'em Poker: A retrospective"
 ---
 

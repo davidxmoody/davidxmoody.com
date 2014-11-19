@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Changing my email address and updates to my CV
 ---
 
