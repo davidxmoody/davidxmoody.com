@@ -42,7 +42,7 @@ var markedOptions = {
   }
 };
 
-Metalsmith(__dirname)
+Metalsmith(__dirname + '/..')
   .clean(true)
   //TODO tidy this up, remove duplicated stuff
   .metadata({

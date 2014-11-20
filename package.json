@@ -22,6 +22,6 @@
     "pygmentize-bundled": "^2.2.0"
   },
   "scripts": {
-    "build": "metalsmith"
+    "build": "node ./scripts/build.js"
   }
 }
