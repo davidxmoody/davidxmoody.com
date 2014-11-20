@@ -13,25 +13,15 @@ var beautify = require('metalsmith-beautify');
 var feed = require('metalsmith-feed');
 var fingerprint = require('metalsmith-fingerprint');
 
-var marked = require('marked');
-var markedOptions = require('./marked-options');
+var markdown = require('./markdown');
+var excerpts = require('./excerpts');
 
-var basename = require('path').basename;
-var dirname = require('path').dirname;
 var extname = require('path').extname;
 
 var EXCERPT_SEPARATOR = '\n\n\n';
 
-function isMarkdown(file){
-  return /\.md|\.markdown/.test(extname(file));
-}
-
 function isHTML(file){
   return /\.html/.test(extname(file));
-}
-
-function paraCount(text) {
-  return text.match(/<(p|ul|ol|pre|table)>[\s\S]*?<\/\1>/g).length;
 }
 
 
@@ -59,74 +49,15 @@ Metalsmith(__dirname + '/..')
       reverse: true
     }
   }))
-  .use(function(files, metalsmith, done) {
-    var toProcess = [];
 
-    Object.keys(files).forEach(function(file) {
-      if (!isMarkdown(file)) return;
-      var data = files[file];
-      var dir = dirname(file);
-      var html = basename(file, extname(file)) + '.html';
-      if ('.' != dir) html = dir + '/' + html;
-
-      var raw_str = data.contents.toString();
-
-      toProcess.push(function(callback) {
-        marked(raw_str, markedOptions, function(err, result) {
-          //TODO is in necessary to create a new buffer?
-          data.contents = new Buffer(result.toString());
-          callback();
-        });
-      });
-
-      //TODO check for being in not the first
-      if (data.collection && data.collection[0] === 'posts') {
-        var raw_excerpt = raw_str.split(EXCERPT_SEPARATOR, 2)[0];
-        //console.log(raw_excerpt);
-        toProcess.push(function(callback) {
-          marked(raw_excerpt, markedOptions, function(err, results) {
-            //console.log(results.toString());
-            data.excerpt = results.toString();
-            callback();
-          });
-        });
-      }
-
-      delete files[file];
-      files[html] = data;
-    });
-
-    var numToProcess = toProcess.length;
-    toProcess.forEach(function(func) {
-      func(function() {
-        numToProcess--;
-        if (numToProcess === 0) {
-          done();
-        }
-      });
-    });
-
-  })
-
+  // Replace custom excerpt separator with <!--more--> tag
   .use(function(files, metalsmith) {
     metalsmith.metadata().posts.forEach(function(file) {
-      // Set default template
-      file.template = 'post.html';
-
-      // Paragraph counts
-      var count = paraCount(file.contents.toString());
-      var excerptCount = paraCount(file.excerpt);
-      var remainingCount = count - excerptCount;
-
-      if (remainingCount === 0) {
-        file.readMoreText = "View post on separate page";
-      } else if (remainingCount === 1) {
-        file.readMoreText = "Read 1 remaining paragraph...";
-      } else {
-        file.readMoreText = "Read " + remainingCount + " remaining paragraphs...";
-      }
+      file.contents = new Buffer(file.contents.toString().replace(EXCERPT_SEPARATOR, '\n\n<!--more-->\n\n'));
     });
   })
+    
+  .use(markdown())
 
   .use(permalinks({
     pattern: ':title'
@@ -147,6 +78,8 @@ Metalsmith(__dirname + '/..')
   .use(each(function(file, filename) {
     file.url = '/' + filename.replace(/index.html$/, '');
   }))
+
+  .use(excerpts())
 
   .use(each(function(file, filename) {
     var pag = file.pagination;
@@ -176,6 +109,11 @@ Metalsmith(__dirname + '/..')
   ]))
 
   // Use templates once then once again to wrap *every HTML file* in default.html
+  .use(function(files, metalsmith) {
+    metalsmith.metadata().posts.forEach(function(file) {
+      file.template = 'post.html';
+    });
+  })
   .use(templates('handlebars'))
   .use(each(function(file, filename) {
     if (isHTML(filename)) file.template = 'default.html';
@@ -188,11 +126,6 @@ Metalsmith(__dirname + '/..')
     indent_char: ' '
   }))
 
-  //TODO this is duplicated and silly, change it
-  .use(each(function(file, filename) {
-    file.url = 'http://davidxmoody.com/' + filename.replace(/index.html$/, '');
-    file.excerpt += '<p><a href="' + file.url + '">' + file.readMoreText + '</a></p>';
-  }))
   .use(feed({
     collection: 'posts',
     limit: 10,
