@@ -59,10 +59,6 @@ Metalsmith(__dirname + '/..')
     
   .use(markdown())
 
-  .use(permalinks({
-    pattern: ':title'
-  }))
-
   .use(pagination({
     'collections.posts': {
       perPage: 6,
@@ -75,8 +71,11 @@ Metalsmith(__dirname + '/..')
   // Don't include the first page (use the regular "/index.html" instead)
   .use(ignore(["page1/index.html"]))
 
+  .use(permalinks({
+    pattern: ':title/'
+  }))
   .use(each(function(file, filename) {
-    file.url = '/' + filename.replace(/index.html$/, '');
+    file.path = filename.replace(/index.html$/, '');
   }))
 
   .use(excerpts())
@@ -85,16 +84,16 @@ Metalsmith(__dirname + '/..')
     var pag = file.pagination;
     if (pag) {
       pag.previousHTML = pag.previous ? 
-          '<a href="' + pag.previous.url + '">&laquo;</a>' :
+          '<a href="/' + pag.previous.path + '">&laquo;</a>' :
           '<span>&laquo;</span>';
       pag.nextHTML = pag.next ? 
-          '|<a href="' + pag.next.url + '">&raquo;</a>' :
+          '|<a href="/' + pag.next.path + '">&raquo;</a>' :
           '|<span>&raquo;</span>';
       pag.pagesHTML = [];
       pag.pages.forEach(function(page) {
         pag.pagesHTML.push( file === page ?
           '|<span>' + page.pagination.num + '</span>' :
-          '|<a href="' + page.url + '">' + page.pagination.num + '</a>');
+          '|<a href="/' + page.path + '">' + page.pagination.num + '</a>');
       });
     }
   }))

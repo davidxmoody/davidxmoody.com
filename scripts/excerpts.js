@@ -23,8 +23,7 @@ module.exports = function(options) {
           break;
       }
 
-      //TODO this is dependant on file.url, change that
-      file.excerpt = before + '<p><a href="' + file.url + '">' + readMoreText + '</a></p>';
+      file.excerpt = before + '<p><a href="/' + file.path + '">' + readMoreText + '</a></p>';
     });
   };
 };
