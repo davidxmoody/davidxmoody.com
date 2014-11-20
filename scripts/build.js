@@ -12,7 +12,10 @@ var ignore = require('metalsmith-ignore');
 var beautify = require('metalsmith-beautify');
 var feed = require('metalsmith-feed');
 var fingerprint = require('metalsmith-fingerprint');
+
 var marked = require('marked');
+var markedOptions = require('./marked-options');
+
 var basename = require('path').basename;
 var dirname = require('path').dirname;
 var extname = require('path').extname;
@@ -31,16 +34,6 @@ function paraCount(text) {
   return text.match(/<(p|ul|ol|pre|table)>[\s\S]*?<\/\1>/g).length;
 }
 
-var markedOptions = {
-  gfm: true,
-  tables: true,
-  highlight: function (code, lang, callback) {
-    require('pygmentize-bundled')({ lang: lang, format: 'html' }, code, function (err, result) {
-      var str = result.toString();
-      callback(err, str);
-    });
-  }
-};
 
 Metalsmith(__dirname + '/..')
   .clean(true)
