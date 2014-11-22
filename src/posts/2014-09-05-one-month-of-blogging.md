@@ -46,7 +46,7 @@ Despite my problems, I'm still proud that I actually stuck to my schedule. I'm a
 
 I've been thinking about this for a while. Most of my problems come from being too rushed. 
 
-When I only have one or two days to write a post, I feel like I can't attempt more ambitious projects. I have lots of [ideas](https://github.com/davidxmoody/davidxmoody.com/blob/master/_ideas.md) for posts. However, I know that many of them will require a lot of research. I don't want to attempt something difficult if I don't think I can finish on time. 
+When I only have one or two days to write a post, I feel like I can't attempt more ambitious projects. I have lots of [ideas](https://github.com/davidxmoody/davidxmoody.github.io/blob/master/_ideas.md) for posts. However, I know that many of them will require a lot of research. I don't want to attempt something difficult if I don't think I can finish on time. 
 
 I've been thinking about ways to fix this. I'm going to reduce the number of posts to *two per week*. On **Mondays** and **Thursdays**. I think this will give me more time to research and polish each post. 
 
