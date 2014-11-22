@@ -409,7 +409,8 @@ pre pre {
 }
 p,
 ul,
-ol {
+ol,
+blockquote {
   font-size: 18px;
   line-height: 27px;
   margin-top: 0px;
@@ -566,4 +567,10 @@ table td {
 }
 table th {
   font-weight: bold
+}
+blockquote {
+  margin-left: 5%;
+  border-left: 3px solid #B52626;
+  padding-left: 1em;
+  font-style: italic
 }

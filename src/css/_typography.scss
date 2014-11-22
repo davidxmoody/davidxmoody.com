@@ -25,7 +25,7 @@ pre pre {
   margin: 0;
 }
 
-p, ul, ol {
+p, ul, ol, blockquote {
   @include rhythm(0, 0, 1);
 }
 

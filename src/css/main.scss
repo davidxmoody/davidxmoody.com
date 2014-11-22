@@ -112,3 +112,12 @@ table th, table td {
 table th {
 	font-weight: bold;
 }
+
+// Quick blockquote styling
+blockquote {
+  margin-left: 5%;
+  border-left: 3px solid $color-dark;
+  padding-left: 1em;
+  font-style: italic;
+}
+
