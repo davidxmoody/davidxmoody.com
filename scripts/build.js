@@ -80,22 +80,25 @@ Metalsmith(__dirname + '/..')
 
   // Group archive posts by month
   .use(each(function(file, filename) {
-    //TODO this is terribly unreadable, clean it up
+    //TODO maybe make it so that months dont get split between pages?
     if (!filename.match(/^archive\//)) return;
-    var months = {};
+
+    var months = [];
+    var lastMonth = '';
+
     file.pagination.files.forEach(function(post) {
       var formattedMonth = moment(post.date).format('MMMM YYYY');
-      if (!months[formattedMonth]) months[formattedMonth] = [];
-      months[formattedMonth].push(post);
+      if (lastMonth !== formattedMonth) {
+        months.push({
+          formattedMonth: formattedMonth,
+          posts: [post]
+        });
+        lastMonth = formattedMonth;
+      } else {
+        months[months.length-1].posts.push(post);
+      }
     });
-    var keys = Object.keys(months).sort().reverse();
-    file.months = [];
-    keys.forEach(function(key) {
-      file.months.push({
-        formattedMonth: key,
-        posts: months[key]
-      });
-    });
+    file.months = months;
   }))
 
   .use(pagination({
