@@ -23,7 +23,7 @@
     "pygmentize-bundled": "^2.2.0"
   },
   "scripts": {
-    "start": "nodemon -e md,sass,scss,css,html ./scripts/build.js",
+    "start": "nodemon -e md,sass,scss,css,html,js,coffee ./scripts/build.js",
     "deploy": "./scripts/deploy.sh"
   }
 }
