@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Host any static site with GitHub Pages</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="A blog about programming">
+  <link rel="canonical" href="http://davidxmoody.com/host-any-static-site-with-github-pages/">
+  <link rel="stylesheet" href="/css/main-281a5c8d54ffb9364e6bfea48573c761.css">
+  <meta name="wot-verification" content="fdff4a26070b9df2fd1a" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/">David Moody</a></h1>
+      <p>A blog about programming</p>
+    </header>
+
+    <div class="content">
+      <article>
+        <header>
+          <h1>Host any static site with GitHub Pages</h1>
+          <p><em>Nov 24, 2014</em>
+          </p>
+        </header>
+
+        <p><a href="https://pages.github.com/">GitHub Pages</a> is pretty awesome.
+          It provides free, no-hassle hosting for static sites built with <a href="http://jekyllrb.com/">Jekyll</a>.
+          For the first three months of this blog, I used Jekyll and GitHub Pages
+          and was very happy with it. </p>
+        <!--more-->
+
+        <p>However, it&#39;s also a bit limiting. Jekyll is great but there is a lot
+          it can&#39;t do. For example, although Jekyll &quot;supports&quot; tags,
+          you can&#39;t create a page to list all posts with a given tag. At least
+          not without using a plugin, which GitHub Pages doesn&#39;t allow.</p>
+        <p>There is an easy way around this. You can build the site locally (using
+          any plugins or code you want) and still host it on GitHub Pages. It&#39;s
+          pretty simple although there are still a few caveats. </p>
+        <h2 id="generated-html-should-go-in-master">Generated HTML should go in master</h2>
+        <p>For a user site (e.g. <a href="http://davidxmoody.com/">davidxmoody.github.io</a>),
+          GitHub expects the generated HTML/CSS/JavaScript to be placed in the root
+          of the master branch. <em>(Project sites should use the gh-pages branch.)</em>
+        </p>
+        <p>Additionally, if you have a custom domain name, the <code>CNAME</code> file
+          must also go in the root of master. It&#39;s only a minor point but you
+          do have to make sure that the <code>CNAME</code> file gets copied across
+          to you build directory when you build your site. </p>
+        <p>It&#39;s slightly awkward to get this all to work. I wanted a way to have
+          both the source and generated site available on GitHub in the same repository.
+          There are a few options available.</p>
+        <h2 id="option-one-two-local-repos">Option one: Two local repos</h2>
+        <p>One approach is to have two separate repositories on your development machine.
+          One for the actual source and one for the generated site. See <a href="http://charliepark.org/jekyll-with-plugins/">this blog post</a>          for a rough guide. </p>
+        <p>The idea is that you keep the source in one repository and then copy across
+          the generated site the other and commit it. You can then push the built
+          repository to the master branch and the other repository to a &quot;source&quot;
+          branch on GitHub. </p>
+        <p>It&#39;s acceptable and can be scripted. I don&#39;t really like it though.</p>
+        <h2 id="option-two-filter-the-source-branch">Option two: Filter the source branch</h2>
+        <p>The next option is a bit more complex and requires a bit of Git hacking.
+          Read <a href="http://davidensinger.com/2013/04/deploying-jekyll-to-github-pages/">this post</a>          for more details.</p>
+        <p>The idea is that you commit all source and generated files to a branch named
+          &quot;source&quot;. You then delete the master branch and recreate it
+          by filtering to only include the history of the <code>_site</code> directory
+          (and also move it to the root of the project). </p>
+        <p>Here&#39;s the script:</p>
+        <pre><code class="lang-bash"><div class="highlight"><pre>git branch -D master
+git checkout -b master
+git filter-branch --subdirectory-filter _site/ -f
+git checkout <span class="nb">source</span>
+git push --all origin
+</pre>
+    </div>
+
+    </code>
+    </pre>
+    <p>I used this solution for about two weeks after finding it. It&#39;s okay but
+      still not great. The thing I don&#39;t like about it is that it feels like
+      a lot of work has to be done every time you want to publish changes. You have
+      to delete the <em>entire</em> master branch and recreate the whole thing.
+      </p>
+    <p>You also have to actually switch branches in the working directory which is
+      awkward. It interferes with your static site generator if it&#39;s watching
+      for changes. It also feels like a lot of unnecessary file copying for the
+      hard drive. </p>
+    <h2 id="option-three-subtree-push">Option three: Subtree push</h2>
+    <p>This third option is actually something I discovered myself. Well, I didn&#39;t
+      exactly create the whole thing from scratch but I did manage to piece it all
+      together without following a specific guide. </p>
+    <p>It solves most of the problems with the above options in the most concise way
+      I can think of. You don&#39;t have to have multiple branches on your filesystem
+      at the same time, you also don&#39;t even have to switch branches at any point.
+      </p>
+    <p>Here&#39;s the script:</p>
+    <pre><code class="lang-bash"><div class="highlight"><pre>git subtree push --squash --prefix _site/ . master
+git push --all origin
+</pre>
+  </div>
+
+  </code>
+  </pre>
+  <ol>
+    <li>The <code>git subtree</code> command splits apart changes from different filesystem
+      subtrees</li>
+    <li>The <code>--prefix _site/</code> option specifies that everything under the
+      <code>_site</code> dir should be split</li>
+    <li>The <code>--squash</code> option specifies that any commit which doesn&#39;t
+      change anything in <code>_site</code> should be ignored (not strictly necessary)</li>
+    <li>The <code>push</code> command and <code>. master</code> tell Git to push those
+      changes to the master branch in the current repository (assuming you are currently
+      in a branch called source)</li>
+    <li><code>git push --all origin</code> then tells Git to push both branches to GitHub</li>
+  </ol>
+  <p>It&#39;s the simplest option I can think of and I&#39;m pretty happy with it.
+    It does feel a bit messy to have to have both generated files and source files
+    in the same source branch. I&#39;m sure there are ways around it but I like
+    this approach for its simplicity. </p>
+  <h2 id="set-the-default-branch">Set the default branch</h2>
+  <p>One last tip. You probably won&#39;t want to display the raw HTML of your generated
+    site to people visiting your GitHub repository. </p>
+  <p>You can fix that simply by going to the Settings for your repository and changing
+    the default branch from master to source. </p>
+
+  </article>
+
+  </div>
+
+  <div class="push"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <br>
+      <a href="http://feeds.feedburner.com/davidxmoody">RSS</a> |
+      <a href="https://github.com/davidxmoody">GitHub</a> |
+      <a href="mailto:david@davidxmoody.com">Email</a>
+    </p>
+    <p>
+      This blog is available under a
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a>
+    </p>
+  </footer>
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+    ga('create', 'UA-54505873-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
