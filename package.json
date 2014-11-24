@@ -19,10 +19,11 @@
     "metalsmith-serve": "0.0.1",
     "metalsmith-templates": "^0.6.0",
     "moment": "^2.8.3",
+    "nodemon": "^1.2.1",
     "pygmentize-bundled": "^2.2.0"
   },
   "scripts": {
-    "build": "node ./scripts/build.js",
+    "start": "nodemon -e md,sass,scss,css,html ./scripts/build.js",
     "deploy": "./scripts/deploy.sh"
   }
 }
