@@ -1,0 +1,14 @@
+<h1>Archive</h1>
+{{#months}}
+<h2>{{formattedMonth}}</h2>
+<ul>
+  {{#posts}}
+  <li><a href="/{{path}}">{{title}}</a></li>
+  {{/posts}}
+</ul>
+{{/months}}
+
+{{#pagination}}
+<p class="pagination">{{{previousHTML}}}{{#pagesHTML}}{{{.}}}{{/pagesHTML}}{{{nextHTML}}}</p>
+{{/pagination}}
+

@@ -59,6 +59,45 @@ Metalsmith(__dirname + '/..')
     
   .use(markdown())
 
+  .use(permalinks({
+    pattern: ':title/'
+  }))
+
+  // Setup archive
+  .use(pagination({
+    'collections.posts': {
+      perPage: 20,
+      template: 'archive.html',
+      first: 'archive/index.html',
+      path: 'archive/page:num/index.html',
+      pageMetadata: {
+        title: "Archive"
+      }
+    }
+  }))
+  // Don't duplicate the first page
+  .use(ignore(["archive/page1/index.html"]))
+
+  // Group archive posts by month
+  .use(each(function(file, filename) {
+    //TODO this is terribly unreadable, clean it up
+    if (!filename.match(/^archive\//)) return;
+    var months = {};
+    file.pagination.files.forEach(function(post) {
+      var formattedMonth = moment(post.date).format('MMMM YYYY');
+      if (!months[formattedMonth]) months[formattedMonth] = [];
+      months[formattedMonth].push(post);
+    });
+    var keys = Object.keys(months).sort().reverse();
+    file.months = [];
+    keys.forEach(function(key) {
+      file.months.push({
+        formattedMonth: key,
+        posts: months[key]
+      });
+    });
+  }))
+
   .use(pagination({
     'collections.posts': {
       perPage: 6,
@@ -68,12 +107,9 @@ Metalsmith(__dirname + '/..')
       pageMetadata: { }
     }
   }))
-  // Don't include the first page (use the regular "/index.html" instead)
+  // Don't duplicate the first page
   .use(ignore(["page1/index.html"]))
 
-  .use(permalinks({
-    pattern: ':title/'
-  }))
   .use(each(function(file, filename) {
     file.path = filename.replace(/index.html$/, '');
   }))
