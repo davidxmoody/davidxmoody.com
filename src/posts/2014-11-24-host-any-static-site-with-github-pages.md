@@ -2,12 +2,12 @@
 title: Host any static site with GitHub Pages
 ---
 
-[GitHub Pages](https://pages.github.com/) is pretty awesome. It provides free, no-hassle hosting for static sites built with [Jekyll](http://jekyllrb.com/). For the first three months of this blog, I used Jekyll and GitHub Pages and was very happy with it. 
+[GitHub Pages](https://pages.github.com/) is pretty awesome. It provides free, no-hassle hosting for static sites built with [Jekyll](http://jekyllrb.com/). However, it also has some limitations.
 
+For example, although Jekyll "supports" tags, you can't create pages to list all posts with a given tag. At least not without using a plugin, which GitHub Pages doesn't allow.
 
-However, it's also a bit limiting. Jekyll is great but there is a lot it can't do. For example, although Jekyll "supports" tags, you can't create a page to list all posts with a given tag. At least not without using a plugin, which GitHub Pages doesn't allow.
+There is an easy way around this. You can build the site locally (using any plugins or code you want) and still host it on GitHub Pages. It's pretty simple although there are a few caveats. 
 
-There is an easy way around this. You can build the site locally (using any plugins or code you want) and still host it on GitHub Pages. It's pretty simple although there are still a few caveats. 
 
 ## Generated HTML should go in master
 
