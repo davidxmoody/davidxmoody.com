@@ -1,9 +1,18 @@
 var basename = require('path').basename;
 var dirname = require('path').dirname;
 var extname = require('path').extname;
-
 var marked = require('marked');
-var markedOptions = require('./marked-options');
+
+var markedOptions = {
+  gfm: true,
+  tables: true,
+  highlight: function (code, lang, callback) {
+    require('pygmentize-bundled')({ lang: lang, format: 'html' }, code, function (err, result) {
+      var str = result.toString();
+      callback(err, str);
+    });
+  }
+};
 
 module.exports = function(options) {
   return function(files, metadata, done) {
