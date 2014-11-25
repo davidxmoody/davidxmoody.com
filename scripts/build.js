@@ -12,6 +12,7 @@ var ignore = require('metalsmith-ignore');
 var beautify = require('metalsmith-beautify');
 var feed = require('metalsmith-feed');
 var fingerprint = require('metalsmith-fingerprint');
+var drafts = require('metalsmith-drafts');
 
 var markdown = require('./markdown');
 var excerpts = require('./excerpts');
@@ -36,6 +37,8 @@ Metalsmith(__dirname + '/..')
       title: "David Moody's Blog"
     }
   })
+
+  .use(drafts())
 
   .use(dateInFilename())
   .use(each(function(file) {
