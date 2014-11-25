@@ -175,7 +175,8 @@ Metalsmith(__dirname + '/..')
   .use(function(files) {
     // Make all relative links and images into absolute links and images
     data = files['feed.xml'];
-    data.contents = new Buffer(data.contents.toString().replace(/src="\//g, 'src="http://davidxmoody.com/').replace(/href="\//g, 'href="http://davidxmoody.com/'));
+    data.contents = new Buffer(data.contents.toString()
+        .replace(/(src|href)="\//g, '$1="http://davidxmoody.com/'));
   })
 
   .use(serve())
