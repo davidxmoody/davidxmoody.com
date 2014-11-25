@@ -28,17 +28,16 @@
           </p>
         </header>
 
-        <p>Most of my experience to date has been with building <strong>static sites</strong>.
-          One of the main advantages of static sites is supposed to be fast load
-          times. However, I noticed that this blog was taking a longer than I would
-          like to load. </p>
+        <p>One of the main advantages of static sites is supposed to be faster load
+          times. However, I noticed this blog was still taking longer than expected
+          to load. </p>
+        <p>I discovered <a href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/">this post by David Ensinger</a>          in which he describes the same problem. I&#39;ve learned a lot from his
+          other posts and we appear to have pretty similar setups. The problem he
+          describes is a time consuming 302 redirect caused by using GitHub Pages
+          with a DNS <code>A</code> record. I suggest you look at his post for more
+          details. </p>
         <!--more-->
 
-        <p>I discovered <a href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/">this post by David Ensinger</a>.
-          I&#39;ve learned a lot from his other posts and it appears we have pretty
-          similar setups. The problem he describes is a time consuming 302 redirect
-          caused by using GitHub Pages with a DNS <code>A</code> record. I suggest
-          you look at his post for more details. </p>
         <h2 id="cloudflare">CloudFlare</h2>
         <p>Anyway, his solution was to use <a href="https://www.cloudflare.com/">CloudFlare</a>          and CNAME flattening. </p>
         <p>To be honest, I had looked into CloudFlare before and completely misunderstood
@@ -49,10 +48,9 @@
           then get passed through to your original server while some are cached
           by CloudFlare. This both reduces traffic for your own server as well as
           possibly reducing latency. </p>
-        <p>I&#39;m was very pleasantly surprised with the service provided by CloudFlare.
-          Their &quot;5 minute setup&quot; claim wasn&#39;t far off. For the low
-          price of <em>free</em>, I can&#39;t fault their service in any way whatsoever.
-          </p>
+        <p>I was very pleasantly surprised with their service. Their &quot;5 minute
+          setup&quot; claim wasn&#39;t far off. For the low price of <em>free</em>,
+          I can&#39;t fault their service in any way whatsoever. </p>
         <p>Using them also has the convenient side effect of eliminating that annoying
           302 redirect. Here is a screenshot from <a href="http://www.webpagetest.org/">http://www.webpagetest.org/</a>          of this blog&#39;s performance before and after switching to CloudFlare&#39;s
           DNS:</p>
@@ -74,8 +72,8 @@
           Cache-Control response header so the browser knows that it will be valid
           forever. </p>
         <p>This is similar to the way that HTTP determines freshness. However, instead
-          of sending a validator back to the server, the validator is send embedded
-          in the HTML which references the CSS file. </p>
+          of sending a validator back to the server, the validator is embedded in
+          the HTML which references the CSS file. </p>
         <h2 id="metalsmith-fingerprint">metalsmith-fingerprint</h2>
         <p>There is already a handy <a href="https://github.com/christophercliff/metalsmith-fingerprint">Metalsmith plugin for this</a>.
           Here&#39;s a sketch of how I use it:</p>
@@ -106,10 +104,8 @@
 
   </code>
   </pre>
-  <p>I also have set up a simple CloudFlare Page Rule for <code>davidxmoody.com/css/*</code>.
+  <p>I have also set up a simple CloudFlare Page Rule for <code>davidxmoody.com/css/*</code>.
     It simply sets the &quot;Browser cache expire TTL&quot; to 1 year. </p>
-  <p><img src="/images/cloudflare-and-hashed-css/final.png" alt="Final: 0.289s first view, 0.089s repeat view">
-  </p>
 
   </article>
 
