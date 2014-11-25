@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CloudFlare and hashed CSS</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="A blog about programming">
+  <link rel="canonical" href="http://davidxmoody.com/cloudflare-and-hashed-css/">
+  <link rel="stylesheet" href="/css/main-281a5c8d54ffb9364e6bfea48573c761.css">
+  <meta name="wot-verification" content="fdff4a26070b9df2fd1a" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/">David Moody</a></h1>
+      <p>A blog about programming</p>
+    </header>
+
+    <div class="content">
+      <article>
+        <header>
+          <h1>CloudFlare and hashed CSS</h1>
+          <p><em>Nov 25, 2014</em>
+          </p>
+        </header>
+
+        <p>Most of my experience to date has been with building <strong>static sites</strong>.
+          One of the main advantages of static sites is supposed to be fast load
+          times. However, I noticed that this blog was taking a longer than I would
+          like to load. </p>
+        <!--more-->
+
+        <p>I discovered <a href="http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/">this post by David Ensinger</a>.
+          I&#39;ve learned a lot from his other posts and it appears we have pretty
+          similar setups. The problem he describes is a time consuming 302 redirect
+          caused by using GitHub Pages with a DNS <code>A</code> record. I suggest
+          you look at his post for more details. </p>
+        <h2 id="cloudflare">CloudFlare</h2>
+        <p>Anyway, his solution was to use <a href="https://www.cloudflare.com/">CloudFlare</a>          and CNAME flattening. </p>
+        <p>To be honest, I had looked into CloudFlare before and completely misunderstood
+          what they actually did. I thought they were an alternative hosting service
+          who just happened to store your files in a &quot;CDN&quot;. </p>
+        <p>Turns out that they are actually more like a <em>wrapper</em> around your
+          existing website. They replace your DNS with their own. Some requests
+          then get passed through to your original server while some are cached
+          by CloudFlare. This both reduces traffic for your own server as well as
+          possibly reducing latency. </p>
+        <p>I&#39;m was very pleasantly surprised with the service provided by CloudFlare.
+          Their &quot;5 minute setup&quot; claim wasn&#39;t far off. For the low
+          price of <em>free</em>, I can&#39;t fault their service in any way whatsoever.
+          </p>
+        <p>Using them also has the convenient side effect of eliminating that annoying
+          302 redirect. Here is a screenshot from <a href="http://www.webpagetest.org/">http://www.webpagetest.org/</a>          of this blog&#39;s performance before and after switching to CloudFlare&#39;s
+          DNS:</p>
+        <p><img src="/images/cloudflare-and-hashed-css/before.png" alt="Before: 3.371s first view, 0.088s repeat view">
+        </p>
+        <p><img src="/images/cloudflare-and-hashed-css/after.png" alt="After: 0.289s first view, 0.089s repeat view">
+        </p>
+        <h2 id="css-caching">CSS caching</h2>
+        <p>Another benefit of using CloudFlare is that it gives me more control over
+          HTTP caching (using Page Rules).</p>
+        <p>Every time you visit a new page on this blog, it used to require <strong>two round trips</strong>.
+          One for the HTML and one to check that the <code>/css/main.css</code>          file had not changed. In practice, it wasn&#39;t too bad given that the
+          server almost always sends a 304 Not Modified response back. However,
+          I still wanted to eliminate the extra round trip. </p>
+        <p>One common way to do this is to insert a hash of the contents of the CSS
+          file into the filename. For example, <code>main.css</code> might become
+          <code>main-281a5c8d54ffb9364e6bfea48573c761.css</code>. You then also
+          have to send that CSS file with a very large <code>max-age</code> HTTP
+          Cache-Control response header so the browser knows that it will be valid
+          forever. </p>
+        <p>This is similar to the way that HTTP determines freshness. However, instead
+          of sending a validator back to the server, the validator is send embedded
+          in the HTML which references the CSS file. </p>
+        <h2 id="metalsmith-fingerprint">metalsmith-fingerprint</h2>
+        <p>There is already a handy <a href="https://github.com/christophercliff/metalsmith-fingerprint">Metalsmith plugin for this</a>.
+          Here&#39;s a sketch of how I use it:</p>
+        <pre><code class="lang-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">fingerprint</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;metalsmith-fingerprint&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">ignore</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;metalsmith-ignore&#39;</span><span class="p">);</span>
+
+<span class="c1">// ...</span>
+
+  <span class="c1">// Insert the hash of the file into its filename</span>
+  <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">fingerprint</span><span class="p">({</span>
+    <span class="nx">pattern</span><span class="o">:</span> <span class="s1">&#39;css/main.css&#39;</span>
+  <span class="p">}))</span>
+  <span class="c1">// Forget the original file</span>
+  <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">ignore</span><span class="p">([</span>
+        <span class="s1">&#39;css/main.css&#39;</span>
+  <span class="p">]))</span>
+
+<span class="c1">// ...</span>
+</pre>
+    </div>
+
+    </code>
+    </pre>
+    <p>Then in my <code>templates/default.html</code> file I have:</p>
+    <pre><code class="lang-html"><div class="highlight"><pre>  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/{{fingerprint.[css/main.css]}}&quot;</span><span class="nt">&gt;</span>
+</pre>
+  </div>
+
+  </code>
+  </pre>
+  <p>I also have set up a simple CloudFlare Page Rule for <code>davidxmoody.com/css/*</code>.
+    It simply sets the &quot;Browser cache expire TTL&quot; to 1 year. </p>
+  <p><img src="/images/cloudflare-and-hashed-css/final.png" alt="Final: 0.289s first view, 0.089s repeat view">
+  </p>
+
+  </article>
+
+  </div>
+
+  <div class="push"></div>
+  </div>
+
+  <footer class="site-footer">
+    <p>
+      <br>
+      <a href="http://feeds.feedburner.com/davidxmoody">RSS</a> |
+      <a href="https://github.com/davidxmoody">GitHub</a> |
+      <a href="mailto:david@davidxmoody.com">Email</a>
+    </p>
+    <p>
+      This blog is available under a
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a>
+    </p>
+  </footer>
+
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+    ga('create', 'UA-54505873-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
