@@ -17,6 +17,8 @@ Additionally, if you have a custom domain name, the `CNAME` file must also go in
 
 It's slightly awkward to get this all to work. I wanted a way to have both the source and generated site available on GitHub in the same repository. There are a few options available.
 
+*[Edit: Since writing this post, I've added a [fourth option which you might want to skip to](#option-four-separating-source-and-build). It solves the problem of having source and build files committed to the same branch.]*
+
 ## Option one: Two local repos
 
 One approach is to have two separate repositories on your development machine. One for the actual source and one for the generated site. See [this blog post](http://charliepark.org/jekyll-with-plugins/) for a rough guide. 
@@ -48,7 +50,7 @@ You also have to actually switch branches in the working directory which is awkw
 
 This third option is actually something I discovered myself. Well, I didn't exactly create the whole thing from scratch but I did manage to piece it all together without following a specific guide. 
 
-It solves most of the problems with the above options in the most concise way I can think of. You don't have to have multiple branches on your filesystem at the same time, you also don't even have to switch branches at any point. 
+It solves some of the problems with the above options in the most concise way I can think of. You don't have to have multiple branches on your filesystem at the same time, you also don't even have to switch branches at any point. 
 
 Here's the script:
 
@@ -64,6 +66,40 @@ git push --all origin
 5. `git push --all origin` then tells Git to push both branches to GitHub
 
 It's the simplest option I can think of and I'm pretty happy with it. It does feel a bit messy to have to have both generated files and source files in the same source branch. I'm sure there are ways around it but I like this approach for its simplicity. 
+
+## Option four: Separating source and build
+
+Option three above was simple. However, I didn't like storing generated files in the same branch as source files.
+
+I was thinking about how to do this for a while. I thought about creating a separate Git repo in the build dir. However, a slight problem arises when you want to clean the build dir because the `.git` directory would get removed. 
+
+I eventually found out about Git's `--work-tree=` option. It allows you to treat a directory as though it were the working tree of your Git repository (even if the `.git` dir isn't located in it). I also employed some other tricks to commit changes to the master branch without actually checking it out. 
+
+Anyway, here's the full script:
+
+```sh
+#!/bin/sh
+
+set -e
+
+# Check for uncommitted changes or untracked files
+[ -n "$(git status --porcelain)" ] && git status && exit 1
+
+# Switch to master branch without changing any files
+git symbolic-ref HEAD refs/heads/master
+git reset
+
+# Add all changes in the build dir
+git --work-tree=build add -A
+git --work-tree=build commit -m "Published changes"
+
+# Switch back to source
+git symbolic-ref HEAD refs/heads/source
+git reset
+
+# Push both branches to GitHub
+git push --all origin
+```
 
 ## Set the default branch
 
