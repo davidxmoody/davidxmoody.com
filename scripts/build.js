@@ -125,18 +125,23 @@ Metalsmith(__dirname + '/..')
   .use(each(function(file, filename) {
     var pag = file.pagination;
     if (pag) {
-      pag.previousHTML = pag.previous ? 
+      var links = [];
+
+      links.push(pag.previous ? 
           '<a href="/' + pag.previous.path + '">&laquo;</a>' :
-          '<span>&laquo;</span>';
-      pag.nextHTML = pag.next ? 
-          '|<a href="/' + pag.next.path + '">&raquo;</a>' :
-          '|<span>&raquo;</span>';
-      pag.pagesHTML = [];
+          '<span>&laquo;</span>');
+
       pag.pages.forEach(function(page) {
-        pag.pagesHTML.push( file === page ?
-          '|<span>' + page.pagination.num + '</span>' :
-          '|<a href="/' + page.path + '">' + page.pagination.num + '</a>');
+        links.push(file === page ?
+          '<span>' + page.pagination.num + '</span>' :
+          '<a href="/' + page.path + '">' + page.pagination.num + '</a>');
       });
+
+      links.push(pag.next ? 
+          '<a href="/' + pag.next.path + '">&raquo;</a>' :
+          '<span>&raquo;</span>');
+
+      pag.linksHTML = '<p class="pagination">' + links.join('|') + '</p>';
     }
   }))
 
@@ -183,5 +188,4 @@ Metalsmith(__dirname + '/..')
 
   .build(function(err) {
     if (err) throw err;
-    console.log("Finished");
   });
