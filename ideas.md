@@ -1,57 +1,16 @@
-## Mondays
+## Post ideas
 
-- Believable one month plan
-- Day/overnight trips to cities I'm thinking of getting jobs in (take photos)
-- Meetups
-- Look at job ads and places to work
-- Video self doing interview practice
-
-## Wednesdays
-
-- Standalone wordsearch game
-- Write about emmet-vim
-- Prof P website walkthrough, what I learned/code review
-
-- New game (iSketch clone, Bookworm Adventures clone, Geometry Dash clone)
-- Contribute to external GitHub repos
-- Python photo import script
+- Standalone wordsearch game (CSS/server)
+- Lessons learned from building the Professor P site
+- Contribute to external GitHub repos (Metalsmith plugins?)
 - Make and publish a Vim auto-capitalisation plugin
-
-- More Vim plugins
-- Learn Git better
-- Linux command line tools (Midnight Commander, SSH)
+- Learn Git better (read the book in full and make notes)
+- Go through Vim plugins top list
+- Try Midnight Commander or Vifm (also customise inputrc)
 - Switch from Terminator to tmux
-- Customise inputrc
-- Grunt
-- Advanced AngularJS features
-- Bash prompts
-- Fix Markdown syntax highlighting 
-
-## Fridays
-
-- Book reviews
-- Meditation habit
-- "About Me"
-- Write about automatic webcamframe script
-
-### Future topics (non-urgent or best delayed)
-
+- Add Git branch to Bash prompt
 - "Primal success story" (with photos)
-- Favourite recipes
-- Pomodoro todo.txt combination
-- StayFocusd and other habit changes
-- Shorthand abbreviations
-- Earplugs review
-- Write about how I use my diary
-- Review of Frixion pens and notebooks
-- Lego memories
-- Plan for a better sleep/nighttime routine (+ sleep tracking)
-- Better morning routine (with FitBit silent alarm)
-- Dating site profile
-- Visit friends in London
-- Read and summarise social textbooks
-- One photo per post challenge
-- More favourite photos (various holidays, themes, desktop backgrounds)
+- Shorthand abbreviations/EasyScript system
 
 ## Blog tweaks
 
@@ -59,8 +18,6 @@
 - Add index page description
 - Add about-me page
 - Change background colour of code elements
-- Reduce text size on mobile devices
+- Reduce text size on mobile devices (and in general?)
 - Favicon (http://realfavicongenerator.net/)
 - Tags
-- Optimize images, make them more responsive
-- Image caching and/or hashes, maybe hash and commit hashed images to filesystem, run as a separate Metalsmith branch which is launched manually
