@@ -3,9 +3,9 @@ title: CV
 permalink: /cv/
 ---
 
-# David Moody -- Web developer
+# David Moody - Web developer
 
-- Email: <a href="mailto:david@davidxmoody.com">david@davidxmoody.com</a>
+- Email: <david@davidxmoody.com>
 - Blog: [davidxmoody.com](http://davidxmoody.com/)
 
 ## Education
@@ -41,9 +41,9 @@ permalink: /cv/
 - My personal blog
 - Static site generated with **Jekyll** and hosted with **GitHub Pages**
 - Simple responsive design and typography with **Sass**
-- 33 posts (20,000 words) written since 11 August 2014 on a **regular&nbsp;schedule**
+- 36 posts (23,000 words) written since 11 August 2014 on a **regular&nbsp;schedule**
 - I have written about: Vim plugins, website design, the Pomodoro Technique, misc tech stuff and almost everything else on this CV
-- Over 200 commits, [available on GitHub](https://github.com/davidxmoody/davidxmoody.github.io)
+- Over 290 commits, [available on GitHub](https://github.com/davidxmoody/davidxmoody.github.io)
 
 ### [Monte Carlo Tree Search in Texas Hold 'em Poker](/mcts-in-texas-hold-em-poker-a-retrospective/) (2011)
 
@@ -66,8 +66,8 @@ permalink: /cv/
 
 - 3 year personal project written in **Bash** and then **Python**
 - Learned many Python features including: generators, regular expressions, file manipulation, module structure, decorators, subprocesses, logging, etc.
-- Over 330 commits, [available on GitHub](https://github.com/davidxmoody/diary)
 - Implemented a basic **Flask RESTful API** and later a static HTML generator using **Jinja2** templates
+- Over 330 commits, [available on GitHub](https://github.com/davidxmoody/diary)
 
 ### Linux and other skills
 

@@ -21,3 +21,4 @@
 - Reduce text size on mobile devices (and in general?)
 - Favicon (http://realfavicongenerator.net/)
 - Tags
+- Change email on home page to use obfuscated email (or use separate contacts page)

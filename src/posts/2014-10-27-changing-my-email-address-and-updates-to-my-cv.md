@@ -2,7 +2,7 @@
 title: Changing my email address and updates to my CV
 ---
 
-I have a *new email address*: <a href="mailto:david@davidxmoody.com">david@davidxmoody.com</a>
+I have a *new email address*: <david@davidxmoody.com>
 
 
 I have been running this blog for two and a half months but was still using my old Gmail address. Now that I'm thinking of applying for jobs, I want something that looks a bit more **professional**. I think my new email address makes it pretty obvious that I have my own personal domain. I'm hoping that people will see it and think *"I guess that guy must know what he's doing"*. 
