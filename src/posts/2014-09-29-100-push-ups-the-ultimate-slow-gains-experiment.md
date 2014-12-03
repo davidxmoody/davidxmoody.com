@@ -40,3 +40,4 @@ I'm also writing about it on this blog for public accountability. In fact, rathe
 | 2014-11-10    | 14  | 14  | 14  | 14  | 14  | 14  | 14  |
 | 2014-11-17    | 16  | 16  | 16  | 16  | 16  | 16  | 16  |
 | 2014-11-24    |  0  | 18  | 18  | 18  | 18  | 18  | 18  |
+| 2014-12-01    | 20  | 20  | 20  |  -  |  -  |  -  |  -  |
