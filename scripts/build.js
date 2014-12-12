@@ -53,6 +53,14 @@ Metalsmith(__dirname + '/..')
     }
   }))
 
+  // Sanitise tags
+  .use(each(function(file) {
+    if (file.tags && typeof file.tags === 'string') {
+      file.tags = file.tags.split(' ');
+    }
+    //if (file.tags) console.log(file.title, file.tags);
+  }))
+
   // Replace custom excerpt separator with <!--more--> tag
   .use(function(files, metalsmith) {
     metalsmith.metadata().posts.forEach(function(file) {
