@@ -21,7 +21,7 @@ For reasons that I can't remember, I started to develop an interest in Linux. I 
 
 One night when I couldn't sleep, I started reading a tutorial on Bash scripting. I was inexperienced with the Linux command line and I was very *curious* about how to use it properly. That curiosity drove me to learn everything I could about Bash. I started playing around. I created scripts for doing all kinds of things. It was a lot of fun. I also started using Vim as my text editor. It was hard to learn but I knew it would be worth it. 
 
-At some point, I realised that Bash wasn't suitable for everything. I switched my attention to Python. I practised on [Project Euler](https://projecteuler.net/) problems. I also started work on a command line program for organising my personal diary. I plan to write a full post about my diary project later. For now, I'll just say that it was a pretty significant project for me. It has over 300 commits and has taken me many hundreds of hours. I have re-written it several times over. I feel I learned more about software development from that project than anything else before it. 
+At some point, I realised that Bash wasn't suitable for everything. I switched my attention to Python. I practised on [Project Euler](https://projecteuler.net/) problems. I also started work on a [command line program for organising my personal diary](/lessons-learned-from-a-three-year-programming-project-part-1/). It was a pretty significant project for me. It has over 300 commits and has taken me many hundreds of hours. I feel that it taught me more about software development than any project before it.
 
 All of the above are what I like to think of as **natural growth**. I was very *curious* about these things and that caused me to explore and learn on my own. I feel it also led me to develop a sort of *unconscious growth mindset*. I became very familiar with learning about new technologies. I accepted that I could probably learn anything with enough time and effort. However, I most definitely still had a fixed mindset in many areas.
 
@@ -43,7 +43,7 @@ That brings me to my most recent project, *this blog*. I had wanted to start one
 
 I have written 14 posts so far (which has taken approximately 50 hours). I set myself a schedule and have stuck to it without fail. It's been hard work. It's difficult to quantify but I *feel* like I've already got a lot better at the process of writing. 
 
-One specific decision I'm pleased I made was to only publish my "best" content. I have been writing a personal diary for nearly four years. I just throw any old words into that with minimal editing. I could have done that for this blog but I'm glad I didn't. Editing my own words is one of the hardest parts of writing. I could have *easily* written ten times as much if I hadn't bothered with editing or planning. 
+One specific decision I'm pleased I made was to only publish my "best" content. I have been writing a personal diary for nearly four years. I just throw any old words into that with minimal editing. I could have done that for this blog but I'm glad I didn't. Editing my own words is one of the hardest parts of writing. 
 
 ## The future
 
