@@ -13,6 +13,7 @@ var beautify = require('metalsmith-beautify');
 var feed = require('metalsmith-feed');
 var fingerprint = require('metalsmith-fingerprint');
 var drafts = require('metalsmith-drafts');
+var pdf = require('metalsmith-pdf');
 
 var markdown = require('./markdown');
 var excerpts = require('./excerpts');
@@ -190,6 +191,16 @@ Metalsmith(__dirname + '/..')
     data = files['feed.xml'];
     data.contents = new Buffer(data.contents.toString()
         .replace(/(src|href)="\//g, '$1="http://davidxmoody.com/'));
+  })
+
+  .use(pdf({
+    pattern: 'cv/index.html',
+    printMediaType: true
+  }))
+  .use(function(files) {
+    // Rename CV to something more meaningful
+    files['cv/david-moody-cv-web-developer.pdf'] = files['cv/index.pdf'];
+    delete files['cv/index.pdf'];
   })
 
   .use(serve())
