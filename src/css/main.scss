@@ -113,6 +113,12 @@ table th {
 	font-weight: bold;
 }
 
+table::after {
+  content: "";
+  display: block;
+  height: $computed-line-height;
+}
+
 // Quick blockquote styling
 blockquote {
   margin-left: 5%;
