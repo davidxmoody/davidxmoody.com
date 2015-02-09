@@ -35,7 +35,7 @@ I then set out on an ambitious adventure to learn everything I could about HTML 
 
 I added [four other games](http://professorp.co.uk/games/), including a [shark attack game](http://professorp.co.uk/games/sharkattack/), a [memory card game](http://professorp.co.uk/games/memory/), a [quiz game](http://professorp.co.uk/games/quiz/) and a [wordsearch game](http://professorp.co.uk/games/wordsearch/) (which I've [already written about](/wordsearch-game/)). Each was challenging in its own way and I learned a lot from all of them. I also spent a long time making [the rest of the website](http://professorp.co.uk/) with a static site generator ([DocPad](http://docpad.org/)). 
 
-The whole thing took me about a year, although I did have a very slow start. I went through intense periods of passion-fuelled work followed by periods of boredom-filled procrastination. [I've written about this before](/the-pomodoro-technique-what-i-wish-id-known/) but it slowly got better. I'm very proud of the Professor P website. If I could start again, there are many things I would do differently. However, I feel it represents a lot of growth in my ability. 
+The whole thing took me about a year, although I did have a very slow start. I went through intense periods of passion-fuelled work followed by periods of boredom-filled procrastination. [I've written about this before](/the-pomodoro-technique-what-i-wish-i-d-known/) but it slowly got better. I'm very proud of the Professor P website. If I could start again, there are many things I would do differently. However, I feel it represents a lot of growth in my ability. 
 
 ## This blog
 
