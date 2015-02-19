@@ -30,56 +30,54 @@ Currently looking for a suitable web developer position at a large company with 
 
 ## Projects
 
+### [davidxmoody.com](http://davidxmoody.com/) (2014 - present)
+
+- My personal blog documenting my technical knowledge and past projects
+- 36 posts (23,000 words) written since 11 August 2014
+- Simple responsive design built with **JavaScript** and **Sass** and hosted with **GitHub Pages**
+
 ### [professorp.co.uk](http://professorp.co.uk) (2013 - 2014)
 
+TODO what is it in a better summary, also focus on the process (what I did)
+
 - Website for the Professor P series of children's books
-- Five JavaScript games written with **AngularJS**, **jQuery** and **CoffeeScript**
+- Five **JavaScript games** written with **AngularJS**, **jQuery** and **CoffeeScript**
 - AI opponent in one of the games uses the **A* search algorithm**
 - Experience with **Node.js**, **Gulp** and **Browserify**
 - **Responsive design** with **Bootstrap** and **Sass**
 - Generated with **DocPad**, **Markdown** and **Eco templates**
 - Working Amazon S3 deployment script (unused) and FTP deployment script
 - Worked with the author to create the content of the site
-- 280 commits, [available on GitHub](https://github.com/davidxmoody/professorp.co.uk)
 
-### [davidxmoody.com](http://davidxmoody.com/) (2014 - present)
+### [Diary program](http://davidxmoody.com/lessons-learned-from-a-three-year-programming-project-part-1/) (2011 - 2014)
 
-- My personal blog
-- Static site built with **Metalsmith** and hosted with **GitHub Pages**
-- Simple responsive design and typography with **Sass**
-- 36 posts (23,000 words) written since 11 August 2014
-- I have written about: Vim plugins, website design, the Pomodoro Technique, other programming topics and almost everything else on this CV
-- Over 300 commits, [available on GitHub](https://github.com/davidxmoody/davidxmoody.github.io)
+- TODO what *is* it?
+- 3 year personal project written in **Bash** and then **Python**
+- Learned many core Python language features
+- Implemented a simple **Flask RESTful API** and a static HTML generator using **Jinja2 templates**
+- TODO learned refactoring?
 
 ### [Monte Carlo Tree Search in Texas Hold 'em Poker](http://davidxmoody.com/mcts-in-texas-hold-em-poker-a-retrospective/) (2011)
 
-- 3rd year dissertation project written in **Java**
+- Third year dissertation project written in **Java**
 - Built a **working poker-bot** with a complex AI search algorithm
-- [Available on GitHub](https://github.com/davidxmoody/mctsbot)
+
+### Edubase web scraper (2011)
+
+- Simple web scraper written in Java using **regular expressions**
+- Exports schools' contact info to a database, saving a lot of time for a small publishing company
 
 ### Project Kilo: recognising molecules from photographs (2010)
 
 - Second year university group project
 - **Worked with others** to create an Android app and server
 
-### Edubase web scraper (2011)
-
-- Simple web scraper written in Java using regular expressions
-- Exports schools' contact info to a database, saving a lot of time for a small publishing company
-
-### [Diary program](http://davidxmoody.com/lessons-learned-from-a-three-year-programming-project-part-1/) (2011 - 2014)
-
-- 3 year personal project written in **Bash** and then **Python**
-- Learned many core Python language features
-- Implemented a basic **Flask RESTful API** and later a static HTML generator using **Jinja2 templates**
-- Over 330 commits, [available on GitHub](https://github.com/davidxmoody/diary)
-
 ### Linux and other skills
 
 - **Mercurial** user (2011 - 2014), now learning **Git**
-- Knowledge and experience with many **Unix command line tools**
+- Experience with many **Unix command line tools**
 - **Fast typist** with Dvorak and Vim (~80wpm)
-- My dotfiles are [available on GitHub](https://github.com/davidxmoody/dotfiles)
+- Most projects referenced here are available on my [GitHub profile](https://github.com/davidxmoody)
 
 ## Interests
 
