@@ -195,7 +195,9 @@ Metalsmith(__dirname + '/..')
 
   .use(pdf({
     pattern: 'cv/index.html',
-    printMediaType: true
+    printMediaType: true,
+    marginTop: '1.5cm',
+    marginBottom: '1.5cm'
   }))
   .use(function(files) {
     // Rename CV to something more meaningful
