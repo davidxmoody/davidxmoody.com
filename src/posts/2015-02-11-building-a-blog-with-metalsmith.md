@@ -24,10 +24,10 @@ function paraCount(text) {
 
 ## Post organisation
 
-I keep all my posts in pretty much the same format as I used with Jekyll. For example, this post has a filename of:
+I keep all my posts in pretty much the same format as I used with Jekyll. For example:
 
 ```bash
-src/posts/2014-11-26-building-a-blog-with-metalsmith.md
+src/posts/2014-08-11-hello-world.md
 ```
 
 I use the handy [metalsmith-date-in-filename](https://github.com/sanx/metalsmith-date-in-filename) plugin to extract the dates. I also use the [metalsmith-permalinks](https://github.com/segmentio/metalsmith-permalinks) and [metalsmith-collections](https://github.com/segmentio/metalsmith-collections) plugins rename and organise posts.
