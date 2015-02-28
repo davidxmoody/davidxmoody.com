@@ -12,7 +12,7 @@ permalink: /cv/
 
 An enthusiastic graduate web developer with a strong academic background. Keenly interested in   new web technologies. Has taken some time off to create two large websites requiring significant   learning. Able to work hard with minimal supervision.
 
-Currently looking for a suitable web developer position at a large company with room for growth.
+Currently looking for a suitable web developer position at an exciting company with room for growth.
 
 ## Technical skills
 
@@ -40,7 +40,7 @@ Currently looking for a suitable web developer position at a large company with 
 ### [davidxmoody.com](http://davidxmoody.com/) (2014 - present)
 
 - Personal blog documenting my technical knowledge and past projects
-- 36 posts (23,000 words) written since 11 August 2014
+- 36 posts (24,000 words) written since 11 August 2014
 - Simple responsive design built with **JavaScript** and **Sass** and hosted with **GitHub Pages**
 
 <div class="page-break"></div>
