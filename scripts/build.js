@@ -59,10 +59,9 @@ Metalsmith(__dirname + '/..')
     if (file.tags && typeof file.tags === 'string') {
       file.tags = file.tags.split(' ');
     }
-    //if (file.tags) console.log(file.title, file.tags);
   }))
 
-  // Replace custom excerpt separator with <!--more--> tag
+  // Replace custom EXCERPT_SEPARATOR with <!--more--> tag
   .use(function(files, metalsmith) {
     metalsmith.metadata().posts.forEach(function(file) {
       file.contents = new Buffer(file.contents.toString().replace(EXCERPT_SEPARATOR, '\n\n<!--more-->\n\n'));
