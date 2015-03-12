@@ -26,21 +26,19 @@ function isHTML(file){
   return /\.html/.test(extname(file));
 }
 
+var METADATA = {
+  title: "David Moody's Blog",
+  description: "A blog about programming",
+  url: "http://davidxmoody.com"
+};
+
 
 Metalsmith(__dirname + '/..')
 
   // CONFIG ===================================================================
 
   .clean(true)
-  //TODO tidy this up, remove duplicated stuff
-  .metadata({
-    title: "David Moody's Blog",
-    description: "A blog about programming",
-    site: {
-      url: "http://davidxmoody.com",
-      title: "David Moody's Blog"
-    }
-  })
+  .metadata(METADATA)
 
   // POSTS ====================================================================
 
@@ -128,7 +126,7 @@ Metalsmith(__dirname + '/..')
       template: 'list.html',
       first: 'index.html',
       path: 'page:num/index.html',
-      pageMetadata: { }
+      pageMetadata: {}
     }
   }))
   // Don't duplicate the first page
@@ -203,13 +201,16 @@ Metalsmith(__dirname + '/..')
   .use(feed({
     collection: 'posts',
     limit: 20,
-    destination: 'feed.xml'
+    destination: 'feed.xml',
+    title: METADATA.title,
+    site_url: METADATA.url,
+    description: METADATA.description
   }))
   .use(function(files) {
     // Make all relative links and images into absolute links and images
     data = files['feed.xml'];
     data.contents = new Buffer(data.contents.toString()
-        .replace(/(src|href)="\//g, '$1="http://davidxmoody.com/'));
+        .replace(/(src|href)="\//g, '$1="' + METADATA.url));
   })
 
   // CV PDF ===================================================================
