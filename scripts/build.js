@@ -28,6 +28,9 @@ function isHTML(file){
 
 
 Metalsmith(__dirname + '/..')
+
+  // CONFIG ===================================================================
+
   .clean(true)
   //TODO tidy this up, remove duplicated stuff
   .metadata({
@@ -39,8 +42,12 @@ Metalsmith(__dirname + '/..')
     }
   })
 
+  // POSTS ====================================================================
+
+  //TODO Is there a better method for doing drafts? Maybe a drafts dir
   .use(drafts())
 
+  // TODO decide on better method for post naming
   .use(dateInFilename())
   .use(each(function(file) {
     if (file.date) file.formattedDate = moment(file.date).format('ll');
@@ -54,7 +61,7 @@ Metalsmith(__dirname + '/..')
     }
   }))
 
-  // Sanitise tags
+  // Convert space separated string of tags into a list
   .use(each(function(file) {
     if (file.tags && typeof file.tags === 'string') {
       file.tags = file.tags.split(' ');
@@ -74,7 +81,8 @@ Metalsmith(__dirname + '/..')
     pattern: ':title/'
   }))
 
-  // Setup archive
+  // ARCHIVE PAGES ============================================================
+
   .use(pagination({
     'collections.posts': {
       perPage: 20,
@@ -112,6 +120,8 @@ Metalsmith(__dirname + '/..')
     file.months = months;
   }))
 
+  // HOME PAGE PAGINATION =====================================================
+
   .use(pagination({
     'collections.posts': {
       perPage: 6,
@@ -124,10 +134,13 @@ Metalsmith(__dirname + '/..')
   // Don't duplicate the first page
   .use(ignore(["page1/index.html"]))
 
+  // Clean up paths to provide clean URLs
   .use(each(function(file, filename) {
     file.path = filename.replace(/index.html$/, '');
   }))
 
+  // EXCERPTS =================================================================
+  
   .use(excerpts())
 
   .use(each(function(file, filename) {
@@ -153,6 +166,8 @@ Metalsmith(__dirname + '/..')
     }
   }))
 
+  // CSS AND FINGERPRINTING ===================================================
+
   .use(sass())
   .use(fingerprint({
     pattern: 'css/main.css'
@@ -161,6 +176,8 @@ Metalsmith(__dirname + '/..')
         'css/_*.sass',
         'css/main.css'
   ]))
+
+  // TEMPLATES ================================================================
 
   // Use templates once then once again to wrap *every HTML file* in default.html
   .use(function(files, metalsmith) {
@@ -174,15 +191,18 @@ Metalsmith(__dirname + '/..')
   }))
   .use(templates('handlebars'))
 
+  // TODO is this necessary?
   .use(beautify({
     wrap_line_length: 79,
     indent_size: 2,
     indent_char: ' '
   }))
 
+  // RSS FEED =================================================================
+
   .use(feed({
     collection: 'posts',
-    limit: 10,
+    limit: 20,
     destination: 'feed.xml'
   }))
   .use(function(files) {
@@ -192,20 +212,27 @@ Metalsmith(__dirname + '/..')
         .replace(/(src|href)="\//g, '$1="http://davidxmoody.com/'));
   })
 
+  // CV PDF ===================================================================
+
   .use(pdf({
     pattern: 'cv/index.html',
     printMediaType: true,
     marginTop: '1.5cm',
     marginBottom: '1.5cm'
   }))
+
+  // Rename CV to something more meaningful
   .use(function(files) {
-    // Rename CV to something more meaningful
-    files['cv/david-moody-cv-web-developer.pdf'] = files['cv/index.pdf'];
-    delete files['cv/index.pdf'];
+    var oldPath = 'cv/index.pdf';
+    var newPath = 'cv/david-moody-cv-web-developer.pdf';
+
+    files[newPath] = files[oldPath];
+    delete files[oldPath];
   })
 
-  .use(serve())
+  // SERVE AND BUILD ==========================================================
 
+  .use(serve())
   .build(function(err) {
     if (err) throw err;
   });
