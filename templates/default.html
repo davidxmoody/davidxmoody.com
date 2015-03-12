@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{title}}</title>
+  <title>{{ title }}</title>
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="{{description}}">
-  <link rel="canonical" href="http://davidxmoody.com/{{path}}">
-  <link rel="stylesheet" href="/{{fingerprint.[css/main.css]}}">
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ url }}/{{ path }}">
+  <link rel="stylesheet" href="/{{ fingerprint.[css/main.css] }}">
   <meta name="wot-verification" content="fdff4a26070b9df2fd1a"/>
 </head>
 <body>
@@ -15,7 +15,7 @@
 <div class="wrapper">
   <header class="site-header">
     <h1><a href="/">David Moody</a></h1>
-    <p>A blog about programming</p>
+    <p>{{ description }}</p>
   </header>
 
   <div class="content">
@@ -28,9 +28,9 @@
 <footer class="site-footer">
   <p>
     <br>
-    <a href="http://feeds.feedburner.com/davidxmoody">RSS</a> | 
-    <a href="https://github.com/davidxmoody">GitHub</a> | 
-    <a href="mailto:david@davidxmoody.com">Email</a>
+    <a href="{{ url }}/{{ feedPath }}">RSS</a> | 
+    <a href="{{ gitHubURL }}">GitHub</a> | 
+    <a href="mailto:{{ email }}">Email</a>
   </p>
   <p>
     This blog is available under a 

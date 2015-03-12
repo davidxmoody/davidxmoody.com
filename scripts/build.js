@@ -29,7 +29,10 @@ function isHTML(file){
 var METADATA = {
   title: "David Moody's Blog",
   description: "A blog about programming",
-  url: "http://davidxmoody.com"
+  url: "http://davidxmoody.com",
+  feedPath: "feed.xml",
+  gitHubURL: "https://github.com/davidxmoody",
+  email: "david@davidxmoody.com"
 };
 
 
@@ -201,14 +204,14 @@ Metalsmith(__dirname + '/..')
   .use(feed({
     collection: 'posts',
     limit: 20,
-    destination: 'feed.xml',
+    destination: METADATA.feedPath,
     title: METADATA.title,
     site_url: METADATA.url,
     description: METADATA.description
   }))
   .use(function(files) {
     // Make all relative links and images into absolute links and images
-    data = files['feed.xml'];
+    data = files[METADATA.feedPath];
     data.contents = new Buffer(data.contents.toString()
         .replace(/(src|href)="\//g, '$1="' + METADATA.url));
   })
