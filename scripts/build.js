@@ -82,45 +82,6 @@ Metalsmith(__dirname + '/..')
     pattern: ':title/'
   }))
 
-  // ARCHIVE PAGES ============================================================
-
-  .use(pagination({
-    'collections.posts': {
-      perPage: 20,
-      template: 'archive.html',
-      first: 'archive/index.html',
-      path: 'archive/page:num/index.html',
-      pageMetadata: {
-        title: "Archive"
-      }
-    }
-  }))
-  // Don't duplicate the first page
-  .use(ignore(["archive/page1/index.html"]))
-
-  // Group archive posts by month
-  .use(each(function(file, filename) {
-    //TODO maybe make it so that months dont get split between pages?
-    if (!filename.match(/^archive\//)) return;
-
-    var months = [];
-    var lastMonth = '';
-
-    file.pagination.files.forEach(function(post) {
-      var formattedMonth = moment(post.date).format('MMMM YYYY');
-      if (lastMonth !== formattedMonth) {
-        months.push({
-          formattedMonth: formattedMonth,
-          posts: [post]
-        });
-        lastMonth = formattedMonth;
-      } else {
-        months[months.length-1].posts.push(post);
-      }
-    });
-    file.months = months;
-  }))
-
   // HOME PAGE PAGINATION =====================================================
 
   .use(pagination({
@@ -191,6 +152,8 @@ Metalsmith(__dirname + '/..')
     if (isHTML(filename)) file.template = 'default.html';
   }))
   .use(templates('handlebars'))
+
+  // BEAUTIFY =================================================================
 
   // TODO is this necessary?
   .use(beautify({
