@@ -6,6 +6,7 @@ permalink: /cv/
 # David Moody - Web developer
 
 - Email: <david@davidxmoody.com>
+- GitHub: [github.com/davidxmoody](https://github.com/davidxmoody)
 - Blog: [davidxmoody.com](http://davidxmoody.com/)
 
 ## Personal summary
