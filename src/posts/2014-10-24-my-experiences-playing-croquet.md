@@ -7,29 +7,27 @@ I haven't written about it before but I am a very keen croquet player. I thought
 
 ## Early introduction to the game
 
-My Dad first introduced me to croquet when I was about 15 years old. I started playing in my grandparents' garden with a very basic wooden mallet. I enjoyed it a lot. 
+My Dad first introduced me to croquet when I was about 15 years old. I started playing in my grandparents' garden with a very basic wooden mallet. 
 
 ![Croquet in my grandparents' garden](/images/my-experiences-playing-croquet/croquet-in-garden.jpg)
 
 ## Abbey Croquet Club
 
-Around 2005, the Abbey Croquet Club formed in Glastonbury Abbey. My Dad went along and encouraged me to go. I enjoyed it and was persuaded to play in two matches. The first was at home, I think I won all of my games and was very pleased. Unfortunately, the second match was away (at Wells) and I lost all of my games. 
-
-I think that second match really shattered my confidence. I stopped playing croquet for quite a while. I didn't play at Cambridge even though I could have. 
+Around 2005, the Abbey Croquet Club formed in Glastonbury Abbey. My Dad went along and encouraged me to go. I enjoyed it and was persuaded to play in two matches. The first went very well but the second went very badly. I stopped playing for a while after that. I didn't play at Cambridge even though I could have. 
 
 ## Abbey Croquet Club again
 
-When I graduated from university and came back home, I re-joined the club. It had moved from Glastonbury Abbey to Street (but kept the name). I played with my Dad and his friends for a while. 
+After university, I re-joined the club. It had moved from Glastonbury Abbey to Street (but kept the name). I played with my Dad and his friends for a while. 
 
-I then entered an inter-club tournament. I was starting to play well at that point and came in second place. That really boosted my confidence. I decided to buy my own mallet that year.
+We then had an inter-club tournament. I was starting to play well at that point and came in second place. That really boosted my confidence. I bought my own mallet that year.
 
 ## First year of matches
 
-In 2012, I started playing in matches again. I was very nervous. Thankfully, my first match of the season went very well. My Dad and I won our first two doubles games together which put me in good spirits. I then proceeded to win one and lose one game on my own. I felt like I had played well so I was content. 
+In 2012, I started playing in matches again. I was very nervous. Thankfully, my first few matches went well and everyone was very friendly.
 
-I should also mention that I started off playing with a handicap of 6 (minimum is 0 and maximum is 12). In the matches we were playing, the higher handicapped player gets a number of "free shots" equal to the difference in handicaps. It's a relatively fair way of balancing games.
+I started off playing with a handicap of 6 (minimum is 0 and maximum is 12). In the matches we were playing, the higher handicapped player gets a number of "free shots" equal to the difference in handicaps. It's a relatively fair way of balancing games.
 
-I played in 4 matches that year. Out of my 12 singles games, I won 8, lost 2 and drew 2. I was very pleased with that. I was also improving constantly because of all the practice. 
+I played in 4 matches that year. Out of my 12 singles games, I won 8, lost 2 and drew 2. I was improving steadily because of all the practice. 
 
 ## Second year of matches
 
@@ -51,7 +49,7 @@ After being in the winning team twice, my confidence had gone up considerably. I
 
 Additionally, there was a new rule that year. It meant that lower handicap players (like myself) had to give away even more free shots than normal. Despite the additional difficulty, I had my best season yet. I won 24 games and only lost 5. I also dropped to a 2 handicap.
 
-Our whole team practised together a lot and improved even more. We also got a new team member. For the second year in a row, we won the South West Handicap League.
+Our whole team frequently practised together and we improved even more. We also got a new team member. For the second year in a row, we won the South West Handicap League.
 
 [![Abbey winning the Golf Handicap League in Taunton](/images/my-experiences-playing-croquet/taunton-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-triumph-South-West-Handicap/story-23184624-detail/story.html)
 
@@ -59,14 +57,10 @@ Our association croquet team also continued to improve. That year, we won the So
 
 [![Abbey winning the AC Federation League in Taunton](/images/my-experiences-playing-croquet/cheltenham-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Federation/story-23026871-detail/story.html)
 
-If I'm being completely honest, I was improving faster than my handicap was dropping. Association croquet games are longer than golf croquet games so you play fewer of them in a season. That meant my handicap was lagging behind my actual skill level. I do feel a bit guilty about that. Next year I plan to ask an official handicapper to drop my handicap to a more realistic level. 
-
 ## Future plans
 
 Unfortunately, the croquet season has ended. We still play on weekends but it's too cold and dark to play in the evenings. I am also planning to move away from Glastonbury soon so things must change. 
 
-Next year, I plan to play in tournaments as well as club matches. I'm also thinking of upgrading my mallet and altering my technique. I still want to play in matches for Abbey but I am also planning to join a new club.
+Next year, I hope to play in tournaments as well as club matches. I'm also thinking of upgrading my mallet and altering my technique. I still want to play in matches for Abbey but I am also planning to join a new club.
 
-I don't know what the future will hold. Croquet is important to me but it is not my highest priority. One of the unfortunate things about croquet is that most players are much older than me. According to the [2012 survey of croquet players](https://www.croquet.org.uk/ca/), the median age is 65. Only 1% of croquet players are in their 20s. 
-
-Nevertheless, I plan to keep playing croquet for a long time to come. It's a great game. 
+I plan to keep playing croquet for a long time to come. It's a great game. 
