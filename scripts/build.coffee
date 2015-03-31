@@ -135,7 +135,7 @@ Metalsmith(__dirname + '/..')
 
   # TEMPLATES #################################################################
 
-  # Use templates once then once again to wrap every HTML file in default.html
+  # Use templates once then once again to wrap every HTML file in wrapper.html
 
   .use (files, metalsmith) ->
     #TODO find a better way to iterate over all posts in CoffeeScript
@@ -148,7 +148,7 @@ Metalsmith(__dirname + '/..')
   
   .use each (file, filename) ->
     if isHTML(filename)
-      file.template = 'default.html'
+      file.template = 'wrapper.html'
     return
 
   .use templates 'handlebars'
