@@ -1,25 +1,23 @@
-moment = require('moment')
-Metalsmith = require('metalsmith')
-templates = require('metalsmith-templates')
-permalinks = require('metalsmith-permalinks')
-collections = require('metalsmith-collections')
-dateInFilename = require('metalsmith-date-in-filename')
-pagination = require('metalsmith-pagination')
-serve = require('metalsmith-serve')
-sass = require('metalsmith-sass')
-ignore = require('metalsmith-ignore')
-beautify = require('metalsmith-beautify')
-feed = require('metalsmith-feed')
-fingerprint = require('metalsmith-fingerprint')
-drafts = require('metalsmith-drafts')
-pdf = require('metalsmith-pdf')
+moment = require 'moment'
+Metalsmith = require 'metalsmith'
+templates = require 'metalsmith-templates'
+permalinks = require 'metalsmith-permalinks'
+collections = require 'metalsmith-collections'
+dateInFilename = require 'metalsmith-date-in-filename'
+pagination = require 'metalsmith-pagination'
+serve = require 'metalsmith-serve'
+sass = require 'metalsmith-sass'
+ignore = require 'metalsmith-ignore'
+beautify = require 'metalsmith-beautify'
+feed = require 'metalsmith-feed'
+fingerprint = require 'metalsmith-fingerprint'
+drafts = require 'metalsmith-drafts'
+pdf = require 'metalsmith-pdf'
 
-markdown = require('./markdown')
-excerpts = require('./excerpts')
+markdown = require './markdown'
+excerpts = require './excerpts'
 
 extname = require('path').extname
-
-EXCERPT_SEPARATOR = '\n\n\n'
 
 METADATA =
   title: 'David Moody\'s Blog'
@@ -28,6 +26,7 @@ METADATA =
   feedPath: 'feed.xml'
   gitHubURL: 'https://github.com/davidxmoody'
   email: 'david@davidxmoody.com'
+  excerptSeparator: '\n\n\n'
 
 isHTML = (file) ->
   /\.html/.test extname(file)
@@ -64,12 +63,10 @@ Metalsmith(__dirname + '/..')
       if file.tags and typeof file.tags == 'string'
         file.tags = file.tags.split(' ')
 
-  # Replace custom EXCERPT_SEPARATOR with <!--more--> tag
+  # Replace custom excerpt separator with <!--more--> tag
   .use (files, metalsmith) ->
-    metalsmith.metadata().posts.forEach (file) ->
-      file.contents = new Buffer(file.contents.toString().replace(EXCERPT_SEPARATOR, '\n\n<!--more-->\n\n'))
-      return
-    return
+    for file in metalsmith.metadata().posts
+      file.contents = new Buffer(file.contents.toString().replace(METADATA.excerptSeparator, '\n\n<!--more-->\n\n'))
 
   .use markdown()
   
@@ -137,11 +134,8 @@ Metalsmith(__dirname + '/..')
   # Use templates once then once again to wrap every HTML file in wrapper.html
 
   .use (files, metalsmith) ->
-    #TODO find a better way to iterate over all posts in CoffeeScript
-    metalsmith.metadata().posts.forEach (file) ->
+    for file in metalsmith.metadata().posts
       file.template = 'post.html'
-      return
-    return
 
   .use templates 'handlebars'
   
