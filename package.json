@@ -9,7 +9,6 @@
     "metalsmith-collections": "^0.6.0",
     "metalsmith-date-in-filename": "0.0.13",
     "metalsmith-drafts": "0.0.1",
-    "metalsmith-each": "^0.1.0",
     "metalsmith-feed": "0.0.6",
     "metalsmith-fingerprint": "^1.0.0",
     "metalsmith-ignore": "^0.1.2",
@@ -25,7 +24,7 @@
     "metalsmith-pdf": "~1.1.2"
   },
   "scripts": {
-    "start": "nodemon -e md,sass,scss,css,html,js,coffee --ignore build/ ./scripts/build.coffee",
+    "start": "nodemon -e md,sass,scss,css,html,js,coffee,json,cson --ignore build/ ./scripts/build.coffee",
     "deploy": "./scripts/deploy.sh"
   }
 }

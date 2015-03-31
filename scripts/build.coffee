@@ -3,7 +3,6 @@ Metalsmith = require('metalsmith')
 templates = require('metalsmith-templates')
 permalinks = require('metalsmith-permalinks')
 collections = require('metalsmith-collections')
-each = require('metalsmith-each')
 dateInFilename = require('metalsmith-date-in-filename')
 pagination = require('metalsmith-pagination')
 serve = require('metalsmith-serve')
@@ -48,10 +47,10 @@ Metalsmith(__dirname + '/..')
   #TODO choose a better method of post naming
   .use dateInFilename()
   
-  .use each (file) ->
-    if file.date
-      file.formattedDate = moment(file.date).format('ll')
-    return
+  .use (files) ->
+    for filename, file of files
+      if file.date
+        file.formattedDate = moment(file.date).format('ll')
 
   .use collections posts: {
     pattern: 'posts/*.md'
@@ -60,10 +59,10 @@ Metalsmith(__dirname + '/..')
   }
   
   # Convert space separated string of tags into a list
-  .use each (file) ->
-    if file.tags and typeof file.tags == 'string'
-      file.tags = file.tags.split(' ')
-    return
+  .use (files) ->
+    for filename, file of files
+      if file.tags and typeof file.tags == 'string'
+        file.tags = file.tags.split(' ')
 
   # Replace custom EXCERPT_SEPARATOR with <!--more--> tag
   .use (files, metalsmith) ->
@@ -90,37 +89,37 @@ Metalsmith(__dirname + '/..')
   .use ignore ['page1/index.html']
   
   # Clean up paths to provide clean URLs
-  .use each (file, filename) ->
-    file.path = filename.replace(/index.html$/, '')
-    return
+  .use (files) ->
+    for filename, file of files
+      file.path = filename.replace(/index.html$/, '')
 
   # EXCERPTS ##################################################################
 
   .use excerpts()
   
-  .use each (file) ->
-    pagin = file.pagination
-    if pagin
-      links = []
+  .use (files) ->
+    for filename, file of files
+      pagin = file.pagination
+      if pagin
+        links = []
 
-      links.push if pagin.previous
-        '<a href="/' + pagin.previous.path + '">&laquo;</a>'
-      else
-        '<span>&laquo;</span>'
-
-      for page in pagin.pages
-        links.push if file == page
-          '<span>' + page.pagination.num + '</span>'
+        links.push if pagin.previous
+          '<a href="/' + pagin.previous.path + '">&laquo;</a>'
         else
-          '<a href="/' + page.path + '">' + page.pagination.num + '</a>'
+          '<span>&laquo;</span>'
 
-      links.push if pagin.next
-        '<a href="/' + pagin.next.path + '">&raquo;</a>'
-      else
-        '<span>&raquo;</span>'
+        for page in pagin.pages
+          links.push if file == page
+            '<span>' + page.pagination.num + '</span>'
+          else
+            '<a href="/' + page.path + '">' + page.pagination.num + '</a>'
 
-      pagin.linksHTML = '<p class="pagination">' + links.join('|') + '</p>'
-    return
+        links.push if pagin.next
+          '<a href="/' + pagin.next.path + '">&raquo;</a>'
+        else
+          '<span>&raquo;</span>'
+
+        pagin.linksHTML = '<p class="pagination">' + links.join('|') + '</p>'
 
   # CSS AND FINGERPRINTING ####################################################
 
@@ -146,10 +145,10 @@ Metalsmith(__dirname + '/..')
 
   .use templates 'handlebars'
   
-  .use each (file, filename) ->
-    if isHTML(filename)
-      file.template = 'wrapper.html'
-    return
+  .use (files) ->
+    for filename, file of files
+      if isHTML(filename)
+        file.template = 'wrapper.html'
 
   .use templates 'handlebars'
 
