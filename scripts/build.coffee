@@ -155,11 +155,9 @@ Metalsmith(__dirname + '/..')
 
   # BEAUTIFY ##################################################################
   
-  #TODO consider removing or changing
   .use beautify {
-    wrap_line_length: 79
-    indent_size: 2
-    indent_char: ' '
+    wrap_line_length: 100000
+    indent_size: 0
   }
 
   # RSS FEED ##################################################################
