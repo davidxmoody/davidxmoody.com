@@ -31,6 +31,8 @@ METADATA =
 isHTML = (file) ->
   /\.html/.test extname(file)
 
+start = new Date()
+
 Metalsmith(__dirname + '/..')
 
   # CONFIG ####################################################################
@@ -192,3 +194,4 @@ Metalsmith(__dirname + '/..')
   .use serve()
   .build (err) ->
     throw err if err
+    console.log "Metalsmith built in #{new Date() - start}ms"
