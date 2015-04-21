@@ -1,3 +1,9 @@
+require "coffee-react/register"
+
+React = require "react"
+Article = require "./react-templates/article"
+getArticle = require "./get-article"
+
 moment = require 'moment'
 Metalsmith = require 'metalsmith'
 templates = require 'metalsmith-templates'
@@ -133,14 +139,11 @@ Metalsmith(__dirname + '/..')
 
   # TEMPLATES #################################################################
 
-  # Use templates once then once again to wrap every HTML file in wrapper.html
-
+  # Custom React templates
   .use (files, metalsmith) ->
     for file in metalsmith.metadata().posts
-      file.template = 'post.html'
+      file.contents = new Buffer getArticle(file)
 
-  .use templates 'handlebars'
-  
   .use (files) ->
     for filename, file of files
       if isHTML(filename)
