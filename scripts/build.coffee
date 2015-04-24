@@ -144,6 +144,9 @@ Metalsmith(__dirname + '/..')
     for file in metalsmith.metadata().posts
       file.contents = new Buffer getArticle(file)
 
+  #TODO use React template for other pages too
+  .use templates 'handlebars'
+
   .use (files) ->
     for filename, file of files
       if isHTML(filename)
