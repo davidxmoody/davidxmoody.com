@@ -24,7 +24,8 @@
     "coffee-react": "~3.1.0",
     "react": "~0.13.2",
     "ramda": "~0.13.0",
-    "metalsmith-layouts": "~1.0.0"
+    "metalsmith-layouts": "~1.0.0",
+    "metalsmith-autoprefixer": "~1.0.2"
   },
   "scripts": {
     "start": "nodemon -e md,sass,scss,css,html,js,coffee,json,cson --ignore build/ ./scripts/build.coffee",

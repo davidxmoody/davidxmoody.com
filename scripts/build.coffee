@@ -7,6 +7,7 @@ getArticleList = require "./get-article-list"
 moment = require 'moment'
 
 Metalsmith     = require 'metalsmith'
+autoprefixer   = require 'metalsmith-autoprefixer'
 beautify       = require 'metalsmith-beautify'
 collections    = require 'metalsmith-collections'
 dateInFilename = require 'metalsmith-date-in-filename'
@@ -62,6 +63,7 @@ Metalsmith(__dirname + '/..')
   }
   
   # Convert space separated string of tags into a list
+  #TODO Do I need this?
   .use (files) ->
     for filename, file of files
       if file.tags and typeof file.tags == 'string'
@@ -102,6 +104,7 @@ Metalsmith(__dirname + '/..')
   # CSS AND FINGERPRINTING ####################################################
 
   .use sass()
+  .use autoprefixer()
   
   .use fingerprint pattern: 'css/main.css'
   
