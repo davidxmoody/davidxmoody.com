@@ -29,7 +29,13 @@ Another benefit of using CloudFlare is that it gives me more control over HTTP c
 
 Every time you visit a new page on this blog, it used to require **two round trips**. One for the HTML and one to check that the `/css/main.css` file had not changed. In practice, it wasn't too bad given that the server almost always sends a 304 Not Modified response back. However, I still wanted to eliminate the extra round trip. 
 
-One common way to do this is to insert a hash of the contents of the CSS file into the filename. For example, `main.css` might become `main-281a5c8d54ffb9364e6bfea48573c761.css`. You then also have to send that CSS file with a very large `max-age` HTTP Cache-Control response header so the browser knows that it will be valid forever. 
+One common way to do this is to insert a hash of the contents of the CSS file into the filename. For example, `main.css` might become:
+
+```
+main-281a5c8d54ffb9364e6bfea48573c761.css
+```
+
+You also have to send that CSS file with a very large `max-age` HTTP Cache-Control response header so the browser knows that it will be valid forever. 
 
 This is similar to the way that HTTP determines freshness. However, instead of sending a validator back to the server, the validator is embedded in the HTML which references the CSS file. 
 
