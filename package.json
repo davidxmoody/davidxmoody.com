@@ -23,7 +23,8 @@
     "pygmentize-bundled": "^2.2.0",
     "metalsmith-pdf": "~1.1.2",
     "coffee-react": "~3.1.0",
-    "react": "~0.13.2"
+    "react": "~0.13.2",
+    "ramda": "~0.13.0"
   },
   "scripts": {
     "start": "nodemon -e md,sass,scss,css,html,js,coffee,json,cson --ignore build/ ./scripts/build.coffee",

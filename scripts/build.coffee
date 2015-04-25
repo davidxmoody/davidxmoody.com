@@ -1,24 +1,25 @@
 require "coffee-react/register"
 
 React = require "react"
-Article = require "./react-templates/article"
 getArticle = require "./get-article"
+getArticleList = require "./get-article-list"
 
 moment = require 'moment'
-Metalsmith = require 'metalsmith'
-templates = require 'metalsmith-templates'
-permalinks = require 'metalsmith-permalinks'
-collections = require 'metalsmith-collections'
+
+Metalsmith     = require 'metalsmith'
+beautify       = require 'metalsmith-beautify'
+collections    = require 'metalsmith-collections'
 dateInFilename = require 'metalsmith-date-in-filename'
-pagination = require 'metalsmith-pagination'
-serve = require 'metalsmith-serve'
-sass = require 'metalsmith-sass'
-ignore = require 'metalsmith-ignore'
-beautify = require 'metalsmith-beautify'
-feed = require 'metalsmith-feed'
-fingerprint = require 'metalsmith-fingerprint'
-drafts = require 'metalsmith-drafts'
-pdf = require 'metalsmith-pdf'
+drafts         = require 'metalsmith-drafts'
+feed           = require 'metalsmith-feed'
+fingerprint    = require 'metalsmith-fingerprint'
+ignore         = require 'metalsmith-ignore'
+pagination     = require 'metalsmith-pagination'
+pdf            = require 'metalsmith-pdf'
+permalinks     = require 'metalsmith-permalinks'
+sass           = require 'metalsmith-sass'
+serve          = require 'metalsmith-serve'
+templates      = require 'metalsmith-templates'
 
 markdown = require './markdown'
 excerpts = require './excerpts'
@@ -83,11 +84,12 @@ Metalsmith(__dirname + '/..')
   # HOME PAGE PAGINATION ######################################################
   
   .use pagination 'collections.posts': {
-    perPage: 6
+    perPage: 8
     template: 'list.html'
     first: 'index.html'
     path: 'page:num/index.html'
-    pageMetadata: {}
+    pageMetadata:
+      reactTemplate: 'ArticleList'
   }
   
   # Don't duplicate the first page
@@ -143,9 +145,12 @@ Metalsmith(__dirname + '/..')
   .use (files, metalsmith) ->
     for file in metalsmith.metadata().posts
       file.contents = new Buffer getArticle(file)
+    for filename, file of files
+      if file.reactTemplate is 'ArticleList'
+        file.contents = new Buffer getArticleList(file)
 
   #TODO use React template for other pages too
-  .use templates 'handlebars'
+  #.use templates 'handlebars'
 
   .use (files) ->
     for filename, file of files
