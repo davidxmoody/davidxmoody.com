@@ -98,30 +98,6 @@ Metalsmith(__dirname + '/..')
   # EXCERPTS ##################################################################
 
   .use excerpts()
-  
-  .use (files) ->
-    for filename, file of files
-      pagin = file.pagination
-      if pagin
-        links = []
-
-        links.push if pagin.previous
-          '<a href="/' + pagin.previous.path + '">&laquo;</a>'
-        else
-          '<span>&laquo;</span>'
-
-        for page in pagin.pages
-          links.push if file == page
-            '<span>' + page.pagination.num + '</span>'
-          else
-            '<a href="/' + page.path + '">' + page.pagination.num + '</a>'
-
-        links.push if pagin.next
-          '<a href="/' + pagin.next.path + '">&raquo;</a>'
-        else
-          '<span>&raquo;</span>'
-
-        pagin.linksHTML = '<p class="pagination">' + links.join('|') + '</p>'
 
   # CSS AND FINGERPRINTING ####################################################
 
