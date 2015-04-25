@@ -14,17 +14,15 @@ drafts         = require 'metalsmith-drafts'
 feed           = require 'metalsmith-feed'
 fingerprint    = require 'metalsmith-fingerprint'
 ignore         = require 'metalsmith-ignore'
+layouts        = require 'metalsmith-layouts'
 pagination     = require 'metalsmith-pagination'
 pdf            = require 'metalsmith-pdf'
 permalinks     = require 'metalsmith-permalinks'
 sass           = require 'metalsmith-sass'
 serve          = require 'metalsmith-serve'
-templates      = require 'metalsmith-templates'
 
 markdown = require './markdown'
 excerpts = require './excerpts'
-
-extname = require('path').extname
 
 METADATA =
   title: 'David Moody\'s Blog'
@@ -34,9 +32,6 @@ METADATA =
   gitHubURL: 'https://github.com/davidxmoody'
   email: 'david@davidxmoody.com'
   excerptSeparator: '\n\n\n'
-
-isHTML = (file) ->
-  /\.html/.test extname(file)
 
 start = new Date()
 
@@ -149,15 +144,8 @@ Metalsmith(__dirname + '/..')
       if file.reactTemplate is 'ArticleList'
         file.contents = new Buffer getArticleList(file)
 
-  #TODO use React template for other pages too
-  #.use templates 'handlebars'
+  .use layouts engine: "handlebars", pattern: "**/*.html", default: "wrapper.html"
 
-  .use (files) ->
-    for filename, file of files
-      if isHTML(filename)
-        file.template = 'wrapper.html'
-
-  .use templates 'handlebars'
 
   # BEAUTIFY ##################################################################
   
