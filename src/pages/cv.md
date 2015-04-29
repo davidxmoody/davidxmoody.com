@@ -7,7 +7,7 @@ permalink: /cv/
 
 - Email: <david@davidxmoody.com>
 - GitHub: [github.com/davidxmoody](https://github.com/davidxmoody)
-- Blog: [davidxmoody.com](http://davidxmoody.com/)
+- Blog: [davidxmoody.com](https://davidxmoody.com/)
 
 ## Personal summary
 
@@ -38,7 +38,7 @@ Currently looking for a suitable web developer position at an exciting company w
 
 ## Projects
 
-### [davidxmoody.com](http://davidxmoody.com/) (2014 - present)
+### [davidxmoody.com](https://davidxmoody.com/) (2014 - present)
 
 - Personal blog documenting my technical knowledge and past projects
 - 36 posts (24,000 words) written since 11 August 2014
@@ -55,13 +55,13 @@ Currently looking for a suitable web developer position at an exciting company w
 - Built with **Node.js**, **DocPad**, **Browserify**, **Markdown** and many others
 - **Responsive design** with **Bootstrap** and **Sass**
 
-### [Diary program](http://davidxmoody.com/lessons-learned-from-a-three-year-programming-project-part-1/) (2011 - 2014)
+### [Diary program](https://davidxmoody.com/lessons-learned-from-a-three-year-programming-project-part-1/) (2011 - 2014)
 
 - Command line program for organising a personal diary
 - Three year side project written in **Bash** and re-written in **Python**
 - Learned many core Python language features
 
-### [Monte Carlo Tree Search in Texas Hold 'em Poker](http://davidxmoody.com/mcts-in-texas-hold-em-poker-a-retrospective/) (2011)
+### [Monte Carlo Tree Search in Texas Hold 'em Poker](https://davidxmoody.com/mcts-in-texas-hold-em-poker-a-retrospective/) (2011)
 
 - Third year dissertation project written in **Java**
 - Built a **working poker-bot** with a complex AI search algorithm
@@ -78,9 +78,9 @@ Currently looking for a suitable web developer position at an exciting company w
 
 ## Interests
 
-- [Skilled croquet player](http://davidxmoody.com/my-experiences-playing-croquet/), my team has won *four South West league finals* since 2013
-- [Amateur photographer](http://davidxmoody.com/my-10-best-tenerife-photos/)
-- [Amateur chef](http://davidxmoody.com/20-of-my-favourite-cooking-photos/)
+- [Skilled croquet player](https://davidxmoody.com/my-experiences-playing-croquet/), my team has won *four South West league finals* since 2013
+- [Amateur photographer](https://davidxmoody.com/my-10-best-tenerife-photos/)
+- [Amateur chef](https://davidxmoody.com/20-of-my-favourite-cooking-photos/)
 
 ## References
 

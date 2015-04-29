@@ -2,7 +2,7 @@
 title: Namecheap, GitHub Pages and apex domains
 ---
 
-When I was setting up this blog, I was excited to learn that [GitHub Pages runs on a fast Content Delivery Network](https://github.com/blog/1715-faster-more-awesome-github-pages). But there is a problem. It does not work with apex domains (i.e. [davidxmoody.com](http://davidxmoody.com/) instead of [www.davidxmoody.com](http://www.davidxmoody.com/)).
+When I was setting up this blog, I was excited to learn that [GitHub Pages runs on a fast Content Delivery Network](https://github.com/blog/1715-faster-more-awesome-github-pages). But there is a problem. It does not work with apex domains (i.e. [davidxmoody.com](https://davidxmoody.com/) instead of [www.davidxmoody.com](https://www.davidxmoody.com/)).
 
 
 Well, it doesn't work with apex domains on [Namecheap](https://www.namecheap.com/) (which I had already registered with). But it does work on other services like [DNSimple](https://dnsimple.com/). This really annoyed me. 
@@ -13,7 +13,7 @@ As I saw it, there were three possibilities:
 2. Switch to DNSimple
 3. Don't take advantage of GitHub's CDN
 
-I really wanted to stick with [davidxmoody.com](http://davidxmoody.com/) instead of [www.davidxmoody.com](http://www.davidxmoody.com/). There are arguments [for](http://www.yes-www.org/) and [against](http://no-www.org/) using "www". For a simple blog, I feel that not using it is far superior. 
+I really wanted to stick with [davidxmoody.com](https://davidxmoody.com/) instead of [www.davidxmoody.com](https://www.davidxmoody.com/). There are arguments [for](http://www.yes-www.org/) and [against](http://no-www.org/) using "www". For a simple blog, I feel that not using it is far superior. 
 
 I could have switched to DNSimple (or one of the few other services which could do the same thing). That would be complicated though. I'm also very very happy with Namecheap in every other way.
 

@@ -11,7 +11,7 @@ There is an easy way around this. You can build the site locally (using any plug
 
 ## Generated HTML should go in master
 
-For a user site (e.g. [davidxmoody.github.io](http://davidxmoody.com/)), GitHub expects the generated HTML/CSS/JavaScript to be placed in the root of the master branch. *(Project sites should use the gh-pages branch.)*
+For a user site (e.g. [davidxmoody.github.io](https://davidxmoody.com/)), GitHub expects the generated HTML/CSS/JavaScript to be placed in the root of the master branch. *(Project sites should use the gh-pages branch.)*
 
 Additionally, if you have a custom domain name, the `CNAME` file must also go in the root of master. It's only a minor point but you do have to make sure that the `CNAME` file gets copied across to you build directory when you build your site. 
 
