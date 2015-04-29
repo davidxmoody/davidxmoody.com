@@ -1,5 +1,6 @@
 require "coffee-react/register"
 
+#TODO abstract this better, put in separate module
 React = require "react"
 getArticle = require "./get-article"
 getArticleList = require "./get-article-list"

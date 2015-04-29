@@ -20,4 +20,4 @@ module.exports = (options) ->
         else
           'Read ' + remainingCount + ' remaining paragraphs...'
 
-      file.excerpt = before + '<p><a href="/' + file.path + '">' + readMoreText + '</a></p>'
+      file.excerpt = "#{before}<p><a href=\"/#{file.path}\">#{readMoreText}</a></p>"
