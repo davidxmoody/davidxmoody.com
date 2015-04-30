@@ -47,7 +47,7 @@ It works great although I like to substitute all relative URLs with absolute one
   .use(function(files) {
     data = files['feed.xml'];
     data.contents = new Buffer(data.contents.toString()
-        .replace(/(src|href)="\//g, '$1="http://davidxmoody.com/'));
+        .replace(/(src|href)="\//g, '$1="https://davidxmoody.com/'));
   })
 ```
 

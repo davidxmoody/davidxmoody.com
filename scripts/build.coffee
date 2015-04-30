@@ -29,7 +29,7 @@ excerpts = require './excerpts'
 METADATA =
   title: 'David Moody\'s Blog'
   description: 'A blog about programming'
-  url: 'http://davidxmoody.com'
+  url: 'https://davidxmoody.com'
   feedPath: 'feed.xml'
   gitHubURL: 'https://github.com/davidxmoody'
   email: 'david@davidxmoody.com'
