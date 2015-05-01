@@ -1,6 +1,6 @@
 ## About
 
-This is the source code for my personal blog. View it at [davidxmoody.com](http://davidxmoody.com/). 
+This is the source code for my personal blog. View it at [davidxmoody.com](https://davidxmoody.com/). 
 
 It's mostly a blog about programming and my personal experiences. I have also written posts about creating the site itself.
 
