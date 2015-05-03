@@ -22,6 +22,7 @@ pdf            = require 'metalsmith-pdf'
 permalinks     = require 'metalsmith-permalinks'
 sass           = require 'metalsmith-sass'
 serve          = require 'metalsmith-serve'
+blc            = require 'metalsmith-broken-link-checker'
 
 markdown = require './markdown'
 excerpts = require './excerpts'
@@ -169,6 +170,8 @@ Metalsmith(__dirname + '/..')
     delete files[oldPath]
 
   # SERVE AND BUILD ###########################################################
+  
+  .use blc()
 
   .use serve()
   .build (err) ->
