@@ -3,40 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{ title }}</title>
+  <title>{{title}}</title>
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="{{ description }}">
-  <link rel="canonical" href="{{ url }}/{{ path }}">
-  <link rel="stylesheet" href="/{{ fingerprint.[css/main.css] }}">
+  <meta name="description" content="{{description}}">
+  <link rel="canonical" href="{{url}}/{{path}}">
+  <link rel="stylesheet" href="/{{fingerprint.[css/main.css]}}">
   <meta name="wot-verification" content="fdff4a26070b9df2fd1a"/>
 </head>
 <body>
 
-<div class="wrapper">
-  <header class="site-header">
-    <h1><a href="/">David Moody</a></h1>
-    <p>{{ description }}</p>
-  </header>
+  <div class="wrapper">
+    <header class="site-header">
+      <h1><a href="/">David Moody</a></h1>
+      <p>{{description}}</p>
+    </header>
 
-  <div class="content">
-    {{{ contents }}}
+    <div class="content">
+      {{{contents}}}
+    </div>
+    
+    <div class="push"></div>
   </div>
-  
-  <div class="push"></div>
-</div>
 
-<footer class="site-footer">
-  <p>
+  <footer class="site-footer">
     <br>
-    <a href="/{{ feedPath }}">RSS</a> | 
-    <a href="{{ gitHubURL }}">GitHub</a> | 
-    <a href="mailto:{{ email }}">Email</a>
-  </p>
-  <p>
-    This blog is available under a 
-    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons License</a>
-  </p>
-</footer>
+    <p>
+      <a href="/{{feedPath}}">RSS</a> | 
+      <a href="{{gitHubURL}}">GitHub</a> | 
+      <a href="mailto:{{email}}">Email</a>
+    </p>
+    <p>
+      This blog is available under a 
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        Creative Commons License
+      </a>
+    </p>
+  </footer>
 
 </body>
 </html>
