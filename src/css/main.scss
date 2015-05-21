@@ -98,27 +98,6 @@ html {
   }
 }
 
-// Tables (done quickly for push ups post, TODO needs improvement)
-table {
-  margin: auto;
-}
-
-table th, table td {
-	text-align: center;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-table th {
-	font-weight: bold;
-}
-
-table::after {
-  content: "";
-  display: block;
-  height: $computed-line-height;
-}
-
 // Quick blockquote styling
 blockquote {
   margin-left: 5%;

@@ -57,7 +57,7 @@ resize800() {
 
 A little something I created when I wanted to find the number of occurrences of common words in a large corpus of text split across multiple files. 
 
-```python3
+```python
 #!/usr/bin/env python3
 
 from collections import Counter

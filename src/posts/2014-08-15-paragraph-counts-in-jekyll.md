@@ -20,7 +20,7 @@ Jekyll already contains support for excerpts (accessible with `post.excerpt`). B
 
 However, jekyll also supports setting a custom `excerpt_separator` variable in the `_config.yml` file. I changed mine to be two empty lines instead of the default of one. 
 
-```yaml
+```
 excerpt_separator: "\n\n"    # Default
 excerpt_separator: "\n\n\n"  # My version
 ```

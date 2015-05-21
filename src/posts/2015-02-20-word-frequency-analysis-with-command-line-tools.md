@@ -11,7 +11,7 @@ I recently looked into a shorthand system called [EasyScript](http://www.easyscr
 
 A little while ago, I wrote the following Python script to do just that. It utilises the `Counter` object and `fileinput` module to simplify the collection process. It also strips out unnecessary punctuation and converts to lower-case. 
 
-```python3
+```python
 #!/usr/bin/env python3
 
 from collections import Counter

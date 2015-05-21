@@ -27,6 +27,7 @@ I don't know if my plan will eventually become too hard. I might have to add res
 
 I'm also writing about it on this blog for public accountability. In fact, rather than just writing this post and forgetting about it, I'm going to go one step further. I'm going to keep a log of the exact number of push ups I do every day and place it right here. 
 
+```
 | Week starting | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
 |---------------|-----|-----|-----|-----|-----|-----|-----|
 | 2014-09-29    |  2  |  2  |  2  |  2  |  2  |  2  |  2  |
@@ -44,5 +45,6 @@ I'm also writing about it on this blog for public accountability. In fact, rathe
 | 2014-12-22    | 24  | 24  | 24  |  0  | 24  |  0  |  0  |
 | 2014-12-29    |  0  |  0  | 26  | 26  |  0  |  0  |  0  |
 | 2015-01-05    |  0  |  0  |  0  |  0  |  0  |  0  |  0  |
+```
 
 *[Edit: I stuck to this habit for eight weeks before missing my first day which I'm pretty pleased with. I then continued for another ten days before I got ill for a week. After that it seemed much harder to complete each day. I also think I didn't include enough rest time. Some days, my muscles were just too sore before I even did my first push up. Overall it was a great experiment and I'm proud I managed to stick to it for so long. Next time, I try something like this, I think I should do something to plan for sick days and rest days.]*

@@ -14,17 +14,6 @@ body {
   @include rhythm(0);
 }
 
-// This is a crappy fix to the double pre element bug
-// TODO fix this properly
-pre {
-  white-space: normal;
-  @include rhythm(0, 0, 1);
-}
-pre pre {
-  white-space: pre;
-  margin: 0;
-}
-
 p, ul, ol, blockquote {
   @include rhythm(0, 0, 1);
 }
@@ -44,8 +33,6 @@ h3 {
 h4, h5, h6 {
   @include rhythm(0, 1, 1);
 }
-
-
 
 /* Sanitation */
 hr {
