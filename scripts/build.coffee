@@ -125,7 +125,7 @@ Metalsmith(__dirname + '/..')
       if file.reactTemplate is 'ArticleList'
         file.contents = new Buffer getArticleList(file)
 
-  .use layouts engine: "handlebars", pattern: "**/*.html", default: "wrapper.html"
+  .use layouts engine: "handlebars", pattern: "**/*.html", default: "wrapper.hbs"
 
 
   # BEAUTIFY ##################################################################
