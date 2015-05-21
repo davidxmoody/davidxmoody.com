@@ -1,5 +1,5 @@
 React = require "react"
-Article = require "./react-templates/article"
+Article = require "./components/article"
 
 module.exports = (file) ->
   React.renderToStaticMarkup <Article file={file} />

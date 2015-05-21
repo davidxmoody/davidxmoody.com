@@ -1,6 +1,10 @@
 {
   "name": "davidxmoody.com",
   "private": true,
+  "scripts": {
+    "start": "nodemon -e md,sass,scss,css,html,hbs,js,coffee,jsx,cjsx,json,yaml,json --ignore build/ ./scripts/build.coffee",
+    "deploy": "./scripts/deploy.sh"
+  },
   "dependencies": {
     "coffee-react": "~3.1.0",
     "handlebars": "^2.0.0",
@@ -27,9 +31,5 @@
     "pygmentize-bundled": "^2.2.0",
     "ramda": "~0.13.0",
     "react": "~0.13.2"
-  },
-  "scripts": {
-    "start": "nodemon -e md,sass,scss,css,html,js,coffee,json,cson --ignore build/ ./scripts/build.coffee",
-    "deploy": "./scripts/deploy.sh"
   }
 }
