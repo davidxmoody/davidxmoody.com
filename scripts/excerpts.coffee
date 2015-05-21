@@ -1,6 +1,8 @@
 paraCount = (text) ->
-  return 0 unless text
-  text.match(/<(p|ul|ol|pre|table)>[\s\S]*?<\/\1>/g).length
+  if text
+    text.match(/<(p|ul|ol|pre|table)>[\s\S]*?<\/\1>/g).length
+  else
+    0
 
 module.exports = (options) ->
 

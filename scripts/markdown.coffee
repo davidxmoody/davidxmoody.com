@@ -8,7 +8,6 @@ markdownRegex = /\.(md|mkd|markdown)$/
 
 markedOptions =
   gfm: true
-  tables: true
   highlight: (code, lang) ->
     if lang
       highlight(lang, code).value
