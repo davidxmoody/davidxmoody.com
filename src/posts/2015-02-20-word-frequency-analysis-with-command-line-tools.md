@@ -9,11 +9,9 @@ I recently looked into a shorthand system called [EasyScript](http://www.easyscr
 
 ## A simple Python script
 
-A little while ago, I wrote the following Python script to do just that. It utilises the `Counter` object and `fileinput` module to simplify the collection process. It also strips out unnecessary punctuation and converts to lower-case. 
+A little while ago, I wrote the following Python 3 script to do just that. It utilises the `Counter` object and `fileinput` module to simplify the collection process. It also strips out unnecessary punctuation and converts to lower-case. 
 
 ```python
-#!/usr/bin/env python3
-
 from collections import Counter
 import fileinput
 
@@ -33,10 +31,6 @@ for word, count in word_tallies.most_common(200):
 The above Python script works perfectly. However, I wanted to try implementing the same thing with Linux command line tools. Roughly working from [this blog post](http://www.generation5.org/content/2004/nlpUnix.asp), I devised the following script:
 
 ```bash
-#!/bin/bash
-
-IN_FILE=./input.txt
-
 tr -sc "[A-Z][a-z][0-9]'" '[\012*]' < "$IN_FILE" | \
   tr '[A-Z]' '[a-z]' | \
   sort | uniq -c | sort -nr | \
@@ -62,10 +56,6 @@ I'm only just getting into `awk` after reading [this pretty good introductory tu
 The first `awk` statement prints out the previous word and the current word on the same line (skipping the very first word). The second statement just sets the previous word for use on the next line. I'm sure it could be prettier but it works well. 
 
 ```bash
-#!/bin/bash
-
-IN_FILE=./input.txt
-
 tr -sc "[A-Z][a-z][0-9]'" '[\012*]' < "$IN_FILE" | \
   tr '[A-Z]' '[a-z]' | \
   awk -- 'prev!="" { print prev,$0; } { prev=$0; }' | \
@@ -76,10 +66,6 @@ tr -sc "[A-Z][a-z][0-9]'" '[\012*]' < "$IN_FILE" | \
 This next script prints out trigrams instead of bigrams using the same kind of method. This could also be done with a for loop for n-grams of any size.
 
 ```bash
-#!/bin/bash
-
-IN_FILE=./input.txt
-
 tr -sc "[A-Z][a-z][0-9]'" '[\012*]' < "$IN_FILE" | \
   tr '[A-Z]' '[a-z]' | \
   awk -- 'first!=""&&second!="" { print first,second,$0; } { first=second; second=$0; }' | \
