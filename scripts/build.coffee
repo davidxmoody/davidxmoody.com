@@ -7,38 +7,38 @@ React = require "react"
 getArticle = require "./get-article"
 getArticleList = require "./get-article-list"
 
-moment = require 'moment'
+moment = require "moment"
 
-Metalsmith     = require 'metalsmith'
-autoprefixer   = require 'metalsmith-autoprefixer'
-beautify       = require 'metalsmith-beautify'
-collections    = require 'metalsmith-collections'
-dateInFilename = require 'metalsmith-date-in-filename'
-drafts         = require 'metalsmith-drafts'
-feed           = require 'metalsmith-feed'
-fingerprint    = require 'metalsmith-fingerprint'
-ignore         = require 'metalsmith-ignore'
-layouts        = require 'metalsmith-layouts'
-pagination     = require 'metalsmith-pagination'
-pdf            = require 'metalsmith-pdf'
-permalinks     = require 'metalsmith-permalinks'
-sass           = require 'metalsmith-sass'
-serve          = require 'metalsmith-serve'
-blc            = require 'metalsmith-broken-link-checker'
+Metalsmith     = require "metalsmith"
+autoprefixer   = require "metalsmith-autoprefixer"
+beautify       = require "metalsmith-beautify"
+blc            = require "metalsmith-broken-link-checker"
+collections    = require "metalsmith-collections"
+dateInFilename = require "metalsmith-date-in-filename"
+drafts         = require "metalsmith-drafts"
+feed           = require "metalsmith-feed"
+fingerprint    = require "metalsmith-fingerprint"
+ignore         = require "metalsmith-ignore"
+layouts        = require "metalsmith-layouts"
+pagination     = require "metalsmith-pagination"
+pdf            = require "metalsmith-pdf"
+permalinks     = require "metalsmith-permalinks"
+sass           = require "metalsmith-sass"
+serve          = require "metalsmith-serve"
 
-markdown = require './markdown'
-excerpts = require './excerpts'
+markdown = require "./markdown"
+excerpts = require "./excerpts"
 
 METADATA =
-  title: 'David Moody\'s Blog'
-  description: 'A blog about programming'
-  url: 'https://davidxmoody.com'
-  feedPath: 'feed.xml'
-  gitHubURL: 'https://github.com/davidxmoody'
-  email: 'david@davidxmoody.com'
-  excerptSeparator: '\n\n\n'
+  title: "David Moody's Blog"
+  description: "A blog about programming"
+  url: "https://davidxmoody.com"
+  feedPath: "feed.xml"
+  gitHubURL: "https://github.com/davidxmoody"
+  email: "david@davidxmoody.com"
+  excerptSeparator: "\n\n\n"
 
-Metalsmith(__dirname + '/..')
+Metalsmith(__dirname + "/..")
 
   # CONFIG ####################################################################
 
@@ -56,11 +56,11 @@ Metalsmith(__dirname + '/..')
   .use (files) ->
     for filename, file of files
       if file.date
-        file.formattedDate = moment(file.date).format('ll')
+        file.formattedDate = moment(file.date).format("ll")
 
   .use collections posts: {
-    pattern: 'posts/*.md'
-    sortBy: 'date'
+    pattern: "posts/*.md"
+    sortBy: "date"
     reverse: true
   }
   
@@ -68,36 +68,36 @@ Metalsmith(__dirname + '/..')
   #TODO Do I need this?
   .use (files) ->
     for filename, file of files
-      if file.tags and typeof file.tags == 'string'
-        file.tags = file.tags.split(' ')
+      if file.tags and typeof file.tags == "string"
+        file.tags = file.tags.split(" ")
 
   # Replace custom excerpt separator with <!--more--> tag
   .use (files, metalsmith) ->
     for file in metalsmith.metadata().posts
-      file.contents = new Buffer(file.contents.toString().replace(METADATA.excerptSeparator, '\n\n<!--more-->\n\n'))
+      file.contents = new Buffer(file.contents.toString().replace(METADATA.excerptSeparator, "\n\n<!--more-->\n\n"))
 
   .use markdown()
   
-  .use permalinks pattern: ':title/'
+  .use permalinks pattern: ":title/"
 
   # HOME PAGE PAGINATION ######################################################
   
-  .use pagination 'collections.posts': {
+  .use pagination "collections.posts": {
     perPage: 8
-    template: 'list.html'
-    first: 'index.html'
-    path: 'page:num/index.html'
+    template: "list.html"
+    first: "index.html"
+    path: "page:num/index.html"
     pageMetadata:
-      reactTemplate: 'ArticleList'
+      reactTemplate: "ArticleList"
   }
   
-  # Don't duplicate the first page
-  .use ignore ['page1/index.html']
+  # Don"t duplicate the first page
+  .use ignore ["page1/index.html"]
   
   # Clean up paths to provide clean URLs
   .use (files) ->
     for filename, file of files
-      file.path = filename.replace(/index.html$/, '')
+      file.path = filename.replace(/index.html$/, "")
 
   # EXCERPTS ##################################################################
 
@@ -108,11 +108,11 @@ Metalsmith(__dirname + '/..')
   .use sass()
   .use autoprefixer()
   
-  .use fingerprint pattern: 'css/main.css'
+  .use fingerprint pattern: "css/main.css"
   
   .use ignore [
-    'css/_*.sass'
-    'css/main.css'
+    "css/_*.sass"
+    "css/main.css"
   ]
 
   # TEMPLATES #################################################################
@@ -122,7 +122,7 @@ Metalsmith(__dirname + '/..')
     for file in metalsmith.metadata().posts
       file.contents = new Buffer getArticle(file)
     for filename, file of files
-      if file.reactTemplate is 'ArticleList'
+      if file.reactTemplate is "ArticleList"
         file.contents = new Buffer getArticleList(file)
 
   .use layouts engine: "handlebars", pattern: "**/*.html", default: "wrapper.hbs"
@@ -138,7 +138,7 @@ Metalsmith(__dirname + '/..')
   # RSS FEED ##################################################################
   
   .use feed {
-    collection: 'posts'
+    collection: "posts"
     limit: 20
     destination: METADATA.feedPath
     title: METADATA.title
@@ -155,16 +155,16 @@ Metalsmith(__dirname + '/..')
   # CV PDF ####################################################################
 
   .use pdf {
-    pattern: 'cv/index.html'
+    pattern: "cv/index.html"
     printMediaType: true
-    marginTop: '1.5cm'
-    marginBottom: '1.5cm'
+    marginTop: "1.5cm"
+    marginBottom: "1.5cm"
   }
 
   # Rename CV to something more meaningful
   .use (files) ->
-    oldPath = 'cv/index.pdf'
-    newPath = 'cv/david-moody-cv-web-developer.pdf'
+    oldPath = "cv/index.pdf"
+    newPath = "cv/david-moody-cv-web-developer.pdf"
 
     files[newPath] = files[oldPath]
     delete files[oldPath]

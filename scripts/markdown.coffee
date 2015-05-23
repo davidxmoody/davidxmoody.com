@@ -1,8 +1,8 @@
-basename = require('path').basename
-dirname = require('path').dirname
-extname = require('path').extname
-marked = require('marked')
-{highlight} = require('highlight.js')
+basename = require("path").basename
+dirname = require("path").dirname
+extname = require("path").extname
+marked = require("marked")
+{highlight} = require("highlight.js")
 
 markdownRegex = /\.(md|mkd|markdown)$/
 
