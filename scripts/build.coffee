@@ -1,3 +1,5 @@
+console.time TIMER = "Metalsmith built in"
+
 require "coffee-react/register"
 
 #TODO abstract this better, put in separate module
@@ -35,8 +37,6 @@ METADATA =
   gitHubURL: 'https://github.com/davidxmoody'
   email: 'david@davidxmoody.com'
   excerptSeparator: '\n\n\n'
-
-start = new Date()
 
 Metalsmith(__dirname + '/..')
 
@@ -176,4 +176,4 @@ Metalsmith(__dirname + '/..')
   .use serve()
   .build (err) ->
     throw err if err
-    console.log "Metalsmith built in #{new Date() - start}ms"
+    console.timeEnd TIMER
