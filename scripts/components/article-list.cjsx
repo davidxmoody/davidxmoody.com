@@ -3,6 +3,8 @@ Article = require "./article"
 R = require "ramda"
 
 Pagination = React.createClass
+  displayName: "Pagination"
+
   render: ->
     file = @props.file
     pagin = file.pagination
@@ -10,20 +12,20 @@ Pagination = React.createClass
     links = []
 
     links.push if pagin.previous
-      <a href={"/#{pagin.previous.path}"}>&laquo;</a>
+      <a key="prev" href={"/#{pagin.previous.path}"}>&laquo;</a>
     else
-      <span>&laquo;</span>
+      <span key="prev">&laquo;</span>
 
-    for page in pagin.pages
+    for page, index in pagin.pages
       links.push if file == page
-        <span>{page.pagination.num}</span>
+        <span key={index}>{page.pagination.num}</span>
       else
-        <a href={"/#{page.path}"}>{page.pagination.num}</a>
+        <a key={index} href={"/#{page.path}"}>{page.pagination.num}</a>
 
     links.push if pagin.next
-      <a href={"/#{pagin.next.path}"}>&raquo;</a>
+      <a key="next" href={"/#{pagin.next.path}"}>&raquo;</a>
     else
-      <span>&raquo;</span>
+      <span key="next">&raquo;</span>
 
     realLinks = []
     for link, i in links
@@ -34,11 +36,15 @@ Pagination = React.createClass
       {realLinks}
     </p>
 
-module.exports = ArticleList = React.createClass
-  render: ->
-    articles = R.map ((file) -> <Article file={file} shortened={true} />), @props.file.pagination.files
 
-    paginationLinks = @props.file.pagination
+module.exports = React.createClass
+  displayName: "ArticleList"
+
+  render: ->
+    makeArticles = R.mapIndexed (file, index) ->
+      <Article key={index} file={file} shortened={true} />
+
+    articles = makeArticles @props.file.pagination.files
 
     <div>
       {articles}

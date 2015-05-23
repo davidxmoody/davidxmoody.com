@@ -1,6 +1,8 @@
 React = require "react"
 
-module.exports = Article = React.createClass
+module.exports = React.createClass
+  displayName: "Article"
+
   render: ->
     content = if @props.shortened
       <div dangerouslySetInnerHTML={__html: @props.file.excerpt} />
