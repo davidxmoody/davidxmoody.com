@@ -32,6 +32,7 @@ Idea: Use recurrent neural networks to process bank charge statements
 - Change email on home page to use obfuscated email (or use separate contacts page)
 - Separate watch script for drafts
 - Custom 404 page, make it do JavaScript redirects to other pages when I specify a redirect slug in a post
+- Try out Roots or Hexo
 
 Full Material UI redesign:
 

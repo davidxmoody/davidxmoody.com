@@ -1,9 +1,6 @@
 console.time TIMER = "Metalsmith built in"
 
 require "coffee-react/register"
-
-#TODO abstract this better, put in separate module
-React = require "react"
 getArticle = require "./get-article"
 getArticleList = require "./get-article-list"
 
@@ -15,7 +12,6 @@ beautify       = require "metalsmith-beautify"
 blc            = require "metalsmith-broken-link-checker"
 collections    = require "metalsmith-collections"
 dateInFilename = require "metalsmith-date-in-filename"
-drafts         = require "metalsmith-drafts"
 feed           = require "metalsmith-feed"
 fingerprint    = require "metalsmith-fingerprint"
 ignore         = require "metalsmith-ignore"
@@ -47,10 +43,6 @@ Metalsmith(__dirname + "/..")
 
   # POSTS #####################################################################
   
-  #TODO do drafts better
-  .use drafts()
-  
-  #TODO choose a better method of post naming
   .use dateInFilename()
   
   .use (files) ->
@@ -65,7 +57,6 @@ Metalsmith(__dirname + "/..")
   }
   
   # Convert space separated string of tags into a list
-  #TODO Do I need this?
   .use (files) ->
     for filename, file of files
       if file.tags and typeof file.tags == "string"
@@ -84,11 +75,10 @@ Metalsmith(__dirname + "/..")
   
   .use pagination "collections.posts": {
     perPage: 8
-    template: "TODO" #TODO get this working with a better system
     first: "index.html"
     path: "page:num/index.html"
     pageMetadata:
-      reactTemplate: "ArticleList" #TODO change this way of doing things
+      reactTemplate: "ArticleList"
   }
   
   # Don"t duplicate the first page
@@ -118,6 +108,7 @@ Metalsmith(__dirname + "/..")
   # TEMPLATES #################################################################
 
   # Custom React templates
+  #TODO could implement this much better, maybe use the existing react plugin
   .use (files, metalsmith) ->
     for file in metalsmith.metadata().posts
       file.contents = new Buffer getArticle(file)
