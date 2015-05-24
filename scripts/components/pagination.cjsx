@@ -1,10 +1,13 @@
 React = require "react"
+PaginationLink = require "./pagination-link"
 
 module.exports = React.createClass
   displayName: "Pagination"
 
   propTypes:
-    file: React.PropTypes.object.isRequired
+    file: React.PropTypes.shape(
+      pagination: React.PropTypes.object.isRequired
+    ).isRequired
 
   render: ->
     file = @props.file
@@ -12,21 +15,24 @@ module.exports = React.createClass
 
     links = []
 
-    links.push if pagin.previous
-      <a key="prev" href={"/#{pagin.previous.path}"}>&laquo;</a>
-    else
-      <span key="prev">&laquo;</span>
+    links.push <PaginationLink
+      key="prev"
+      disabled={not pagin.previous?}
+      href={"/#{pagin.previous?.path}"}
+    >&laquo;</PaginationLink>
 
-    for page, index in pagin.pages
-      links.push if file == page
-        <span key={index}>{page.pagination.num}</span>
-      else
-        <a key={index} href={"/#{page.path}"}>{page.pagination.num}</a>
+    for page in pagin.pages
+      links.push <PaginationLink
+        key={page.pagination.num}
+        disabled={file is page}
+        href={"/#{page.path}"}
+      >{page.pagination.num}</PaginationLink>
 
-    links.push if pagin.next
-      <a key="next" href={"/#{pagin.next.path}"}>&raquo;</a>
-    else
-      <span key="next">&raquo;</span>
+    links.push <PaginationLink
+      key="next"
+      disabled={not pagin.next?}
+      href={"/#{pagin.next?.path}"}
+    >&raquo;</PaginationLink>
 
     realLinks = []
     for link, i in links
