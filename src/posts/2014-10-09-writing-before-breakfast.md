@@ -36,13 +36,13 @@ I hope that starting as early as possible will help prevent procrastination late
 Just like with my push ups post, I am going to log my progress right here. The following table shows the number of Pomodoro sessions completed *before breakfast* on each day.
 
 ```
-| Week starting | Mon | Tue | Wed | Thu | Fri | Sat | Sun |
-|---------------|-----|-----|-----|-----|-----|-----|-----|
-| 2014-10-06    |  -  |  -  |  -  |  1  |  1  |  1  |  2  |
-| 2014-10-13    |  1  |  1  |  1  |  1  |  1  |  1  |  1  |
-| 2014-10-20    |  1  |  1  |  1  |  1  |  1  |  1  |  1  |
-| 2014-10-27    |  1  |  1  |  1  |  1  |  1  |  1  |  2  |
-| 2014-11-03    |  1  |  1  |  1  |  1  |  1  |  1  |  2  |
+ Week starting   Mo   Tu   We   Th   Fr   Sa   Su 
+--------------- ---- ---- ---- ---- ---- ---- ----
+    2014-10-06    -    -    -    1    1    1    2 
+    2014-10-13    1    1    1    1    1    1    1 
+    2014-10-20    1    1    1    1    1    1    1 
+    2014-10-27    1    1    1    1    1    1    2 
+    2014-11-03    1    1    1    1    1    1    2 
 ```
 
 *[Edit on 2014-11-10: After just over one month of continuing this habit, I have decided to stop. I'm glad I tried it out and I feel it helped me to write better posts in the time I was doing it. However, I want to try experimenting with different ways to spend my time in the morning. I'll write about them soon.]*
