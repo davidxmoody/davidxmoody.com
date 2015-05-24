@@ -76,6 +76,7 @@ Metalsmith(__dirname + "/..")
   .use pagination "collections.posts": {
     perPage: 8
     first: "index.html"
+    template: "NOT_USED" #TODO do this better
     path: "page:num/index.html"
     pageMetadata:
       reactTemplate: "ArticleList"
