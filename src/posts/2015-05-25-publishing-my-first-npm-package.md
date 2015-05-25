@@ -6,9 +6,7 @@ I use a lot of great open source software every day. For both work and side proj
 
 Although I have released everything I've ever made on [GitHub](https://github.com/davidxmoody), I had never created anything which other people could *actually use*.
 
-I wanted to change that. This is the story of how I published my first npm package and what I learned along the way.
-
-TODO put links to GitHub/npm right here?
+I wanted to change that. This is the story of how I published my [first npm package](https://www.npmjs.com/package/metalsmith-broken-link-checker) and what I learned along the way.
 
 
 ## The problem I wanted to solve
@@ -19,53 +17,55 @@ Sometimes, you can end up with broken links between the pages of your site. By "
 
 With static sites, every single page is generated before you deploy your site. This makes it possible to check all internal links for references to missing pages.
 
-Thus, I decided to create a Metalsmith plugin to help developers catch broken links before it's too late.
+Thus, I decided to create a Metalsmith plugin to help developers catch broken links as soon as possible.
 
 ## Plan of action
 
-TODO: existing alternatives?
+Before I started on this plugin, I checked to see if anything like it already existed. There are several existing libraries meant to check sites for external URLs. However, *that's not what I wanted*. I wanted something that checked internal relative and root-relative links within a static site. 
 
-- Must be correct so tests
-- Actually used TDD
-- How: one correct structure depending on all files, delete files one by one
-- Hard because of async plus no changes only errors and working on files not simple inputs
-- Mocha/chai good, would use again
+The main requirement of a project like this is that it actually works *correctly*. That means tests. 
+
+It's an awkward thing to test because Metalsmith runs asynchronously and the only output should be the presence or absence of an error. I used [Mocha](http://mochajs.org/) and [Chai](http://chaijs.com/) to run my tests. I then created a set of Metalsmith source files such that removing any one file would break an internal link. I then looped through, deleting one file at a time and expecting an error to be thrown in each case.
+
+I've written tests before but I have to say I've never found them as useful as with this project. This time, I actually used my tests as the main method of developing my plugin. I had one terminal open watching my files and re-running all tests on any change. 
 
 ## Implementation
 
-I'm not going to give an extensive walkthrough of the code. If you are interested, you can [view the source code here](https://github.com/davidxmoody/metalsmith-broken-link-checker/blob/master/src/index.coffee). It's a relatively concise 93 lines of CoffeeScript (with lots of comments and about half of that being taken up by configuration options). 
+I'm not going to give an extensive walkthrough of the code. If you are interested, you can [view the source code here](https://github.com/davidxmoody/metalsmith-broken-link-checker/blob/master/src/index.coffee). It's a relatively concise 93 lines of CoffeeScript (with lots of comments).
 
 Here is a quick overview of what the program does:
 
 1. Extract all links in HTML pages with [cheerio](https://github.com/cheeriojs/cheerio). Cheerio is basically jQuery for static content and it works very nicely. 
 
-2. Determine which file in the Metalsmith pipeline should correspond to that link and throw an error if it does not exist. This was a bit harder. I spent about an hour going down dead ends with one URL manipulation library and then trying to write my own. I then found [URIjs](https://www.npmjs.com/package/URIjs) which worked much better. 
+2. Determine which file in the Metalsmith pipeline corresponds to each link and throw an error if the file does not exist. This was a bit harder. I spent about an hour going down dead ends with one URL manipulation library and then trying to write my own. I then found [URIjs](https://www.npmjs.com/package/URIjs) which worked much better. 
 
-3. Provide configuration options. For example, `options.warn` to print errors to the console instead of throwing them. Also the ability to check `src` attributes of `img` tags. Also the ability to specify a regex of URLs to ignore.
+3. Provide configuration options. For example, `options.warn` to print errors to the console instead of throwing them. Also the ability to check `src` attributes of `img` tags and the ability to specify a regex of URLs to ignore.
 
-Then of course I had to write the README.md as well. Writing good documentation can often be one of the hardest parts. In many ways though, it's just as important as the code itself so I wanted to do it right. 
+There are also a lot of different edge cases which all add complexity to the project. For example: relative links have to be resolved relative to the file they appear in, hash fragments should be allowed, links to directories containing an `index.html` should be allowed and so on.
 
-- Copied conventions from react plugin
+Then of course I had to write the README as well. Writing good documentation can often be the hardest part. In many ways though, it's just as important as the code itself so I wanted to do it right. I created an example HTML file showing the different types of links that the plugin recognises and what Metalsmith files they correspond to. 
 
 ## Npm tips
 
 Here is a quick list of a few useful things I've learned while using npm:
 
-- I was using CoffeeScript but obviously I wanted to compile to JavaScript before publishing. I used the following npm prepublish script in my [package.json](https://github.com/davidxmoody/metalsmith-broken-link-checker/blob/master/package.json) to help with that. I also used a test script to run mocha and then a watch script to automatically watch for changes in my CoffeeScript and run the tests when it detected any changes:
+- I was using CoffeeScript but wanted to compile to JavaScript before publishing. In my [package.json](https://github.com/davidxmoody/metalsmith-broken-link-checker/blob/master/package.json) I have the following scripts:
 
 ```json
+{
   "scripts": {
     "watch": "coffee --watch -o lib -c src/*.coffee & mocha --watch --compilers coffee:coffee-script/register",
     "test": "mocha --compilers coffee:coffee-script/register",
     "prepublish": "coffee -o lib -c src/*.coffee"
   },
+}
 ```
 
 - `npm version 0.1.0` will set the version number in `package.json` as well as commit that change to git and then tag that git commit with `v0.1.0`.
 
 - `npm link` in my project dir then `npm link metalsmith-broken-link-checker` in my blog dir to symlink my link checker as a dependency to my blog. Very useful for testing so you don't have to continuously uninstall and reinstall it.
 
-- `.npmignore` to prevent files from being published by npm and `npm pack` to bundle up everything like it would be when it gets published. Useful to see what files are actually going to get published without having to publish them.
+- `.npmignore` to prevent tests and CoffeeScript files from being published by npm. Then `npm pack` to bundle up everything like it would be when it gets published. Useful to see what files are actually going to get published without having to publish them.
 
 ## Publishing to npm
 
@@ -87,7 +87,7 @@ Now I've done it, it all seems pretty trivial. However, at the time, it felt lik
 
 I published the plugin about three weeks ago. 
 
-It's had 190 downloads on npm since then at a steady rate. Also about 20 visitors to my GitHub repo. Not too bad. 
+Since then, it's had 190 downloads on npm and 18 visitors to my GitHub repo. Not too bad. 
 
 Was it worth it? This project took me slightly more than a full day to implement. Realistically, the amount of time my plugin will save other people will only barely be worth the amount of time it took me. 
 
