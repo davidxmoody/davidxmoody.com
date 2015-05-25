@@ -41,7 +41,7 @@ Currently looking for a suitable web developer position at an exciting company w
 ### [davidxmoody.com](https://davidxmoody.com/) (2014 - present)
 
 - Personal blog documenting my technical knowledge and past projects
-- 36 posts (24,000 words) written since 11 August 2014
+- 37 posts (25,000 words) written since 11 August 2014
 - Simple responsive design built with **JavaScript** and **Sass** and hosted with **GitHub Pages**
 
 <div class="page-break"></div>
