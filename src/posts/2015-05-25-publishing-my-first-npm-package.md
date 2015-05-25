@@ -8,6 +8,8 @@ Although I have released everything I've ever made on [GitHub](https://github.co
 
 I wanted to change that. This is the story of how I published my first npm package and what I learned along the way.
 
+TODO put links to GitHub/npm right here?
+
 
 ## The problem I wanted to solve
 
@@ -31,7 +33,7 @@ TODO: existing alternatives?
 
 ## Implementation
 
-I'm not going to an extensive walkthrough of the code. If you are interested, you can [view the source code here](https://github.com/davidxmoody/metalsmith-broken-link-checker/blob/master/src/index.coffee). It's a relatively concise 93 lines of CoffeeScript (with lots of comments and about half of that being taken up by configuration options). 
+I'm not going to give an extensive walkthrough of the code. If you are interested, you can [view the source code here](https://github.com/davidxmoody/metalsmith-broken-link-checker/blob/master/src/index.coffee). It's a relatively concise 93 lines of CoffeeScript (with lots of comments and about half of that being taken up by configuration options). 
 
 Here is a quick overview of what the program does:
 
@@ -39,24 +41,15 @@ Here is a quick overview of what the program does:
 
 2. Determine which file in the Metalsmith pipeline should correspond to that link and throw an error if it does not exist. This was a bit harder. I spent about an hour going down dead ends with one URL manipulation library and then trying to write my own. I then found [URIjs](https://www.npmjs.com/package/URIjs) which worked much better. 
 
-3. TODO config options
+3. Provide configuration options. For example, `options.warn` to print errors to the console instead of throwing them. Also the ability to check `src` attributes of `img` tags. Also the ability to specify a regex of URLs to ignore.
 
-## Additional options
+Then of course I had to write the README.md as well. Writing good documentation can often be one of the hardest parts. In many ways though, it's just as important as the code itself so I wanted to do it right. 
 
-- Hard to design a great interface (went back and forth between allowEmpty and allowRegex), decided simple is better and only had one
-
-- Writing docs hardest part, done many times before with others (list them?)
 - Copied conventions from react plugin
 
 ## Npm tips
 
 Here is a quick list of a few useful things I've learned while using npm:
-
-- `npm version 0.1.0` will set the version number in `package.json` as well as commit that change to git and then tag that git commit with `v0.1.0`.
-
-- `npm link` in my project dir then `npm link metalsmith-broken-link-checker` in my blog dir to symlink my link checker as a dependency to my blog. Very useful for testing so you don't have to continuously uninstall and reinstall it.
-
-- `.npmignore` to prevent files from being published by npm and `npm pack` to bundle up everything like it would be when it gets published. Useful to see what files are actually going to get published without having to publish them.
 
 - I was using CoffeeScript but obviously I wanted to compile to JavaScript before publishing. I used the following npm prepublish script in my [package.json](https://github.com/davidxmoody/metalsmith-broken-link-checker/blob/master/package.json) to help with that. I also used a test script to run mocha and then a watch script to automatically watch for changes in my CoffeeScript and run the tests when it detected any changes:
 
@@ -67,6 +60,12 @@ Here is a quick list of a few useful things I've learned while using npm:
     "prepublish": "coffee -o lib -c src/*.coffee"
   },
 ```
+
+- `npm version 0.1.0` will set the version number in `package.json` as well as commit that change to git and then tag that git commit with `v0.1.0`.
+
+- `npm link` in my project dir then `npm link metalsmith-broken-link-checker` in my blog dir to symlink my link checker as a dependency to my blog. Very useful for testing so you don't have to continuously uninstall and reinstall it.
+
+- `.npmignore` to prevent files from being published by npm and `npm pack` to bundle up everything like it would be when it gets published. Useful to see what files are actually going to get published without having to publish them.
 
 ## Publishing to npm
 
@@ -88,7 +87,10 @@ Now I've done it, it all seems pretty trivial. However, at the time, it felt lik
 
 I published the plugin about three weeks ago. 
 
-- 75 per week, 190 total, no signs of slowing
-- Most GitHub traffic from npmjs.org
-- Full day of dev time worth it? Only barely but learning experience was amazingly worth it, could do it again in half the time
-- *First step* on road to becoming an open source contributor
+It's had 190 downloads on npm since then at a steady rate. Also about 20 visitors to my GitHub repo. Not too bad. 
+
+Was it worth it? This project took me slightly more than a full day to implement. Realistically, the amount of time my plugin will save other people will only barely be worth the amount of time it took me. 
+
+But in terms of *my experience*, it has been worth it a hundred times over. 
+
+The idea of creating a useful open source project used to feel like a significant milestone for me. Now I've done it once, I feel like I could do it again in half the time. I feel like this was only the first step on my road to becoming an open source contributor. 

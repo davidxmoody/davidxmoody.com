@@ -20,6 +20,8 @@ Create an NPM repo for pagination logic
 
 Idea: Use recurrent neural networks to process bank charge statements 
 
+Idea: Use my metalsmith-broken-link-checker as a standalone static site checker (with a one step metalsmith build process).
+
 ## Blog tweaks
 
 - Add comments (Disqus)
