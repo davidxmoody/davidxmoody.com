@@ -17,40 +17,29 @@ Sometimes, you can end up with broken links between the pages of your site. By "
 
 With static sites, every single page is generated before you deploy your site. This makes it possible to check all internal links for references to missing pages.
 
-Thus, I decided to create a Metalsmith plugin to help developers catch broken links. 
+Thus, I decided to create a Metalsmith plugin to help developers catch broken links before it's too late.
 
 ## Plan of action
 
-TODO
-
 TODO: existing alternatives?
-
-## Implementation
-
-The plugin has two main tasks:
-
-1. Extract all links in HTML pages
-2. Determine which file in the Metalsmith pipeline should correspond to that link and throw an error if it does not exist
-
-To extract links, I decided to use [cheerio](https://github.com/cheeriojs/cheerio). It's basically jQuery for static content. 
-
-I've used cheerio a bit more since then and I have to say it's very nice. I was able to load cheerio with the contents of each HTML file and use jQuery like syntax to find all links and extract their href attributes. 
-
-For the second, I had a few more problems. I did some research and found a library that was supposed to be able to extract the different parts from an URL. Unfortunately, it failed for relative links. 
-
-I then tried writing my own function to do it. It worked fine for simple cases but every time I needed to account for another type of URL, the complexity just kept growing and growing. 
-
-I realised that someone else had to have done this before. I then found a much better library, [URIjs](https://www.npmjs.com/package/URIjs). It did everything I needed and worked correctly.
-
-I probably wasted at least an hour going down the first two dead ends. I think it serves an important lesson to not try and reinvent the wheel. Even for *very simple things*, someone has probably already done it better than you could. I think that's especially true for npm considering the massive number of small packages it has. 
-
-## Test driven development
 
 - Must be correct so tests
 - Actually used TDD
 - How: one correct structure depending on all files, delete files one by one
 - Hard because of async plus no changes only errors and working on files not simple inputs
 - Mocha/chai good, would use again
+
+## Implementation
+
+I'm not going to an extensive walkthrough of the code. If you are interested, you can [view the source code here](https://github.com/davidxmoody/metalsmith-broken-link-checker/blob/master/src/index.coffee). It's a relatively concise 93 lines of CoffeeScript (with lots of comments and about half of that being taken up by configuration options). 
+
+Here is a quick overview of what the program does:
+
+1. Extract all links in HTML pages with [cheerio](https://github.com/cheeriojs/cheerio). Cheerio is basically jQuery for static content and it works very nicely. 
+
+2. Determine which file in the Metalsmith pipeline should correspond to that link and throw an error if it does not exist. This was a bit harder. I spent about an hour going down dead ends with one URL manipulation library and then trying to write my own. I then found [URIjs](https://www.npmjs.com/package/URIjs) which worked much better. 
+
+3. TODO config options
 
 ## Additional options
 
@@ -63,21 +52,29 @@ I probably wasted at least an hour going down the first two dead ends. I think i
 
 Here is a quick list of a few useful things I've learned while using npm:
 
-- `npm version 0.1.0` will set the version number in `package.json` as well as commit that change to git and then tag that git commit with `v0.1.0`
-- `npm link` in my project dir then `npm link metalsmith-broken-link-checker` in my blog dir to symlink my link checker as a dependency to my blog, very useful for testing so you don't have to continuously uninstall and reinstall it
-- `.npmignore` to prevent files from being published by npm and `npm pack` to bundle up everything like it would be when it gets published (useful to see what files are actually going to get published)
-- `prepublish` script in the `scripts` field of `package.json`, useful way to 
+- `npm version 0.1.0` will set the version number in `package.json` as well as commit that change to git and then tag that git commit with `v0.1.0`.
 
-TODO go into more details about prepublish and watch for development
+- `npm link` in my project dir then `npm link metalsmith-broken-link-checker` in my blog dir to symlink my link checker as a dependency to my blog. Very useful for testing so you don't have to continuously uninstall and reinstall it.
+
+- `.npmignore` to prevent files from being published by npm and `npm pack` to bundle up everything like it would be when it gets published. Useful to see what files are actually going to get published without having to publish them.
+
+- I was using CoffeeScript but obviously I wanted to compile to JavaScript before publishing. I used the following npm prepublish script in my [package.json](https://github.com/davidxmoody/metalsmith-broken-link-checker/blob/master/package.json) to help with that. I also used a test script to run mocha and then a watch script to automatically watch for changes in my CoffeeScript and run the tests when it detected any changes:
+
+```json
+  "scripts": {
+    "watch": "coffee --watch -o lib -c src/*.coffee & mocha --watch --compilers coffee:coffee-script/register",
+    "test": "mocha --compilers coffee:coffee-script/register",
+    "prepublish": "coffee -o lib -c src/*.coffee"
+  },
+```
 
 ## Publishing to npm
 
-Before I published to npm, I first uploaded it to GitHub. Pretty easy as this was my *seventh* GitHub repo.
+Before I published to npm, I first [uploaded it to GitHub](https://github.com/davidxmoody/metalsmith-broken-link-checker). Pretty easy as this was my *seventh* GitHub repo.
 
-I then signed up for npm (again easy). However, I couldn't log in with the command line utility. [According to this post](https://github.com/npm/npm/issues/7876), I was using an older version of npm. No problem, I used npm itself to install the newest version of npm (`npm install -g npm`) and logged in just fine.
+I then signed up for npm (again easy). However, I couldn't log in with the command line utility. [According to this post](https://github.com/npm/npm/issues/7876), I was using an older version of npm. No problem, I used npm itself to install the newest version of npm (`npm install -g npm`) and logged in just fine. 
 
-- Signed up for npm and published (easy)
-- Metalsmith.io pull request
+I then published version 0.1.0 without any problems.
 
 ## A bonus: My first ever pull request
 
