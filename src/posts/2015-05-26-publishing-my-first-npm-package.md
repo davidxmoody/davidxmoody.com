@@ -21,13 +21,13 @@ Thus, I decided to create a Metalsmith plugin to help developers catch broken li
 
 ## Plan of action
 
-Before I started on this plugin, I checked to see if anything like it already existed. There are several existing libraries meant to check sites for external URLs. However, *that's not what I wanted*. I wanted something that checked internal relative and root-relative links within a static site. 
+Before I started on this plugin, I checked to see if anything like it already existed. There are several libraries meant to check live websites sites for external URLs. However, *that's not what I wanted*. I wanted something to check internal relative and root-relative links within a static site *before* it has been deployed.
 
 The main requirement of a project like this is that it actually works *correctly*. That means tests. 
 
 It's an awkward thing to test because Metalsmith runs asynchronously and the only output should be the presence or absence of an error. I used [Mocha](http://mochajs.org/) and [Chai](http://chaijs.com/) to run my tests. I then created a set of Metalsmith source files such that removing any one file would break an internal link. I then looped through, deleting one file at a time and expecting an error to be thrown in each case.
 
-I've written tests before but I have to say I've never found them as useful as with this project. This time, I actually used my tests as the main method of developing my plugin. I had one terminal open watching my files and re-running all tests on any change. 
+I've written tests before but I have to say I've never found them as useful as with this project. This time, I actually used my tests as the main method for developing my plugin. I always kept one terminal open watching my files and re-running all tests on any change. 
 
 ## Implementation
 
@@ -41,7 +41,7 @@ Here is a quick overview of what the program does:
 
 3. Provide configuration options. For example, `options.warn` to print errors to the console instead of throwing them. Also the ability to check `src` attributes of `img` tags and the ability to specify a regex of URLs to ignore.
 
-There are also a lot of different edge cases which all add complexity to the project. For example: relative links have to be resolved relative to the file they appear in, hash fragments should be allowed, links to directories containing an `index.html` should be allowed and so on.
+There are also a lot of different edge cases which all add complexity to the program. For example: relative links have to be resolved relative to the file they appear in, hash fragments should be allowed, links to directories containing an `index.html` should be allowed and so on.
 
 Then of course I had to write the README as well. Writing good documentation can often be the hardest part. In many ways though, it's just as important as the code itself so I wanted to do it right. I created an example HTML file showing the different types of links that the plugin recognises and what Metalsmith files they correspond to. 
 
@@ -49,7 +49,7 @@ Then of course I had to write the README as well. Writing good documentation can
 
 Here is a quick list of a few useful things I've learned while using npm:
 
-- I was using CoffeeScript but wanted to compile to JavaScript before publishing. In my [package.json](https://github.com/davidxmoody/metalsmith-broken-link-checker/blob/master/package.json) I have the following scripts:
+- I was using CoffeeScript but wanted to compile to JavaScript before publishing. In my [package.json](https://github.com/davidxmoody/metalsmith-broken-link-checker/blob/master/package.json) I have the following prepublish script to do that and also a watch script for development which runs my tests on any change.
 
 ```json
 {
@@ -79,7 +79,7 @@ I then published version 0.1.0 without any problems.
 
 I realised that I should also get my plugin listed on the official [metalsmith.io](http://www.metalsmith.io/) website. 
 
-I forked the [metalsmith.io repository on GitHub](https://github.com/segmentio/metalsmith.io) and cloned it locally. I made a small change to the JSON list of packaged, committed, pushed and then submitted my first ever pull request. 
+I forked the [metalsmith.io repository on GitHub](https://github.com/segmentio/metalsmith.io) and cloned it locally. I updated the JSON list of packages, committed, pushed and then submitted my first ever pull request. 
 
 Now I've done it, it all seems pretty trivial. However, at the time, it felt like a pretty significant achievement. It was the same for my first GitHub repo and my first blog post. I guess it's just one of those things.
 
@@ -87,7 +87,7 @@ Now I've done it, it all seems pretty trivial. However, at the time, it felt lik
 
 I published the plugin about three weeks ago. 
 
-Since then, it's had 190 downloads on npm and 18 visitors to my GitHub repo. Not too bad. 
+Since then, it's had 190 downloads on npm and 19 visitors to my GitHub repo. Not too bad. 
 
 Was it worth it? This project took me slightly more than a full day to implement. Realistically, the amount of time my plugin will save other people will only barely be worth the amount of time it took me. 
 
