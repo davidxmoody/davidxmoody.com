@@ -74,12 +74,12 @@ Metalsmith(__dirname + "/..")
   # HOME PAGE PAGINATION ######################################################
   
   .use pagination "collections.posts": {
-    perPage: 3
+    perPage: 8
     first: "index.html"
     template: "NOT_USED" #TODO do this better (with proper react templates plugin)
     path: "page:num/index.html"
     pageMetadata:
-      reactTemplate: "ArticleList"
+      rtemplate: "ArticleList"
   }
   
   # Don"t duplicate the first page
@@ -114,7 +114,7 @@ Metalsmith(__dirname + "/..")
     for file in metalsmith.metadata().posts
       file.contents = new Buffer getArticle(file)
     for filename, file of files
-      if file.reactTemplate is "ArticleList"
+      if file.rtemplate is "ArticleList"
         file.contents = new Buffer getArticleList(file)
 
   .use layouts engine: "handlebars", pattern: "**/*.html", default: "wrapper.hbs"
