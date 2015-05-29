@@ -28,7 +28,7 @@ excerpts = require "./excerpts"
 METADATA =
   title: "David Moody's Blog"
   description: "A blog about programming"
-  url: "https://davidxmoody.com"
+  url: "https://davidxmoody.com/"
   feedPath: "feed.xml"
   gitHubURL: "https://github.com/davidxmoody"
   email: "david@davidxmoody.com"
@@ -141,7 +141,7 @@ Metalsmith(__dirname + "/..")
   .use (files) ->
     # Make all relative links and images into absolute links and images
     data = files[METADATA.feedPath]
-    replaced = data.contents.toString().replace(/(src|href)="\//g, '$1="' + METADATA.url)
+    replaced = data.contents.toString().replace(/(src|href)="\//g, "$1=\"#{METADATA.url}")
     data.contents = new Buffer(replaced)
 
   # CV PDF ####################################################################
