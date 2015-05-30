@@ -1,4 +1,5 @@
-console.time TIMER = "Metalsmith built in"
+console.time BUILD_TIMER = "Metalsmith built in"
+console.time "Require"
 
 require "coffee-react/register"
 getArticle = require "./get-article"
@@ -25,6 +26,9 @@ serve          = require "metalsmith-serve"
 markdown = require "./markdown"
 excerpts = require "./excerpts"
 
+console.timeEnd "Require"
+console.time "Build"
+
 METADATA =
   title: "David Moody's Blog"
   description: "A blog about programming"
@@ -42,6 +46,8 @@ Metalsmith(__dirname + "/..")
   .metadata METADATA
 
   # POSTS #####################################################################
+
+  .use -> console.time "Markdown"
   
   .use dateInFilename()
   
@@ -71,7 +77,11 @@ Metalsmith(__dirname + "/..")
   
   .use permalinks pattern: ":title/"
 
+  .use -> console.timeEnd "Markdown"
+
   # HOME PAGE PAGINATION ######################################################
+
+  .use -> console.time "Pagination"
   
   .use pagination "collections.posts": {
     perPage: 5
@@ -90,11 +100,17 @@ Metalsmith(__dirname + "/..")
     for filename, file of files
       file.path = filename.replace(/index.html$/, "")
 
+  .use -> console.timeEnd "Pagination"
+
   # EXCERPTS ##################################################################
 
+  .use -> console.time "Excerpts"
   .use excerpts()
+  .use -> console.timeEnd "Excerpts"
 
   # CSS AND FINGERPRINTING ####################################################
+
+  .use -> console.time "Sass"
 
   .use sass()
   .use autoprefixer()
@@ -106,7 +122,11 @@ Metalsmith(__dirname + "/..")
     "css/main.css"
   ]
 
+  .use -> console.timeEnd "Sass"
+
   # TEMPLATES #################################################################
+
+  .use -> console.time "Templates"
 
   # Custom React templates
   #TODO could implement this much better, maybe use the existing react plugin
@@ -119,16 +139,23 @@ Metalsmith(__dirname + "/..")
 
   .use layouts engine: "handlebars", pattern: "**/*.html", default: "wrapper.hbs"
 
+  .use -> console.timeEnd "Templates"
 
   # BEAUTIFY ##################################################################
   
+  .use -> console.time "Beautify"
+
   .use beautify {
     wrap_line_length: 100000
     indent_size: 0
   }
 
+  .use -> console.timeEnd "Beautify"
+
   # RSS FEED ##################################################################
   
+  .use -> console.time "Feed"
+
   .use feed {
     collection: "posts"
     limit: 20
@@ -138,13 +165,17 @@ Metalsmith(__dirname + "/..")
     description: METADATA.description
   }
 
+  # Make all relative links and images into absolute links and images
   .use (files) ->
-    # Make all relative links and images into absolute links and images
     data = files[METADATA.feedPath]
     replaced = data.contents.toString().replace(/(src|href)="\//g, "$1=\"#{METADATA.url}")
     data.contents = new Buffer(replaced)
 
+  .use -> console.timeEnd "Feed"
+
   # CV PDF ####################################################################
+
+  .use -> console.time "PDF"
 
   .use pdf {
     pattern: "cv/index.html"
@@ -161,11 +192,19 @@ Metalsmith(__dirname + "/..")
     files[newPath] = files[oldPath]
     delete files[oldPath]
 
+  .use -> console.timeEnd "PDF"
+
   # SERVE AND BUILD ###########################################################
   
+  .use -> console.time "Broken link checker"
   .use blc()
+  .use -> console.timeEnd "Broken link checker"
 
   .use serve()
+
+  .use -> console.time "Write"
   .build (err) ->
     throw err if err
-    console.timeEnd TIMER
+    console.timeEnd "Write"
+    console.timeEnd "Build"
+    console.timeEnd BUILD_TIMER
