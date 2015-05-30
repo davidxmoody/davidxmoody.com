@@ -1,5 +1,18 @@
 React = require "react"
-PaginationLink = require "./pagination-link"
+
+PaginationLink = React.createClass
+  displayName: "PaginationLink"
+
+  propTypes:
+    href: React.PropTypes.string.isRequired
+    disabled: React.PropTypes.bool.isRequired
+
+  render: ->
+    if @props.disabled
+      <span className="pagination__disabled">{@props.children}</span>
+    else
+      <a className="pagination__link" href={@props.href}>{@props.children}</a>
+
 
 module.exports = React.createClass
   displayName: "Pagination"
@@ -13,6 +26,20 @@ module.exports = React.createClass
     file = @props.file
     pagin = file.pagination
 
+    current = pagin.num
+    last = pagin.pages.length
+
+    ellipsis = "..."
+
+    nums = if last <= 5
+      [1..last]
+    else if current <= 3
+      [1, 2, 3, 4, ellipsis, last]
+    else if current >= last-2
+      [1, ellipsis, last-3, last-2, last-1, last]
+    else
+      [1, ellipsis, current-1, current, current+1, ellipsis, last]
+
     links = []
 
     links.push <PaginationLink
@@ -21,12 +48,17 @@ module.exports = React.createClass
       href={"/#{pagin.previous?.path}"}
     >&laquo;</PaginationLink>
 
-    for page in pagin.pages
-      links.push <PaginationLink
-        key={page.pagination.num}
-        disabled={file is page}
-        href={"/#{page.path}"}
-      >{page.pagination.num}</PaginationLink>
+    for num, index in nums
+      if num is ellipsis
+        links.push <span className="pagination__ellipsis" key={"ellipsis-#{index}"} />
+      else
+        for page in pagin.pages
+          if page.pagination.num is num
+            links.push <PaginationLink
+              key={page.pagination.num}
+              disabled={file is page}
+              href={"/#{page.path}"}
+            >{page.pagination.num}</PaginationLink>
 
     links.push <PaginationLink
       key="next"
@@ -35,8 +67,8 @@ module.exports = React.createClass
     >&raquo;</PaginationLink>
 
     realLinks = []
-    for link, i in links
-      realLinks.push "|" unless i is 0
+    for link, index in links
+      realLinks.push <span className="pagination__separator" key={"separator-#{index}"} /> unless index is 0 or nums[index-2] is ellipsis or nums[index-1] is ellipsis
       realLinks.push link
 
     <p className="pagination">

@@ -88,14 +88,27 @@ html {
   overflow-y: scroll;
 }
 
-// Make small links a bit easier to click
+// Make small links a bit easier to click by expanding their padding
 .pagination {
   margin-top: $computed-line-height * 2;
   text-align: center;
-  a, span, em {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
+}
+
+.pagination__link, .pagination__disabled {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.pagination__ellipsis {
+  padding-left: -1em;
+  padding-right: -1em;
+}
+.pagination__ellipsis::before {
+  content: "...";
+}
+
+.pagination__separator::before {
+  content: "|";
 }
 
 // Quick blockquote styling
