@@ -35,7 +35,7 @@ METADATA =
   email: "david@davidxmoody.com"
   excerptSeparator: "\n\n\n"
 
-module.exports = ->
+module.exports = (callback) ->
 
   console.time "Build"
 
@@ -182,8 +182,6 @@ module.exports = ->
 
     #.use serve()
 
-    .use -> console.time "Write"
     .build (err) ->
-      throw err if err
-      console.timeEnd "Write"
       console.timeEnd "Build"
+      callback err
