@@ -18,7 +18,6 @@ fingerprint    = require "metalsmith-fingerprint"
 ignore         = require "metalsmith-ignore"
 layouts        = require "metalsmith-layouts"
 pagination     = require "metalsmith-pagination"
-pdf            = require "metalsmith-pdf"
 permalinks     = require "metalsmith-permalinks"
 sass           = require "metalsmith-sass"
 serve          = require "metalsmith-serve"
@@ -172,27 +171,6 @@ Metalsmith(__dirname + "/..")
     data.contents = new Buffer(replaced)
 
   .use -> console.timeEnd "Feed"
-
-  # CV PDF ####################################################################
-
-  .use -> console.time "PDF"
-
-  .use pdf {
-    pattern: "cv/index.html"
-    printMediaType: true
-    marginTop: "1.5cm"
-    marginBottom: "1.5cm"
-  }
-
-  # Rename CV to something more meaningful
-  .use (files) ->
-    oldPath = "cv/index.pdf"
-    newPath = "cv/david-moody-cv-web-developer.pdf"
-
-    files[newPath] = files[oldPath]
-    delete files[oldPath]
-
-  .use -> console.timeEnd "PDF"
 
   # SERVE AND BUILD ###########################################################
   
