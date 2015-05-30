@@ -3,10 +3,13 @@
   "private": true,
   "scripts": {
     "start": "nodemon -e md,sass,scss,css,html,hbs,js,coffee,jsx,cjsx,json,yaml,json --ignore build/ ./scripts/build.coffee",
+    "watch": "gulp watch",
     "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
     "coffee-react": "~3.1.0",
+    "coffee-script": "^1.9.3",
+    "gulp": "^3.8.11",
     "handlebars": "^2.0.0",
     "highlight.js": "^8.6.0",
     "marked": "^0.3.2",

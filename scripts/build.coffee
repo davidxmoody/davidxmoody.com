@@ -1,4 +1,3 @@
-console.time BUILD_TIMER = "Metalsmith built in"
 console.time "Require"
 
 require "coffee-react/register"
@@ -26,7 +25,6 @@ markdown = require "./markdown"
 excerpts = require "./excerpts"
 
 console.timeEnd "Require"
-console.time "Build"
 
 METADATA =
   title: "David Moody's Blog"
@@ -37,152 +35,155 @@ METADATA =
   email: "david@davidxmoody.com"
   excerptSeparator: "\n\n\n"
 
-Metalsmith(__dirname + "/..")
+module.exports = ->
 
-  # CONFIG ####################################################################
+  console.time "Build"
 
-  .clean true
-  .metadata METADATA
+  Metalsmith(__dirname + "/..")
 
-  # POSTS #####################################################################
+    # CONFIG ####################################################################
 
-  .use -> console.time "Markdown"
-  
-  .use dateInFilename()
-  
-  .use (files) ->
-    for filename, file of files
-      if file.date
-        file.formattedDate = moment(file.date).format("ll")
+    .clean true
+    .metadata METADATA
 
-  .use collections posts: {
-    pattern: "posts/*.md"
-    sortBy: "date"
-    reverse: true
-  }
-  
-  # Convert space separated string of tags into a list
-  .use (files) ->
-    for filename, file of files
-      if file.tags and typeof file.tags == "string"
-        file.tags = file.tags.split(" ")
+    # POSTS #####################################################################
 
-  # Replace custom excerpt separator with <!--more--> tag
-  .use (files, metalsmith) ->
-    for file in metalsmith.metadata().posts
-      file.contents = new Buffer(file.contents.toString().replace(METADATA.excerptSeparator, "\n\n<!--more-->\n\n"))
+    .use -> console.time "Markdown"
+    
+    .use dateInFilename()
+    
+    .use (files) ->
+      for filename, file of files
+        if file.date
+          file.formattedDate = moment(file.date).format("ll")
 
-  .use markdown()
-  
-  .use permalinks pattern: ":title/"
+    .use collections posts: {
+      pattern: "posts/*.md"
+      sortBy: "date"
+      reverse: true
+    }
+    
+    # Convert space separated string of tags into a list
+    .use (files) ->
+      for filename, file of files
+        if file.tags and typeof file.tags == "string"
+          file.tags = file.tags.split(" ")
 
-  .use -> console.timeEnd "Markdown"
+    # Replace custom excerpt separator with <!--more--> tag
+    .use (files, metalsmith) ->
+      for file in metalsmith.metadata().posts
+        file.contents = new Buffer(file.contents.toString().replace(METADATA.excerptSeparator, "\n\n<!--more-->\n\n"))
 
-  # HOME PAGE PAGINATION ######################################################
+    .use markdown()
+    
+    .use permalinks pattern: ":title/"
 
-  .use -> console.time "Pagination"
-  
-  .use pagination "collections.posts": {
-    perPage: 5
-    first: "index.html"
-    template: "NOT_USED" #TODO do this better (with proper react templates plugin)
-    path: "page:num/index.html"
-    pageMetadata:
-      rtemplate: "ArticleList"
-  }
-  
-  # Don"t duplicate the first page
-  .use ignore ["page1/index.html"]
-  
-  # Clean up paths to provide clean URLs
-  .use (files) ->
-    for filename, file of files
-      file.path = filename.replace(/index.html$/, "")
+    .use -> console.timeEnd "Markdown"
 
-  .use -> console.timeEnd "Pagination"
+    # HOME PAGE PAGINATION ######################################################
 
-  # EXCERPTS ##################################################################
+    .use -> console.time "Pagination"
+    
+    .use pagination "collections.posts": {
+      perPage: 5
+      first: "index.html"
+      template: "NOT_USED" #TODO do this better (with proper react templates plugin)
+      path: "page:num/index.html"
+      pageMetadata:
+        rtemplate: "ArticleList"
+    }
+    
+    # Don"t duplicate the first page
+    .use ignore ["page1/index.html"]
+    
+    # Clean up paths to provide clean URLs
+    .use (files) ->
+      for filename, file of files
+        file.path = filename.replace(/index.html$/, "")
 
-  .use -> console.time "Excerpts"
-  .use excerpts()
-  .use -> console.timeEnd "Excerpts"
+    .use -> console.timeEnd "Pagination"
 
-  # CSS AND FINGERPRINTING ####################################################
+    # EXCERPTS ##################################################################
 
-  .use -> console.time "Sass"
+    .use -> console.time "Excerpts"
+    .use excerpts()
+    .use -> console.timeEnd "Excerpts"
 
-  .use sass()
-  .use autoprefixer()
-  
-  .use fingerprint pattern: "css/main.css"
-  
-  .use ignore [
-    "css/_*.sass"
-    "css/main.css"
-  ]
+    # CSS AND FINGERPRINTING ####################################################
 
-  .use -> console.timeEnd "Sass"
+    .use -> console.time "Sass"
 
-  # TEMPLATES #################################################################
+    .use sass()
+    .use autoprefixer()
+    
+    .use fingerprint pattern: "css/main.css"
+    
+    .use ignore [
+      "css/_*.sass"
+      "css/main.css"
+    ]
 
-  .use -> console.time "Templates"
+    .use -> console.timeEnd "Sass"
 
-  # Custom React templates
-  #TODO could implement this much better, maybe use the existing react plugin
-  .use (files, metalsmith) ->
-    for file in metalsmith.metadata().posts
-      file.contents = new Buffer getArticle(file)
-    for filename, file of files
-      if file.rtemplate is "ArticleList"
-        file.contents = new Buffer getArticleList(file)
+    # TEMPLATES #################################################################
 
-  .use layouts engine: "handlebars", pattern: "**/*.html", default: "wrapper.hbs"
+    .use -> console.time "Templates"
 
-  .use -> console.timeEnd "Templates"
+    # Custom React templates
+    #TODO could implement this much better, maybe use the existing react plugin
+    .use (files, metalsmith) ->
+      for file in metalsmith.metadata().posts
+        file.contents = new Buffer getArticle(file)
+      for filename, file of files
+        if file.rtemplate is "ArticleList"
+          file.contents = new Buffer getArticleList(file)
 
-  # BEAUTIFY ##################################################################
-  
-  .use -> console.time "Beautify"
+    .use layouts engine: "handlebars", pattern: "**/*.html", default: "wrapper.hbs"
 
-  .use beautify {
-    wrap_line_length: 100000
-    indent_size: 0
-  }
+    .use -> console.timeEnd "Templates"
 
-  .use -> console.timeEnd "Beautify"
+    # BEAUTIFY ##################################################################
+    
+    .use -> console.time "Beautify"
 
-  # RSS FEED ##################################################################
-  
-  .use -> console.time "Feed"
+    .use beautify {
+      wrap_line_length: 100000
+      indent_size: 0
+    }
 
-  .use feed {
-    collection: "posts"
-    limit: 20
-    destination: METADATA.feedPath
-    title: METADATA.title
-    site_url: METADATA.url
-    description: METADATA.description
-  }
+    .use -> console.timeEnd "Beautify"
 
-  # Make all relative links and images into absolute links and images
-  .use (files) ->
-    data = files[METADATA.feedPath]
-    replaced = data.contents.toString().replace(/(src|href)="\//g, "$1=\"#{METADATA.url}")
-    data.contents = new Buffer(replaced)
+    # RSS FEED ##################################################################
+    
+    .use -> console.time "Feed"
 
-  .use -> console.timeEnd "Feed"
+    .use feed {
+      collection: "posts"
+      limit: 20
+      destination: METADATA.feedPath
+      title: METADATA.title
+      site_url: METADATA.url
+      description: METADATA.description
+    }
 
-  # SERVE AND BUILD ###########################################################
-  
-  .use -> console.time "Broken link checker"
-  .use blc()
-  .use -> console.timeEnd "Broken link checker"
+    # Make all relative links and images into absolute links and images
+    .use (files) ->
+      data = files[METADATA.feedPath]
+      replaced = data.contents.toString().replace(/(src|href)="\//g, "$1=\"#{METADATA.url}")
+      data.contents = new Buffer(replaced)
 
-  .use serve()
+    .use -> console.timeEnd "Feed"
 
-  .use -> console.time "Write"
-  .build (err) ->
-    throw err if err
-    console.timeEnd "Write"
-    console.timeEnd "Build"
-    console.timeEnd BUILD_TIMER
+    # SERVE AND BUILD ###########################################################
+    
+    .use -> console.time "Broken link checker"
+    .use blc()
+    .use -> console.timeEnd "Broken link checker"
+
+    #.use serve()
+
+    .use -> console.time "Write"
+    .build (err) ->
+      throw err if err
+      console.timeEnd "Write"
+      console.timeEnd "Build"
