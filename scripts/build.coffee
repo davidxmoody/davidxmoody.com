@@ -26,6 +26,8 @@ excerpts = require "./excerpts"
 
 console.timeEnd "Require"
 
+#TODO could move this into build script or separate file? or simply as defaults
+#for the options parameter
 METADATA =
   title: "David Moody's Blog"
   description: "A blog about programming"
@@ -35,129 +37,134 @@ METADATA =
   email: "david@davidxmoody.com"
   excerptSeparator: "\n\n\n"
 
-module.exports = (callback) ->
+module.exports = (options, callback) ->
+
+  #TODO maybe Ramda merge these options?
+  options ?= {}
+  options.production ?= true
 
   console.time "Build"
 
-  Metalsmith(__dirname + "/..")
+  # CONFIG ####################################################################
 
-    # CONFIG ####################################################################
+  M = Metalsmith(__dirname + "/..")
+  M.clean true
+  M.metadata METADATA
 
-    .clean true
-    .metadata METADATA
+  # POSTS #####################################################################
 
-    # POSTS #####################################################################
+  M.use -> console.time "Markdown"
+  
+  M.use dateInFilename()
+  
+  M.use (files) ->
+    for filename, file of files
+      if file.date
+        file.formattedDate = moment(file.date).format("ll")
 
-    .use -> console.time "Markdown"
-    
-    .use dateInFilename()
-    
-    .use (files) ->
-      for filename, file of files
-        if file.date
-          file.formattedDate = moment(file.date).format("ll")
+  M.use collections posts: {
+    pattern: "posts/*.md"
+    sortBy: "date"
+    reverse: true
+  }
+  
+  # Convert space separated string of tags into a list
+  M.use (files) ->
+    for filename, file of files
+      if file.tags and typeof file.tags == "string"
+        file.tags = file.tags.split(" ")
 
-    .use collections posts: {
-      pattern: "posts/*.md"
-      sortBy: "date"
-      reverse: true
-    }
-    
-    # Convert space separated string of tags into a list
-    .use (files) ->
-      for filename, file of files
-        if file.tags and typeof file.tags == "string"
-          file.tags = file.tags.split(" ")
+  # Replace custom excerpt separator with <!--more--> tag
+  M.use (files, metalsmith) ->
+    for file in metalsmith.metadata().posts
+      file.contents = new Buffer(file.contents.toString().replace(METADATA.excerptSeparator, "\n\n<!--more-->\n\n"))
 
-    # Replace custom excerpt separator with <!--more--> tag
-    .use (files, metalsmith) ->
-      for file in metalsmith.metadata().posts
-        file.contents = new Buffer(file.contents.toString().replace(METADATA.excerptSeparator, "\n\n<!--more-->\n\n"))
+  M.use markdown()
+  
+  M.use permalinks pattern: ":title/"
 
-    .use markdown()
-    
-    .use permalinks pattern: ":title/"
+  M.use -> console.timeEnd "Markdown"
 
-    .use -> console.timeEnd "Markdown"
+  # HOME PAGE PAGINATION ######################################################
 
-    # HOME PAGE PAGINATION ######################################################
+  M.use -> console.time "Pagination"
+  
+  M.use pagination "collections.posts": {
+    perPage: 5
+    first: "index.html"
+    template: "NOT_USED" #TODO do this better (with proper react templates plugin)
+    path: "page:num/index.html"
+    pageMetadata:
+      rtemplate: "ArticleList"
+  }
+  
+  # Don"t duplicate the first page
+  M.use ignore ["page1/index.html"]
+  
+  # Clean up paths to provide clean URLs
+  M.use (files) ->
+    for filename, file of files
+      file.path = filename.replace(/index.html$/, "")
 
-    .use -> console.time "Pagination"
-    
-    .use pagination "collections.posts": {
-      perPage: 5
-      first: "index.html"
-      template: "NOT_USED" #TODO do this better (with proper react templates plugin)
-      path: "page:num/index.html"
-      pageMetadata:
-        rtemplate: "ArticleList"
-    }
-    
-    # Don"t duplicate the first page
-    .use ignore ["page1/index.html"]
-    
-    # Clean up paths to provide clean URLs
-    .use (files) ->
-      for filename, file of files
-        file.path = filename.replace(/index.html$/, "")
+  M.use -> console.timeEnd "Pagination"
 
-    .use -> console.timeEnd "Pagination"
+  # EXCERPTS ##################################################################
 
-    # EXCERPTS ##################################################################
+  M.use -> console.time "Excerpts"
+  M.use excerpts()
+  M.use -> console.timeEnd "Excerpts"
 
-    .use -> console.time "Excerpts"
-    .use excerpts()
-    .use -> console.timeEnd "Excerpts"
+  # CSS AND FINGERPRINTING ####################################################
 
-    # CSS AND FINGERPRINTING ####################################################
+  M.use -> console.time "Sass"
 
-    .use -> console.time "Sass"
+  M.use sass()
+  M.use autoprefixer()
+  
+  M.use fingerprint pattern: "css/main.css"
+  
+  M.use ignore [
+    "css/_*.sass"
+    "css/main.css"
+  ]
 
-    .use sass()
-    .use autoprefixer()
-    
-    .use fingerprint pattern: "css/main.css"
-    
-    .use ignore [
-      "css/_*.sass"
-      "css/main.css"
-    ]
+  M.use -> console.timeEnd "Sass"
 
-    .use -> console.timeEnd "Sass"
+  # TEMPLATES #################################################################
 
-    # TEMPLATES #################################################################
+  M.use -> console.time "Templates"
 
-    .use -> console.time "Templates"
+  # Custom React templates
+  #TODO could implement this much better, maybe use the existing react plugin
+  M.use (files, metalsmith) ->
+    for file in metalsmith.metadata().posts
+      file.contents = new Buffer getArticle(file)
+    for filename, file of files
+      if file.rtemplate is "ArticleList"
+        file.contents = new Buffer getArticleList(file)
 
-    # Custom React templates
-    #TODO could implement this much better, maybe use the existing react plugin
-    .use (files, metalsmith) ->
-      for file in metalsmith.metadata().posts
-        file.contents = new Buffer getArticle(file)
-      for filename, file of files
-        if file.rtemplate is "ArticleList"
-          file.contents = new Buffer getArticleList(file)
+  M.use layouts engine: "handlebars", pattern: "**/*.html", default: "wrapper.hbs"
 
-    .use layouts engine: "handlebars", pattern: "**/*.html", default: "wrapper.hbs"
+  M.use -> console.timeEnd "Templates"
 
-    .use -> console.timeEnd "Templates"
+  # BEAUTIFY ##################################################################
+  
+  if options.production
+    M.use -> console.time "Beautify"
 
-    # BEAUTIFY ##################################################################
-    
-    .use -> console.time "Beautify"
-
-    .use beautify {
+    M.use beautify {
       wrap_line_length: 100000
       indent_size: 0
     }
 
-    .use -> console.timeEnd "Beautify"
+    M.use -> console.timeEnd "Beautify"
 
-    # RSS FEED ##################################################################
+  # RSS FEED ##################################################################
     
-    .use -> console.time "Feed"
+  if options.production
+    M.use -> console.time "Feed"
 
-    .use feed {
+    M.use feed {
       collection: "posts"
       limit: 20
       destination: METADATA.feedPath
@@ -167,21 +174,22 @@ module.exports = (callback) ->
     }
 
     # Make all relative links and images into absolute links and images
-    .use (files) ->
+    M.use (files) ->
       data = files[METADATA.feedPath]
       replaced = data.contents.toString().replace(/(src|href)="\//g, "$1=\"#{METADATA.url}")
       data.contents = new Buffer(replaced)
 
-    .use -> console.timeEnd "Feed"
+    M.use -> console.timeEnd "Feed"
 
-    # SERVE AND BUILD ###########################################################
-    
-    .use -> console.time "Broken link checker"
-    .use blc()
-    .use -> console.timeEnd "Broken link checker"
+  # BROKEN LINK CHECKER #######################################################
+  
+  if options.production
+    M.use -> console.time "Broken link checker"
+    M.use blc()
+    M.use -> console.timeEnd "Broken link checker"
 
-    #.use serve()
+  # BUILD #####################################################################
 
-    .build (err) ->
-      console.timeEnd "Build"
-      callback err
+  M.build (err) ->
+    console.timeEnd "Build"
+    callback err

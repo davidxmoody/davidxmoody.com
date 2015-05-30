@@ -6,23 +6,28 @@ paths =
   src: "src/**/*"
   layouts: "layouts/**/*"
 
-startServer = ->
-  browserSync
-    server:
-      baseDir: "./build"
+serverStarted = false
 
 refreshServer = ->
-  browserSync.reload()
+  if not serverStarted
+    browserSync
+      server:
+        baseDir: "./build"
+    serverStarted = true
+  else
+    browserSync.reload()
 
-
-gulp.task "browser-sync", ->
-  startServer()
 
 gulp.task "dev-build", ->
-  build (err) ->
+  build {production: false}, (err) ->
     if err then throw err
     refreshServer()
 
-gulp.task "watch", ["browser-sync", "dev-build"], ->
+gulp.task "watch", ["dev-build"], ->
   gulp.watch(paths.src, ["dev-build"])
   gulp.watch(paths.layouts, ["dev-build"])
+
+gulp.task "prod-build", ->
+  build {production: true}, (err) ->
+    if err then throw err
+    console.log "Built"

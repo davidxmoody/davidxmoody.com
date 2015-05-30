@@ -2,7 +2,6 @@
   "name": "davidxmoody.com",
   "private": true,
   "scripts": {
-    "start": "nodemon -e md,sass,scss,css,html,hbs,js,coffee,jsx,cjsx,json,yaml,json --ignore build/ ./scripts/build.coffee",
     "watch": "gulp watch",
     "deploy": "./scripts/deploy.sh"
   },
