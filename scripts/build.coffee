@@ -62,11 +62,10 @@ module.exports = (options, callback) ->
       if file.date
         file.formattedDate = moment(file.date).format("ll")
 
-  M.use collections posts: {
+  M.use collections posts:
     pattern: "posts/*.md"
     sortBy: "date"
     reverse: true
-  }
   
   # Convert space separated string of tags into a list
   M.use (files) ->
@@ -74,13 +73,12 @@ module.exports = (options, callback) ->
       if file.tags and typeof file.tags == "string"
         file.tags = file.tags.split(" ")
 
-  # Replace custom excerpt separator with <!--more--> tag
+  # Replace custom excerpt separator with <!--more--> tag before markdown runs
   M.use (files, metalsmith) ->
     for file in metalsmith.metadata().posts
       file.contents = new Buffer(file.contents.toString().replace(METADATA.excerptSeparator, "\n\n<!--more-->\n\n"))
 
   M.use markdown()
-  
   M.use permalinks pattern: ":title/"
 
   M.use -> console.timeEnd "Markdown"
@@ -89,14 +87,13 @@ module.exports = (options, callback) ->
 
   M.use -> console.time "Pagination"
   
-  M.use pagination "collections.posts": {
+  M.use pagination "collections.posts":
     perPage: 5
     first: "index.html"
     template: "NOT_USED" #TODO do this better (with proper react templates plugin)
     path: "page:num/index.html"
     pageMetadata:
       rtemplate: "ArticleList"
-  }
   
   # Don"t duplicate the first page
   M.use ignore ["page1/index.html"]
@@ -122,11 +119,7 @@ module.exports = (options, callback) ->
   M.use autoprefixer()
   
   M.use fingerprint pattern: "css/main.css"
-  
-  M.use ignore [
-    "css/_*.sass"
-    "css/main.css"
-  ]
+  M.use ignore ["css/_*.sass", "css/main.css"]
 
   M.use -> console.timeEnd "Sass"
 
@@ -152,10 +145,9 @@ module.exports = (options, callback) ->
   if options.production
     M.use -> console.time "Beautify"
 
-    M.use beautify {
+    M.use beautify
       wrap_line_length: 100000
       indent_size: 0
-    }
 
     M.use -> console.timeEnd "Beautify"
 
@@ -164,14 +156,13 @@ module.exports = (options, callback) ->
   if options.production
     M.use -> console.time "Feed"
 
-    M.use feed {
+    M.use feed
       collection: "posts"
-      limit: 20
+      limit: 100
       destination: METADATA.feedPath
       title: METADATA.title
       site_url: METADATA.url
       description: METADATA.description
-    }
 
     # Make all relative links and images into absolute links and images
     M.use (files) ->

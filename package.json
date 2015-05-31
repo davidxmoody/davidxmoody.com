@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "watch": "gulp watch",
+    "build": "gulp build",
     "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {

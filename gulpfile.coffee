@@ -18,6 +18,11 @@ refreshServer = ->
     browserSync.reload()
 
 
+gulp.task "build", ->
+  build {production: true}, (err) ->
+    if err then throw err
+    console.log "Built successfully"
+
 gulp.task "dev-build", ->
   build {production: false}, (err) ->
     if err then throw err
@@ -26,8 +31,3 @@ gulp.task "dev-build", ->
 gulp.task "watch", ["dev-build"], ->
   gulp.watch(paths.src, ["dev-build"])
   gulp.watch(paths.layouts, ["dev-build"])
-
-gulp.task "prod-build", ->
-  build {production: true}, (err) ->
-    if err then throw err
-    console.log "Built"
