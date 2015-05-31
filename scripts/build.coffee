@@ -54,6 +54,12 @@ module.exports = (options, callback) ->
   # POSTS #####################################################################
 
   M.use -> console.time "Markdown"
+
+  M.use (files) ->
+    for filename, file of files
+      if options.production and file.draft
+        console.log "Warning: Skipping one draft: #{filename}"
+        delete files[filename]
   
   M.use dateInFilename()
   
