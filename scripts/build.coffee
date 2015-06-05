@@ -121,6 +121,12 @@ module.exports = (options, callback) ->
   m.use excerpts()
   m.use -> console.timeEnd "Excerpts"
 
+  # CANONICAL URLS ############################################################
+
+  m.use (files) ->
+    for filename, file of files
+      file.canonical = METADATA.url + filename.replace(/index.html$/, "")
+
   # CSS AND FINGERPRINTING ####################################################
 
   m.use -> console.time "Sass"
@@ -164,19 +170,21 @@ module.exports = (options, callback) ->
   # SITEMAP ###################################################################
   
   if options.production
-    m.use (files) ->
-      for filename, file of files
-        file.canonical = METADATA.url + filename.replace(/index.html$/, "")
+    #TODO for some reason this does not include the home page or any pagination
+    #pages, figure out why that happens and decide if it is a problem
+    m.use -> console.time "Sitemap"
 
     m.use sitemap
       ignoreFiles: [/^CNAME$/, /\.css$/, /\.js$/, /\.jpg$/, /\.png$/]
       output: METADATA.sitemapPath
-      urlProperty: 'canonical'
+      urlProperty: "canonical"
       hostname: METADATA.url
-      modifiedProperty: 'modified'
+      modifiedProperty: "modified"
       defaults:
-        priority: 0.5,
-        changefreq: 'daily'
+        priority: 0.5
+        changefreq: "daily"
+
+    m.use -> console.timeEnd "Sitemap"
 
   # RSS FEED ##################################################################
     
