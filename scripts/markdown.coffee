@@ -17,7 +17,7 @@ markedOptions =
 module.exports = (options) ->
   (files, metadata) ->
     for filename, file of files
-      if not markdownRegex.test filename then continue
+      if not markdownRegex.test(filename) then continue
 
       rawStr = file.contents.toString()
       formatted = marked rawStr, markedOptions

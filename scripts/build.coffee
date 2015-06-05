@@ -5,6 +5,7 @@ getArticle = require "./get-article"
 getArticleList = require "./get-article-list"
 
 moment = require "moment"
+R = require "ramda"
 
 Metalsmith     = require "metalsmith"
 autoprefixer   = require "metalsmith-autoprefixer"
@@ -19,7 +20,6 @@ layouts        = require "metalsmith-layouts"
 pagination     = require "metalsmith-pagination"
 permalinks     = require "metalsmith-permalinks"
 sass           = require "metalsmith-sass"
-serve          = require "metalsmith-serve"
 
 markdown = require "./markdown"
 excerpts = require "./excerpts"
@@ -37,63 +37,64 @@ METADATA =
   email: "david@davidxmoody.com"
   excerptSeparator: "\n\n\n"
 
+defaultOptions =
+  production: true
+
 module.exports = (options, callback) ->
 
-  #TODO maybe Ramda merge these options?
-  options ?= {}
-  options.production ?= true
+  options = R.merge defaultOptions, options
 
   console.time "Build"
 
   # CONFIG ####################################################################
 
-  M = Metalsmith(__dirname + "/..")
-  M.clean true
-  M.metadata METADATA
+  m = Metalsmith(__dirname + "/..")
+  m.clean true
+  m.metadata METADATA
 
   # POSTS #####################################################################
 
-  M.use -> console.time "Markdown"
+  m.use -> console.time "Markdown"
 
-  M.use (files) ->
+  m.use (files) ->
     for filename, file of files
       if options.production and file.draft
         console.log "Warning: Skipping one draft: #{filename}"
         delete files[filename]
   
-  M.use dateInFilename()
+  m.use dateInFilename()
   
-  M.use (files) ->
+  m.use (files) ->
     for filename, file of files
       if file.date
         file.formattedDate = moment(file.date).format("ll")
 
-  M.use collections posts:
+  m.use collections posts:
     pattern: "posts/*.md"
     sortBy: "date"
     reverse: true
   
   # Convert space separated string of tags into a list
-  M.use (files) ->
+  m.use (files) ->
     for filename, file of files
       if file.tags and typeof file.tags == "string"
         file.tags = file.tags.split(" ")
 
   # Replace custom excerpt separator with <!--more--> tag before markdown runs
-  M.use (files, metalsmith) ->
+  m.use (files, metalsmith) ->
     for file in metalsmith.metadata().posts
       file.contents = new Buffer(file.contents.toString().replace(METADATA.excerptSeparator, "\n\n<!--more-->\n\n"))
 
-  M.use markdown()
-  M.use permalinks pattern: ":title/"
+  m.use markdown()
+  m.use permalinks pattern: ":title/"
 
-  M.use -> console.timeEnd "Markdown"
+  m.use -> console.timeEnd "Markdown"
 
   # HOME PAGE PAGINATION ######################################################
 
-  M.use -> console.time "Pagination"
+  m.use -> console.time "Pagination"
   
-  M.use pagination "collections.posts":
+  m.use pagination "collections.posts":
     perPage: 5
     first: "index.html"
     template: "NOT_USED" #TODO do this better (with proper react templates plugin)
@@ -102,67 +103,67 @@ module.exports = (options, callback) ->
       rtemplate: "ArticleList"
   
   # Don"t duplicate the first page
-  M.use ignore ["page1/index.html"]
+  m.use ignore ["page1/index.html"]
   
   # Clean up paths to provide clean URLs
-  M.use (files) ->
+  m.use (files) ->
     for filename, file of files
       file.path = filename.replace(/index.html$/, "")
 
-  M.use -> console.timeEnd "Pagination"
+  m.use -> console.timeEnd "Pagination"
 
   # EXCERPTS ##################################################################
 
-  M.use -> console.time "Excerpts"
-  M.use excerpts()
-  M.use -> console.timeEnd "Excerpts"
+  m.use -> console.time "Excerpts"
+  m.use excerpts()
+  m.use -> console.timeEnd "Excerpts"
 
   # CSS AND FINGERPRINTING ####################################################
 
-  M.use -> console.time "Sass"
+  m.use -> console.time "Sass"
 
-  M.use sass()
-  M.use autoprefixer()
+  m.use sass()
+  m.use autoprefixer()
   
-  M.use fingerprint pattern: "css/main.css"
-  M.use ignore ["css/_*.sass", "css/main.css"]
+  m.use fingerprint pattern: "css/main.css"
+  m.use ignore ["css/_*.sass", "css/main.css"]
 
-  M.use -> console.timeEnd "Sass"
+  m.use -> console.timeEnd "Sass"
 
   # TEMPLATES #################################################################
 
-  M.use -> console.time "Templates"
+  m.use -> console.time "Templates"
 
   # Custom React templates
   #TODO could implement this much better, maybe use the existing react plugin
-  M.use (files, metalsmith) ->
+  m.use (files, metalsmith) ->
     for file in metalsmith.metadata().posts
       file.contents = new Buffer getArticle(file)
     for filename, file of files
       if file.rtemplate is "ArticleList"
         file.contents = new Buffer getArticleList(file)
 
-  M.use layouts engine: "handlebars", pattern: "**/*.html", default: "wrapper.hbs"
+  m.use layouts engine: "handlebars", pattern: "**/*.html", default: "wrapper.hbs"
 
-  M.use -> console.timeEnd "Templates"
+  m.use -> console.timeEnd "Templates"
 
   # BEAUTIFY ##################################################################
   
   if options.production
-    M.use -> console.time "Beautify"
+    m.use -> console.time "Beautify"
 
-    M.use beautify
+    m.use beautify
       wrap_line_length: 100000
       indent_size: 0
 
-    M.use -> console.timeEnd "Beautify"
+    m.use -> console.timeEnd "Beautify"
 
   # RSS FEED ##################################################################
     
   if options.production
-    M.use -> console.time "Feed"
+    m.use -> console.time "Feed"
 
-    M.use feed
+    m.use feed
       collection: "posts"
       limit: 100
       destination: METADATA.feedPath
@@ -171,22 +172,22 @@ module.exports = (options, callback) ->
       description: METADATA.description
 
     # Make all relative links and images into absolute links and images
-    M.use (files) ->
+    m.use (files) ->
       data = files[METADATA.feedPath]
       replaced = data.contents.toString().replace(/(src|href)="\//g, "$1=\"#{METADATA.url}")
       data.contents = new Buffer(replaced)
 
-    M.use -> console.timeEnd "Feed"
+    m.use -> console.timeEnd "Feed"
 
   # BROKEN LINK CHECKER #######################################################
   
   if options.production
-    M.use -> console.time "Broken link checker"
-    M.use blc()
-    M.use -> console.timeEnd "Broken link checker"
+    m.use -> console.time "Broken link checker"
+    m.use blc()
+    m.use -> console.timeEnd "Broken link checker"
 
   # BUILD #####################################################################
 
-  M.build (err) ->
+  m.build (err) ->
     console.timeEnd "Build"
     callback err
