@@ -20,6 +20,7 @@ layouts        = require "metalsmith-layouts"
 pagination     = require "metalsmith-pagination"
 permalinks     = require "metalsmith-permalinks"
 sass           = require "metalsmith-sass"
+sitemap        = require "metalsmith-sitemap"
 
 markdown = require "./markdown"
 excerpts = require "./excerpts"
@@ -33,6 +34,7 @@ METADATA =
   description: "A blog about programming"
   url: "https://davidxmoody.com/"
   feedPath: "feed.xml"
+  sitemapPath: "sitemap.xml"
   gitHubURL: "https://github.com/davidxmoody"
   email: "david@davidxmoody.com"
   excerptSeparator: "\n\n\n"
@@ -56,11 +58,12 @@ module.exports = (options, callback) ->
 
   m.use -> console.time "Markdown"
 
-  m.use (files) ->
-    for filename, file of files
-      if options.production and file.draft
-        console.log "Warning: Skipping one draft: #{filename}"
-        delete files[filename]
+  if options.production
+    m.use (files) ->
+      for filename, file of files
+        if file.draft
+          console.log "Warning: Skipping one draft: #{filename}"
+          delete files[filename]
   
   m.use dateInFilename()
   
@@ -157,6 +160,23 @@ module.exports = (options, callback) ->
       indent_size: 0
 
     m.use -> console.timeEnd "Beautify"
+
+  # SITEMAP ###################################################################
+  
+  if options.production
+    m.use (files) ->
+      for filename, file of files
+        file.canonical = METADATA.url + filename.replace(/index.html$/, "")
+
+    m.use sitemap
+      ignoreFiles: [/^CNAME$/, /\.css$/, /\.js$/, /\.jpg$/, /\.png$/]
+      output: METADATA.sitemapPath
+      urlProperty: 'canonical'
+      hostname: METADATA.url
+      modifiedProperty: 'modified'
+      defaults:
+        priority: 0.5,
+        changefreq: 'daily'
 
   # RSS FEED ##################################################################
     
