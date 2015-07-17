@@ -1,8 +1,8 @@
-import getArticle from "./get-article";
-import getArticleList from "./get-article-list";
-
 import moment from "moment";
 import R from "ramda";
+
+import getArticle from "./get-article";
+import getArticleList from "./get-article-list";
 
 import Metalsmith from "metalsmith";
 import autoprefixer from "metalsmith-autoprefixer";
