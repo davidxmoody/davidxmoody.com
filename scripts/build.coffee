@@ -1,5 +1,3 @@
-console.time "Require"
-
 require "coffee-react/register"
 getArticle = require "./get-article"
 getArticleList = require "./get-article-list"
@@ -25,7 +23,6 @@ sitemap        = require "metalsmith-sitemap"
 markdown = require "./markdown"
 excerpts = require "./excerpts"
 
-console.timeEnd "Require"
 
 #TODO could move this into build script or separate file? or simply as defaults
 #for the options parameter
@@ -46,8 +43,6 @@ module.exports = (options, callback) ->
 
   options = R.merge defaultOptions, options
 
-  console.time "Build"
-
   # CONFIG ####################################################################
 
   m = Metalsmith(__dirname + "/..")
@@ -55,8 +50,6 @@ module.exports = (options, callback) ->
   m.metadata METADATA
 
   # POSTS #####################################################################
-
-  m.use -> console.time "Markdown"
 
   if options.production
     m.use (files) ->
@@ -91,11 +84,8 @@ module.exports = (options, callback) ->
   m.use markdown()
   m.use permalinks pattern: ":title/"
 
-  m.use -> console.timeEnd "Markdown"
 
   # HOME PAGE PAGINATION ######################################################
-
-  m.use -> console.time "Pagination"
   
   m.use pagination "collections.posts":
     perPage: 5
@@ -113,13 +103,9 @@ module.exports = (options, callback) ->
     for filename, file of files
       file.path = filename.replace(/index.html$/, "")
 
-  m.use -> console.timeEnd "Pagination"
-
   # EXCERPTS ##################################################################
 
-  m.use -> console.time "Excerpts"
   m.use excerpts()
-  m.use -> console.timeEnd "Excerpts"
 
   # CANONICAL URLS ############################################################
 
@@ -129,19 +115,13 @@ module.exports = (options, callback) ->
 
   # CSS AND FINGERPRINTING ####################################################
 
-  m.use -> console.time "Sass"
-
   m.use sass()
   m.use autoprefixer()
   
   m.use fingerprint pattern: "css/main.css"
   m.use ignore ["css/_*.sass", "css/main.css"]
 
-  m.use -> console.timeEnd "Sass"
-
   # TEMPLATES #################################################################
-
-  m.use -> console.time "Templates"
 
   # Custom React templates
   #TODO could implement this much better, maybe use the existing react plugin
@@ -154,25 +134,18 @@ module.exports = (options, callback) ->
 
   m.use layouts engine: "handlebars", pattern: "**/*.html", default: "wrapper.hbs"
 
-  m.use -> console.timeEnd "Templates"
-
   # BEAUTIFY ##################################################################
   
   if options.production
-    m.use -> console.time "Beautify"
-
     m.use beautify
       wrap_line_length: 100000
       indent_size: 0
-
-    m.use -> console.timeEnd "Beautify"
 
   # SITEMAP ###################################################################
   
   if options.production
     #TODO for some reason this does not include the home page or any pagination
     #pages, figure out why that happens and decide if it is a problem
-    m.use -> console.time "Sitemap"
 
     m.use sitemap
       ignoreFiles: [/^CNAME$/, /\.css$/, /\.js$/, /\.jpg$/, /\.png$/]
@@ -184,13 +157,9 @@ module.exports = (options, callback) ->
         priority: 0.5
         changefreq: "daily"
 
-    m.use -> console.timeEnd "Sitemap"
-
   # RSS FEED ##################################################################
     
   if options.production
-    m.use -> console.time "Feed"
-
     m.use feed
       collection: "posts"
       limit: 100
@@ -205,17 +174,12 @@ module.exports = (options, callback) ->
       replaced = data.contents.toString().replace(/(src|href)="\//g, "$1=\"#{METADATA.url}")
       data.contents = new Buffer(replaced)
 
-    m.use -> console.timeEnd "Feed"
-
   # BROKEN LINK CHECKER #######################################################
   
   if options.production
-    m.use -> console.time "Broken link checker"
     m.use blc()
-    m.use -> console.timeEnd "Broken link checker"
 
   # BUILD #####################################################################
 
   m.build (err) ->
-    console.timeEnd "Build"
     callback err
