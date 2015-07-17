@@ -11,7 +11,6 @@
     "browser-sync": "^2.7.12",
     "coffee-react": "^3.2.0",
     "coffee-script": "^1.9.3",
-    "decaffeinate": "^1.19.0",
     "gulp": "^3.9.0",
     "handlebars": "^3.0.3",
     "highlight.js": "^8.6.0",

@@ -2,7 +2,7 @@ import 'coffee-script/register';
 import 'coffee-react/register';
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
-import build from './scripts/build.coffee';
+import build from './scripts/build.babel.js';
 
 let paths = {
   src: 'src/**/*',
