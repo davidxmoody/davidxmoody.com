@@ -1,36 +1,36 @@
-import moment from "moment";
-import R from "ramda";
+import moment from 'moment';
+import R from 'ramda';
 
-import getArticle from "./get-article";
-import getArticleList from "./get-article-list";
+import getArticle from './get-article';
+import getArticleList from './get-article-list';
 
-import Metalsmith from "metalsmith";
-import autoprefixer from "metalsmith-autoprefixer";
-import beautify from "metalsmith-beautify";
-import blc from "metalsmith-broken-link-checker";
-import collections from "metalsmith-collections";
-import dateInFilename from "metalsmith-date-in-filename";
-import feed from "metalsmith-feed";
-import fingerprint from "metalsmith-fingerprint";
-import ignore from "metalsmith-ignore";
-import layouts from "metalsmith-layouts";
-import pagination from "metalsmith-pagination";
-import permalinks from "metalsmith-permalinks";
-import sass from "metalsmith-sass";
-import sitemap from "metalsmith-sitemap";
+import Metalsmith from 'metalsmith';
+import autoprefixer from 'metalsmith-autoprefixer';
+import beautify from 'metalsmith-beautify';
+import blc from 'metalsmith-broken-link-checker';
+import collections from 'metalsmith-collections';
+import dateInFilename from 'metalsmith-date-in-filename';
+import feed from 'metalsmith-feed';
+import fingerprint from 'metalsmith-fingerprint';
+import ignore from 'metalsmith-ignore';
+import layouts from 'metalsmith-layouts';
+import pagination from 'metalsmith-pagination';
+import permalinks from 'metalsmith-permalinks';
+import sass from 'metalsmith-sass';
+import sitemap from 'metalsmith-sitemap';
 
-import markdown from "./markdown";
-import excerpts from "./excerpts";
+import markdown from './markdown';
+import excerpts from './excerpts';
 
 const METADATA = {
   title: "David Moody's Blog",
-  description: "A blog about programming",
-  url: "https://davidxmoody.com/",
-  feedPath: "feed.xml",
-  sitemapPath: "sitemap.xml",
-  gitHubURL: "https://github.com/davidxmoody",
-  email: "david@davidxmoody.com",
-  excerptSeparator: "\n\n\n"
+  description: 'A blog about programming',
+  url: 'https://davidxmoody.com/',
+  feedPath: 'feed.xml',
+  sitemapPath: 'sitemap.xml',
+  gitHubURL: 'https://github.com/davidxmoody',
+  email: 'david@davidxmoody.com',
+  excerptSeparator: '\n\n\n'
 };
 
 const defaultOptions = {
@@ -43,7 +43,7 @@ export default function(options, callback) {
 
   // CONFIG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  let m = Metalsmith(__dirname + "/..");
+  let m = Metalsmith(__dirname + '/..');
   m.clean(true);
   m.metadata(METADATA);
 
@@ -55,7 +55,7 @@ export default function(options, callback) {
       for (filename in files) {
         file = files[filename];
         if (file.draft) {
-          console.log("Warning: Skipping one draft: " + filename);
+          console.log('Warning: Skipping one draft: ' + filename);
           delete files[filename];
         }
       }
@@ -69,15 +69,15 @@ export default function(options, callback) {
     for (filename in files) {
       file = files[filename];
       if (file.date) {
-        file.formattedDate = moment(file.date).format("ll");
+        file.formattedDate = moment(file.date).format('ll');
       }
     }
   });
 
   m.use(collections({
     posts: {
-      pattern: "posts/*.md",
-      sortBy: "date",
+      pattern: 'posts/*.md',
+      sortBy: 'date',
       reverse: true
     }
   }));
@@ -87,51 +87,49 @@ export default function(options, callback) {
     var file, filename;
     for (filename in files) {
       file = files[filename];
-      if (file.tags && typeof file.tags === "string") {
-        file.tags = file.tags.split(" ");
+      if (file.tags && typeof file.tags === 'string') {
+        file.tags = file.tags.split(' ');
       }
     }
   });
 
   // Replace custom excerpt separator with <!--more--> tag before markdown runs
   m.use(function(files, metalsmith) {
-    var file, i, len, ref;
-    ref = metalsmith.metadata().posts;
-    for (i = 0, len = ref.length; i < len; i++) {
-      file = ref[i];
-      file.contents = new Buffer(file.contents.toString().replace(METADATA.excerptSeparator, "\n\n<!--more-->\n\n"));
+    for (const file of metalsmith.metadata().posts) {
+      const oldContents = file.contents.toString();
+      const newContents = oldContents.replace(METADATA.excerptSeparator, '\n\n<!--more-->\n\n');
+      file.contents = new Buffer(newContents);
     }
   });
 
   m.use(markdown());
 
   m.use(permalinks({
-    pattern: ":title/"
+    pattern: ':title/'
   }));
 
   // HOME PAGE PAGINATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   m.use(pagination({
-    "collections.posts": {
+    'collections.posts': {
       perPage: 5,
-      first: "index.html",
-      template: "NOT_USED",
-      path: "page:num/index.html",
+      first: 'index.html',
+      template: 'NOT_USED',
+      path: 'page:num/index.html',
       pageMetadata: {
-        rtemplate: "ArticleList"
+        rtemplate: 'ArticleList'
       }
     }
   }));
 
   // Don't duplicate the first page
-  m.use(ignore(["page1/index.html"]));
+  m.use(ignore(['page1/index.html']));
 
   // Clean up paths to provide clean URLs
   m.use(function(files) {
-    var file, filename;
-    for (filename in files) {
-      file = files[filename];
-      file.path = filename.replace(/index.html$/, "");
+    for (const filename in files) {
+      const file = files[filename];
+      file.path = filename.replace(/index.html$/, '');
     }
   });
 
@@ -142,10 +140,9 @@ export default function(options, callback) {
   // CANONICAL URLS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   m.use(function(files) {
-    var file, filename;
-    for (filename in files) {
-      file = files[filename];
-      file.canonical = METADATA.url + filename.replace(/index.html$/, "");
+    for (const filename in files) {
+      const file = files[filename];
+      file.canonical = METADATA.url + filename.replace(/index.html$/, '');
     }
   });
 
@@ -154,11 +151,12 @@ export default function(options, callback) {
   m.use(sass());
   m.use(autoprefixer());
 
-  m.use(fingerprint({pattern: "css/main.css"}));
-  m.use(ignore(["css/_*.sass", "css/main.css"]));
+  m.use(fingerprint({pattern: 'css/main.css'}));
+  m.use(ignore(['css/_*.sass', 'css/main.css']));
 
   // TEMPLATES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+  // TODO this needs a re-write
   m.use(function(files, metalsmith) {
     var file, filename, i, len, ref;
     ref = metalsmith.metadata().posts;
@@ -168,16 +166,16 @@ export default function(options, callback) {
     }
     for (filename in files) {
       file = files[filename];
-      if (file.rtemplate === "ArticleList") {
+      if (file.rtemplate === 'ArticleList') {
         file.contents = new Buffer(getArticleList(file));
       }
     }
   });
 
   m.use(layouts({
-    engine: "handlebars",
-    pattern: "**/*.html",
-    "default": "wrapper.hbs"
+    engine: 'handlebars',
+    pattern: '**/*.html',
+    default: 'wrapper.hbs'
   }));
 
   // BEAUTIFY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -195,12 +193,12 @@ export default function(options, callback) {
     m.use(sitemap({
       ignoreFiles: [/^CNAME$/, /\.css$/, /\.js$/, /\.jpg$/, /\.png$/],
       output: METADATA.sitemapPath,
-      urlProperty: "canonical",
+      urlProperty: 'canonical',
       hostname: METADATA.url,
-      modifiedProperty: "modified",
+      modifiedProperty: 'modified',
       defaults: {
         priority: 0.5,
-        changefreq: "daily"
+        changefreq: 'daily'
       }
     }));
   }
@@ -209,7 +207,7 @@ export default function(options, callback) {
 
   if (options.production) {
     m.use(feed({
-      collection: "posts",
+      collection: 'posts',
       limit: 100,
       destination: METADATA.feedPath,
       title: METADATA.title,
@@ -219,10 +217,9 @@ export default function(options, callback) {
 
     // Make all relative links and images into absolute links and images
     m.use(function(files) {
-      var data, replaced;
-      data = files[METADATA.feedPath];
-      replaced = data.contents.toString().replace(/(src|href)="\//g, "$1=\"" + METADATA.url);
-      return data.contents = new Buffer(replaced);
+      const data = files[METADATA.feedPath];
+      const newContents = data.contents.toString().replace(/(src|href)="\//g, '$1="' + METADATA.url);
+      return data.contents = new Buffer(newContents);
     });
   }
 

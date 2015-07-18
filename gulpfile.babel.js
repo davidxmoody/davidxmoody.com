@@ -49,38 +49,7 @@ gulp.task('watch', ['dev-build'], function(cb) {
 gulp.task('lint', function() {
   //return gulp.src(['scripts/**/*.babel.js'])
   return gulp.src(['test.js'])
-    .pipe(eslint({
-      parser: 'babel-eslint',
-    ecmaFeatures: {
-      arrowFunctions: true,
-      blockBindings: true,
-      destructuring: true,
-      regexYFlag: true,
-      regexUFlag: true,
-      templateStrings: true,
-      binaryLiterals: true,
-      octalLiterals: true,
-      unicodeCodePointEscapes: true,
-      defaultParams: true,
-      restParams: true,
-      forOf: true,
-      objectLiteralComputedProperties: true,
-      objectLiteralShorthandMethods: true,
-      objectLiteralShorthandProperties: true,
-      objectLiteralDuplicateProperties: true,
-      generators: true,
-      spread: true,
-      classes: true,
-      modules: true,
-      jsx: true,
-      globalReturn: true
-    },
-    tokens: true,
-    loc: true,
-    range: true,
-    comment: true,
-    attachComments: true
-  }))
+    .pipe(eslint({parser: 'babel-eslint', ecmaFeatures: {blockBindings: true, modules: true}}))
     .pipe(eslint.format());
     //.pipe(eslint.failOnError());
 })
