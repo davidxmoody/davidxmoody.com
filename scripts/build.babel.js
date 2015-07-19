@@ -104,6 +104,8 @@ export default function(options, callback) {
 
   m.use(markdown());
 
+  // TODO add better meta descriptions
+
   m.use(permalinks({
     pattern: ':title/'
   }));
