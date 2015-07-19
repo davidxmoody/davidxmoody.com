@@ -1,10 +1,10 @@
 ## About
 
-This is the source code for my personal blog. View it at [davidxmoody.com](https://davidxmoody.com/). 
+This is the source code for my personal blog. View it at <https://davidxmoody.com/>. 
 
 It's mostly a blog about programming and my personal experiences. I have also written posts about creating the site itself.
 
-Feedback of any kind is very welcome. Please feel free to email me if you have any comments or criticisms or if you just want to talk about something I've written. 
+Feedback of any kind is very welcome. Please feel free to email me at <david@davidxmoody.com> if you have any comments or criticisms or if you just want to talk about something I've written. 
 
 ## License
 
