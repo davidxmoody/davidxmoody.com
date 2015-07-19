@@ -15,7 +15,6 @@ iab i I
 iab iv I've
 iab il I'll
 iab dont don't
-iab youtube YouTube
 iab monday Monday
 iab february February
 iab cof CoffeeScript

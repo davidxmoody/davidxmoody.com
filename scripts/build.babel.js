@@ -1,5 +1,6 @@
 import moment from 'moment';
 import R from 'ramda';
+import cheerio from 'cheerio';
 
 import getArticle from './get-article';
 import getArticleList from './get-article-list';
@@ -25,12 +26,14 @@ import excerpts from './excerpts';
 const METADATA = {
   title: "David Moody's Blog",
   description: 'A blog about programming',
+  tagline: 'A blog about programming',
   url: 'https://davidxmoody.com/',
   feedPath: 'feed.xml',
   sitemapPath: 'sitemap.xml',
   gitHubURL: 'https://github.com/davidxmoody',
   email: 'david@davidxmoody.com',
-  excerptSeparator: '\n\n\n'
+  excerptSeparator: '\n\n\n',
+  maxDescriptionLength: 155,
 };
 
 const defaultOptions = {
@@ -104,7 +107,21 @@ export default function(options, callback) {
 
   m.use(markdown());
 
-  // TODO add better meta descriptions
+  m.use(function(files, metalsmith) {
+    for (const file of metalsmith.metadata().posts) {
+      if (!file.description) {
+        const $ = cheerio.load(file.contents.toString());
+        // This is a very awkward way of doing this
+        let description = $('p').map(function() {return $(this).text();}).get().join(' ').replace('  ', ' ');
+        if (description.length > METADATA.maxDescriptionLength) {
+          description = description.slice(0, METADATA.maxDescriptionLength-3);
+          description = description.replace(/[,.!?:;]?\s*\S*$/, '...');
+          console.log(description);
+        }
+        file.description = description;
+      }
+    }
+  });
 
   m.use(permalinks({
     pattern: ':title/'
