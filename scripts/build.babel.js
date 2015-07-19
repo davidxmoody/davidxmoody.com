@@ -116,7 +116,6 @@ export default function(options, callback) {
         if (description.length > METADATA.maxDescriptionLength) {
           description = description.slice(0, METADATA.maxDescriptionLength-3);
           description = description.replace(/[,.!?:;]?\s*\S*$/, '...');
-          console.log(description);
         }
         file.description = description;
       }
