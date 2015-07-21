@@ -37,16 +37,15 @@ const METADATA = {
 };
 
 const defaultOptions = {
-  production: true
+  production: true,
 };
 
-export default function(options, callback) {
-
-  options = R.merge(defaultOptions, options);
+export default function(specifiedOptions, callback) {
+  const options = R.merge(defaultOptions, specifiedOptions);
 
   // CONFIG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  let m = Metalsmith(__dirname + '/..');
+  const m = Metalsmith(__dirname + '/..');
   m.clean(true);
   m.metadata(METADATA);
 
@@ -54,9 +53,8 @@ export default function(options, callback) {
 
   if (options.production) {
     m.use(function(files) {
-      var file, filename;
-      for (filename in files) {
-        file = files[filename];
+      for (const filename in files) {
+        const file = files[filename];
         if (file.draft) {
           console.log('Warning: Skipping one draft: ' + filename);
           delete files[filename];
@@ -68,9 +66,8 @@ export default function(options, callback) {
   m.use(dateInFilename());
 
   m.use(function(files) {
-    var file, filename;
-    for (filename in files) {
-      file = files[filename];
+    for (const filename in files) {
+      const file = files[filename];
       if (file.date) {
         file.formattedDate = moment(file.date).format('ll');
       }
@@ -81,15 +78,14 @@ export default function(options, callback) {
     posts: {
       pattern: 'posts/*.md',
       sortBy: 'date',
-      reverse: true
-    }
+      reverse: true,
+    },
   }));
 
   // Convert space separated string of tags into a list
   m.use(function(files) {
-    var file, filename;
-    for (filename in files) {
-      file = files[filename];
+    for (const filename in files) {
+      const file = files[filename];
       if (file.tags && typeof file.tags === 'string') {
         file.tags = file.tags.split(' ');
       }
@@ -112,9 +108,9 @@ export default function(options, callback) {
       if (!file.description) {
         const $ = cheerio.load(file.contents.toString());
         // This is a very awkward way of doing this
-        let description = $('p').map(function() {return $(this).text();}).get().join(' ').replace('  ', ' ');
+        let description = $('p').map(function() { return $(this).text(); }).get().join(' ').replace('  ', ' ');
         if (description.length > METADATA.maxDescriptionLength) {
-          description = description.slice(0, METADATA.maxDescriptionLength-3);
+          description = description.slice(0, METADATA.maxDescriptionLength - 3);
           description = description.replace(/[,.!?:;]?\s*\S*$/, '...');
         }
         file.description = description;
@@ -123,7 +119,7 @@ export default function(options, callback) {
   });
 
   m.use(permalinks({
-    pattern: ':title/'
+    pattern: ':title/',
   }));
 
   // HOME PAGE PAGINATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -135,9 +131,9 @@ export default function(options, callback) {
       template: 'NOT_USED',
       path: 'page:num/index.html',
       pageMetadata: {
-        rtemplate: 'ArticleList'
-      }
-    }
+        rtemplate: 'ArticleList',
+      },
+    },
   }));
 
   // Don't duplicate the first page
@@ -176,13 +172,13 @@ export default function(options, callback) {
 
   // TODO this needs a re-write
   m.use(function(files, metalsmith) {
-    var file, filename, i, len, ref;
+    var file, i, len, ref;
     ref = metalsmith.metadata().posts;
     for (i = 0, len = ref.length; i < len; i++) {
       file = ref[i];
       file.contents = new Buffer(getArticle(file));
     }
-    for (filename in files) {
+    for (const filename in files) {
       file = files[filename];
       if (file.rtemplate === 'ArticleList') {
         file.contents = new Buffer(getArticleList(file));
@@ -193,7 +189,7 @@ export default function(options, callback) {
   m.use(layouts({
     engine: 'handlebars',
     pattern: '**/*.html',
-    default: 'wrapper.hbs'
+    'default': 'wrapper.hbs',
   }));
 
   // BEAUTIFY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -201,7 +197,7 @@ export default function(options, callback) {
   if (options.production) {
     m.use(beautify({
       wrap_line_length: 100000,
-      indent_size: 0
+      indent_size: 0,
     }));
   }
 
@@ -216,8 +212,8 @@ export default function(options, callback) {
       modifiedProperty: 'modified',
       defaults: {
         priority: 0.5,
-        changefreq: 'daily'
-      }
+        changefreq: 'daily',
+      },
     }));
   }
 
@@ -230,14 +226,14 @@ export default function(options, callback) {
       destination: METADATA.feedPath,
       title: METADATA.title,
       site_url: METADATA.url,
-      description: METADATA.description
+      description: METADATA.description,
     }));
 
     // Make all relative links and images into absolute links and images
     m.use(function(files) {
       const data = files[METADATA.feedPath];
       const newContents = data.contents.toString().replace(/(src|href)="\//g, '$1="' + METADATA.url);
-      return data.contents = new Buffer(newContents);
+      data.contents = new Buffer(newContents);
     });
   }
 
@@ -252,4 +248,4 @@ export default function(options, callback) {
   m.build(function(err) {
     callback(err);
   });
-};
+}
