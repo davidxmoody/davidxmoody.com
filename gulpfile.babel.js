@@ -5,51 +5,50 @@ import browserSync from 'browser-sync';
 import build from './scripts/build.babel.js';
 import eslint from 'gulp-eslint';
 
-let paths = {
+const paths = {
   src: 'src/**/*',
-  layouts: 'layouts/**/*'
+  layouts: 'layouts/**/*',
 };
 
 let serverStarted = false;
 
-let refreshServer = function() {
+function refreshServer() {
   if (!serverStarted) {
     browserSync({
       server: {
-        baseDir: './build'
-      }
+        baseDir: './build',
+      },
     });
     serverStarted = true;
   } else {
     browserSync.reload();
   }
-};
+}
 
-gulp.task('build', function(cb) {
-  build({production: true}, function(err) {
+gulp.task('build', function buildTask(cb) {
+  build({production: true}, function buildCompleted(err) {
     if (err) { throw err; }
     console.log('Built successfully');
-    cb()
+    cb();
   });
 });
 
-gulp.task('dev-build', function(cb) {
-  build({production: false}, function(err) {
+gulp.task('dev-build', function devBuildTask(cb) {
+  build({production: false}, function buildCompleted(err) {
     if (err) { throw err; }
     refreshServer();
-    cb()
+    cb();
   });
 });
 
-gulp.task('watch', ['dev-build'], function(cb) {
+gulp.task('watch', ['dev-build'], function watchTask() {
   gulp.watch(paths.src, ['dev-build']);
-  gulp.watch(paths.layouts, ['dev-build']);
+  return gulp.watch(paths.layouts, ['dev-build']);
 });
 
-gulp.task('lint', function() {
-  //return gulp.src(['scripts/**/*.babel.js'])
-  return gulp.src(['test.js'])
+gulp.task('lint', function lintTask() {
+  return gulp.src(['scripts/**/*.babel.js'])
     .pipe(eslint({parser: 'babel-eslint', ecmaFeatures: {blockBindings: true, modules: true}}))
-    .pipe(eslint.format());
-    //.pipe(eslint.failOnError());
-})
+    .pipe(eslint.format())
+    .pipe(eslint.failOnError());
+});
