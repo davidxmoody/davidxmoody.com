@@ -41,7 +41,7 @@ gulp.task('dev-build', function devBuildTask(cb) {
   });
 });
 
-gulp.task('watch', ['dev-build'], function watchTask() {
+gulp.task('watch', ['dev-build'], function watchTask(cb) {
   gulp.watch(paths.src, ['dev-build']);
   return gulp.watch(paths.layouts, ['dev-build']);
 });

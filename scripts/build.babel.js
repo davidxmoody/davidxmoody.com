@@ -5,7 +5,7 @@ import cheerio from 'cheerio';
 import getArticle from './get-article';
 import getArticleList from './get-article-list';
 
-import Metalsmith from 'metalsmith';
+import metalsmith from 'metalsmith';
 import autoprefixer from 'metalsmith-autoprefixer';
 import beautify from 'metalsmith-beautify';
 import blc from 'metalsmith-broken-link-checker';
@@ -45,7 +45,7 @@ export default function(specifiedOptions, callback) {
 
   // CONFIG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  const m = Metalsmith(__dirname + '/..');
+  const m = metalsmith(__dirname + '/..');
   m.clean(true);
   m.metadata(METADATA);
 
@@ -170,16 +170,12 @@ export default function(specifiedOptions, callback) {
 
   // TEMPLATES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  // TODO this needs a re-write
   m.use(function(files, metalsmith) {
-    var file, i, len, ref;
-    ref = metalsmith.metadata().posts;
-    for (i = 0, len = ref.length; i < len; i++) {
-      file = ref[i];
+    for (const file of metalsmith.metadata().posts) {
       file.contents = new Buffer(getArticle(file));
     }
     for (const filename in files) {
-      file = files[filename];
+      const file = files[filename];
       if (file.rtemplate === 'ArticleList') {
         file.contents = new Buffer(getArticleList(file));
       }
