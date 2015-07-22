@@ -21,7 +21,7 @@ export default React.createClass({
 
     let nums;
     if (last <= 5) {
-      nums = pagin.pages.map(({num}) => num);
+      nums = pagin.pages.map((page, index) => index + 1);
     } else if (current <= 3) {
       nums = [1, 2, 3, 4, ellipsis, last];
     } else if (current >= last - 2) {
