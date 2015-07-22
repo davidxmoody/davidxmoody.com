@@ -9,7 +9,6 @@
   "dependencies": {
     "babel": "^5.6.23",
     "cheerio": "^0.19.0",
-    "coffee-react": "^4.0.0",
     "coffee-script": "^1.9.3",
     "gulp": "^3.9.0",
     "handlebars": "^3.0.3",

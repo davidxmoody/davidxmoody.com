@@ -1,8 +1,7 @@
 import 'coffee-script/register';
-import 'coffee-react/register';
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
-import build from './scripts/build.babel.js';
+import build from './scripts/build';
 import eslint from 'gulp-eslint';
 
 const paths = {

@@ -1,2 +1,2 @@
-require('babel/register')({only: /\.babel\.js$|\.jsx$/});
+require('babel/register');
 require('./gulpfile.babel.js')
