@@ -23,16 +23,13 @@ Idea: Use my metalsmith-broken-link-checker as a standalone static site checker 
 ## Blog tweaks
 
 - Add comments (Disqus)
-- Add index page description
 - Add about-me page
 - Change background colour of code elements
 - Reduce text size on mobile devices (and in general?)
 - Favicon (http://realfavicongenerator.net/)
 - Tags (actually use them)
 - Change email on home page to use obfuscated email (or use separate contacts page)
-- Separate watch script for drafts
 - Custom 404 page, make it do JavaScript redirects to other pages when I specify a redirect slug in a post
-- Fix pagination logic for large numbers of pages
 
 Full Material UI redesign:
 

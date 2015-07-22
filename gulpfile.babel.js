@@ -2,7 +2,6 @@
 import excerpts from './scripts/excerpts';
 import markdown from './scripts/markdown';
 
-import 'coffee-script/register';
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import build from './scripts/build';

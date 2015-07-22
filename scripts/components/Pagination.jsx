@@ -1,5 +1,4 @@
 import React from 'react';
-import R from 'ramda';
 import PaginationLink from './PaginationLink';
 
 export default React.createClass({
@@ -22,7 +21,7 @@ export default React.createClass({
 
     let nums;
     if (last <= 5) {
-      nums = R.range(1, last + 2);
+      nums = pagin.pages.map(({num}) => num);
     } else if (current <= 3) {
       nums = [1, 2, 3, 4, ellipsis, last];
     } else if (current >= last - 2) {

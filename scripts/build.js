@@ -1,5 +1,4 @@
 import moment from 'moment';
-import R from 'ramda';
 import cheerio from 'cheerio';
 
 import getArticle from './get-article';
@@ -41,7 +40,7 @@ const defaultOptions = {
 };
 
 export default function(specifiedOptions, callback) {
-  const options = R.merge(defaultOptions, specifiedOptions);
+  const options = Object.assign({}, defaultOptions, specifiedOptions);
 
   // CONFIG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
