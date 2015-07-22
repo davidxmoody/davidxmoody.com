@@ -20,8 +20,8 @@ import permalinks from 'metalsmith-permalinks';
 import sass from 'metalsmith-sass';
 import sitemap from 'metalsmith-sitemap';
 
-import markdown from './markdown';
 import excerpts from './excerpts';
+import markdown from './markdown';
 
 const METADATA = {
   title: "David Moody's Blog",

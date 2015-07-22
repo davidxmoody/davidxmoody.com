@@ -1,3 +1,7 @@
+// For some reason babel will not parse these files unless they are imported here
+import excerpts from './scripts/excerpts';
+import markdown from './scripts/markdown';
+
 import 'coffee-script/register';
 import gulp from 'gulp';
 import browserSync from 'browser-sync';

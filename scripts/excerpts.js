@@ -22,7 +22,7 @@ export default function() {
           readMoreText = `Read ${remainingCount} remaining paragraphs...`;
       }
 
-      file.excerpt = `${before} <p><a href="${file.path}">${readMoreText}</a></p>`;
+      file.excerpt = `${before} <p><a href="/${file.path}">${readMoreText}</a></p>`;
     }
   };
 }
