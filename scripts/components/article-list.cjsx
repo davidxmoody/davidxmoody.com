@@ -2,7 +2,7 @@ React = require "react"
 R = require "ramda"
 
 Article = require "./article"
-Pagination = require "./pagination"
+Pagination = require "./Pagination"
 
 mapIndexed = R.addIndex(R.map)
 
