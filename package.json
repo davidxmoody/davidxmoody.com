@@ -16,7 +16,7 @@
     "metalsmith": "^1.7.0",
     "metalsmith-autoprefixer": "^1.1.0",
     "metalsmith-beautify": "^0.0.7",
-    "metalsmith-broken-link-checker": "^0.1.3",
+    "metalsmith-broken-link-checker": "^0.1.4",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-date-in-filename": "^0.0.13",
     "metalsmith-feed": "^0.0.6",

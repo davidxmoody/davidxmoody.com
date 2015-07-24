@@ -75,3 +75,5 @@ If you are dead set on using Pygments with Metalsmith then you might want to ref
 Overall, Metalsmith is great. It's *supposed* to be extremely simple and rely on plugins to do the heavy lifting. It accomplishes that well. I would happily use it for another project.
 
 My only complaint is that it doesn't do incremental builds. A small change in one post causes a full rebuild with my current setup. It's understandable why Metalsmith doesn't include this (it would be really complex). I may try to implement a custom solution where each individual post is only updated when that post changes but all other files are regenerated every time. 
+
+*[Edit: I recently created created and published my first Metalsmith plugin. It's a plugin to check files for internal broken links. See [this blog post](/publishing-my-first-npm-package/) for how I did it or go straight to the [npm package](https://www.npmjs.com/package/metalsmith-broken-link-checker).]*
