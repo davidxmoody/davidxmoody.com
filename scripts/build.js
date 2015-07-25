@@ -11,6 +11,7 @@ import autoprefixer from 'metalsmith-autoprefixer';
 import beautify from 'metalsmith-beautify';
 import blc from 'metalsmith-broken-link-checker';
 import collections from 'metalsmith-collections';
+import drafts from 'metalsmith-drafts';
 import feed from 'metalsmith-feed';
 import fingerprint from 'metalsmith-fingerprint';
 import ignore from 'metalsmith-ignore';
@@ -46,21 +47,12 @@ export default function(specifiedOptions, callback) {
   // CONFIG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   const m = Metalsmith(path.resolve(__dirname, '..'));
-  m.clean(true);
   m.metadata(METADATA);
 
   // POSTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   if (options.production) {
-    m.use(function(files) {
-      for (const filename in files) {
-        const file = files[filename];
-        if (file.draft) {
-          console.log('Warning: Skipping one draft: ' + filename);
-          delete files[filename];
-        }
-      }
-    });
+    m.use(drafts());
   }
 
   m.use(function(files) {

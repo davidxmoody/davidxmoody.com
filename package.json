@@ -20,6 +20,7 @@
     "metalsmith-beautify": "^0.0.7",
     "metalsmith-broken-link-checker": "^0.1.4",
     "metalsmith-collections": "^0.7.0",
+    "metalsmith-drafts": "0.0.1",
     "metalsmith-feed": "^0.0.6",
     "metalsmith-fingerprint": "^1.0.2",
     "metalsmith-ignore": "^0.1.2",
