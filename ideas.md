@@ -1,16 +1,22 @@
 ## Post ideas
 
-- Standalone wordsearch game (CSS/server)
-- Lessons learned from building the Professor P site
-- Contribute to external GitHub repos (Metalsmith plugins?)
+- Write about ideas/implementation of standalone wordsearch game
+- Lessons learned from building the Professor P website
+- Contribute to external GitHub repos
+- Write about how I feel about my repos getting GitHub issues or stars
 - Make and publish a Vim auto-capitalisation plugin
-- Learn Git better (read the book in full and make notes)
+- Vim plugin for 
+- Git branching strategies and rebasing
 - Go through Vim plugins top list
-- Write about Vifm
 - Switch from Terminator to tmux (also customise inputrc)
-- Add Git branch to Bash prompt
-- "Primal success story" (with photos)
-- Shorthand abbreviations/EasyScript system
+- Add Git branch to Bash prompt, also maybe whether or not the current branch has been pushed to origin
+- About me: "Primal success story" (with photos)
+- Git commit hook to make sure your commit messages are in imperative mood
+
+Quick post ideas: 
+
+- Tip to use beautify with zero indent and infinite line length as an alternative to html minification
+- Using react templates for rendering to static markup, pros and cons
 
 "Idea for a static site generator that I will never implement", go over the idea for my purely React based SSG which progressively enhances images and transitions between pages and generates an endpoint for each terminal page but uses push state for faster page transitions and also incrementally updates only the pages necessary using internal DOM writing to files not the real DOM. Reason for not implementing it is that it is overkill for a static site. It is too much work for simple page transitions. Tries to re-implement what the browser does. Too much complexity. Only writing about it to try and get it out of my head. 
 
