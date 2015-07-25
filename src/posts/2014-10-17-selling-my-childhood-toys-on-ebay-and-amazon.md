@@ -1,5 +1,6 @@
 ---
 title: Selling my childhood toys on eBay and Amazon
+date: 2014-10-17
 ---
 
 I mentioned in my [two months of blogging post](/two-months-of-blogging/#what-ive-been-doing-when-i-havent-been-blogging) that I've been selling my family's old possessions on eBay and Amazon. Over the last couple of years, I have sold literally 144 things on eBay and 153 things on Amazon. I thought I'd share a few of my thoughts on how it's gone.

@@ -1,5 +1,6 @@
 ---
 title: Better Vim abbreviations
+date: 2014-08-27
 tags: Vim
 ---
 

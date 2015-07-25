@@ -9,7 +9,6 @@ import autoprefixer from 'metalsmith-autoprefixer';
 import beautify from 'metalsmith-beautify';
 import blc from 'metalsmith-broken-link-checker';
 import collections from 'metalsmith-collections';
-import dateInFilename from 'metalsmith-date-in-filename';
 import feed from 'metalsmith-feed';
 import fingerprint from 'metalsmith-fingerprint';
 import ignore from 'metalsmith-ignore';
@@ -62,13 +61,12 @@ export default function(specifiedOptions, callback) {
     });
   }
 
-  m.use(dateInFilename());
-
   m.use(function(files) {
     for (const filename in files) {
       const file = files[filename];
       if (file.date) {
-        file.formattedDate = moment(file.date).format('ll');
+        file.date = moment(file.date);
+        file.formattedDate = file.date.format('ll');
       }
     }
   });

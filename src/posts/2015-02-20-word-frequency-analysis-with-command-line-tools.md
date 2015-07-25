@@ -1,5 +1,6 @@
 ---
 title: Word frequency analysis with command line tools
+date: 2015-02-20
 ---
 
 I have previously written about [writing speeds](/writing-speeds/). I think one of the best ways to improve is to utilise [abbreviations](/better-vim-abbreviations/) and other [tricks](/vim-auto-capitalisation/). 

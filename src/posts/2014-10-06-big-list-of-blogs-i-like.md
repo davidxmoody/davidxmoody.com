@@ -1,5 +1,6 @@
 ---
 title: Big list of blogs I like
+date: 2014-10-06
 ---
 
 I don't have time to write a proper post right now so here is a big list of some of my favourite blogs. I use [Feedly](http://feedly.com/) as my RSS reader and save longer articles to [Pocket](http://getpocket.com/) for later reading. 

@@ -1,5 +1,6 @@
 ---
 title: Namecheap, GitHub Pages and apex domains
+date: 2014-08-20
 ---
 
 When I was setting up this blog, I was excited to learn that [GitHub Pages runs on a fast Content Delivery Network](https://github.com/blog/1715-faster-more-awesome-github-pages). But there is a problem. It does not work with apex domains (i.e. [davidxmoody.com](https://davidxmoody.com/) instead of [www.davidxmoody.com](https://www.davidxmoody.com/)).

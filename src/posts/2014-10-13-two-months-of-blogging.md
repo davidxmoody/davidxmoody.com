@@ -1,5 +1,6 @@
 ---
 title: Two months of blogging
+date: 2014-10-13
 ---
 
 I've now been blogging for about two months. In that time, I've written 19 posts or about 12,000 words. After my first month, [I reviewed my progress](/one-month-of-blogging/) and adjusted my plan for the future. Now it's time to do it again. 

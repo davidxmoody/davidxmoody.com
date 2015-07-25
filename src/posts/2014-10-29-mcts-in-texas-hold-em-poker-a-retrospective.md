@@ -1,5 +1,6 @@
 ---
 title: "MCTS in Texas Hold 'em Poker: A retrospective"
+date: 2014-10-29
 ---
 
 I've recently been uploading a lot of my old projects. Both to prove I've actually done them and also in case someone might be interested.
