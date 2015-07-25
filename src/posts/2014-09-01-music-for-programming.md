@@ -1,28 +1,21 @@
 ---
 title: Music for programming
 date: 2014-09-01
+tags: featured
 ---
 
 Music is awesome. Music while programming is even more awesome. It reduces the effect of distracting background noise and helps you get into the right frame of mind. Without further ado, here are my recommendations.
 
 
-## Grooveshark broadcasts
+## Get Work Done Music
 
-[Grooveshark](http://grooveshark.com/) is pretty great. It offers an incredibly easy to use streaming service. It runs in the browser and is completely free. 
-
-I like the [broadcasts](http://grooveshark.com/#!/broadcasts) section. It's essentially user-created radio stations. [Programming Electronic & Alternative](http://grooveshark.com/#!/writhem/broadcast) is my favourite. Any other EDM broadcast without vocals is usually pretty good too. 
-
-I also think it's worth creating a Grooveshark account so that you can save your favourite tracks. Stopping work to read about the current track is very distracting. Switching tabs and clicking the favourite button is easier.
+[Get Work Done Music](http://www.getworkdonemusic.com/) is a free and very simple streaming service. It has just two options: "Fast" and "Faster". It serves up music from Soundcloud which is suitable for working. I love the simplicity and also the music.
 
 ## musicForProgramming();
 
 [musicForProgramming();](http://musicforprogramming.net/) is another source of free music meant to aid concentration. I like it. There is a lot of interesting music on there. 
 
 My only criticism is that there is a bit too much silence mixed in with the tracks. I find that when there is too much silence, background noises suddenly become distracting again. It's still worth checking out though, especially if you are already working in a quiet environment. 
-
-## Get Work Done Music
-
-[Get Work Done Music](http://www.getworkdonemusic.com/) is another free and very simple streaming service. It has just two options: "Fast" and "Faster". It serves up music from Soundcloud which is suitable for working. I love the simplicity and also the music.
 
 ## Assassin's Creed 2 OST
 
@@ -57,6 +50,16 @@ With my laptop and phone, I use [these SoundMAGIC E10 Earphones](http://www.amaz
 
 For my standing desk, I use [these Bluedio Bluetooth headphones](http://www.amazon.co.uk/gp/product/B00ADJG95I). I've tried a lot of different headphones over the last few years. I've found that for a *standing desk*, absolutely nothing can beat the convenience of wireless. The freedom of movement they offer is more important than anything else. My pair are falling to pieces a little bit. Partly due to a year of hard use and partly due to weak plastic. I would buy them again but I'm also interested in looking for alternatives. 
 
-## Music is awesome
+## Grooveshark broadcasts
+
+*[Edit: Unfortunately no longer available.]*
+
+[Grooveshark](http://grooveshark.com/) is pretty great. It offers an incredibly easy to use streaming service. It runs in the browser and is completely free. 
+
+I like the [broadcasts](http://grooveshark.com/#!/broadcasts) section. It's essentially user-created radio stations. [Programming Electronic & Alternative](http://grooveshark.com/#!/writhem/broadcast) is my favourite. Any other EDM broadcast without vocals is usually pretty good too. 
+
+I also think it's worth creating a Grooveshark account so that you can save your favourite tracks. Stopping work to read about the current track is very distracting. Switching tabs and clicking the favourite button is easier.
+
+## Summary: music is awesome
 
 I can't understate the importance of music for work. It took me a long time to realise that, partly because I had nothing to listen to. All of my music had distracting vocals. Now that I've found some great music to listen to, I couldn't imagine going back. 
