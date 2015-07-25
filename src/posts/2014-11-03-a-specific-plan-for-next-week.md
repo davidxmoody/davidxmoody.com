@@ -1,6 +1,7 @@
 ---
 title: A specific plan for next week
 date: 2014-11-03
+tags: personal
 ---
 
 Three weeks ago, I wrote a [two month review](/two-months-of-blogging/). I said that I wanted to focus on **getting a job**.

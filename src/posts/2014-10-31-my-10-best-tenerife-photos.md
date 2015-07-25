@@ -1,6 +1,7 @@
 ---
 title: My 10 best Tenerife photos
 date: 2014-10-31
+tags: featured
 ---
 
 In March of this year, I went on a family holiday with my parents to Tenerife. It was fantastic, one of the best holidays we have ever had. 

@@ -1,6 +1,7 @@
 ---
 title: Host any static site with GitHub Pages
 date: 2015-01-26
+tags: featured
 ---
 
 [GitHub Pages](https://pages.github.com/) is pretty awesome. It provides free, no-hassle hosting for static sites built with [Jekyll](http://jekyllrb.com/). However, it also has some limitations.

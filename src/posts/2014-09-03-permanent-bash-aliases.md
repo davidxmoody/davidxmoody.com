@@ -1,7 +1,7 @@
 ---
 title: Permanent Bash aliases
 date: 2014-09-03
-tags: Bash
+tags: bash, featured
 ---
 
 This post will introduce a handy little Bash tip. I created it over a year ago but many other people have already done similar things.

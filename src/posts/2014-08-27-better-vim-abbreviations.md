@@ -1,7 +1,7 @@
 ---
 title: Better Vim abbreviations
 date: 2014-08-27
-tags: Vim
+tags: vim, featured
 ---
 
 I've been using Vim, full-time, for nearly three years. I have written *a lot* of plain text in that time. 

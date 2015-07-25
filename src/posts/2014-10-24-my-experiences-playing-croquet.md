@@ -1,6 +1,7 @@
 ---
 title: My experiences playing croquet
 date: 2014-10-24
+tags: croquet
 ---
 
 I haven't written about it before but I am a very keen croquet player. I thought I would share some of my experiences playing in matches over the last few years. 

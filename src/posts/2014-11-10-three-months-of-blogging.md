@@ -1,6 +1,7 @@
 ---
 title: Three months of blogging
 date: 2014-11-10
+tags: review
 ---
 
 This will be my third monthly review. Yet again, I am going to look back at the last month and create a plan for the next one. 

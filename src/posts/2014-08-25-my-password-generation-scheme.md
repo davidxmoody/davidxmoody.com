@@ -1,6 +1,7 @@
 ---
 title: My password generation scheme
 date: 2014-08-25
+tags: featured
 ---
 
 I've been using computers for a long time. Way back in the days of Windows 95 I had a tremendously insecure password. I think it was `1234`. I later upgraded to `123456` and then the (clearly far superior) `654321`. 

@@ -1,6 +1,7 @@
 ---
 title: "The growth mindset applied to my life (part 2)"
 date: 2014-09-25
+tags: featured
 ---
 
 Continued from [part 1](/the-growth-mindset-applied-to-my-life-part-1/). This part will discuss how the different mindsets affected me after I left university.
@@ -10,7 +11,7 @@ Continued from [part 1](/the-growth-mindset-applied-to-my-life-part-1/). This pa
 
 I was absolutely gutted when I didn't get a first class honours in my final exams. My *only* plan had been to stay for a fourth year at Cambridge. When that was no longer possible, I was stuck. I labelled myself as a "failure". It took me a long time to get over it. 
 
-*[I left Cambridge just over three years ago. I'm going to be skipping over a lot and focusing on the things important to this story.]*
+*[Note: I left Cambridge just over three years ago. I'm going to be skipping over a lot and focusing on the things important to this story.]*
 
 I stayed with my parents and spent a long time drifting with no clear purpose. I started to focus on non-career goals. I successfully lost a lot of weight (from 220lbs to 150lbs). I also learned to cook and passed my driving test. 
 

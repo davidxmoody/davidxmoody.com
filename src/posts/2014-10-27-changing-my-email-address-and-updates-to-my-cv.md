@@ -1,6 +1,7 @@
 ---
 title: Changing my email address and updates to my CV
 date: 2014-10-27
+tags: personal
 ---
 
 I have a *new email address*: <david@davidxmoody.com>

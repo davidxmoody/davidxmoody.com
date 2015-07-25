@@ -1,6 +1,7 @@
 ---
 title: Writing before breakfast
 date: 2014-10-09
+tags: habits, writing
 ---
 
 **I want to become a better writer.** According to the [growth mindset](/the-growth-mindset-applied-to-my-life-part-1/), I know that this is achievable through *hard work and practice*. I have to consistently put in the time and effort and I will slowly get better. 

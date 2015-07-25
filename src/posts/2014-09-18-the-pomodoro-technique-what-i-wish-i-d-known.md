@@ -1,6 +1,7 @@
 ---
 title: "The Pomodoro Technique: What I wish I'd known"
 date: 2014-09-18
+tags: pomodoro
 ---
 
 Let me tell you how I came to write this blog post. I have been using the Pomodoro Technique for over a year. I was using a web-based timer but felt I was due for an upgrade. I wanted a command line app.

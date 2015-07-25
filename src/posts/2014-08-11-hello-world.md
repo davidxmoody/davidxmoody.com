@@ -1,6 +1,7 @@
 ---
 title: Hello world
 date: 2014-08-11
+tags: featured
 ---
 
 *I'm starting a blog.* 

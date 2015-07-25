@@ -1,7 +1,7 @@
 ---
 title: Building a blog with Metalsmith
 date: 2015-02-11
-tags: Metalsmith JavaScript
+tags: metalsmith, javascript, featured
 ---
 
 I recently transitioned this blog from [Jekyll](http://jekyllrb.com/) to [Metalsmith](http://www.metalsmith.io/). I'm glad I started with Jekyll but I wanted more control. I decided to switch to Metalsmith so that I could write my own build scripts in a language I knew (JavaScript). 

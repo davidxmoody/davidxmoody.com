@@ -1,6 +1,7 @@
 ---
 title: A third attempt at Anki
 date: 2014-08-22
+tags: anki
 ---
 
 I first found out about [Anki](http://ankisrs.net/) ages ago. Probably about four years ago on [LessWrong](http://wiki.lesswrong.com/wiki/Spaced_repetition). It's a flashcard program which makes remembering things easier. 

@@ -60,6 +60,6 @@ I like the [broadcasts](http://grooveshark.com/#!/broadcasts) section. It's esse
 
 I also think it's worth creating a Grooveshark account so that you can save your favourite tracks. Stopping work to read about the current track is very distracting. Switching tabs and clicking the favourite button is easier.
 
-## Summary: music is awesome
+## Summary: Music is awesome
 
 I can't understate the importance of music for work. It took me a long time to realise that, partly because I had nothing to listen to. All of my music had distracting vocals. Now that I've found some great music to listen to, I couldn't imagine going back. 

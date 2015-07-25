@@ -1,6 +1,7 @@
 ---
 title: "The growth mindset applied to my life (part 1)"
 date: 2014-09-22
+tags: featured
 ---
 
 I am now a firm believer in the **growth mindset**. When someone has a growth mindset, they believe that their basic abilities (intelligence, talent, strength, etc.) can be improved through hard work and practice. This is opposed to a fixed mindset: the belief that basic abilities are "fixed" and cannot be improved upon. 

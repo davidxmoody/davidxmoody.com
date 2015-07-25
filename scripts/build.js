@@ -66,7 +66,7 @@ export default function(specifiedOptions, callback) {
 
       // Parse tags
       if (file.tags && typeof file.tags === 'string') {
-        file.tags = file.tags.split(' ');
+        file.tags = file.tags.split(', ');
       }
     }
   });
