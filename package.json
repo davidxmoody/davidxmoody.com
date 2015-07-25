@@ -2,18 +2,19 @@
   "name": "davidxmoody.com",
   "private": true,
   "scripts": {
-    "watch": "gulp watch",
-    "build": "gulp build",
+    "gulp": "babel-node --harmony `which gulp`",
+    "watch": "npm run gulp watch",
+    "build": "npm run gulp build",
     "deploy": "npm run build && ./scripts/deploy.sh"
   },
   "dependencies": {
-    "babel": "^5.8.3",
+    "babel": "^5.8.5",
     "cheerio": "^0.19.0",
     "gulp": "^3.9.0",
     "handlebars": "^3.0.3",
     "highlight.js": "^8.6.0",
     "marked": "^0.3.3",
-    "metalsmith": "^1.7.0",
+    "metalsmith": "^2.0.1",
     "metalsmith-autoprefixer": "^1.1.0",
     "metalsmith-beautify": "^0.0.7",
     "metalsmith-broken-link-checker": "^0.1.4",
@@ -32,7 +33,7 @@
     "react": "^0.13.3"
   },
   "devDependencies": {
-    "babel-eslint": "^3.1.23",
+    "babel-eslint": "^3.1.26",
     "browser-sync": "^2.8.0",
     "eslint": "^1.0.0-rc-1",
     "eslint-plugin-react": "^3.0.0",
