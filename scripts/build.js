@@ -135,21 +135,13 @@ export default function(specifiedOptions, callback) {
     for (const filename in files) {
       const file = files[filename];
       file.path = filename.replace(/index.html$/, '');
+      file.canonical = METADATA.url + filename.replace(/index.html$/, '');
     }
   });
 
   // EXCERPTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   m.use(excerpts());
-
-  // CANONICAL URLS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  m.use(function(files) {
-    for (const filename in files) {
-      const file = files[filename];
-      file.canonical = METADATA.url + filename.replace(/index.html$/, '');
-    }
-  });
 
   // CSS AND FINGERPRINTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -179,18 +171,19 @@ export default function(specifiedOptions, callback) {
     'default': 'wrapper.hbs',
   }));
 
-  // BEAUTIFY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  // PRODUCTION ONLY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   if (options.production) {
+
+    // BEAUTIFY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     m.use(beautify({
       wrap_line_length: 100000,
       indent_size: 0,
     }));
-  }
 
-  // SITEMAP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // SITEMAP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  if (options.production) {
     m.use(sitemap({
       ignoreFiles: [/^CNAME$/, /\.css$/, /\.js$/, /\.jpg$/, /\.png$/],
       output: METADATA.sitemapPath,
@@ -202,11 +195,9 @@ export default function(specifiedOptions, callback) {
         changefreq: 'daily',
       },
     }));
-  }
 
-  // RSS FEED ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // RSS FEED ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  if (options.production) {
     m.use(feed({
       collection: 'posts',
       limit: 100,
@@ -222,12 +213,11 @@ export default function(specifiedOptions, callback) {
       const newContents = data.contents.toString().replace(/(src|href)="\//g, '$1="' + METADATA.url);
       data.contents = new Buffer(newContents);
     });
-  }
 
-  // BROKEN LINK CHECKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // BROKEN LINK CHECKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  if (options.production) {
     m.use(blc());
+
   }
 
   // BUILD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
