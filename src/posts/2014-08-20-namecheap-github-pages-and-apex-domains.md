@@ -1,7 +1,10 @@
 ---
 title: Namecheap, GitHub Pages and apex domains
 date: 2014-08-20
+tags: namecheap, github pages
 ---
+
+*[Edit: Since writing this post, I have switched to CloudFlare. Using their CNAME flattening, you can pretty much have it all: a fast CDN, an apex domain and no annoying 302 redirect that GitHub pages used to add. See [this post](/cloudflare-and-hashed-css/) for details.]*
 
 When I was setting up this blog, I was excited to learn that [GitHub Pages runs on a fast Content Delivery Network](https://github.com/blog/1715-faster-more-awesome-github-pages). But there is a problem. It does not work with apex domains (i.e. [davidxmoody.com](https://davidxmoody.com/) instead of [www.davidxmoody.com](https://www.davidxmoody.com/)).
 
