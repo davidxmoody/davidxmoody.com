@@ -2,7 +2,6 @@ import path from 'path';
 import moment from 'moment';
 import cheerio from 'cheerio';
 
-// TODO use a proper metalsmith react plugin for this
 import getArticle from './get-article';
 import getArticleList from './get-article-list';
 
@@ -58,9 +57,16 @@ export default function(specifiedOptions, callback) {
   m.use(function(files) {
     for (const filename in files) {
       const file = files[filename];
+
+      // Format dates
       if (file.date) {
         file.date = moment(file.date);
         file.formattedDate = file.date.format('ll');
+      }
+
+      // Parse tags
+      if (file.tags && typeof file.tags === 'string') {
+        file.tags = file.tags.split(' ');
       }
     }
   });
@@ -72,16 +78,6 @@ export default function(specifiedOptions, callback) {
       reverse: true,
     },
   }));
-
-  // Convert space separated string of tags into a list
-  m.use(function(files) {
-    for (const filename in files) {
-      const file = files[filename];
-      if (file.tags && typeof file.tags === 'string') {
-        file.tags = file.tags.split(' ');
-      }
-    }
-  });
 
   // Replace custom excerpt separator with <!--more--> tag before markdown runs
   m.use(function(files, metalsmith) {
@@ -209,9 +205,10 @@ export default function(specifiedOptions, callback) {
 
     // Make all relative links and images into absolute links and images
     m.use(function(files) {
-      const data = files[METADATA.feedPath];
-      const newContents = data.contents.toString().replace(/(src|href)="\//g, '$1="' + METADATA.url);
-      data.contents = new Buffer(newContents);
+      const file = files[METADATA.feedPath];
+      file.contents = new Buffer(
+        file.contents.toString().replace(/(src|href)="\//g, '$1="' + METADATA.url)
+      );
     });
 
     // BROKEN LINK CHECKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
