@@ -85,7 +85,7 @@
       "allowKeywords": true
     }],
     "eqeqeq": 2,                     // http://eslint.org/docs/rules/eqeqeq
-    "guard-for-in": 2,               // http://eslint.org/docs/rules/guard-for-in
+    "guard-for-in": 1,               // http://eslint.org/docs/rules/guard-for-in
     "no-caller": 2,                  // http://eslint.org/docs/rules/no-caller
     "no-else-return": 2,             // http://eslint.org/docs/rules/no-else-return
     "no-eq-null": 2,                 // http://eslint.org/docs/rules/no-eq-null
@@ -96,7 +96,7 @@
     "no-floating-decimal": 2,        // http://eslint.org/docs/rules/no-floating-decimal
     "no-implied-eval": 2,            // http://eslint.org/docs/rules/no-implied-eval
     "no-lone-blocks": 2,             // http://eslint.org/docs/rules/no-lone-blocks
-    "no-loop-func": 2,               // http://eslint.org/docs/rules/no-loop-func
+    "no-loop-func": 1,               // http://eslint.org/docs/rules/no-loop-func
     "no-multi-str": 2,               // http://eslint.org/docs/rules/no-multi-str
     "no-native-reassign": 2,         // http://eslint.org/docs/rules/no-native-reassign
     "no-new": 2,                     // http://eslint.org/docs/rules/no-new
@@ -146,7 +146,10 @@
         "afterColon": true
     }],
     "new-cap": [2, {                 // http://eslint.org/docs/rules/new-cap
-      "newIsCap": true
+      "newIsCap": true,
+      "capIsNewExceptions": [
+        "Metalsmith"
+      ]
     }],
     "no-multiple-empty-lines": [2, { // http://eslint.org/docs/rules/no-multiple-empty-lines
       "max": 2

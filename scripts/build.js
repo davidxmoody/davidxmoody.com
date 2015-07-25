@@ -1,10 +1,12 @@
+import path from 'path';
 import moment from 'moment';
 import cheerio from 'cheerio';
 
+// TODO use a proper metalsmith react plugin for this
 import getArticle from './get-article';
 import getArticleList from './get-article-list';
 
-import metalsmith from 'metalsmith';
+import Metalsmith from 'metalsmith';
 import autoprefixer from 'metalsmith-autoprefixer';
 import beautify from 'metalsmith-beautify';
 import blc from 'metalsmith-broken-link-checker';
@@ -34,16 +36,16 @@ const METADATA = {
   maxDescriptionLength: 155,
 };
 
-const defaultOptions = {
+const DEFAULT_OPTIONS = {
   production: true,
 };
 
 export default function(specifiedOptions, callback) {
-  const options = Object.assign({}, defaultOptions, specifiedOptions);
+  const options = Object.assign({}, DEFAULT_OPTIONS, specifiedOptions);
 
   // CONFIG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  const m = metalsmith(__dirname + '/..');
+  const m = Metalsmith(path.resolve(__dirname, '..'));
   m.clean(true);
   m.metadata(METADATA);
 

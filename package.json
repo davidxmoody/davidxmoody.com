@@ -5,7 +5,8 @@
     "gulp": "babel-node --harmony `which gulp`",
     "watch": "npm run gulp watch",
     "build": "npm run gulp build",
-    "deploy": "npm run build && ./scripts/deploy.sh"
+    "lint": "npm run gulp lint",
+    "deploy": "npm run lint && npm run build && ./scripts/deploy.sh"
   },
   "dependencies": {
     "babel": "^5.8.5",

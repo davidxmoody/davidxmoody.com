@@ -26,7 +26,6 @@ function refreshServer() {
 gulp.task('build', function buildTask(cb) {
   build({production: true}, function buildCompleted(err) {
     if (err) { throw err; }
-    console.log('Built successfully');
     cb();
   });
 });
@@ -45,7 +44,7 @@ gulp.task('watch', ['dev-build'], function watchTask(cb) {
 });
 
 gulp.task('lint', function lintTask() {
-  return gulp.src(['scripts/**/*.babel.js'])
+  return gulp.src(['scripts/**/*.js'])
     .pipe(eslint({parser: 'babel-eslint', ecmaFeatures: {blockBindings: true, modules: true}}))
     .pipe(eslint.format())
     .pipe(eslint.failOnError());
