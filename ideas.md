@@ -22,6 +22,10 @@ Write growth mindset post part 3.
 
 Update "Big list of blogs I like" post.
 
+Write post about pagination number logic.
+
+Do an experiment comparing the difference between pagination buttons over different pages and a "load more" button which loads more on the same page. 
+
 "Idea for a static site generator that I will never implement", go over the idea for my purely React based SSG which progressively enhances images and transitions between pages and generates an endpoint for each terminal page but uses push state for faster page transitions and also incrementally updates only the pages necessary using internal DOM writing to files not the real DOM. Reason for not implementing it is that it is overkill for a static site. It is too much work for simple page transitions. Tries to re-implement what the browser does. Too much complexity. Only writing about it to try and get it out of my head. 
 
 Different ways to embed static apps into static websites. For example my old Professor P way of doing it then the render server and client side methods and finally my new idea: provide the module exports as being one main executable function, it accepts options and outputs it's own html, scripts, styles and a list of files with paths. Allows for greater flexibility within each module but less reuse also allows for publishing directly to npm so you can have a prepublish step. 

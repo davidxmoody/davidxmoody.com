@@ -2,14 +2,10 @@
 <html>
 <head>
 
-<!-- Load the Content Experiment JavaScript API client for the experiment -->
-<script src="//www.google-analytics.com/cx/api.js?experiment=XDGiu6DySf-GzuI84u1orw"></script>
-
-<script>
-  // Ask Google Analytics which variation to show the user.
-  var chosenVariation = cxApi.chooseVariation();
-  console.log(chosenVariation);
-</script>
+  {{#if experiment.hideNonFeatured}}
+  <!-- Load the Content Experiment JavaScript API client for the experiment -->
+  <script src="//www.google-analytics.com/cx/api.js?experiment=dGHD0m13QWOIZcPKZTCpTQ"></script>
+  {{/if}}
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +15,24 @@
   <link rel="canonical" href="{{canonical}}">
   <link rel="stylesheet" href="/{{fingerprint.[css/main.css]}}">
   <meta name="wot-verification" content="fdff4a26070b9df2fd1a"/>
+
+  {{#if experiment.hideNonFeatured}}
+  <script>
+    // Ask Google Analytics which variation to show the user.
+    var chosenVariation = cxApi.chooseVariation();
+    switch (chosenVariation) {
+      case 0:
+        console.log('Choosing variation #0: Show all posts');
+        // Do nothing
+        break;
+      case 1:
+        console.log('Choosing variation #1: Show only featured posts');
+        document.write('<style>.article--not-featured {display: none;}</style>');
+        break;
+    }
+  </script>
+  {{/if}}
+
 </head>
 <body>
 
@@ -50,6 +64,7 @@
     </p>
   </footer>
 
+  {{#if production}}
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -60,6 +75,11 @@
     ga('send', 'pageview');
 
   </script>
+  {{else}}
+  <script>
+    console.log('Google Analytics is only enabled in production mode');
+  </script>
+  {{/if}}
 
 </body>
 </html>

@@ -1,4 +1,6 @@
 import React from 'react';
+import cx from 'classnames';
+import R from 'ramda';
 
 export default React.createClass({
   displayName: 'Article',
@@ -16,8 +18,14 @@ export default React.createClass({
       contents = this.props.file.contents.toString();
     }
 
+    const isFeatured = R.contains("featured", this.props.file.tags);
+    const classes = cx("", {
+      "article--featured": isFeatured,
+      "article--not-featured": !isFeatured,
+    });
+
     return (
-      <article>
+      <article className={classes}>
         <header>
           <h1>{this.props.file.title}</h1>
           <p><em>{this.props.file.formattedDate}</em></p>

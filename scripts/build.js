@@ -23,7 +23,7 @@ import sitemap from 'metalsmith-sitemap';
 import excerpts from './excerpts';
 import markdown from './markdown';
 
-const METADATA = {
+const DEFAULT_OPTIONS = {
   title: "David Moody's Blog",
   description: 'A blog about programming',
   tagline: 'A blog about programming',
@@ -34,19 +34,16 @@ const METADATA = {
   email: 'david@davidxmoody.com',
   excerptSeparator: '\n\n\n',
   maxDescriptionLength: 155,
-};
-
-const DEFAULT_OPTIONS = {
   production: true,
 };
 
-export default function(specifiedOptions, callback) {
+export default function(specifiedOptions={}, callback=null) {
   const options = Object.assign({}, DEFAULT_OPTIONS, specifiedOptions);
 
   // CONFIG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   const m = Metalsmith(path.resolve(__dirname, '..'));
-  m.metadata(METADATA);
+  m.metadata(options);
 
   // POSTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -83,7 +80,7 @@ export default function(specifiedOptions, callback) {
   m.use(function(files, metalsmith) {
     for (const file of metalsmith.metadata().posts) {
       const oldContents = file.contents.toString();
-      const newContents = oldContents.replace(METADATA.excerptSeparator, '\n\n<!--more-->\n\n');
+      const newContents = oldContents.replace(options.excerptSeparator, '\n\n<!--more-->\n\n');
       file.contents = new Buffer(newContents);
     }
   });
@@ -96,8 +93,8 @@ export default function(specifiedOptions, callback) {
         const $ = cheerio.load(file.contents.toString());
         // This is a very awkward way of doing this
         let description = $('p').map(function() { return $(this).text(); }).get().join(' ').replace('  ', ' ');
-        if (description.length > METADATA.maxDescriptionLength) {
-          description = description.slice(0, METADATA.maxDescriptionLength - 3);
+        if (description.length > options.maxDescriptionLength) {
+          description = description.slice(0, options.maxDescriptionLength - 3);
           description = description.replace(/[,.!?:;]?\s*\S*$/, '...');
         }
         file.description = description;
@@ -113,12 +110,13 @@ export default function(specifiedOptions, callback) {
 
   m.use(pagination({
     'collections.posts': {
-      perPage: 5,
+      perPage: 9,
       first: 'index.html',
       template: 'NOT_USED',
       path: 'page:num/index.html',
       pageMetadata: {
         rtemplate: 'ArticleList',
+        experiment: {hideNonFeatured: true},
       },
     },
   }));
@@ -131,7 +129,7 @@ export default function(specifiedOptions, callback) {
     for (const filename in files) {
       const file = files[filename];
       file.path = filename.replace(/index.html$/, '');
-      file.canonical = METADATA.url + filename.replace(/index.html$/, '');
+      file.canonical = options.url + filename.replace(/index.html$/, '');
     }
   });
 
@@ -182,9 +180,9 @@ export default function(specifiedOptions, callback) {
 
     m.use(sitemap({
       ignoreFiles: [/^CNAME$/, /\.css$/, /\.js$/, /\.jpg$/, /\.png$/],
-      output: METADATA.sitemapPath,
+      output: options.sitemapPath,
       urlProperty: 'canonical',
-      hostname: METADATA.url,
+      hostname: options.url,
       modifiedProperty: 'modified',
       defaults: {
         priority: 0.5,
@@ -197,17 +195,17 @@ export default function(specifiedOptions, callback) {
     m.use(feed({
       collection: 'posts',
       limit: 100,
-      destination: METADATA.feedPath,
-      title: METADATA.title,
-      site_url: METADATA.url,
-      description: METADATA.description,
+      destination: options.feedPath,
+      title: options.title,
+      site_url: options.url,
+      description: options.description,
     }));
 
     // Make all relative links and images into absolute links and images
     m.use(function(files) {
-      const file = files[METADATA.feedPath];
+      const file = files[options.feedPath];
       file.contents = new Buffer(
-        file.contents.toString().replace(/(src|href)="\//g, '$1="' + METADATA.url)
+        file.contents.toString().replace(/(src|href)="\//g, '$1="' + options.url)
       );
     });
 
@@ -220,6 +218,6 @@ export default function(specifiedOptions, callback) {
   // BUILD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   m.build(function(err) {
-    callback(err);
+    if (callback) callback(err);
   });
 }
