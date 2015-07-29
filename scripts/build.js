@@ -124,12 +124,11 @@ export default function(specifiedOptions={}, callback=null) {
   // Don't duplicate the first page
   m.use(ignore(['page1/index.html']));
 
-  // Clean up paths to provide clean URLs
   m.use(function(files) {
     for (const filename in files) {
       const file = files[filename];
-      file.path = filename.replace(/index.html$/, '');
-      file.canonical = options.url + filename.replace(/index.html$/, '');
+      file.relativeURL = '/' + filename.replace(/index.html$/, '');
+      file.canonicalURL = options.url + filename.replace(/index.html$/, '');
     }
   });
 
@@ -181,7 +180,7 @@ export default function(specifiedOptions={}, callback=null) {
     m.use(sitemap({
       ignoreFiles: [/^CNAME$/, /\.css$/, /\.js$/, /\.jpg$/, /\.png$/],
       output: options.sitemapPath,
-      urlProperty: 'canonical',
+      urlProperty: 'canonicalURL',
       hostname: options.url,
       modifiedProperty: 'modified',
       defaults: {

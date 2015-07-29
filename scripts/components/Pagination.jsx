@@ -35,7 +35,7 @@ export default React.createClass({
     links.push(<PaginationLink
       key='prev'
       disabled={!pagin.previous}
-      href={pagin.previous ? '/' + pagin.previous.path : ''}
+      href={pagin.previous ? pagin.previous.relativeURL : ''}
     >&laquo;</PaginationLink>);
 
     nums.forEach((num, index) => {
@@ -47,7 +47,7 @@ export default React.createClass({
             links.push(<PaginationLink
               key={page.pagination.num}
               disabled={file === page}
-              href={'/' + page.path}
+              href={page.relativeURL}
             >{page.pagination.num}</PaginationLink>);
           }
         }
@@ -57,7 +57,7 @@ export default React.createClass({
     links.push(<PaginationLink
       key='next'
       disabled={!pagin.next}
-      href={pagin.next ? '/' + pagin.next.path : ''}
+      href={pagin.next ? pagin.next.relativeURL : ''}
     >&raquo;</PaginationLink>);
 
     const realLinks = [];
