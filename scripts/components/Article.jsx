@@ -1,6 +1,6 @@
-import React from 'react';
-import cx from 'classnames';
-import R from 'ramda';
+import React from 'react'
+import cx from 'classnames'
+import R from 'ramda'
 
 export default React.createClass({
   displayName: 'Article',
@@ -11,18 +11,18 @@ export default React.createClass({
   },
 
   render() {
-    let contents;
+    let contents
     if (this.props.shortened) {
-      contents = this.props.file.excerpt;
+      contents = this.props.file.excerpt
     } else {
-      contents = this.props.file.contents.toString();
+      contents = this.props.file.contents.toString()
     }
 
-    const isFeatured = R.contains("featured", this.props.file.tags);
-    const classes = cx("", {
-      "article--featured": isFeatured,
-      "article--not-featured": !isFeatured,
-    });
+    const isFeatured = R.contains('featured', this.props.file.tags)
+    const classes = cx('', {
+      'article--featured': isFeatured,
+      'article--not-featured': !isFeatured,
+    })
 
     return (
       <article className={classes}>
@@ -33,6 +33,6 @@ export default React.createClass({
 
         <div dangerouslySetInnerHTML={{__html: contents}} />
       </article>
-    );
+    )
   },
-});
+})

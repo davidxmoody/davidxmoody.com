@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import Article from './Article';
-import Pagination from './Pagination';
+import Article from './Article'
+import Pagination from './Pagination'
 
 export default React.createClass({
   displayName: 'ArticleList',
@@ -12,14 +12,14 @@ export default React.createClass({
 
   render() {
     const articles = this.props.file.pagination.files.map((file, index) => {
-      return <Article key={index} file={file} shortened={true} />;
-    });
+      return <Article key={index} file={file} shortened={true} />
+    })
 
     return (
       <div>
         {articles}
         <Pagination file={this.props.file} />
       </div>
-    );
+    )
   },
-});
+})

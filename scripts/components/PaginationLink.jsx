@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default React.createClass({
   displayName: 'PaginationLink',
@@ -11,9 +11,9 @@ export default React.createClass({
 
   render() {
     if (this.props.disabled) {
-      return <span className='pagination__disabled'>{this.props.children}</span>;
+      return <span className='pagination__disabled'>{this.props.children}</span>
     }
 
-    return <a className='pagination__link' href={this.props.href}>{this.props.children}</a>;
+    return <a className='pagination__link' href={this.props.href}>{this.props.children}</a>
   },
-});
+})
