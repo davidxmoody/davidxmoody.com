@@ -3,9 +3,8 @@
 ## Quick tech tips
 
 - Tip to use beautify with zero indent and infinite line length as an alternative to html minification
-- Extract information from filenames and put it into the file: `for f in 20*; do d=$(echo $f |grep -oP '\d{4}-\d\d-\d\d'); sed -i "/title:/a\date: $d" $f; done`
-- Adding Git branch to Bash prompt, also whether or not the current branch has been pushed to origin
-- Lots of different tips on new ES6 features I didn't know about before
+- Extract information from Jekyll-like filenames and put it into the file: `for f in 20*; do d=$(echo $f |grep -oP '\d{4}-\d\d-\d\d'); sed -i "/title:/a\date: $d" $f; done`
+- Adding Git branch to Bash prompt, and whether or not the current branch has been pushed to origin
 
 ## Small projects
 
@@ -14,6 +13,8 @@
 - Use my metalsmith-broken-link-checker as a standalone static site checker (with a one step metalsmith build process)
 - Use Digital Ocean machine for something interesting
 - Try using https://github.com/purifycss/purifycss on my blog
+- Create a Ramda "deep where" function
+- Create open source logarithmic React sliders
 
 ## Large projects
 
@@ -66,13 +67,12 @@
 
 # Blog tweaks
 
-- Add comments (Disqus)
+- Add comments (Discourse)
 - Add about-me page
 - Change background colour of code elements
-- Reduce text size on mobile devices (and in general?)
+- Reduce text size on mobile devices
 - Favicon (http://realfavicongenerator.net/)
-- Tags (actually use them)
-- Change email on home page to use obfuscated email (or use separate contacts page)
+- Use tags better
+- Change email on home page to use obfuscated email (or put it somewhere else)
 - Custom 404 page, make it do JavaScript redirects to other pages when I specify a redirect slug in a post
 - Better header with more links to important pages
-- Start a new Vim spell file specific to my blog (and move it into my dotfiles)

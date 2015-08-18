@@ -1,7 +1,6 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
 import build from './scripts/build';
-import eslint from 'gulp-eslint';
 
 const paths = {
   src: 'src/**/*',
@@ -41,11 +40,4 @@ gulp.task('dev-build', function devBuildTask(cb) {
 gulp.task('watch', ['dev-build'], function watchTask(cb) {
   gulp.watch(paths.src, ['dev-build']);
   return gulp.watch(paths.layouts, ['dev-build']);
-});
-
-gulp.task('lint', function lintTask() {
-  return gulp.src(['scripts/**/*.js'])
-    .pipe(eslint({parser: 'babel-eslint', ecmaFeatures: {blockBindings: true, modules: true}}))
-    .pipe(eslint.format())
-    .pipe(eslint.failOnError());
 });
