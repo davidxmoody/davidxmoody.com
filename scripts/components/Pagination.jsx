@@ -33,14 +33,14 @@ export default React.createClass({
     const links = []
 
     links.push(<PaginationLink
-      key='prev'
+      key="prev"
       disabled={!pagin.previous}
       href={pagin.previous ? pagin.previous.relativeURL : ''}
     >&laquo;</PaginationLink>)
 
     nums.forEach((num, index) => {
       if (num === ellipsis) {
-        links.push(<span className='pagination__ellipsis' key={'ellipsis-' + index} />)
+        links.push(<span className="pagination__ellipsis" key={'ellipsis-' + index} />)
       } else {
         for (const page of pagin.pages) {
           if (page.pagination.num === num) {
@@ -55,7 +55,7 @@ export default React.createClass({
     })
 
     links.push(<PaginationLink
-      key='next'
+      key="next"
       disabled={!pagin.next}
       href={pagin.next ? pagin.next.relativeURL : ''}
     >&raquo;</PaginationLink>)
@@ -63,11 +63,11 @@ export default React.createClass({
     const realLinks = []
     links.forEach((link, index) => {
       if (index && nums[index - 2] !== ellipsis && nums[index - 1] !== ellipsis) {
-        realLinks.push(<span className='pagination__separator' key={'separator-' + index} />)
+        realLinks.push(<span className="pagination__separator" key={'separator-' + index} />)
       }
       realLinks.push(link)
     })
 
-    return <p className='pagination'>{realLinks}</p>
+    return <p className="pagination">{realLinks}</p>
   },
 })
