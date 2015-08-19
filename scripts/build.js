@@ -93,9 +93,7 @@ export default function(specifiedOptions={}, callback=null) {
     }
   })
 
-  m.use(permalinks({
-    pattern: ':title/',
-  }))
+  m.use(permalinks({pattern: ':title/'}))
 
   // HOME PAGE PAGINATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
