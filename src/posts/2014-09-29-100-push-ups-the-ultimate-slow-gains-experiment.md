@@ -8,6 +8,7 @@ I have recently written about the [growth mindset](/the-growth-mindset-applied-t
 
 There are plenty things in my life I want to improve. However, I'm going to start with exercise. I've previously tried and failed to form exercise habits. None of my attempts have made any lasting improvements. This time I want it to be different. This time I'm going to make it **so easy I can't fail**.
 
+<!--more-->
 
 ## The plan
 

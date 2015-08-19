@@ -6,6 +6,7 @@ tags: personal
 
 Three weeks ago, I wrote a [two month review](/two-months-of-blogging/). I said that I wanted to focus on **getting a job**.
 
+<!--more-->
 
 I have certainly made some progress. I have written [my CV](/cv/) (which I'm very pleased with). I have also written a lot of blog posts which *support my CV*. By that, I mean I have written about many of the projects mentioned on my CV. I wanted to provide evidence that I'd actually done them and show more examples of my work. 
 

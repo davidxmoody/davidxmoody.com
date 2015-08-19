@@ -8,6 +8,7 @@ I have now published three posts per week for the last four weeks. That's about 
 
 When I started, I just wanted to start. I knew I would never be completely ready but I also knew it didn't matter. Now that I've been blogging for one month, it's time for a review. I want to take stock of what went well and what could have gone better. 
 
+<!--more-->
 
 ## Sticking to a schedule
 

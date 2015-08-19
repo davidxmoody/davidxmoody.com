@@ -8,6 +8,7 @@ I am now a firm believer in the **growth mindset**. When someone has a growth mi
 
 For most of my life, I have had a fixed mindset. I'm trying to change that. I want to take a moment to look back at my life and see how the different mindsets have impacted me. 
 
+<!--more-->
 
 ## My academic life
 

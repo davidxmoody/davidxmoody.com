@@ -10,6 +10,7 @@ For example, although Jekyll "supports" tags, you can't create pages to list all
 
 There is an easy way around this. You can build the site locally (using any plugins or code you want) and still host it on GitHub Pages. It's pretty simple although there are a few caveats. 
 
+<!--more-->
 
 ## Generated HTML should go in master
 

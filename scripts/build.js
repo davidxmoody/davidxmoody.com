@@ -32,7 +32,6 @@ const DEFAULT_OPTIONS = {
   sitemapPath: 'sitemap.xml',
   gitHubURL: 'https://github.com/davidxmoody',
   email: 'david@davidxmoody.com',
-  excerptSeparator: '\n\n\n',
   maxDescriptionLength: 155,
   production: true,
 }
@@ -76,15 +75,6 @@ export default function(specifiedOptions={}, callback=null) {
       reverse: true,
     },
   }))
-
-  // Replace custom excerpt separator with <!--more--> tag before markdown runs
-  m.use(function(files, metalsmith) {
-    for (const file of metalsmith.metadata().posts) {
-      const oldContents = file.contents.toString()
-      const newContents = oldContents.replace(options.excerptSeparator, '\n\n<!--more-->\n\n')
-      file.contents = new Buffer(newContents)
-    }
-  })
 
   m.use(markdown())
 

@@ -6,6 +6,7 @@ tags: bash, featured
 
 I've recently been uploading a lot of my old projects to GitHub. There is only one left: **my dotfiles**.
 
+<!--more-->
 
 You can [view them on GitHub](https://github.com/davidxmoody/dotfiles). I wanted to upload them because I think there are a few interesting fragments in there. Someone might find something they need. It also makes it easier for me to clone them from another machine, should the need ever arise. 
 

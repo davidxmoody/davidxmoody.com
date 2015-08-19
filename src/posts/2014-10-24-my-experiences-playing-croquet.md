@@ -6,6 +6,7 @@ tags: croquet
 
 I haven't written about it before but I am a very keen croquet player. I thought I would share some of my experiences playing in matches over the last few years. 
 
+<!--more-->
 
 ## Early introduction to the game
 

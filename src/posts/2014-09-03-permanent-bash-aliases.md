@@ -8,6 +8,7 @@ This post will introduce a handy little Bash tip. I created it over a year ago b
 
 Bash aliases are incredibly convenient. If, for some reason, you don't already use them then you should [read this tutorial](https://www.digitalocean.com/community/tutorials/an-introduction-to-useful-bash-aliases-and-functions). 
 
+<!--more-->
 
 Anyway, on to the function:
 

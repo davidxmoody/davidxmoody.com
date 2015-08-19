@@ -8,6 +8,7 @@ I've been using Vim, full-time, for nearly three years. I have written *a lot* o
 
 Pretty early on, I noticed I was wasting a lot of time with several common typing patterns. For example, to type "I've" requires 5 key strokes including two stretches of the little fingers. I replaced that with the abbreviation `iab iv I've`. That's only two keys instead of five and it doesn't put any unnecessary stress on the little fingers (which I sometimes have problems with). 
 
+<!--more-->
 
 I created several other abbreviations for common typing patterns (mostly avoiding having to type apostrophes and capital letters). Here is a small sample:
 

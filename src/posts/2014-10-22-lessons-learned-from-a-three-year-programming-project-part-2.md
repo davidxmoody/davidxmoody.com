@@ -6,6 +6,7 @@ tags: featured
 
 Continued from [part 1](/lessons-learned-from-a-three-year-programming-project-part-1/). You can also [view the project on GitHub](https://github.com/davidxmoody/diary).
 
+<!--more-->
 
 ## Abstraction and small methods
 

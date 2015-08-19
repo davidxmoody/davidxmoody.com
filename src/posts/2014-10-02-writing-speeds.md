@@ -6,6 +6,7 @@ tags: writing
 
 I like to write a lot. I usually write for about 2-4 hours per day. For something I do so much of, there are incredible time savings to be had. Of course, writing fast is only a very small part of being a good writer. Nevertheless, these small gains add up. The less time I spend writing, the more time I can spend thinking.
 
+<!--more-->
 
 ## A very brief history of my writing
 

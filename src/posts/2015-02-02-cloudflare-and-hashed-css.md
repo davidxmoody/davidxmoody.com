@@ -8,6 +8,7 @@ One of the main advantages of static sites is supposed to be faster load times. 
 
 I discovered [this post by David Ensinger](http://davidensinger.com/2014/04/transferring-the-dns-from-namecheap-to-cloudflare-for-github-pages/) in which he describes the same problem. I've learned a lot from his other posts and we appear to have pretty similar setups. The problem he describes is a time consuming 302 redirect caused by using GitHub Pages with a DNS `A` record. I suggest you look at his post for more details. 
 
+<!--more-->
 
 ## CloudFlare
 

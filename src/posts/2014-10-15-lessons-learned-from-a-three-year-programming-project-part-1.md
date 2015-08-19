@@ -8,6 +8,7 @@ For the last three years, I have been working on a little pet project. It has pr
 
 It's a command line program for writing and organising a personal diary ([GitHub link](https://github.com/davidxmoody/diary)). I've spent hundreds of hours on it and have gone through many different designs. Instead of covering every little detail of the project, I'm going to write about some important lessons it has taught me. 
 
+<!--more-->
 
 ## Bash is really powerful
 

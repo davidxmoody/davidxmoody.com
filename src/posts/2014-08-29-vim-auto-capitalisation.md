@@ -8,6 +8,7 @@ Continuing in the same theme as my [last post](/better-vim-abbreviations/), I am
 
 Many word processors already include this. For some reason, Vim and other text editors don't usually have the option. I don't know why. I feel that a lot of unnecessary key-strokes are wasted on the shift keys. It also stresses the little fingers and twists the wrists.
 
+<!--more-->
 
 ## The scripts
 

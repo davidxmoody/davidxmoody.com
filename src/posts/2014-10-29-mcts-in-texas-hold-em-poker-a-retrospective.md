@@ -8,6 +8,7 @@ I've recently been uploading a lot of my old projects. Both to prove I've actual
 
 This week, I have uploaded my 3rd year Cambridge University dissertation project. It is a **Texas Hold 'em poker-bot** which uses the **Monte Carlo Tree Search algorithm**. You can [view the source on GitHub](https://github.com/davidxmoody/mctsbot). In this post, I am going to give a very brief summary of the project and make notes on how I could have done better.
 
+<!--more-->
 
 ## How to build a poker-bot
 

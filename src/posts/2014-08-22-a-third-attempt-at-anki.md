@@ -8,6 +8,7 @@ I first found out about [Anki](http://ankisrs.net/) ages ago. Probably about fou
 
 A lot of smart people had said a lot of good things about Anki. That made me want to try it. However, I have yet to stick with it successfully. 
 
+<!--more-->
 
 ## My first attempt
 

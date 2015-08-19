@@ -8,6 +8,7 @@ I've been using computers for a long time. Way back in the days of Windows 95 I 
 
 At one point I used my mothers maiden name and later my cat's name. When I ran across sites that required numbers in the password, I simply added a `1` to the end.
 
+<!--more-->
 
 As I became more tech-savvy, I slowly started strengthening my passwords. For a long time I had a scheme which consisted of eight "random" seeming characters, followed by two letters corresponding to the name of the website. While *technically* making every password different, it would not have fooled anyone who knew what they were doing. 
 

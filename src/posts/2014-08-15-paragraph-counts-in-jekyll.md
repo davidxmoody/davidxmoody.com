@@ -11,6 +11,7 @@ If I can't read the full article from an RSS feed, this is the next best option.
 - It contains enough of the article to let you know if you will want to read the whole thing
 - It lets you know how long the entire article will be
 
+<!--more-->
 
 I've seen many *bad* approaches to the same problem. Some feeds contain very limited information, frequently just the first paragraph of the article. I feel that the first paragraph alone is not usually enough to decide if the entire article is worth reading. 
 

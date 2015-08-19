@@ -8,6 +8,7 @@ I have previously written about [writing speeds](/writing-speeds/). I think one 
 
 I recently looked into a shorthand system called [EasyScript](http://www.easyscript.com/). The most important part I took from it is to develop a set of short abbreviations for the most common words. They give a set of suggested abbreviations but I wasn't happy with them. Instead, I wanted to analyse my own writing to find my most commonly used words and phrases. 
 
+<!--more-->
 
 ## A simple Python script
 

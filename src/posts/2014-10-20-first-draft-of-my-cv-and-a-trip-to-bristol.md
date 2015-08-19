@@ -6,6 +6,7 @@ tags: bristol
 
 [Last week](/two-months-of-blogging/), I said that Mondays would be about my job search. Here's what I've done so far.
 
+<!--more-->
 
 ## The first draft of my CV
 

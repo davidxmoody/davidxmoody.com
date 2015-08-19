@@ -10,6 +10,7 @@ There are *tons* of excellent static site generators available. See [staticsiteg
 
 This post will not be a full guide on how to use Metalsmith. I'm assuming that anyone interested in Metalsmith is willing to get their hands dirty. Instead, this post will simply list some of the useful plugins I've come across and some other hacks I've made up. 
 
+<!--more-->
 
 ## Paragraph count
 

@@ -8,6 +8,7 @@ Let me tell you how I came to write this blog post. I have been using the Pomodo
 
 However, in my research, I learned a lot more than I thought I would. My opinion has changed on what's truly important. I only wish I had realised this sooner. 
 
+<!--more-->
 
 ## A look back
 

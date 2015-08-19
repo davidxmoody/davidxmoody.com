@@ -6,6 +6,7 @@ tags: featured
 
 Music is awesome. Music while programming is even more awesome. It reduces the effect of distracting background noise and helps you get into the right frame of mind. Without further ado, here are my recommendations.
 
+<!--more-->
 
 ## Get Work Done Music
 

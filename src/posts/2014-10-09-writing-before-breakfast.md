@@ -8,6 +8,7 @@ tags: habits, writing
 
 I knew that when I first started this blog. I set myself a schedule for publishing blog posts and have stuck to it ever since. *This has worked brilliantly.* But, it also has a few problems. Although I've never missed a post, I have procrastinated more than I would like. This last week in particular, my writing has suffered because of it.
 
+<!--more-->
 
 ## How to beat procrastination
 

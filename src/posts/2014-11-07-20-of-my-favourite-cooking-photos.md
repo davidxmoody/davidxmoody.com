@@ -8,6 +8,7 @@ I started learning to cook in September 2011. I really enjoyed it. I learned fro
 
 I started taking photographs of what I was making in early 2012. Since then, I have built up a collection of 550 cooking photos of new and interesting recipes. Unfortunately many of the early photos were taking with my Nexus One camera and are pretty much unusable. However, I still have plenty worth sharing, here are my 20 favourite cooking photos. 
 
+<!--more-->
 
 ![](/images/20-of-my-favourite-cooking-photos/2012-06-09_12-02-42_dmc-fs30.jpg)
 

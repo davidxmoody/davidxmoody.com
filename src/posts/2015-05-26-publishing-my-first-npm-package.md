@@ -10,6 +10,7 @@ Although I have released everything I've ever made on [GitHub](https://github.co
 
 I wanted to change that. This is the story of how I published my [first npm package](https://www.npmjs.com/package/metalsmith-broken-link-checker) and what I learned along the way.
 
+<!--more-->
 
 ## The problem I wanted to solve
 

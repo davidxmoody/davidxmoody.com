@@ -8,6 +8,7 @@ In March of this year, I went on a family holiday with my parents to Tenerife. I
 
 That was also around the time I was getting into photography. I had just bought a second hand Fujifilm X10 and this was the first chance I had to really use it. I wanted to share some of my favourite photos. I've probably got about 50 very good ones but that's too many for one blog post. So, here are my 10 best Tenerife photos.
 
+<!--more-->
 
 ## Botanical gardens
 

@@ -8,6 +8,7 @@ For my first post not about blogging, I thought I would return to my wordsearch 
 
 In this post, I will take a look back at what I've already done and make a note of what I think could be improved. In subsequent posts, I plan to make some improvements and also make it into a standalone game.
 
+<!--more-->
 
 ## The game
 

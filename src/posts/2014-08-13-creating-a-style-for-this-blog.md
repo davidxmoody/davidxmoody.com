@@ -10,6 +10,7 @@ However, I'm not an artist. I've struggled with creating visually attractive con
 
 This post will describe some of the things I've learned while creating this blog. 
 
+<!--more-->
 
 ## Great artists steal
 
