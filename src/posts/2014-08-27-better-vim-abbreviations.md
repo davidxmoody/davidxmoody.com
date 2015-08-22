@@ -39,8 +39,10 @@ I was about to start creating my own script to deal with this stuff. Thankfully,
 The [Vim Abolish plugin](https://github.com/tpope/vim-abolish) is pretty neat. Read the tutorial for a full walkthrough of the features. It lets you do stuff like this:
 
 ```vim
+" Typing the following:
 Abolish seperate separate
-" Results in:
+
+" Is equivalent to:
 iabbrev seperate separate
 iabbrev Seperate Separate
 iabbrev SEPERATE SEPARATE
