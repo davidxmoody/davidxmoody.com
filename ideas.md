@@ -5,6 +5,7 @@
 - Tip to use beautify with zero indent and infinite line length as an alternative to html minification
 - Extract information from Jekyll-like filenames and put it into the file: `for f in 20*; do d=$(echo $f |grep -oP '\d{4}-\d\d-\d\d'); sed -i "/title:/a\date: $d" $f; done`
 - Adding Git branch to Bash prompt, and whether or not the current branch has been pushed to origin
+- BEM classnames npm package(s)
 
 ## Small projects
 
@@ -21,6 +22,7 @@
 - Sync the state of any app with text files via sockets, allow both reading and writing from that file, could use bash scripts to quickly replace the file with another and so on, enable Vim to auto-reload the file on any change to "watch" the state of the app
 - Game idea: Tetris game with letters as blocks, valid words get removed 
 - Game idea: Text based adventure which also teaches JavaScript techniques
+- Redux real time playback of actions
 
 ## Write about existing experience
 
