@@ -2,11 +2,6 @@
 <html>
 <head>
 
-  {{#if experiment.hideNonFeatured}}
-  <!-- Load the Content Experiment JavaScript API client for the experiment -->
-  <script src="//www.google-analytics.com/cx/api.js?experiment=RzhKVzBdTAec-yBqPRT8KQ"></script>
-  {{/if}}
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{title}}</title>
@@ -15,23 +10,6 @@
   <link rel="canonical" href="{{canonicalURL}}">
   <link rel="stylesheet" href="/{{fingerprint.[css/main.css]}}">
   <meta name="wot-verification" content="fdff4a26070b9df2fd1a"/>
-
-  {{#if experiment.hideNonFeatured}}
-  <script>
-    // Ask Google Analytics which variation to show the user.
-    var chosenVariation = cxApi.chooseVariation();
-    switch (chosenVariation) {
-      case 0:
-        console.log('Choosing variation #0: Show all posts');
-        // Do nothing
-        break;
-      case 1:
-        console.log('Choosing variation #1: Show only featured posts');
-        document.write('<style>.article--not-featured {display: none;}</style>');
-        break;
-    }
-  </script>
-  {{/if}}
 
 </head>
 <body>

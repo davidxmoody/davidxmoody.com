@@ -105,7 +105,6 @@ export default function(specifiedOptions={}, callback=null) {
       path: 'page:num/index.html',
       pageMetadata: {
         rtemplate: 'ArticleList',
-        experiment: {hideNonFeatured: true},
       },
     },
   }))
