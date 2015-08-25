@@ -1,14 +1,13 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import PaginationLink from './PaginationLink'
 
-export default React.createClass({
-  displayName: 'Pagination',
+export default class Pagination extends React.Component {
 
-  propTypes: {
-    file: React.PropTypes.shape({
-      pagination: React.PropTypes.object.isRequired,
+  static propTypes = {
+    file: PropTypes.shape({
+      pagination: PropTypes.object.isRequired,
     }).isRequired,
-  },
+  }
 
   render() {
     const file = this.props.file
@@ -69,5 +68,6 @@ export default React.createClass({
     })
 
     return <p className="pagination">{realLinks}</p>
-  },
-})
+  }
+
+}

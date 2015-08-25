@@ -2,7 +2,7 @@
   "name": "davidxmoody.com",
   "private": true,
   "scripts": {
-    "gulp": "babel-node --harmony `which gulp`",
+    "gulp": "babel-node --stage 0 --harmony `which gulp`",
     "watch": "npm run gulp watch",
     "build": "npm run gulp build",
     "deploy": "npm run build && ./scripts/deploy.sh"

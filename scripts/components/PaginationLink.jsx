@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 
-export default React.createClass({
-  displayName: 'PaginationLink',
+export default class PaginationLink extends React.Component {
 
-  propTypes: {
-    href: React.PropTypes.string.isRequired,
-    disabled: React.PropTypes.bool.isRequired,
-    children: React.PropTypes.node.isRequired,
-  },
+  static propTypes = {
+    href: PropTypes.string.isRequired,
+    disabled: PropTypes.bool.isRequired,
+    children: PropTypes.node.isRequired,
+  }
 
   render() {
     if (this.props.disabled) {
@@ -15,5 +14,6 @@ export default React.createClass({
     }
 
     return <a className="pagination__link" href={this.props.href}>{this.props.children}</a>
-  },
-})
+  }
+
+}
