@@ -1,5 +1,5 @@
 import marked from 'marked'
-import {highlight} from 'highlight.js'
+import { highlight } from 'highlight.js'
 
 const markdownRegex = /\.(md|mkd|markdown)$/
 
@@ -7,11 +7,7 @@ const markedOptions = {
   gfm: true,
 
   highlight(code, lang) {
-    if (lang) {
-      return highlight(lang, code).value
-    }
-
-    return code
+    return lang ? highlight(lang, code).value : code
   },
 }
 

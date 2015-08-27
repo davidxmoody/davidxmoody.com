@@ -1,6 +1,5 @@
 import React from 'react'
 import path from 'path'
-import cheerio from 'cheerio'
 
 import Article from './components/Article'
 import ArticleList from './components/ArticleList'
@@ -20,8 +19,9 @@ import permalinks from 'metalsmith-permalinks'
 import sass from 'metalsmith-sass'
 import sitemap from 'metalsmith-sitemap'
 
-import excerpts from './excerpts'
-import markdown from './markdown'
+import excerpts from './plugins/excerpts'
+import markdown from './plugins/markdown'
+import descriptions from './plugins/descriptions'
 
 const DEFAULT_OPTIONS = {
   title: "David Moody's Blog",
@@ -31,7 +31,6 @@ const DEFAULT_OPTIONS = {
   sitemapPath: 'sitemap.xml',
   gitHubURL: 'https://github.com/davidxmoody',
   email: 'david@davidxmoody.com',
-  maxDescriptionLength: 155,
   production: true,
 }
 
@@ -60,20 +59,7 @@ export default function(specifiedOptions={}, callback=null) {
 
   m.use(markdown())
 
-  m.use((files, metalsmith) => {
-    for (const file of metalsmith.metadata().posts) {
-      if (!file.description) {
-        const $ = cheerio.load(file.contents.toString())
-        // This is a very awkward way of doing this
-        let description = $('p').map(function() { return $(this).text() }).get().join(' ').replace('  ', ' ')
-        if (description.length > options.maxDescriptionLength) {
-          description = description.slice(0, options.maxDescriptionLength - 3)
-          description = description.replace(/[,.!?:;]?\s*\S*$/, '...')
-        }
-        file.description = description
-      }
-    }
-  })
+  m.use(descriptions())
 
   m.use(permalinks({pattern: ':title/'}))
 
