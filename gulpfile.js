@@ -9,31 +9,27 @@ const paths = {
 
 let serverStarted = false
 
-function refreshServer() {
-  if (!serverStarted) {
-    browserSync({server: {baseDir: './build'}})
-    serverStarted = true
-  } else {
-    browserSync.reload()
+function refresh(cb) {
+  return (...args) => {
+    if (!serverStarted) {
+      browserSync({server: {baseDir: './build'}})
+      serverStarted = true
+    } else {
+      browserSync.reload()
+    }
+    cb(...args)
   }
 }
 
 gulp.task('build', cb => {
-  build({production: true}, err => {
-    if (err) throw err
-    cb()
-  })
+  build({production: true}, cb)
 })
 
 gulp.task('dev-build', cb => {
-  build({production: false}, err => {
-    if (err) throw err
-    refreshServer()
-    cb()
-  })
+  build({production: false}, refresh(cb))
 })
 
 gulp.task('watch', ['dev-build'], cb => {
   gulp.watch(paths.src, ['dev-build'])
-  return gulp.watch(paths.layouts, ['dev-build'])
+  gulp.watch(paths.layouts, ['dev-build'])
 })
