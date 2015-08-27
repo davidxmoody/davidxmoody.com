@@ -1,9 +1,10 @@
+import React from 'react'
 import path from 'path'
 import moment from 'moment'
 import cheerio from 'cheerio'
 
-import getArticle from './get-article'
-import getArticleList from './get-article-list'
+import Article from './components/Article'
+import ArticleList from './components/ArticleList'
 
 import Metalsmith from 'metalsmith'
 import autoprefixer from 'metalsmith-autoprefixer'
@@ -23,6 +24,7 @@ import sitemap from 'metalsmith-sitemap'
 import excerpts from './excerpts'
 import markdown from './markdown'
 
+// TODO use config module for this
 const DEFAULT_OPTIONS = {
   title: "David Moody's Blog",
   description: 'A blog about programming',
@@ -57,6 +59,7 @@ export default function(specifiedOptions={}, callback=null) {
 
       // Format dates
       if (file.date) {
+        // TODO consider using metalsmith dates plugin instead
         file.date = moment(file.date)
         file.formattedDate = file.date.format('ll')
       }
@@ -136,12 +139,14 @@ export default function(specifiedOptions={}, callback=null) {
 
   m.use(function(files, metalsmith) {
     for (const file of metalsmith.metadata().posts) {
-      file.contents = new Buffer(getArticle(file))
+      const markup = React.renderToStaticMarkup(React.createElement(Article, {file}))
+      file.contents = new Buffer(markup)
     }
     for (const filename in files) {
       const file = files[filename]
       if (file.rtemplate === 'ArticleList') {
-        file.contents = new Buffer(getArticleList(file))
+        const markup = React.renderToStaticMarkup(React.createElement(ArticleList, {file}))
+        file.contents = new Buffer(markup)
       }
     }
   })

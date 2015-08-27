@@ -15,6 +15,7 @@
 - Try using https://github.com/purifycss/purifycss on my blog
 - Create a Ramda "deep where" function
 - Create open source logarithmic React sliders
+- Quick idea to conveniently extract query string options with defaults and node fallback
 
 ## Large projects
 
