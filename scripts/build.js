@@ -1,6 +1,5 @@
 import React from 'react'
 import path from 'path'
-import moment from 'moment'
 import cheerio from 'cheerio'
 
 import Article from './components/Article'
@@ -24,7 +23,6 @@ import sitemap from 'metalsmith-sitemap'
 import excerpts from './excerpts'
 import markdown from './markdown'
 
-// TODO use config module for this
 const DEFAULT_OPTIONS = {
   title: "David Moody's Blog",
   description: 'A blog about programming',
@@ -56,13 +54,6 @@ export default function(specifiedOptions={}, callback=null) {
   m.use(function(files) {
     for (const filename in files) {
       const file = files[filename]
-
-      // Format dates
-      if (file.date) {
-        // TODO consider using metalsmith dates plugin instead
-        file.date = moment(file.date)
-        file.formattedDate = file.date.format('ll')
-      }
 
       // Parse tags
       if (file.tags && typeof file.tags === 'string') {
@@ -209,8 +200,6 @@ export default function(specifiedOptions={}, callback=null) {
 
   // BUILD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  m.build(function(err) {
-    if (callback) callback(err)
-  })
+  m.build(callback)
 
 }
