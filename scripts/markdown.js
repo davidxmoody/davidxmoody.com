@@ -1,9 +1,9 @@
 import marked from 'marked'
 import {highlight} from 'highlight.js'
 
-const MARKDOWN_REGEX = /\.(md|mkd|markdown)$/
+const markdownRegex = /\.(md|mkd|markdown)$/
 
-const MARKED_OPTIONS = {
+const markedOptions = {
   gfm: true,
 
   highlight(code, lang) {
@@ -16,15 +16,15 @@ const MARKED_OPTIONS = {
 }
 
 export default function() {
-  return function(files) {
+  return files => {
     for (const filename in files) {
-      if (MARKDOWN_REGEX.test(filename)) {
+      if (markdownRegex.test(filename)) {
         const file = files[filename]
         const rawStr = file.contents.toString()
-        const formatted = marked(rawStr, MARKED_OPTIONS)
+        const formatted = marked(rawStr, markedOptions)
         file.contents = new Buffer(formatted)
 
-        const newFilename = filename.replace(MARKDOWN_REGEX, '.html')
+        const newFilename = filename.replace(markdownRegex, '.html')
         delete files[filename]
         files[newFilename] = file
       }

@@ -60,7 +60,7 @@ export default function(specifiedOptions={}, callback=null) {
 
   m.use(markdown())
 
-  m.use(function(files, metalsmith) {
+  m.use((files, metalsmith) => {
     for (const file of metalsmith.metadata().posts) {
       if (!file.description) {
         const $ = cheerio.load(file.contents.toString())
@@ -94,7 +94,7 @@ export default function(specifiedOptions={}, callback=null) {
   // Don't duplicate the first page
   m.use(ignore(['page1/index.html']))
 
-  m.use(function(files) {
+  m.use(files => {
     for (const filename in files) {
       const file = files[filename]
       file.relativeURL = '/' + filename.replace(/index.html$/, '')
@@ -116,7 +116,7 @@ export default function(specifiedOptions={}, callback=null) {
 
   // TEMPLATES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  m.use(function(files, metalsmith) {
+  m.use((files, metalsmith) => {
     for (const file of metalsmith.metadata().posts) {
       const markup = React.renderToStaticMarkup(React.createElement(Article, {file}))
       file.contents = new Buffer(markup)
@@ -173,7 +173,7 @@ export default function(specifiedOptions={}, callback=null) {
     }))
 
     // Make all relative links and images into absolute links and images
-    m.use(function(files) {
+    m.use(files => {
       const file = files[options.feedPath]
       file.contents = new Buffer(
         file.contents.toString().replace(/(src|href)="\//g, '$1="' + options.url)

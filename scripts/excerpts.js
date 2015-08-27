@@ -1,4 +1,4 @@
-const EXCERPT_SEPARATOR = /<!--\s*more\s*-->/
+const excerptSeparator = /<!--\s*more\s*-->/
 
 function paraCount(text) {
   return text ? text.match(/<(p|ul|ol|pre|table)>[\s\S]*?<\/\1>/g).length : 0
@@ -18,9 +18,9 @@ function getReadMoreText(text) {
 }
 
 export default function() {
-  return function(files, metalsmith) {
+  return (files, metalsmith) => {
     for (const file of metalsmith.metadata().posts) {
-      const [before, after] = file.contents.toString().split(EXCERPT_SEPARATOR, 2)
+      const [before, after] = file.contents.toString().split(excerptSeparator, 2)
       const readMoreText = getReadMoreText(after)
       file.excerpt = `${before} <p><a href="${file.relativeURL}">${readMoreText}</a></p>`
     }
