@@ -26,7 +26,6 @@ import markdown from './markdown'
 const DEFAULT_OPTIONS = {
   title: "David Moody's Blog",
   description: 'A blog about programming',
-  tagline: 'A blog about programming',
   url: 'https://davidxmoody.com/',
   feedPath: 'feed.xml',
   sitemapPath: 'sitemap.xml',
@@ -50,17 +49,6 @@ export default function(specifiedOptions={}, callback=null) {
   if (options.production) {
     m.use(drafts())
   }
-
-  m.use(function(files) {
-    for (const filename in files) {
-      const file = files[filename]
-
-      // Parse tags
-      if (file.tags && typeof file.tags === 'string') {
-        file.tags = file.tags.split(', ')
-      }
-    }
-  })
 
   m.use(collections({
     posts: {
