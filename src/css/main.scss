@@ -4,9 +4,7 @@
 @import 'typography';
 @import 'stickyfooter';
 
-/* Colours based off of:
- * http://www.paletton.com/#uid=1000u0kleqtbzEKgVuIpcmGtdhZ
- */
+// Colours from: http://www.paletton.com/#uid=1000u0kleqtbzEKgVuIpcmGtdhZ
 
 $color-base: #D34747;
 $color-light: #F57373;
@@ -23,7 +21,7 @@ $header-shadow-color: $color-dark;
 $link-color: $color-dark;
 $hover-link-color: $color-darker;
 
-/* Site header and footer */
+// Site header and footer
 
 .site-header, 
 .site-footer {
@@ -73,22 +71,23 @@ $hover-link-color: $color-darker;
 
 a {
   color: $link-color;
-}
-a:hover {
-  color: $hover-link-color;
+
+  &:hover {
+    color: $hover-link-color;
+  }
 }
 
-/* Quick fix for images */
+// Responsive images
 img {
   max-width: 100%;
 }
 
-/* Force scrollbars to prevent "centering jumps" */
+// Force scrollbars to prevent "centering jumps"
 html {
   overflow-y: scroll;
 }
 
-// Make small links a bit easier to click by expanding their padding
+// Pagination
 .pagination {
   margin-top: $computed-line-height * 2;
   text-align: center;
@@ -111,7 +110,7 @@ html {
   content: "|";
 }
 
-// Quick blockquote styling
+// Blockquotes
 blockquote {
   margin-left: 5%;
   border-left: 3px solid $color-dark;

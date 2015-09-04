@@ -1,6 +1,5 @@
 html {
   font-family: Arial, sans-serif;
-  // Make everything look a little nicer in webkit
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -34,7 +33,7 @@ h4, h5, h6 {
   @include rhythm(0, 1, 1);
 }
 
-/* Sanitation */
+// Sanitation
 hr {
   border: 1px solid;
   margin: -1px 0;
