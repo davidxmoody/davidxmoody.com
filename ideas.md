@@ -27,10 +27,10 @@
 
 ## Write about existing experience
 
-- From ES5 to CoffeeScript to ES6
+- From ES5 to CoffeeScript and back to ES6 again
 - "Lesser known ES6 features" from the ebook
-- Write post about pagination number logic
-- Pros and cons of using react templates for rendering to static markup (hint at idea for react-static or similar)
+- Pagination number logic
+- Pros and cons of using react templates for rendering to static markup (or try deku!)
 - "Idea for a static site generator that I will never implement", idea for purely React based SSG, it progressively enhances images and transitions between pages, it generates an endpoint for each terminal page but uses push state for faster page transitions, in dev mode it only writes out changes to the files that have actually changed
 - Different ways to embed static apps into static websites: e.g. my old Professor P way of doing it then the render server and client side methods and finally my new idea: provide the module exports as being one main executable function (it accepts options and outputs it's own html, scripts, styles and a list of files with paths), would allow publishing to npm
 
@@ -38,17 +38,18 @@
 
 - Git branching strategies and rebasing
 - Go through Vim plugins top list (nerdtree, ctrlp, easymotion)
-- Switch from Terminator to tmux
-- Try zsh
+- Switch to tmux
+- Try zsh or fish
 - Try Facebook's Path Picker tool
 - Do anything to try out neural networks
 - Finish reading about Material UI
-- Flexbox (and update my blog to use it)
+- Flexbox
+- `jq` command line tool
 
 ## Updates to old posts
 
-- Update "Big list of blogs I like" post
-- Write growth mindset post part 3
+- Update "Big list of blogs I like"
+- Growth mindset part 3
 
 ## Reviews of existing projects
 
@@ -57,9 +58,7 @@
 
 # Content experiment ideas
 
-- Compare pagination buttons vs a "load more" button which loads more on the same page
 - Put CTAs or links to my most recent posts/relevant posts at the bottom of all of my posts
-- Put tags under articles and create listing pages for tags
 
 # Blog tweaks
 
@@ -68,7 +67,15 @@
 - Change background colour of code elements
 - Reduce text size on mobile devices
 - Favicon (http://realfavicongenerator.net/)
-- Use tags better
+- Tag explorer page
 - Change email on home page to use obfuscated email (or put it somewhere else)
-- Custom 404 page, make it do JavaScript redirects to other pages when I specify a redirect slug in a post
-- Better header with more links to important pages (no hamburger)
+- Custom 404 page, make it do JavaScript redirects to other pages when I specify a redirect slug in a post's metadata
+- Better header with more links to important pages (do NOT use a hamburger menu)
+- Asynchronous "load more" button for pagination
+
+# Ideas for helper scripts
+
+- Create new blog post (based on title, defaults to today's date and being a draft and no tags)
+- Edit most recently edited blog post (or most recent blog post by date or most recent draft)
+- Publish a post (remove draft: true, set date to today's date, commit to git with convenient message)
+- Make deployment script create a Git tag with a deployment "ref"
