@@ -15,7 +15,7 @@ The biggest draw is **easy integration with Google Analytics**.
 
 If you are not measuring *something* then there is no point to AB testing. By using Content Experiments, you can measure an experiment against metrics like pageviews, session time, custom events or any other goal you can set up in Google Analytics. GA is already so popular, there is a good chance you are already using it.
 
-GA Content Experiments also directs more traffic to the most promising experimental variations. The aim is to try to *minimise lost conversions* over the course of the experiment by exploiting the information you have already gathered. As you will later see, I don't completely trust the way in which this is done and have explored some other possible methods (see my upcoming post on *Bayesian Bandits*).
+GA Content Experiments also directs more traffic to the most promising experimental variations. The aim is to try to *minimise lost conversions* over the course of the experiment by exploiting the information you have already gathered. However, I don't completely trust the way in which this is done and have explored some other possible methods (see my upcoming post on *Bayesian Bandits*).
 
 ## Implementation
 
@@ -23,7 +23,7 @@ There is already an [official guide on how to set up JavaScript experiments here
 
 After the experiment has been created (and tied to a GA goal), you can proceed with the following steps to actually *implement* some experimental variations on a static site.
 
-### Add header code
+### Add the experiment script
 
 The Google's experiment script must fire on the page. Note that unlike in the guide, I recommend placing the script in the `head` of the document.
 
@@ -32,32 +32,25 @@ The Google's experiment script must fire on the page. Note that unlike in the gu
 <script src="//www.google-analytics.com/cx/api.js?experiment=YOUR_EXPERIMENT_ID"></script>
 ```
 
-### Add a CSS rule to the page
+### Write a CSS rule to the page
 
-Use the `cxApi.chooseVariation()` method to choose one of your experimental variations. Based on that result, conditionally write a CSS rule to the page using `document.write()`.
+Next, use the `cxApi.chooseVariation()` method to choose an experimental variation. Based on that result, conditionally write a CSS rule to the page using `document.write()`.
 
-Here is a simple example. I wanted to test whether showing all posts on my homepage would perform better than showing only posts which I thought were worth showing off. I added a "featured" tag to every post I thought was good. Then in my build script, I added a class of `experiment-hide` to any post on the home page without that tag. 
+Here is a simple example. I wanted to test whether showing all posts on my homepage would perform better than showing only my favourite posts. I added a "featured" tag to every post I thought was good. Then in my build script, I added a class of `experiment-hide` to any post on the home page without that tag. The style rule `.experiment-hide {display: none;}` is then written to the `head` of the document if the experimental variation is chosen.
 
-The following script 
-
-```html
-<script>
-// Ask Google Analytics which variation to show the user.
-var chosenVariation = cxApi.chooseVariation();
-switch (chosenVariation) {
+```js
+// This script should go in the head of the document
+switch (cxApi.chooseVariation()) {
   case 0:
-    console.log('Choosing variation #0: Show all posts');
-    // Do nothing
+    // Original variation, do nothing
     break;
   case 1:
-    console.log('Choosing variation #1: Show only featured posts');
     document.write('<style>.experiment-hide {display: none;}</style>');
     break;
 }
-</script>
 ```
 
-Here is an example of what the HTML might look like.
+Here is an example of roughly what the HTML could have looked like. 
 
 ```html
 <article>This is visible</article>
@@ -80,18 +73,27 @@ All of the above examples use some weird hacks in an attempt to eliminate any po
 
 This option has the advantage of not blocking the page from loading while the experiment script is fetched. It may also make deployment easier to manage (if you are using Google Tag Manager for example).
 
-- Additional delay in loading any page with a request that can't be cached
-- More code complexity
-- Possible inconsistent user experience for the same user on different sessions
-- Very hard to decide (for a blog) what to measure as a goal (session time/page views?, maybe comments?)
-
-## Server side alternative
+Also, if your experimental content is below the fold then I would always recommend this method because it will result in a faster initial page load.
 
 ## The lazy alternative
 
-## Bayesian bandits
+I know this isn't really an "alternative" but another valid option is to simply **not bother AB testing**. Instead you could just rely on your own *design skills*, run variations *sequentially* or *observe* real life users interacting with your site. 
+
+AB testing has several drawbacks that just can't be avoided:
+
+- Yet another HTTP request that *can't even be cached* (it increased my blog's page load time from 0.85s to 1.29s)
+- Requires *Google Analytics*
+- Increases code complexity of the static site generator
+- Different experiences for different users (or the same user if they change browsers)
+- Underlying difficulty in deciding what to even *measure* (especially for a non-commercial blog like this)
+- With small amounts of traffic, you may *never* reach an answer
 
 ## Conclusions
 
-- My blog doesn't get enough traffic (show graph)
-- Don't forget to mention YW site
+I have used this method multiple times on two static websites. The first was [YourWealth.co.uk](https://www.yourwealth.co.uk/) and the second was this blog. In both cases, the results were mildly underwhelming. 
+
+For my blog in particular, I found that I just wasn't getting enough traffic to the right pages to gather meaningful information. I also just *don't trust* the way in which Google calculate the "winning variation". In one of my experiments, the original received just 2 sessions (average session time of 0 minutes) and the variation received 35 sessions (average session time of 1 minute 24 seconds). Google proclaimed the variation to have a "100% chance of outperforming the original". Obviously complete bullshit. Most experiments aren't as bad as that though.
+
+In summary, AB testing *can* be a very useful tool in the right situations and it *can* be done effectively on a static website. 
+
+However, it is also *not* a tool to simply throw blindly at any problem. You have to weigh up the potential benefits against the development costs. If your goals could be better accomplished by spending your resources elsewhere (e.g. fixing known bugs) then you should do that instead.
