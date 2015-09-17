@@ -6,6 +6,7 @@
 - Extract information from Jekyll-like filenames and put it into the file: `for f in 20*; do d=$(echo $f |grep -oP '\d{4}-\d\d-\d\d'); sed -i "/title:/a\date: $d" $f; done`
 - Adding Git branch to Bash prompt, and whether or not the current branch has been pushed to origin
 - BEM classnames npm package(s)
+- What to measure when AB testing and what to measure for a non-commercial blog?
 
 ## Small projects
 
