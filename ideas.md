@@ -73,10 +73,4 @@
 - Custom 404 page, make it do JavaScript redirects to other pages when I specify a redirect slug in a post's metadata
 - Better header with more links to important pages (do NOT use a hamburger menu)
 - Asynchronous "load more" button for pagination
-
-# Ideas for helper scripts
-
-- Create new blog post (based on title, defaults to today's date and being a draft and no tags)
-- Edit most recently edited blog post (or most recent blog post by date or most recent draft)
-- Publish a post (remove draft: true, set date to today's date, commit to git with convenient message)
-- Make deployment script create a Git tag with a deployment "ref"
+- Make deployment script add the current source commit hash in the commit message
