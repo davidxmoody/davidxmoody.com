@@ -4,7 +4,7 @@ title=$*
 
 [ -z "$title" ] && echo "Please enter a title" && exit 1
 
-slug=$(sed -e 's/[^a-z]\+/-/g' -e 's/-$//' <<< ${title,,})
+slug=$(sed -e 's/[^a-z0-9]\+/-/g' -e 's/-$//' <<< ${title,,})
 date=$(date +%F)
 
 vim "+normal i---title: $titleslug: $slugdate: $datetags: draft: true---" \

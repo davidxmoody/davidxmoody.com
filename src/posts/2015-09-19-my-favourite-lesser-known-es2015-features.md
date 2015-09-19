@@ -1,6 +1,6 @@
 ---
 title: My favourite lesser known ES2015 features
-slug: my-favourite-lesser-known-es-features
+slug: my-favourite-lesser-known-es2015-features
 date: 2015-09-19
 tags: 
 draft: true
