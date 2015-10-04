@@ -2,6 +2,8 @@ import gulp from 'gulp'
 import browserSync from 'browser-sync'
 import build from './scripts/build'
 import gitlog from 'gitlog'
+import glob from 'glob'
+import path from 'path'
 
 const paths = {
   src: 'src/**/*',
@@ -58,4 +60,25 @@ gulp.task('gitlog', cb => {
     console.log(dates)
     cb()
   })
+})
+
+function discoverRepos(searchPaths) {
+  return searchPaths.map(
+    searchPath => {
+      return glob.sync('*/.git', {
+        cwd: path.join(process.env.HOME, searchPath),
+        realpath: true,
+      }).map(str => str.replace(/\/.git$/, ''))
+    }
+  ).reduce((a, b) => a.concat(b), []).map(
+    fullPath => ({
+      path: fullPath,
+      name: fullPath.replace(/^.*\//, ''),
+    })
+  )
+}
+
+gulp.task('glob', cb => {
+  console.log(discoverRepos(['p', 'sync/old-projects']))
+  cb()
 })
