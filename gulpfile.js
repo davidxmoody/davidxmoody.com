@@ -119,19 +119,24 @@ function groupCommitsByDay(commits) {
     }
   }
 
-  // For convenience and readability, sort the object by date
-  const sortedDays = {}
-  for (const day of Object.keys(days).sort()) {
-    sortedDays[day] = days[day]
-  }
+  return days
+}
 
-  return sortedDays
+function getSummary(commitsByDay) {
+  return Object.keys(commitsByDay).sort().map(
+    day => ({
+      date: day,
+      numCommits: commitsByDay[day].length,
+    })
+  )
 }
 
 gulp.task('gitlog', cb => {
   getAllCommits(['p', 'sync/old-projects']).then(commits => {
     const days = groupCommitsByDay(commits)
-    console.log(days)
+    const summary = getSummary(days)
+    const prettySummary = summary.map(({date, numCommits}) => `${date}: ${'#'.repeat(numCommits)}`).join('\n') + '\n'
+    console.log(prettySummary)
     cb()
   }).catch(
     err => cb(err)
