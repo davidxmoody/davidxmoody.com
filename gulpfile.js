@@ -4,6 +4,7 @@ import build from './scripts/build'
 import gitlog from 'gitlog'
 import glob from 'glob'
 import path from 'path'
+import fs from 'fs'
 
 const gitAuthorName = 'David Moody'
 
@@ -135,8 +136,9 @@ gulp.task('gitlog', cb => {
   getAllCommits(['p', 'sync/old-projects']).then(commits => {
     const days = groupCommitsByDay(commits)
     const summary = getSummary(days)
-    const prettySummary = summary.map(({date, numCommits}) => `${date}: ${'#'.repeat(numCommits)}`).join('\n') + '\n'
-    console.log(prettySummary)
+    //const prettySummary = summary.map(({date, numCommits}) => `${date}: ${'#'.repeat(numCommits)}`).join('\n') + '\n'
+    //console.log(prettySummary)
+    fs.writeFileSync(__dirname + '/commits.json', JSON.stringify(summary, null, 2))
     cb()
   }).catch(
     err => cb(err)
