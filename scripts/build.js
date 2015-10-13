@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOMServer from 'react-dom/server'
 import path from 'path'
 
 import Article from './components/Article'
@@ -34,7 +35,7 @@ const DEFAULT_OPTIONS = {
   production: true,
 }
 
-export default function(specifiedOptions={}, callback=null) {
+export default function(specifiedOptions = {}, callback) {
 
   const options = Object.assign({}, DEFAULT_OPTIONS, specifiedOptions)
 
@@ -104,13 +105,13 @@ export default function(specifiedOptions={}, callback=null) {
 
   m.use((files, metalsmith) => {
     for (const file of metalsmith.metadata().posts) {
-      const markup = React.renderToStaticMarkup(React.createElement(Article, {file}))
+      const markup = ReactDOMServer.renderToStaticMarkup(React.createElement(Article, {file}))
       file.contents = new Buffer(markup)
     }
     for (const filename in files) {
       const file = files[filename]
       if (file.rtemplate === 'ArticleList') {
-        const markup = React.renderToStaticMarkup(React.createElement(ArticleList, {file}))
+        const markup = ReactDOMServer.renderToStaticMarkup(React.createElement(ArticleList, {file}))
         file.contents = new Buffer(markup)
       }
     }
