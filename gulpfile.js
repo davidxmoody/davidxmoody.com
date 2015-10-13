@@ -138,7 +138,7 @@ gulp.task('gitlog', cb => {
     const summary = getSummary(days)
     //const prettySummary = summary.map(({date, numCommits}) => `${date}: ${'#'.repeat(numCommits)}`).join('\n') + '\n'
     //console.log(prettySummary)
-    fs.writeFileSync(__dirname + '/commits.json', JSON.stringify(summary, null, 2))
+    fs.writeFileSync(__dirname + '/commits/commits.json', JSON.stringify(summary, null, 2))
     cb()
   }).catch(
     err => cb(err)

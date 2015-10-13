@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.hover-only {
+  opacity: 0;
+}
+
+.hover-only:hover {
+  opacity: 1;
+  fill: blue;
+}
+
+</style>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script>
+
+var width = 960,
+    height = 500
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+
+d3.json("commits.json", function(error, commits) {
+  if (error) throw error
+
+  var enter = svg.selectAll('g')
+      .data(commits).enter()
+
+  enter.append('circle')
+    .attr('r', function(day) {return day.numCommits})
+    .attr('cx', function(day, index) {return 20 + (index / commits.length) * 920})
+    .attr('cy', function(day, index) {return 50})
+
+  enter.append('text')
+    .text(function(d) {return d.date})
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "20px")
+    .attr("fill", "red")
+    .attr('x', function(day, index) {return 20 + (index / commits.length) * 920})
+    .attr('y', function(day, index) {return 50})
+    .attr('transform', function(day, index) {return 'rotate(-90, ' + (20 + (index / commits.length) * 920) + ',' + 50 + ')'})
+    .classed('.hover-only', true)
+
+})
+
+</script>
