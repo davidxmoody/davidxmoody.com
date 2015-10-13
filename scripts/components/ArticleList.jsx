@@ -1,25 +1,18 @@
-import React, { PropTypes } from 'react'
-
+import React from 'react'
 import Article from './Article'
 import Pagination from './Pagination'
 
-export default class ArticleList extends React.Component {
+export default ({ file }) => {
 
-  static propTypes = {
-    file: PropTypes.object.isRequired,
-  }
+  const articles = file.pagination.files.map((f, index) => {
+    return <Article key={index} file={f} shortened />
+  })
 
-  render() {
-    const articles = this.props.file.pagination.files.map((file, index) => {
-      return <Article key={index} file={file} shortened={true} />
-    })
-
-    return (
-      <div>
-        {articles}
-        <Pagination file={this.props.file} />
-      </div>
-    )
-  }
+  return (
+    <div>
+      {articles}
+      <Pagination file={file} />
+    </div>
+  )
 
 }
