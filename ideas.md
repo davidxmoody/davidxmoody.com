@@ -41,15 +41,16 @@
 - Different ways to embed static apps into static websites: e.g. my old Professor P way of doing it then the render server and client side methods and finally my new idea: provide the module exports as being one main executable function (it accepts options and outputs it's own html, scripts, styles and a list of files with paths), would allow publishing to npm
 - Idea for file watcher that outputs a single object of all files (same references if unchanged) on any file change, then use pure memoized functions to build a static site and pair with a file writer that only writes changes when necessary, go from that to a Redux style static site generator
 - Branching strategies (try Git Flow too)
+- Growth mindset part 3
 
 ## Things to learn about then write about
 
+- Write about fzf scripts
 - Git branching strategies and rebasing
 - Go through Vim plugins top list (nerdtree, ctrlp, easymotion)
 - Switch to tmux
 - Try zsh or fish
 - Try Facebook's Path Picker tool
-- Do anything to try out neural networks
 - Finish reading about Material UI
 - Flexbox
 - `jq` command line tool
@@ -58,19 +59,17 @@
 - Find a tool for capturing gifs of webpages for bug reports 
 - Try typescript
 
-## Updates to old posts
-
-- Update "Big list of blogs I like"
-- Growth mindset part 3
-
 ## Reviews of existing projects
 
 - Write about ideas/implementation of standalone wordsearch game
 - Lessons learned from building the Professor P website
+- YourWealth retrospective (mortgages, life insurance, decision tree)
 
 # Content experiment ideas
 
 - Put CTAs or links to my most recent posts/relevant posts at the bottom of all of my posts
+- Try *asking* for GitHub stars in relevant posts?
+- Add iframe for wordsearch game into wordsearch post
 
 # Blog tweaks
 
