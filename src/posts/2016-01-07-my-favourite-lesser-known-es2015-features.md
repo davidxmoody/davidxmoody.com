@@ -1,7 +1,7 @@
 ---
 title: My favourite lesser known ES2015 features
 slug: my-favourite-lesser-known-es2015-features
-date: 2015-09-19
+date: 2016-01-07
 tags: 
 draft: true
 ---
@@ -32,3 +32,20 @@ console.log(doAnotherThing.name);       // "doAnotherThing"`
 - function names account for lots of stuff like `console.log(doSomething.bind().name);   // "bound doSomething"` also they have "get" or "set" at the start if they are getters or setters
 
 Currently up to "new.target" section
+
+## Notes on generators
+
+From: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators>
+
+- An *iterator* is a thing that has a next method and keeps track of its own position
+- An *iterable* is something that can supply an iterator to iterate over its own values
+- The iterable has a method on the property `Symbol.iterator` which generates a new iterator each time it is called (for example, it could be a generator function)
+- Strings, Arrays, Maps and Sets are all iterable
+- An iterator's `next()` method returns a `{value: "foo", done: false}` or `{value: undefined, done: true}`, "done" will come *after the last value*
+
+Generators are just like Python generators (maybe link to that great StackOverflow article on them).
+
+- No code in the generator is run until the first time `next()` is called
+- You can pass values in with `next(value)` (just like Python coroutines)
+- The first value passed to `next()` is ignored because the generator is just starting out
+- Subsequent values passed to `next()` are substituted to the value of `yield something`
