@@ -79,3 +79,39 @@ Use the `hostAttributes` property in the Polymer constructor to make an element 
 ## Properties
 
 - Use the `properties` object in the Polymer constructor when you want to provide the ability for the user to pass down custom properties.
+
+- Each key of the `properties` object is an object with the key being the name, a `type` property (e.g. `String`), a `value` default value. 
+
+- An optional `computed: "myFunction(param1, param2)"` property to define computed properties. Is only invoked once all dependant properties are not `undefined`.
+
+- Various other options for notifying and data binding control (`reflectToAttribute`, `readOnly`, `notify`, `observer`).
+
+- To map an *attribute name* (i.e. the thing in the HTML source) to a *property*, there are two ways to convert (these do not feel obvious and may trip me up in the future):
+    - Attribute `firstname` or `firstName` goes to property `firstname`
+    - Attribute `first-name` goes to property `firstName`
+
+- Shorthand for simple properties which only have a `type` and nothing else: `properties: {foo: String, bar: Boolean}`
+
+- Observers can be added to properties by giving their name as a string and get called with the new value and old value.
+
+- You can also define an array of observers in the top level rather than one for each component. They can depend on multiple properties and nested properties. You can also use a wildcard to listen for multiple nested property changes (e.g. `observers: ['userNameChanged(user.name.*)']`).
+
+- There is also a whole complex "splices" option for listening to changes in arrays.
+
+## Local DOM
+
+- Local DOM has multiple implementations. Shadow DOM can be used if it is supported, otherwise a custom implementation called "shady DOM" is used. Currently shady DOM is used on all browsers which would explain why I wasn't able to see a real shadow DOM being used in my tests.
+
+- Nodes in the local DOM are stored by id in `this.$`.
+
+- For finding dynamically created nodes use `this.$$(selector)`. It returns the *first* node that matches the selector.
+
+- The element's children are its "light DOM". They can be placed into the template with the `<content>` tag.
+
+- Optionally give the content node a select attribute to select on the light DOM content matching that (e.g. `<content select="h3"></content>`).
+
+- There are a whole bunch of functions for accessing the DOM found on `Polymer.dom(parent)`.
+
+- `this.root` is the root of the local DOM tree. Example: `var toLocal = document.createElement('div'); Polymer.dom(this.root).appendChild(toLocal);`
+
+- There are methods for accessing "distributed children" and "effective children" when you select different parts of your content.
