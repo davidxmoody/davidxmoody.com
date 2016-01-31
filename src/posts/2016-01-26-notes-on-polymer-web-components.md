@@ -2,6 +2,7 @@
 title: Notes on Polymer Web Components
 date: 2016-01-26
 tags: polymer
+draft: true
 ---
 
 These are some of my notes from reading through the [Polymer documentation](https://www.polymer-project.org/1.0/). I was using version 1.2.3 so things may have changed since then.
