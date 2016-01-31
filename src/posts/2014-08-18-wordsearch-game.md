@@ -10,6 +10,8 @@ In this post, I will take a look back at what I've already done and make a note 
 
 <!--more-->
 
+*[Update on 2016-01-31: Thanks to Mikhail, this game has been adapted for the language learning site [Internet Polyglot](http://www.internetpolyglot.com/). See [here](http://www.internetpolyglot.com/word_search_game?lessonId=-2104301155) and [here](http://www.internetpolyglot.com/word_search_game?lessonId=-4602101160) for examples.]*
+
 ## The game
 
 You can play it [right now](http://professorp.co.uk/games/wordsearch/) but in case you don't want to, here is a screenshot:
