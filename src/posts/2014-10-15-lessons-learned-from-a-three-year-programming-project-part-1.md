@@ -14,7 +14,7 @@ It's a command line program for writing and organising a personal diary ([GitHub
 
 I started keeping a diary about four years ago. Initially, I just wrote in a single text file. It was nice and simple and easy. After a few months, the file got a bit big and it was impossible to find anything. I experimented with splitting it into multiple files but that just made the problem worse.
 
-Then, three years ago, I started learning [Bash](http://en.wikipedia.org/wiki/Bash_(Unix_shell)). Bash is incredibly powerful. I take it for granted now. At the time, something as simple as [grepping](http://en.wikipedia.org/wiki/Grep) for keywords in multiple files was a revelation. 
+Then, three years ago, I started learning [Bash][bash]. Bash is incredibly powerful. I take it for granted now. At the time, something as simple as [grepping](http://en.wikipedia.org/wiki/Grep) for keywords in multiple files was a revelation. 
 
 I started experimenting with all kinds of ad-hoc scripts. I had a script to search for keywords, a script to do a wordcount and a script to create new entries. I eventually settled on a new file format with one file per entry and the date embedded in the filename. 
 
@@ -69,3 +69,5 @@ With the faster text wrapping method, my caching was now *slower* than re-wrappi
 **Lesson 3:** Premature optimisation is bad.
 
 [Read part 2...](/lessons-learned-from-a-three-year-programming-project-part-2/)
+
+[bash]: http://en.wikipedia.org/wiki/Bash_(Unix_shell)
