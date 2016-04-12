@@ -5,21 +5,13 @@
 - Tip to use beautify with zero indent and infinite line length as an alternative to html minification
 - Extract information from Jekyll-like filenames and put it into the file: `for f in 20*; do d=$(echo $f |grep -oP '\d{4}-\d\d-\d\d'); sed -i "/title:/a\date: $d" $f; done`
 - Adding Git branch to Bash prompt, and whether or not the current branch has been pushed to origin
-- BEM classnames npm package(s)
-- What to measure when AB testing and what to measure for a non-commercial blog?
-- How to run React in production mode with webpack
 
 ## Small projects
 
-- Git commit hook to make sure your commit messages are in imperative mood
 - Use my metalsmith-broken-link-checker as a standalone static site checker (with a one step metalsmith build process)
 - Use Digital Ocean machine for something interesting
-- Try using https://github.com/purifycss/purifycss on my blog
-- Create a Ramda "deep where" function
-- Create open source logarithmic React sliders
 - Quick idea to conveniently extract query string options with defaults and node fallback
 - Try https://github.com/feross/standard as an alternative to eslint
-- Try switching from React to https://github.com/dekujs/deku for template rendering on my blog
 - Idea for alternative to immutable data structures with Redux: simply check that the entire state has not changed in dev mode before doing the next reduce
 
 ## Large projects
@@ -35,24 +27,20 @@
 
 - From ES5 to CoffeeScript and back to ES6 again
 - "Lesser known ES6 features" from the ebook
-- Pagination number logic
 - Pros and cons of using react templates for rendering to static markup (or try deku!)
 - "Idea for a static site generator that I will never implement", idea for purely React based SSG, it progressively enhances images and transitions between pages, it generates an endpoint for each terminal page but uses push state for faster page transitions, in dev mode it only writes out changes to the files that have actually changed
 - Different ways to embed static apps into static websites: e.g. my old Professor P way of doing it then the render server and client side methods and finally my new idea: provide the module exports as being one main executable function (it accepts options and outputs it's own html, scripts, styles and a list of files with paths), would allow publishing to npm
 - Idea for file watcher that outputs a single object of all files (same references if unchanged) on any file change, then use pure memoized functions to build a static site and pair with a file writer that only writes changes when necessary, go from that to a Redux style static site generator
 - Branching strategies (try Git Flow too)
 - Growth mindset part 3
+- Write about fzf and ranger scripts
 
 ## Things to learn about then write about
 
-- Write about fzf scripts
-- Git branching strategies and rebasing
-- Go through Vim plugins top list (nerdtree, ctrlp, easymotion)
+- Go through Vim plugins top list (nerdtree, easymotion)
 - Switch to tmux
 - Try zsh or fish
-- Try Facebook's Path Picker tool
 - Finish reading about Material UI
-- Flexbox
 - `jq` command line tool
 - Try a CI/testing service for open source projects (https://circleci.com/ or https://saucelabs.com/opensauce/)
 - Try https://libraries.io/npm/super-react
@@ -61,15 +49,14 @@
 
 ## Reviews of existing projects
 
-- Write about ideas/implementation of standalone wordsearch game
+- Write about ideas/implementation of standalone wordsearch game (or update old post with iframe)
 - Lessons learned from building the Professor P website
 - YourWealth retrospective (mortgages, life insurance, decision tree)
 
 # Content experiment ideas
 
-- Put CTAs or links to my most recent posts/relevant posts at the bottom of all of my posts
+- Put CTAs or links to my most recent posts/relevant posts at the bottom of all of my posts (or exit modals)
 - Try *asking* for GitHub stars in relevant posts?
-- Add iframe for wordsearch game into wordsearch post
 
 # Blog tweaks
 
