@@ -1,8 +1,7 @@
 ---
 title: "Blinkist book review: The Miracle Morning"
-date: 2016-06-04
+date: 2016-06-05
 tags: blinkist, book-review
-draft: true
 ---
 
 Last week I tried out a new service called [Blinkist](https://www.blinkist.com/en/). They provide 15 minute summaries of non-fiction books. My initial experience has been amazing and I have now subscribed to them.
@@ -43,7 +42,7 @@ What can be effective is to visualise realistic situations and imagine how you m
 
 Then there is also the concept of negative visualisations from stoicism (which I read another Blinkist summary on recently and will write about later). 
 
-I see the value in visualisations but am not sure how to work it into my morning routine yet. 
+I see the value in visualisations but am not sure how to work them into my morning routine yet. 
 
 ### 4. Exercise
 
@@ -77,6 +76,6 @@ I kind of already covered this one in the "note taking" while reading summaries 
 
 ## Summary
 
-This entry has turned into more of a discussion of my own habits rather than a review of the book summary. That's fine although I expect future summaries to follow the books more closely. 
+This post has turned into more of a discussion of my own habits rather than a review of the book summary. That's fine although I expect future summaries to follow the books more closely. 
 
 I'm glad I read this one first. It was an easy first read and got me in the mood for wanting to change my habits. I also don't think it's an accident that this book is promoted so heavily on Blinkist. I'm pretty sure they are doing it deliberately to get people excited about changing their habits and be more likely to commit to subscribing for a year. It certainly worked on me.
