@@ -21,7 +21,7 @@ I'm not going to attempt to give a full summary in these blog posts. Rather, I w
 
 Silence seems very important to me. One thing that used to be a problem with my morning routine was that I kept using my phone too much immediately after waking up. 
 
-I now keep my phone outside of my bedroom and make sure never to use it until I have already finished every other step in my morning routine. I feel like this already helps me to be more mindful while performing the others steps in my routine.
+I now keep my phone outside of my bedroom and never use it until I have already finished every other step in my morning routine. I feel like this helps me to be more mindful.
 
 However, I have never yet been able to stick to a real meditation habit, despite multiple attempts in the past. I recently tried [Headspace](https://www.headspace.com/) in another attempt but just kept forgetting to use the app. 
 
@@ -33,7 +33,7 @@ This is something I've never actually tried even once. I've read Scott Adams and
 
 ### 3. Visualisations
 
-Again, this is something I've really never tried before. I also disagree with the author somewhat. He writes:
+Again, this is something I've really never tried before. I also disagree with the summary somewhat. It says:
 
 > "For example, if you want to write a book, visualize yourself feeling inspired and joyfully writing page after page at your desk."
 
@@ -49,11 +49,11 @@ I see the value in visualisations but am not sure how to work it into my morning
 
 Exercise is something that I have been managing very successfully recently. 
 
-I took up running one mile every morning this March. I've been incredibly pleased with the habit. I chose to focus on consistency rather than any other metrics like time or distance. Over the last 73 days, I have run one mile on 52 of those days. **That's 71%!** Additionally, a lot of those missed days were either due to minor injury or heavy rain so the number I missed out of laziness has been very small. 
+I took up running one mile every morning this March. I've been incredibly pleased with the habit. I chose to focus on consistency rather than any other metrics like time or distance. Over the last 74 days, I have run one mile on 53 of those days. **That's 72%!** Additionally, a lot of those missed days were either due to minor injury or heavy rain so the number I missed out of laziness has been very small. 
 
-I also started doing push ups every morning four weeks ago. Again, I'm choosing to focus on consistency. Over the last 27 days, I have only skipped 6 days due to laziness or extreme soreness. 
+I also started doing push ups every morning four weeks ago. Again, I'm choosing to focus on consistency. Over the last 28 days, I have only skipped 6 days due to laziness or extreme soreness. 
 
-I've also been tracking the number I can do each time. I started off at about 10 and am now up to about 15. I admit that I often get a little impatient that I haven't been improving faster but then I catch myself with that line of thinking and realise it's not helpful. I also realise that since I am doing them every day, I am always a little bit sore from the previous day so my absolute maximum could be higher.
+I've also been tracking the number I can do each time. I started off at about 10-12 and am now able to do about 15-17. I admit that I often get a little impatient that I haven't been improving faster but then I catch myself with that line of thinking and realise it's not helpful. I also realise that since I am doing them every day, I am always a little bit sore from the previous day so my absolute maximum could be higher.
 
 Although I am very pleased with my running and push ups habits, they are still new enough that I'm wary of pushing myself too hard and burning out. I plan to continue my exercise habits for 1-3 months longer before reviewing them.
 
@@ -63,7 +63,7 @@ Reading is very important to me. However, I am a very slow reader. I like to tak
 
 There is one particular book that I started over a month ago but still haven't finished because every time I pick it up I read just one chapter and then spend the next half hour thinking about what I just read. (The book I'm talking about is [Turn The Ship Around!](https://www.amazon.co.uk/Turn-Ship-Around-Building-ebook/dp/B015QQ10HE/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr=) by David Marquet but I'll write about that some other time.)
 
-If anything, subscribing to Blinkist has made me realise the flaws in that approach. I definitely see the benefit in reading more quickly. Partly to skip through the crap bits. I also remember reading somewhere the idea that "once you read a book on some topic and think to yourself that you've read it all before then you are starting to master that topic". I feel that reading books more quickly (or reading Blinkist summaries) will help me to reach that point more quickly.
+If anything, subscribing to Blinkist has made me realise the flaws in that approach. I definitely see the benefit in reading more quickly. I remember reading somewhere the idea that "once you read a book on some topic and think to yourself that you've read it all before then you are starting to master that topic". I feel that reading books more quickly (or reading Blinkist summaries) will help me to reach that point more quickly.
 
 Initially after reading this summary, I had the awesome idea to read one Blinkist summary every single morning and write notes on them. The next morning, I did that and it was amazing. The morning after that, I did it again and it was pretty good. The morning after that I just did not have the energy and have not done it again since. I've been reading in the evenings instead. 
 
@@ -75,6 +75,8 @@ I think in the future, I should simply aim to do *some amount of reading/note ta
 
 I kind of already covered this one in the "note taking" while reading summaries above. Additionally, writing blog posts is another good form of writing. I also frequently write in my diary (although not usually in the mornings). 
 
-## Getting out of bed
+## Summary
 
-TODO
+This entry has turned into more of a discussion of my own habits rather than a review of the book summary. That's fine although I expect future summaries to follow the books more closely. 
+
+I'm glad I read this one first. It was an easy first read and got me in the mood for wanting to change my habits. I also don't think it's an accident that this book is promoted so heavily on Blinkist. I'm pretty sure they are doing it deliberately to get people excited about changing their habits and be more likely to commit to subscribing for a year. It certainly worked on me.
