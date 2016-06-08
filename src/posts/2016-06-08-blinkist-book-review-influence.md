@@ -15,7 +15,7 @@ I bought this book on Kindle about 4 years ago but only read the fist three chap
 
 Interesting opening example of female turkeys which, upon hearing a "cheap-cheap" sound, will automatically assume that the thing making it is their child. Even if it's actually a polecat with a tape recorder strapped to it. It's meant to illustrate that all animals have certain shortcut behaviours and humans are no exception.
 
-The next example is when a gem-store owner accidentally doubled the price of some jade rather than halving it. It quickly sold out. It's meant to highlight the fact that humans have the shortcut of: "price indicates quality". Even though it was still the same jewellery, people assumed it was better because it cost more.
+The next example is when a gem-store owner accidentally doubled the price of some jade rather than halving it. It quickly sold out. It's meant to highlight the fact that humans have the shortcut of: "price indicates quality". It was the same jewellery but people assumed it was better because it cost more.
 
 ## The rule of reciprocation
 
@@ -89,8 +89,40 @@ When you choose to fight for something, it changes you. When you acquire somethi
 
 If it is possible to justify your actions with an alternative hypothesis then it can weaken the effect.
 
-It reminds me of various psychological experiments where people getting paid a lot to perform a dull repetitive task rated it as less enjoyable than those who got paid less. The people getting paid a lot were able to justify the time they spent by saying they were doing it for the money. The people getting paid little could not justify it in that way and instead decided that the task really was fun.
-
 This can be exploited by making an initial low offer and giving time for someone to get accustomed to buying the thing. Then, once they have already decided they are going to get it, the price can be increased or additional extras can be added on. They have already decided to fight for the thing and so the additional extras don't seem like such a big deal. 
 
 Inner change can often be much more effective than external pressure. 
+
+## When uncertain, we look for social proof
+
+When we don't know what to do or think, we will look at others around us. 
+
+A negative example of this can be the "bystander inaction effect" when something negative is happening but nobody helps. The effect can be mitigated by *singling out a specific person* and asking for their help/action. 
+
+## We like to emulate similar people
+
+Observing people similar to us can greatly affect our choices. Fashion choices being the obvious example.
+
+Advertisers can exploit this by staging fake interviews to make it seem like people similar to us use their product.
+
+## We comply with people we like
+
+Many factors contribute to who you like:
+
+1. Physical attractiveness (causing a halo-effect where we assume they are more talented in other areas)
+2. Flattery/complements (but obviously this can be over-done)
+3. Similarity (finding common interests/circumstances)
+4. Co-operating with someone (aka being on the "same team")
+5. Positive associations (could be anything related to the person)
+
+Also, I think there is a lot you can do to build genuine trust and friendship which isn't mentioned in the summary. Obviously that's not a tactic most salespeople could use.
+
+To protect against this, ask yourself if you have come to like someone in an *unusually* short amount of time. If so, they may be deliberately manipulating you.
+
+## Authority
+
+We can be influenced by real authority as well as just symbols of authority.
+
+People can masquerade as authority figures using symbols like titles and clothing.
+
+Also, real authority figures can sometimes have agendas of their own and be trying to manipulate you. 
