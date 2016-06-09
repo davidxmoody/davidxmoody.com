@@ -1,8 +1,7 @@
 ---
 title: "Blinkist book review: Influence"
-date: 2016-06-08
+date: 2016-06-09
 tags: blinkist, book-review
-draft: true
 ---
 
 For my third Blinkist book summary, I chose [Influence](https://www.blinkist.com/en/books/influence-en.html) by Robert B. Cialdini. 
@@ -19,7 +18,7 @@ The next example is when a gem-store owner accidentally doubled the price of som
 
 ## The rule of reciprocation
 
-Humans feel like we have a duty to repay others in kind for whatever they have provided to us. If we do not repay a favour, it can feel like a psychological burden. 
+We feel like we have a duty to repay others in kind for what they have given us. If we do not repay a favour, it can feel like a *psychological burden*. 
 
 To rid ourselves of this perceived debt, we are often willing to reciprocate with a much larger favour than the one originally received. 
 
@@ -40,7 +39,7 @@ Similarly for knowledge sharing. If you know a lot more about one subject than s
 3. Ask for something smaller
 4. They say yes
 
-This can be even more effective than just asking for the smaller thing first. It works because when you lower your request, you are making a *concession* to them. They feel obliged to make a similar concession to you by accepting your request.
+This can be even more effective than just asking for the smaller thing first. It works because when you lower your request, you are making a *concession* to them. They feel obliged to reciprocate by making a similar concession and accepting your second request.
 
 Additionally, **the principle of contrast** will make your second request seem smaller/easier in comparison.
 
@@ -52,15 +51,13 @@ People hate losing *opportunities*. If an opportunity is seen as limited in avai
 
 If information about the opportunity is limited then it can trigger the effect too.
 
-It can be more effective when availability suddenly drops rather than when it has been low all along.
-
-It can also be made even more effective if you think you are competing with others for the same limited resources.
+It can be more effective when availability suddenly drops rather than when it has been low all along. Also if you think you are competing with others for the same limited resources.
 
 To protect against this, you should ask yourself if you really want the thing for what it is or if you suddenly have an irrational desire to possess it. The latter case is often triggered by artificial scarcity.
 
 I recently visited booking.com to book a hotel and I noticed that they are playing this strategy to a *ridiculous degree*. Everywhere on their site they are trying to suggest that the hotel your are looking at is about to get booked up.
 
-They tell you how many times other people have booked that hotel today and how many rooms are left. They aren't even remotely subtle about it either. They show search results saying things like: "You missed it! We have reserved our last available room at this property." The most annoying part is that even though I knew exactly what they were doing, I still felt like I was getting strongly influenced by it.
+They tell you how many times other people have booked that hotel today and how many rooms are left. They aren't even remotely subtle about it either. They show search results saying things like: *"You missed it! We have reserved our last available room at this property."* The most annoying part is that even though I knew exactly what they were doing, I still felt like I was getting strongly influenced by it.
 
 ## Banned things are more desirable
 
@@ -101,7 +98,7 @@ A negative example of this can be the "bystander inaction effect" when something
 
 ## We like to emulate similar people
 
-Observing people similar to us can greatly affect our choices. Fashion choices being the obvious example.
+Observing people similar to us can greatly affect our choices. Fashion choices being the most obvious example.
 
 Advertisers can exploit this by staging fake interviews to make it seem like people similar to us use their product.
 
@@ -111,11 +108,11 @@ Many factors contribute to who you like:
 
 1. Physical attractiveness (causing a halo-effect where we assume they are more talented in other areas)
 2. Flattery/complements (but obviously this can be over-done)
-3. Similarity (finding common interests/circumstances)
+3. Similarity (and finding common interests/circumstances)
 4. Co-operating with someone (aka being on the "same team")
 5. Positive associations (could be anything related to the person)
 
-Also, I think there is a lot you can do to build genuine trust and friendship which isn't mentioned in the summary. Obviously that's not a tactic most salespeople could use.
+Also, I think there is a lot you can do to build *genuine trust and friendship* which isn't mentioned in the summary. Probably because that's not a tactic most salespeople could use.
 
 To protect against this, ask yourself if you have come to like someone in an *unusually* short amount of time. If so, they may be deliberately manipulating you.
 
