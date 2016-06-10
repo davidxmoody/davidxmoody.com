@@ -41,4 +41,39 @@ Different people always have unique differing needs. Multiple people can usually
 
 It reminds me of listening to product feedback. Often users will demand that you add this feature or that. However the best strategy is usually to try to understand what their unexpressed needs are that the product is not meeting. Focusing too much on feature requests can lead to massive feature bloat without fixing any of the real problems. 
 
-**Trust** can help people be more willing to share their needs and make concessions to others. Highlighting shared goals before the negotiation can also help. 
+**Trust** can help people be more willing to share their needs and make concessions to others. Highlighting *shared goals* before the negotiation can also help. 
+
+## Tap into as many sources of power as possible
+
+When negotiating, the other side will have many sources of power at their disposal. 
+
+Some examples are obvious due to the roles each person has. For example, if negotiating with your boss, they could have the power to influence the tasks they give you, to raise your salary or to fire you.
+
+There are many other sources of power you can utilise:
+
+- Having *alternative options* available to you
+- An existing *precedent* for what you want
+- Being able to point to *written rules* which support you (aka legitimacy)
+- Having *expertise or credentials*
+
+All power is based on perception.
+
+## Make it hard for the other person to say "No"
+
+You can make the other side invest time/effort into negotiations so that they are more willing to make concessions. 
+
+You can first get the buy-in of friends/family of the other person. Then they will be less willing to turn away from negotiations because they would be letting the other people down. This is called "getting commitment".
+
+You could also try to get the other side to stick to any previous statements they have made (especially if written and/or public). Being inconsistent with your previous actions can be very uncomfortable.
+
+## Information distribution
+
+Knowing the needs/deadlines/constraints of the other side can put you in a very strong position. 
+
+If they need to reach an agreement by a certain date, you can drag things on until the deadline is imminent and they will be more likely to make concessions. 
+
+Much of the information gathering happens before official negotiations begin. 
+
+Additionally, you can deliberately "play dumb" a little bit in order to gather more information. You can ask people to explain things to you in simple terms in order to learn more. 
+
+TODO give and take
