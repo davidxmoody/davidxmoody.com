@@ -5,7 +5,7 @@ tags: blinkist, book-review
 draft: true
 ---
 
-After reading the Influence summary, I decided to jump straight into the recommended follow-on book: [You Can Negotiate Anything](https://app.blinkist.com/blinks/you-can-negotiate-anything-en) by Herb Cohen.
+After reading the Influence summary, I decided to jump straight into the recommended next book: [You Can Negotiate Anything](https://app.blinkist.com/blinks/you-can-negotiate-anything-en) by Herb Cohen.
 
 <!--more-->
 
@@ -33,15 +33,15 @@ If facing one, set limits ahead of time and be careful to stick to them.
 
 ## Win-win negotiations
 
-In contrast, a win-lose mindset is where you take the view that there is a limited amount of resources and you are dividing them up. Aka a zero-sum game. Occasionally, this may be the case but a true *win-win negotiation* is often possible. 
+A *win-lose* mindset is where you take the view that there is a limited amount of resources to divide up. Aka a zero-sum game. Occasionally, this may be the case but a true *win-win negotiation* is usually possible. 
 
 It can be a *mistake* to focus too much on the *demands* of other people. Instead, you should focus on **understanding their underlying needs and unexpressed desires**. 
 
 Different people always have unique differing needs. Multiple people can usually be satisfied without anyone losing out.
 
-It reminds me of listening to product feedback. Often users will demand that you add this feature or that. However the best strategy is usually to try to understand what their unexpressed needs are that the product is not meeting. Focusing too much on feature requests can lead to massive feature bloat without fixing any of the real problems. 
+It reminds me of listening to product feedback. Often, users will demand that you add this feature or that. However, the best strategy is to try to understand what their unexpressed needs are. Focusing too much on feature requests can lead to massive feature bloat without fixing any of the underlying problems. 
 
-**Trust** can help people be more willing to share their needs and make concessions to others. Highlighting *shared goals* before the negotiation can also help. 
+Building trust can help people be more willing to share their needs and make concessions to others. **Highlighting shared goals** before the negotiation can also help. 
 
 ## Tap into as many sources of power as possible
 
@@ -70,10 +70,28 @@ You could also try to get the other side to stick to any previous statements the
 
 Knowing the needs/deadlines/constraints of the other side can put you in a very strong position. 
 
-If they need to reach an agreement by a certain date, you can drag things on until the deadline is imminent and they will be more likely to make concessions. 
-
 Much of the information gathering happens before official negotiations begin. 
 
 Additionally, you can deliberately "play dumb" a little bit in order to gather more information. You can ask people to explain things to you in simple terms in order to learn more. 
 
-TODO give and take
+Information exchange can be a game of "give and take" where one person shares something and expects the other person to share something in return. This is a normal part of negotiation.
+
+You can also unexpectedly reveal information with other actions or concessions you make. For example, if your initial offer was £100 then you go straight up to £500 then obviously you must think the true value of the thing is much closer to £500 than £100.
+
+## Deadlines
+
+Different people often have different deadlines for coming to an agreement. If the other side's deadline is imminent then they will be more likely to make concessions.
+
+This can be deliberately exploited by dragging things out until the other side's deadline approaches.
+
+If you have a deadline to meet, you should ask yourself what the consequences of missing it are. Sometimes it will be worth the cost and sometimes you will just have to make greater concessions to meet it.
+
+## Make it personal, in a good way
+
+Getting the other person to identify with you as a human being can work well. The best way to do that is to appear likeable and to be considerate towards them. 
+
+You can also exploit this by deliberately trying to elicit sympathy from someone. 
+
+It's possible to make things personal in a bad way though. Being unpleasant and inconsiderate in private can make them dislike you. Doing the same thing in public can cause them to "lose face" and will probably make an enemy of them.
+
+To remain relaxed, you can try to imagine you are negotiating on somebody else's behalf. 
