@@ -2,8 +2,9 @@
 title: Notes on Polymer Web Components
 date: 2016-01-26
 tags: polymer
-draft: true
 ---
+
+*[Note: I found this blog post 5 months after I first wrote it. I didn't get around to publishing it at the time but decided I'd rather publish it now than delete it.]*
 
 These are some of my notes from reading through the [Polymer documentation](https://www.polymer-project.org/1.0/). I was using version 1.2.3 so things may have changed since then.
 
@@ -13,9 +14,7 @@ These are some of my notes from reading through the [Polymer documentation](http
 
 - The top level element should be `<dom-module id="my-element">` (the `id` must be the name of the element you are defining).
 
-- Within the `<dom-module>` tag, there is a `<template>` tag which contains:
-    - A `<style>` tag or `<link>` tag for locally scoped styles
-    - Any markup for the element
+- Within the `<dom-module>` tag, there is a `<template>` tag which contains: A `<style>` tag or `<link>` tag for locally scoped styles and any markup for the element
 
 - Within the `<dom-module>` tag, you also have a `<script>` tag which registers the element with the `Polymer()` function.
 
@@ -87,9 +86,7 @@ Use the `hostAttributes` property in the Polymer constructor to make an element 
 
 - Various other options for notifying and data binding control (`reflectToAttribute`, `readOnly`, `notify`, `observer`).
 
-- To map an *attribute name* (i.e. the thing in the HTML source) to a *property*, there are two ways to convert (these do not feel obvious and may trip me up in the future):
-    - Attribute `firstname` or `firstName` goes to property `firstname`
-    - Attribute `first-name` goes to property `firstName`
+- To map an *attribute name* (i.e. the thing in the HTML source) to a *property*, there are two ways to convert (these do not feel obvious and may trip me up in the future): **(1)** Attribute `firstname` or `firstName` goes to property `firstname` or **(2)** attribute `first-name` goes to property `firstName`
 
 - Shorthand for simple properties which only have a `type` and nothing else: `properties: {foo: String, bar: Boolean}`
 
