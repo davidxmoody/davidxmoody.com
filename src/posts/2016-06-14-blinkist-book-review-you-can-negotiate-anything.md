@@ -1,8 +1,7 @@
 ---
 title: "Blinkist book review: You Can Negotiate Anything"
-date: 2016-06-11
+date: 2016-06-14
 tags: blinkist, book-review
-draft: true
 ---
 
 After reading the Influence summary, I decided to jump straight into the recommended next book: [You Can Negotiate Anything](https://app.blinkist.com/blinks/you-can-negotiate-anything-en) by Herb Cohen.
@@ -26,7 +25,7 @@ The only things that should affect your decision about whether to negotiate for 
 Soviet-style negotiators are characterised by:
 
 - Taking *ridiculous* initial positions and refusing to make *significant concessions*
-- Deliberately putting you in contact with negotiators with little authority
+- Deliberately putting you in contact with negotiators who have little authority
 - Using unfair emotional tactics (bullying, walking out, crying, etc)
 
 If facing one, set limits ahead of time and be careful to stick to them.
