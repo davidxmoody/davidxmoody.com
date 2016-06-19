@@ -2,12 +2,11 @@
 title: "Blinkist book review: A Guide to the Good Life"
 date: 2016-06-19
 tags: blinkist, book-review
-draft: true
 ---
 
 This is my review of [A Guide to the Good Life](https://www.blinkist.com/en/books/a-guide-to-the-good-life-en.html) by William B. Irvine. It's a book about Stoicism.
 
-The previous three book summaries I read were packed full of specific tips. The next few I have read are all a bit shorter and dealt with more abstract concepts rather than actionable bullet points. There is nothing wrong with that although I expect the next few posts I write to contain more of my own thoughts than the others. 
+The previous three book summaries I read were packed full of specific tips. The next few are all a bit shorter and deal with more abstract concepts rather than actionable bullet points. 
 
 <!--more-->
 
@@ -33,14 +32,14 @@ To fight the temptations of consumerism, we should learn to appreciate what we a
 
 One tool to do this is called **negative visualisation**. It involves imagining what our lives would be like if something we have or someone we know was lost to us. 
 
-Another tool is **voluntary discomfort**. It means choosing to live without something we are accustomed to (for a little while).
+Another tool is **voluntary discomfort**. It can mean choosing to live without something we are accustomed to (for a little while). It can also mean putting yourself through physical hardship.
 
 Both negative visualisation and voluntary discomfort help to do two things:
 
-1. They hardens us in case of actual loss
-2. They makes us appreciate things more while we still have them
+1. They harden us in case of actual loss
+2. They make us appreciate things more while we still have them
 
-As an example, consider food. If you are accustomed to eating lots of sugary high-calorie food, or if you are accustomed to eating at expensive restaurants then it can take a lot to satisfy you. However, if you have a more simple diet, you can gain much more enjoyment from simple things like an apple.
+As an example, consider food. If you are accustomed to eating lots of sugary high-calorie food, or if you are accustomed to eating at expensive restaurants then it can take a lot to satisfy you. However, if you have a simpler diet, you can gain much more enjoyment from simple things like an apple.
 
 I guess the idea of intermittent fasting is related to this. It's something I've tried in the past but have never stuck with in the long run. I'm interested in trying it again though. 
 
@@ -64,17 +63,17 @@ What you can do in these situations is *internalise your goal* and focus on the 
 
 ## Weather analogy
 
-Of course, the third category is pretty complicated. Stephen Fry gives the example of our moods being like the weather. He says when it's raining, there is no point walking out in a t-shirt and expect not to get wet. Similarly when you are depressed, you can't do the things you normally do and expect them to be the same. He says that in the first case, you need to bring an umbrella and in the second, you need to adjust your actions accordingly. 
+Of course, the third category is pretty complicated. Stephen Fry gives the example of our moods being like the weather. He says when it's raining, there is no point walking out in a t-shirt and expect not to get wet. Similarly when you are depressed, you can't do the things you normally do and expect them to be the same. He says that you just need to bring an umbrella and realise that it won't be raining forever.
 
 I like that analogy in some ways. However it does not account for the fact that we have a lot of *indirect influence* over our moods. Many things feed into our mood system. Some of them we have direct control over, some we don't and most we only have a little control over.
 
 I feel like the art of Stoicism is being able to pull apart the complex web of your life and focus on the parts which you do control. 
 
-That is not a trivial thing to do at all. For example, nobody can will themselves to lose 5lbs in the next minute. It requires a longer more disciplined approach of eating healthily and exercising often. You have to understand how your everyday actions affect your life in the long-term.
+That is not a trivial thing to do at all. For example, nobody can will themselves to lose 5lbs in the next minute. It requires a longer-term, more disciplined approach of eating healthily and exercising often. You have to understand how your everyday actions affect your life in the long-term.
 
 ## Examples
 
-One example (which is relevant to me as I'm writing this) is what to do when my internet connection becomes unreliable. I can either sit there turning my router off and on again and getting frustrated. Or I can accept that there really isn't anything I can do to make it better right now and do something that doesn't require a constant internet connection.
+One example (which is relevant to me as I'm writing this) is what to do when my internet connection becomes unreliable. I can either sit here turning my router off and on again and getting frustrated. Or I can accept that there really isn't anything I can do to make it better right now and do something that doesn't require a constant internet connection.
 
 Another example could be the success of my company. Ultimately, I cannot control whether our product is successful or not. The biggest influence over that is the market conditions which I literally have no control over. 
 
@@ -100,7 +99,7 @@ Stoicism says that your mental state contributes significantly more to your happ
 
 As evidence for this, you only have to look around at the world and see all the wealthy yet miserable people.
 
-Part of the reason for this is that the things that we do in the pursuit of wealth can make us unhappy. For example: working long hours with a long commute at a job that doesn't help people. The other reason is hedonic adaptation, we can work really hard to pay for something and then find it doesn't make us happy anyway.
+This is partly because the things we do to pursue wealth can make us unhappy. For example: working long hours with a long commute at a job that doesn't help people. The other reason is hedonic adaptation, we can work really hard to pay for something and then find it doesn't make us happy anyway.
 
 Again though, Stoicism advocates the path of moderation. Being poor can of course be terrible for your happiness. If you can't afford to eat or if you constantly fear not being able to pay rent then it can be far worse than the alternative.
 
@@ -112,7 +111,7 @@ Of course, I still plan to save as much as I can. If I *could* retire at 40 then
 
 ## Life and death
 
-Stoicism also says something about how to deal with other people's deaths. You cannot control how long other people live and dwelling for too long on it is not helpful. 
+Stoicism also says something about how to deal with other people's deaths. You cannot control how long other people live. 
 
 Again, you can use *negative visualisation*. It can both mentally prepare you for inevitable losses and also make you appreciate the time you still have with the people you love.
 
@@ -133,5 +132,3 @@ This turned out to be a longer post than I expected. I would definitely call mys
 Stoicism can help you make decisions in your life by asking what options will help you maintain your tranquillity and help your reach your goals.
 
 *Negative visualisations* and *voluntary discomfort* are both helpful tools to help you appreciate what you already have and harden you in case of loss.
-
-I've also read another summary of another book on Stoicism which I will post soon.
