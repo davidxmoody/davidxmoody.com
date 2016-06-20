@@ -117,11 +117,11 @@ Again, you can use *negative visualisation*. It can both mentally prepare you fo
 
 This also applies to your own life. By thinking about the time you have left, you can appreciate your time more. Younger people often fail to appreciate time as much as older people because their own death seems further away.
 
-It reminds me again of [this amazing Wait But Why article](http://waitbutwhy.com/2014/05/life-weeks.html). It visualises your own life in years then months then weeks by drawing them all on the screen at once. By seeing every single week you will live (in an assumed 90 year lifespan), you can see how precious each one is. 
+It reminds me again of [this amazing Wait But Why post](http://waitbutwhy.com/2014/05/life-weeks.html). It visualises your own life in years, months and weeks by showing them all on the screen at once. By seeing every single week you will live (in an assumed 90 year lifespan), you can see how precious each one is. 
 
-About six months ago, I got really into that idea and created [this project](https://github.com/davidxmoody/life-calendar) for visualising every week of my life on one page. It was heavily inspired by the previously mentioned Wait But Why post. It had the additional advantage of actually pairing up each week in the calendar with a specific date. I also overlaid custom "eras" of my life (school, uni, first job, etc) to see how I have spent my time already. I have vague plans to expand it and make each week click-able to show my diary from that period. 
+About six months ago, I got really into that idea and created [this project](https://github.com/davidxmoody/life-calendar) for visualising every week of my life on one page. It was heavily inspired by that Wait But Why post. It also pairs up each week in the calendar with a specific date. I also overlaid custom "eras" of my life (school, uni, first job, etc) to see how I have spent my time already. I have vague plans to expand it and make each week click-able to show my diary from that period. 
 
-I think it's an excellent way to think about your life. Accepting that you will not live forever is an great way to make the most of your time.
+I think it's an excellent way to think about your life. Accepting that you will not live forever is a great way to make the most of your time.
 
 I hesitate to write this but there is of course hope that technology will advance enough in our lifetimes to actually make us live forever. You can have yourself cryogenically frozen *today* if you pay enough. I'm still very doubtful about it but I have some vague hope that I will live significantly more than 90 years if I get lucky. Of course, that is very much beyond my control. I want to focus on living the best life I can right now and if I get to live much longer then it's a bonus.
 
