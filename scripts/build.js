@@ -70,7 +70,7 @@ export default function(specifiedOptions = {}, callback) {
     'collections.posts': {
       perPage: 9,
       first: 'index.html',
-      template: 'NOT_USED',
+      layout: 'wrapper.hbs',
       path: 'page:num/index.html',
       pageMetadata: {
         rtemplate: 'ArticleList',
