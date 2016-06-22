@@ -40,7 +40,8 @@ export default function(specifiedOptions = {}, callback) {
 
   // CONFIG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  const m = Metalsmith(path.resolve(__dirname, '..'))
+  const m = Metalsmith(options.srcDir)
+  m.destination(options.buildDir)
   m.metadata(options)
 
   // POSTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
