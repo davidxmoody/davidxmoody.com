@@ -1,8 +1,7 @@
 import React from 'react'
 import PaginationLink from './PaginationLink'
 
-export default ({ file }) => {
-
+export default ({file}) => {
   const pagin = file.pagination
 
   const current = pagin.num
@@ -23,42 +22,47 @@ export default ({ file }) => {
 
   const links = []
 
-  links.push(<PaginationLink
-    key="prev"
-    disabled={!pagin.previous}
-    href={pagin.previous ? pagin.previous.relativeURL : ''}
-  >&laquo;</PaginationLink>)
+  links.push(React.createElement(PaginationLink, {
+    key: 'prev',
+    disabled: !pagin.previous,
+    href: pagin.previous ? pagin.previous.relativeURL : '',
+  }, '«'))
 
   nums.forEach((num, index) => {
     if (num === ellipsis) {
-      links.push(<span className="pagination__ellipsis" key={'ellipsis-' + index} />)
+      links.push(React.createElement('span', {
+        key: 'ellipsis-' + index,
+        className: 'pagination__ellipsis',
+      }))
     } else {
       for (const page of pagin.pages) {
         if (page.pagination.num === num) {
-          links.push(<PaginationLink
-            key={page.pagination.num}
-            disabled={file === page}
-            href={page.relativeURL}
-          >{page.pagination.num}</PaginationLink>)
+          links.push(React.createElement(PaginationLink, {
+            key: page.pagination.num,
+            disabled: file === page,
+            href: page.relativeURL,
+          }, page.pagination.num))
         }
       }
     }
   })
 
-  links.push(<PaginationLink
-    key="next"
-    disabled={!pagin.next}
-    href={pagin.next ? pagin.next.relativeURL : ''}
-  >&raquo;</PaginationLink>)
+  links.push(React.createElement(PaginationLink, {
+    key: 'next',
+    disabled: !pagin.next,
+    href: pagin.next ? pagin.next.relativeURL : '',
+  }, '»'))
 
   const realLinks = []
   links.forEach((link, index) => {
     if (index && nums[index - 2] !== ellipsis && nums[index - 1] !== ellipsis) {
-      realLinks.push(<span className="pagination__separator" key={'separator-' + index} />)
+      realLinks.push(React.createElement('span', {
+        key: 'separator-' + index,
+        className: 'pagination__separator',
+      }))
     }
     realLinks.push(link)
   })
 
-  return <p className="pagination">{realLinks}</p>
-
+  return React.createElement('p', {className: 'pagination'}, realLinks)
 }

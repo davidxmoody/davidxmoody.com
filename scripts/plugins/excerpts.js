@@ -7,14 +7,13 @@ function paraCount(text) {
 function getReadMoreText(text) {
   const remainingCount = paraCount(text)
 
-  switch (remainingCount) {
-  case 0:
+  if (remainingCount === 0) 
     return 'View post on separate page'
-  case 1:
+
+  if (remainingCount === 1) 
     return 'Read 1 remaining paragraph...'
-  default:
-    return `Read ${remainingCount} remaining paragraphs...`
-  }
+
+  return `Read ${remainingCount} remaining paragraphs...`
 }
 
 export default function() {
