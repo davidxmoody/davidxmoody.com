@@ -2,7 +2,6 @@
 
 ## Quick tech tips
 
-- Tip to use beautify with zero indent and infinite line length as an alternative to html minification
 - Extract information from Jekyll-like filenames and put it into the file: `for f in 20*; do d=$(echo $f |grep -oP '\d{4}-\d\d-\d\d'); sed -i "/title:/a\date: $d" $f; done`
 - Adding Git branch to Bash prompt, and whether or not the current branch has been pushed to origin
 

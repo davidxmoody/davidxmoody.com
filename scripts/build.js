@@ -7,7 +7,6 @@ import ArticleList from './components/ArticleList'
 
 import Metalsmith from 'metalsmith'
 import autoprefixer from 'metalsmith-autoprefixer'
-import beautify from 'metalsmith-beautify'
 import blc from 'metalsmith-broken-link-checker'
 import collections from 'metalsmith-collections'
 import drafts from 'metalsmith-drafts'
@@ -126,13 +125,6 @@ export default function(specifiedOptions = {}, callback) {
   // PRODUCTION ONLY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   if (options.production) {
-
-    // BEAUTIFY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    m.use(beautify({
-      wrap_line_length: 100000,
-      indent_size: 0,
-    }))
 
     // SITEMAP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
