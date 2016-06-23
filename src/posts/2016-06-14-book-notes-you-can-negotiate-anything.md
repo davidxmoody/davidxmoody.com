@@ -1,5 +1,5 @@
 ---
-title: "Blinkist book review: You Can Negotiate Anything"
+title: "Book notes: You Can Negotiate Anything"
 date: 2016-06-14
 tags: blinkist, book-review
 ---

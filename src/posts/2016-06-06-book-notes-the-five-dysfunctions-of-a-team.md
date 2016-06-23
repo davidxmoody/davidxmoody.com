@@ -1,5 +1,5 @@
 ---
-title: "Blinkist book review: The Five Dysfunctions of a Team"
+title: "Book notes: The Five Dysfunctions of a Team"
 date: 2016-06-06
 tags: blinkist, book-review
 ---

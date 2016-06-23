@@ -1,5 +1,5 @@
 ---
-title: "Blinkist book review: A Guide to the Good Life"
+title: "Book notes: A Guide to the Good Life"
 date: 2016-06-19
 tags: blinkist, book-review
 ---

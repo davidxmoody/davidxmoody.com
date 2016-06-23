@@ -1,5 +1,5 @@
 ---
-title: "Blinkist book review: Influence"
+title: "Book notes: Influence"
 date: 2016-06-09
 tags: blinkist, book-review
 ---

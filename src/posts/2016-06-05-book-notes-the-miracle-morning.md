@@ -1,5 +1,5 @@
 ---
-title: "Blinkist book review: The Miracle Morning"
+title: "Book notes: The Miracle Morning"
 date: 2016-06-05
 tags: blinkist, book-review
 ---
