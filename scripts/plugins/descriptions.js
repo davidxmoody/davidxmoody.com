@@ -1,4 +1,4 @@
-import cheerio from 'cheerio'
+const cheerio = require('cheerio')
 
 const maxDescriptionLength = 155
 
@@ -18,12 +18,10 @@ function getDescription(html) {
   return description
 }
 
-export default function() {
-  return (files, metalsmith) => {
-    for (const file of metalsmith.metadata().posts) {
-      if (!file.description) {
-        file.description = getDescription(file.contents.toString())
-      }
+module.exports = () => (files, metalsmith) => {
+  for (const file of metalsmith.metadata().posts) {
+    if (!file.description) {
+      file.description = getDescription(file.contents.toString())
     }
   }
 }

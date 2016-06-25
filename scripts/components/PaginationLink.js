@@ -1,6 +1,6 @@
-import React from 'react'
+const React = require('react')
 
-export default ({ href, disabled, children }) => {
+module.exports = ({ href, disabled, children }) => {
   if (disabled) {
     return React.createElement('span', {className: 'pagination__disabled', children})
   }

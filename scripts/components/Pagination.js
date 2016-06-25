@@ -1,7 +1,7 @@
-import React from 'react'
-import PaginationLink from './PaginationLink'
+const React = require('react')
+const PaginationLink = require('./PaginationLink')
 
-export default ({file}) => {
+module.exports = ({file}) => {
   const pagin = file.pagination
 
   const current = pagin.num

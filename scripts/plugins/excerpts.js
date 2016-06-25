@@ -16,12 +16,10 @@ function getReadMoreText(text) {
   return `Read ${remainingCount} remaining paragraphs...`
 }
 
-export default function() {
-  return (files, metalsmith) => {
-    for (const file of metalsmith.metadata().posts) {
-      const [before, after] = file.contents.toString().split(excerptSeparator, 2)
-      const readMoreText = getReadMoreText(after)
-      file.excerpt = `${before} <p><a href="${file.relativeURL}">${readMoreText}</a></p>`
-    }
+module.exports = () => (files, metalsmith) => {
+  for (const file of metalsmith.metadata().posts) {
+    const [before, after] = file.contents.toString().split(excerptSeparator, 2)
+    const readMoreText = getReadMoreText(after)
+    file.excerpt = `${before} <p><a href="${file.relativeURL}">${readMoreText}</a></p>`
   }
 }

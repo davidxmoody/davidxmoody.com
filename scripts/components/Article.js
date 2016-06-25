@@ -1,7 +1,7 @@
-import React from 'react'
-import moment from 'moment'
+const React = require('react')
+const moment = require('moment')
 
-export default ({file, shortened = false}) => {
+module.exports = ({file, shortened = false}) => {
   const {date, title, excerpt, contents} = file
   const formattedDate = moment(date).format('ll')
   const articleContents = shortened ? excerpt : contents.toString()

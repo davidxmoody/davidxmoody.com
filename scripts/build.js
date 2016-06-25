@@ -1,27 +1,27 @@
-import React from 'react'
-import ReactDOMServer from 'react-dom/server'
-import path from 'path'
+const React = require('react')
+const ReactDOMServer = require('react-dom/server')
+const path = require('path')
 
-import Article from './components/Article'
-import ArticleList from './components/ArticleList'
+const Article = require('./components/Article')
+const ArticleList = require('./components/ArticleList')
 
-import Metalsmith from 'metalsmith'
-import autoprefixer from 'metalsmith-autoprefixer'
-import blc from 'metalsmith-broken-link-checker'
-import collections from 'metalsmith-collections'
-import drafts from 'metalsmith-drafts'
-import feed from 'metalsmith-feed'
-import fingerprint from 'metalsmith-fingerprint'
-import ignore from 'metalsmith-ignore'
-import layouts from 'metalsmith-layouts'
-import pagination from 'metalsmith-pagination'
-import permalinks from 'metalsmith-permalinks'
-import sass from 'metalsmith-sass'
-import sitemap from 'metalsmith-sitemap'
+const Metalsmith = require('metalsmith')
+const autoprefixer = require('metalsmith-autoprefixer')
+const blc = require('metalsmith-broken-link-checker')
+const collections = require('metalsmith-collections')
+const drafts = require('metalsmith-drafts')
+const feed = require('metalsmith-feed')
+const fingerprint = require('metalsmith-fingerprint')
+const ignore = require('metalsmith-ignore')
+const layouts = require('metalsmith-layouts')
+const pagination = require('metalsmith-pagination')
+const permalinks = require('metalsmith-permalinks')
+const sass = require('metalsmith-sass')
+const sitemap = require('metalsmith-sitemap')
 
-import excerpts from './plugins/excerpts'
-import markdown from './plugins/markdown'
-import descriptions from './plugins/descriptions'
+const excerpts = require('./plugins/excerpts')
+const markdown = require('./plugins/markdown')
+const descriptions = require('./plugins/descriptions')
 
 const DEFAULT_OPTIONS = {
   title: "David Moody's Blog",
@@ -34,14 +34,13 @@ const DEFAULT_OPTIONS = {
   production: true,
 }
 
-export default function(specifiedOptions = {}, callback) {
+module.exports = (specifiedOptions = {}, callback) => {
 
   const options = Object.assign({}, DEFAULT_OPTIONS, specifiedOptions)
 
   // CONFIG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  const m = Metalsmith(options.srcDir)
-  m.destination(options.buildDir)
+  const m = Metalsmith(path.resolve(__dirname, '..'))
   m.metadata(options)
 
   // POSTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

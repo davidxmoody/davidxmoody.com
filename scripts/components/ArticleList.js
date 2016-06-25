@@ -1,8 +1,8 @@
-import React from 'react'
-import Article from './Article'
-import Pagination from './Pagination'
+const React = require('react')
+const Article = require('./Article')
+const Pagination = require('./Pagination')
 
-export default ({file}) => {
+module.exports = ({file}) => {
   const articles = file.pagination.files.map((f, index) => {
     return React.createElement(Article, {key: index, file: f, shortened: true})
   })

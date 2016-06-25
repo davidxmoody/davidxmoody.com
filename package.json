@@ -5,8 +5,8 @@
     "node": ">=6.2.2"
   },
   "scripts": {
-    "start": "rollup --format=cjs run-watch.js | node",
-    "build": "rollup --format=cjs run-build.js | node",
+    "start": "gulp watch",
+    "build": "gulp build",
     "deploy": "npm run build && ./scripts/helpers/deploy"
   },
   "dependencies": {
@@ -32,7 +32,6 @@
     "metalsmith-sitemap": "^1.0.0",
     "moment": "^2.11.0",
     "react": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "rollup": "^0.32.0"
+    "react-dom": "^15.1.0"
   }
 }
