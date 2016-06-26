@@ -1,9 +1,5 @@
-const React = require('react')
-const ReactDOMServer = require('react-dom/server')
 const path = require('path')
-
-const Article = require('./components/Article')
-const ArticleList = require('./components/ArticleList')
+const moment = require('moment')
 
 const Metalsmith = require('metalsmith')
 const autoprefixer = require('metalsmith-autoprefixer')
@@ -57,6 +53,13 @@ module.exports = (specifiedOptions = {}, callback) => {
     },
   }))
 
+  m.use((files, metalsmith) => {
+    for (const file of metalsmith.metadata().posts) {
+      file.layout = 'post.njk'
+      file.formattedDate = moment(file.date).format('ll')
+    }
+  })
+
   m.use(markdown())
 
   m.use(descriptions())
@@ -69,11 +72,8 @@ module.exports = (specifiedOptions = {}, callback) => {
     'collections.posts': {
       perPage: 9,
       first: 'index.html',
-      layout: 'wrapper.hbs',
+      layout: 'post-list.njk',
       path: 'page:num/index.html',
-      pageMetadata: {
-        rtemplate: 'ArticleList',
-      },
     },
   }))
 
@@ -100,26 +100,12 @@ module.exports = (specifiedOptions = {}, callback) => {
   m.use(fingerprint({pattern: 'css/main.css'}))
   m.use(ignore(['css/_*.sass', 'css/main.css']))
 
-  // TEMPLATES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  m.use((files, metalsmith) => {
-    for (const file of metalsmith.metadata().posts) {
-      const markup = ReactDOMServer.renderToStaticMarkup(React.createElement(Article, {file}))
-      file.contents = new Buffer(markup)
-    }
-    for (const filename in files) {
-      const file = files[filename]
-      if (file.rtemplate === 'ArticleList') {
-        const markup = ReactDOMServer.renderToStaticMarkup(React.createElement(ArticleList, {file}))
-        file.contents = new Buffer(markup)
-      }
-    }
-  })
+  // LAYOUTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   m.use(layouts({
-    engine: 'handlebars',
+    engine: 'nunjucks',
     pattern: '**/*.html',
-    default: 'wrapper.hbs',
+    default: 'page.njk',
   }))
 
   // PRODUCTION ONLY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
