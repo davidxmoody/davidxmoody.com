@@ -17,7 +17,6 @@ const sitemap = require('metalsmith-sitemap')
 
 const excerpts = require('./plugins/excerpts')
 const markdown = require('./plugins/markdown')
-const descriptions = require('./plugins/descriptions')
 
 const DEFAULT_OPTIONS = {
   title: "David Moody's Blog",
@@ -61,8 +60,6 @@ module.exports = (specifiedOptions = {}, callback) => {
   })
 
   m.use(markdown())
-
-  m.use(descriptions())
 
   m.use(permalinks({pattern: ':title/'}))
 

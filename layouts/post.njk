@@ -1,5 +1,9 @@
 {% extends "layouts/base.njk" %}
 
+{% block description -%}
+  {{ contents | striptags | truncate(152) | safe }}
+{%- endblock %}
+
 {% block content %}
   <article>
     <header>
