@@ -6,7 +6,7 @@ tags: blinkist, book-review
 
 For my third Blinkist book summary, I chose [Influence](https://www.blinkist.com/en/books/influence-en.html) by Robert B. Cialdini. 
 
-I bought this book on Kindle about 4 years ago but only read the fist three chapters. I've always wanted to finish it and this was a good opportunity to see what else was in the book.
+I bought this book on Kindle about 4 years ago but only read the first three chapters. I've always wanted to finish it and this was a good opportunity to see what else was in the book.
 
 <!--more-->
 
