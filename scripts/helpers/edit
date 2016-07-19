@@ -1,3 +1,3 @@
 #!/bin/bash
 
-vim "$BLOG_DIR/src/posts/$(ls -t $BLOG_DIR/src/posts | head -1)"
+nvim "$BLOG_DIR/src/posts/$(ls -t $BLOG_DIR/src/posts | head -1)"

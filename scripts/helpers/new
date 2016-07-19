@@ -7,5 +7,5 @@ title=$*
 slug=$(sed -e 's/[^a-z0-9]\+/-/g' -e 's/-$//' <<< ${title,,})
 date=$(date +%F)
 
-vim "+normal i---title: $titleslug: $slugdate: $datetags: draft: true---" \
+nvim "+normal i---title: $titleslug: $slugdate: $datetags: draft: true---" \
     "$BLOG_DIR/src/posts/$date-$slug.md"
