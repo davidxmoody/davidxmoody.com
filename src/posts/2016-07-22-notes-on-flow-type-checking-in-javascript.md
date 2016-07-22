@@ -1,12 +1,11 @@
 ---
 title: Notes on Flow type checking in JavaScript
 slug: notes-on-flow-type-checking-in-javascript
-date: 2016-07-19
-tags: 
-draft: true
+date: 2016-07-22
+tags: JavaScript, Flow
 ---
 
-Here are some rough notes while setting up [Flow](https://flowtype.org/) and reading through all of the [official docs](https://flowtype.org/docs/getting-started.html).
+Here are some rough notes I made while setting up [Flow](https://flowtype.org/) and reading through the [official docs](https://flowtype.org/docs/getting-started.html). These notes probably won't be that useful to anyone but me.
 
 <!--more-->
 
