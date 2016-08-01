@@ -95,3 +95,17 @@ Edit: After further experimentation, I think that `Html.Attribute` accepts one a
 - I notice that in the examples, the value of input fields is not bound...
 
 Just reached [here](http://guide.elm-lang.org/architecture/effects/random.html)...
+
+## Effects
+
+For producing effects, your model should return a tuple of the new model plus an effect command. Use `Cmd.none` for an empty command.
+
+- Use `Random.generate` to create a command to generate a random action
+- Must also tell it how to create a message: `Random.generate NewFace (Random.int 1 6)`
+
+Just wrote out the basic dice program from scratch without looking at anything for reference. Seems relatively straightforward. Apparently `Sub` and `Cmd` appear to be always available and they both have a `.none` property to do nothing.
+
+Difference between `type` and `type alias`:
+
+- `type alias` is just an alias for something that already would have been a valid type before (e.g. a specific type of record)
+- `type` constructs a new type that did not exist before, it defines a union of new type constructors (which accept any arguments) used to construct something of that type
