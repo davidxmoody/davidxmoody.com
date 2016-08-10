@@ -109,3 +109,35 @@ Difference between `type` and `type alias`:
 
 - `type alias` is just an alias for something that already would have been a valid type before (e.g. a specific type of record)
 - `type` constructs a new type that did not exist before, it defines a union of new type constructors (which accept any arguments) used to construct something of that type
+
+Http fetching seems okay, if a tad verbose:
+
+- `Task.perform FetchFail FetchSucceed (Http.get decodeGifUrl url)`
+- Use `Task.perform` for something that might fail
+- Need to decode the server response JSON using the `Json.Decoder` stuff which I won't write about here
+- WebSockets seem nice although I've never actually used them on the server before anyway
+
+## Modularity
+
+Modules expose stuff at the top of the file:
+
+```elm
+module Counter exposing (Model, Msg, init, update, view)
+```
+
+In the above example, external code cannot instantiate a value of type `Msg` because it only has access to the `Msg` type and not the type constructors that make it up.
+
+- `App.map Top (Counter.view model.topCounter)`
+- Compose views with `App.map` to make any messages passed from the `Html` get preceded by the `Top` constructor
+
+## More notes on types
+
+- Function definitions are just shorthand for assigning a lambda expression: `half n = n / 2` is treated identically to `half = \n -> n / 2` (the syntax is obviously much more useful when you have multiple arguments)
+- You can have *type variables* `type List a = Empty | Node a (List a)`
+- You can have triple quoted strings `decodeString user """{ "name": "Tom", "age": 42 }"""`
+
+## How to use in the real world
+
+- Generate full index.html file and let it set everything up for you
+- Generate a JavaScript file which sets a global `Elm.MyModule` variable to have three methods: `fullscreen()` to take over the body tag, `embed(node)` to mount on a node and `worker()` to just run it with no UI
+- Could theoretically use with React with the embed method style
