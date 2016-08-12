@@ -141,3 +141,23 @@ In the above example, external code cannot instantiate a value of type `Msg` bec
 - Generate full index.html file and let it set everything up for you
 - Generate a JavaScript file which sets a global `Elm.MyModule` variable to have three methods: `fullscreen()` to take over the body tag, `embed(node)` to mount on a node and `worker()` to just run it with no UI
 - Could theoretically use with React with the embed method style
+
+## Ports
+
+- Initialise an app with `const app = Elm.AppName.fullscreen()`
+- Subscribe to a port with `app.ports.check.subscribe(callback)`
+- Send data back through a port with `app.ports.suggestions.send(data)`
+
+Then create ports with the following syntax:
+
+```elm
+port check : String -> Cmd msg
+
+port suggestions : (List String -> msg) -> Sub msg
+```
+
+The syntax is a bit weird but the basic idea is that you use the first port and provide it with a string value. This then returns a command and when that command is passed to Elm, it notifies the JavaScript subscriber on that port with that string value. 
+
+The second type of port is given a function that can interpret whatever JavaScript gives it and returns a message. After being given a processing function, it returns a subscription which is passed to Elm and will process anything given on that port and return a message which gets dispatched to the update cycle.
+
+Most JSON-like values can be transferred and there are various rules to prevent incorrect things getting in (if you try to pass something wrong from JavaScript it will throw an error straight away).
