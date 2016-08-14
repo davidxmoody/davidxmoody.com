@@ -1,12 +1,15 @@
 ---
 title: Notes on Elm
 slug: notes-on-elm
-date: 2016-07-29
-tags: 
-draft: true
+date: 2016-08-14
+tags: Elm
 ---
 
-Here are some of my notes from reading through the [Elm docs](http://guide.elm-lang.org/).
+I recently got interested in the Elm programming language. A little while ago I started reading the PureScript docs and then later started learning Haskell. However I'm generally much more focused on frontend development and could never really see myself using either of those languages for much.
+
+Elm has most of the awesome functional programming features of Haskell. It also has a lot of similarities with Redux and can actually be used to create real-world applications. 
+
+Here are some of my rough notes from reading through the [Elm docs](http://guide.elm-lang.org/). I also implemented most of the examples from the docs, with my own modifications, in [this repo](https://github.com/davidxmoody/elm-play).
 
 <!--more-->
 
@@ -15,9 +18,9 @@ Here are some of my notes from reading through the [Elm docs](http://guide.elm-l
 - Strings require double quotes
 - String concatenation with double plus `++`
 - Rounded integer division supported with double slash `//` (like in Python)
-- True and False values need to be capitalised
+- True and False values need to be capitalised (like in Python)
 - `if cond then value1 else value2` (like Python again)
-- There is no concept of truthy/falsy values like in JavaScript
+- There is no concept of truthy/falsy values (unlike JavaScript)
 - List functions: `List.isEmpty`, `List.length`, `List.reverse`, `List.sort`, `List.map`
 - Tuples with brackets for returning multiple values
 - Records like objects, define with equals symbols instead of colons `{ x = 3, y = 4 }`, access with dot notation `point.x`
@@ -55,7 +58,6 @@ elm-reactor
 - Easily added a button component
 - Adding a class name to a component requires `div [ attribute "class" "my-class" ] []` with `attribute` from the `Html.Attributes` package
 
-
 **Something I don't understand:** 
 
 I wrote this function to abstract away the creation of a button style:
@@ -85,16 +87,14 @@ Removing the type works fine and loading it up in the repl tells me the type is 
 
 I don't currently know what the `a` argument passed to the `Html.Attribute` type is doing...
 
-Edit: After further experimentation, I think that `Html.Attribute` accepts one argument (to make it a generic type or whatever that's called in Elm). If that argument starts with a lower-case character then it is a generic type variable (e.g. how a filter function might map from any type of list to the same type of list given a function that accepts that type and returns a boolean). However the actual type that it needs to match with in this case is the `Msg` type (because the attributes can potentially be handlers which return messages I guess).
+Edit: After further experimentation, I think that `Html.Attribute` accepts one argument (to make it a generic type or whatever that's called in Elm). If that argument starts with a lower-case character then it is a generic type variable. However the actual type that it needs to match with in this case is the `Msg` type (because the attributes can potentially be handlers which return messages I guess).
 
 ## Form example
 
-- Not sure what is going on constructing the model with three empty strings (`model = Model "" "" ""`), putting values in there seems to update the values of the model even though when the html renders for the first time, there are no values in the text boxes (not sure if bug or intended behaviour)
-- Seems that the "type" html input attribute has to be called `type'`
-- Can use `let ... in ...` syntax for temporary variables
-- I notice that in the examples, the value of input fields is not bound...
-
-Just reached [here](http://guide.elm-lang.org/architecture/effects/random.html)...
+- Not sure what is going on constructing the model with three empty strings (`model = Model "" "" ""`), putting values in there seems to update the values of the model even though when the HTML renders for the first time, there are no values in the text boxes (not sure if bug or intended behaviour)
+- **Edit:** Wait, I just realised that it's because the inputs are never actually being passed a value, they only have an `onInput` handler which won't actually control the initial value passed...
+- Seems that the "type" HTML input attribute has to be called `type'` to avoid a naming clash
+- Can use `let ... in ...` syntax for (multiple) temporary variables
 
 ## Effects
 
@@ -113,7 +113,7 @@ Difference between `type` and `type alias`:
 Http fetching seems okay, if a tad verbose:
 
 - `Task.perform FetchFail FetchSucceed (Http.get decodeGifUrl url)`
-- Use `Task.perform` for something that might fail
+- Use `Task.perform` for something that might fail with two message constructors for each case
 - Need to decode the server response JSON using the `Json.Decoder` stuff which I won't write about here
 - WebSockets seem nice although I've never actually used them on the server before anyway
 
@@ -140,7 +140,7 @@ In the above example, external code cannot instantiate a value of type `Msg` bec
 
 - Generate full index.html file and let it set everything up for you
 - Generate a JavaScript file which sets a global `Elm.MyModule` variable to have three methods: `fullscreen()` to take over the body tag, `embed(node)` to mount on a node and `worker()` to just run it with no UI
-- Could theoretically use with React with the embed method style
+- Could theoretically use with React with the embed method style and React refs to get access to the DOM node to mount on
 
 ## Ports
 
@@ -160,4 +160,4 @@ The syntax is a bit weird but the basic idea is that you use the first port and 
 
 The second type of port is given a function that can interpret whatever JavaScript gives it and returns a message. After being given a processing function, it returns a subscription which is passed to Elm and will process anything given on that port and return a message which gets dispatched to the update cycle.
 
-Most JSON-like values can be transferred and there are various rules to prevent incorrect things getting in (if you try to pass something wrong from JavaScript it will throw an error straight away).
+Most JSON-like values can be transferred and there are various rules to prevent incorrect things getting in (if you try to pass something wrong from JavaScript it will throw an error before even reaching Elm).
