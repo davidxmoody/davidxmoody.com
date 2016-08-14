@@ -53,7 +53,7 @@ For my standing desk, I use [these Bluedio Bluetooth headphones](http://www.amaz
 
 ## Grooveshark broadcasts
 
-*[Edit: Unfortunately no longer available.]*
+*[Edit: Unfortunately Grooveshark has been shut down.]*
 
 [Grooveshark](http://grooveshark.com/) is pretty great. It offers an incredibly easy to use streaming service. It runs in the browser and is completely free. 
 
