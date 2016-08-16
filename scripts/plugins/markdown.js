@@ -1,5 +1,5 @@
-const marked = require('marked')
-const {highlight} = require('highlight.js')
+const marked = require("marked")
+const {highlight} = require("highlight.js")
 
 const markdownRegex = /\.(md|mkd|markdown)$/
 
@@ -18,7 +18,7 @@ module.exports = () => files => {
       const formatted = marked(rawStr, markedOptions)
       file.contents = new Buffer(formatted)
 
-      const newFilename = filename.replace(markdownRegex, '.html')
+      const newFilename = filename.replace(markdownRegex, ".html")
       delete files[filename]
       files[newFilename] = file
     }

@@ -8,10 +8,10 @@ function getReadMoreText(text) {
   const remainingCount = paraCount(text)
 
   if (remainingCount === 0) 
-    return 'View post on separate page'
+    return "View post on separate page"
 
   if (remainingCount === 1) 
-    return 'Read 1 remaining paragraph...'
+    return "Read 1 remaining paragraph..."
 
   return `Read ${remainingCount} remaining paragraphs...`
 }
