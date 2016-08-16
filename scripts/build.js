@@ -54,7 +54,7 @@ module.exports = (specifiedOptions = {}, callback) => {
 
   m.use((files, metalsmith) => {
     for (const file of metalsmith.metadata().posts) {
-      file.layout = "post.njk"
+      file.layout = "post.html"
       file.formattedDate = moment(file.date).format("ll")
     }
   })
@@ -69,7 +69,7 @@ module.exports = (specifiedOptions = {}, callback) => {
     "collections.posts": {
       perPage: 9,
       first: "index.html",
-      layout: "post-list.njk",
+      layout: "post-list.html",
       path: "page:num/index.html",
     },
   }))
@@ -102,7 +102,7 @@ module.exports = (specifiedOptions = {}, callback) => {
   m.use(layouts({
     engine: "nunjucks",
     pattern: "**/*.html",
-    default: "page.njk",
+    default: "page.html",
   }))
 
   // PRODUCTION ONLY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

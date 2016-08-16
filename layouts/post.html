@@ -1,4 +1,4 @@
-{% extends "layouts/base.njk" %}
+{% extends "layouts/base.html" %}
 
 {% block description -%}
   {{ contents | striptags | truncate(152) | safe }}
