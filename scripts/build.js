@@ -7,7 +7,6 @@ const blc = require("metalsmith-broken-link-checker")
 const collections = require("metalsmith-collections")
 const drafts = require("metalsmith-drafts")
 const feed = require("metalsmith-feed")
-const ignore = require("metalsmith-ignore")
 const layouts = require("metalsmith-layouts")
 const pagination = require("metalsmith-pagination")
 const permalinks = require("metalsmith-permalinks")
@@ -74,7 +73,7 @@ module.exports = (specifiedOptions = {}, callback) => {
   }))
 
   // Don"t duplicate the first page
-  m.use(ignore(["page1/index.html"]))
+  m.use(files => delete files["page1/index.html"])
 
   m.use(files => {
     for (const filename in files) {
