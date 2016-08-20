@@ -20,7 +20,6 @@
     "metalsmith-collections": "^0.7.0",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-feed": "^0.2.0",
-    "metalsmith-fingerprint": "^1.0.3",
     "metalsmith-ignore": "^0.1.2",
     "metalsmith-layouts": "^1.6.5",
     "metalsmith-markdown": "^0.2.1",

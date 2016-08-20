@@ -7,7 +7,6 @@ const blc = require("metalsmith-broken-link-checker")
 const collections = require("metalsmith-collections")
 const drafts = require("metalsmith-drafts")
 const feed = require("metalsmith-feed")
-const fingerprint = require("metalsmith-fingerprint")
 const ignore = require("metalsmith-ignore")
 const layouts = require("metalsmith-layouts")
 const pagination = require("metalsmith-pagination")
@@ -93,9 +92,6 @@ module.exports = (specifiedOptions = {}, callback) => {
 
   m.use(sass())
   m.use(autoprefixer())
-
-  m.use(fingerprint({pattern: "css/main.css"}))
-  m.use(ignore(["css/_*.sass", "css/main.css"]))
 
   // LAYOUTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
