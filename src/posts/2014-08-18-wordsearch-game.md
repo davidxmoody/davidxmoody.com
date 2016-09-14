@@ -42,7 +42,7 @@ I fixed that problem by forcing the "random" directions to be distributed evenly
 
 Another small detail is how to choose the random words. Again, I found that by choosing truly random words, the grid tended to fill up with many smaller words because those were least likely to cause conflicts. While not a huge problem, I felt the game was more fun with a mix of long and short words. To fix this, I simply forced longer words to be tried before shorter words. 
 
-I created several other abstractions to reason about grid but I am not going to write about everything here. If you are interested you can read the [source code on GitHub](https://github.com/davidxmoody/professorp.co.uk/tree/master/src/documents/games/wordsearch), it comes with an [MIT licence](https://github.com/davidxmoody/professorp.co.uk/blob/master/LICENCE.md).
+I created several other abstractions to reason about grid but I am not going to write about everything here. If you are interested you can read the [source code on GitHub](https://github.com/davidxmoody/professorp.co.uk/tree/master/src/documents/games/wordsearch), it comes with an [MIT license](https://github.com/davidxmoody/professorp.co.uk/blob/master/LICENCE.md).
 
 ## Colour highlighting
 
