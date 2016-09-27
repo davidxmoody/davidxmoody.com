@@ -16,25 +16,11 @@ const sitemap = require("metalsmith-sitemap")
 const excerpts = require("./plugins/excerpts")
 const markdown = require("./plugins/markdown")
 
-const DEFAULT_OPTIONS = {
-  title: "David Moody's Blog",
-  description: "A blog about programming",
-  url: "https://davidxmoody.com/",
-  feedPath: "feed.xml",
-  sitemapPath: "sitemap.xml",
-  gitHubURL: "https://github.com/davidxmoody",
-  email: "david@davidxmoody.com",
-  production: true,
-}
+const SITE_URL = "https://davidxmoody.com/"
 
-module.exports = (specifiedOptions = {}, callback) => {
-
-  const options = Object.assign({}, DEFAULT_OPTIONS, specifiedOptions)
-
-  // CONFIG ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+module.exports = (options = {}, callback) => {
 
   const m = Metalsmith(path.resolve(__dirname, ".."))
-  m.metadata(options)
 
   // POSTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -79,7 +65,7 @@ module.exports = (specifiedOptions = {}, callback) => {
     for (const filename in files) {
       const file = files[filename]
       file.relativeURL = "/" + filename.replace(/index.html$/, "")
-      file.canonicalURL = options.url + filename.replace(/index.html$/, "")
+      file.canonicalURL = SITE_URL + filename.replace(/index.html$/, "")
     }
   })
 
@@ -108,9 +94,9 @@ module.exports = (specifiedOptions = {}, callback) => {
 
     m.use(sitemap({
       ignoreFiles: [/^CNAME$/, /\.css$/, /\.js$/, /\.jpg$/, /\.png$/],
-      output: options.sitemapPath,
+      output: "sitemap.xml",
       urlProperty: "canonicalURL",
-      hostname: options.url,
+      hostname: SITE_URL,
       modifiedProperty: "modified",
       defaults: {
         priority: 0.5,
@@ -123,17 +109,17 @@ module.exports = (specifiedOptions = {}, callback) => {
     m.use(feed({
       collection: "posts",
       limit: 100,
-      destination: options.feedPath,
-      title: options.title,
-      site_url: options.url,
-      description: options.description,
+      destination: "feed.xml",
+      title: "David Moody's blog",
+      site_url: SITE_URL,
+      description: "A blog about programming",
     }))
 
     // Make all relative links and images into absolute links and images
     m.use(files => {
-      const file = files[options.feedPath]
+      const file = files["feed.xml"]
       file.contents = new Buffer(
-        file.contents.toString().replace(/(src|href)="\//g, "$1=\"" + options.url)
+        file.contents.toString().replace(/(src|href)="\//g, "$1=\"" + SITE_URL)
       )
     })
 

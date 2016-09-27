@@ -26,7 +26,6 @@
 - Reduce text size on mobile devices
 - Favicon <http://realfavicongenerator.net/>
 - Better archive page
-- Change email on home page to use obfuscated email (or put it somewhere else)
 - Custom 404 page, maybe with a helpful index of all posts
 - Better header with more links to important pages (not hamburger menu)
 - Alternate home page pagination style
