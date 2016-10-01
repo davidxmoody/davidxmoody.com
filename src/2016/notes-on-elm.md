@@ -1,6 +1,5 @@
 ---
 title: Notes on Elm
-slug: notes-on-elm
 date: 2016-08-14
 tags: Elm
 ---

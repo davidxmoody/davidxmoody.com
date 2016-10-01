@@ -1,6 +1,5 @@
 ---
 title: Notes on Flow type checking in JavaScript
-slug: notes-on-flow-type-checking-in-javascript
 date: 2016-07-22
 tags: JavaScript, Flow
 ---

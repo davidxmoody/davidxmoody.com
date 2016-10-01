@@ -28,38 +28,41 @@ module.exports = (options = {}, callback) => {
     m.use(drafts())
   }
 
-  m.use(collections({
-    posts: {
-      pattern: "posts/*.md",
-      sortBy: "date",
-      reverse: true,
-    },
-  }))
+  // TODO add back some kind of collections
+  // m.use(collections({
+  //   posts: {
+  //     pattern: "posts/*.md",
+  //     sortBy: "date",
+  //     reverse: true,
+  //   },
+  // }))
 
-  m.use((files, metalsmith) => {
-    for (const file of metalsmith.metadata().posts) {
-      file.layout = "post.html"
-      file.formattedDate = moment(file.date).format("ll")
-    }
-  })
+  // TODO add a layout to each individual post
+  // m.use((files, metalsmith) => {
+  //   for (const file of metalsmith.metadata().posts) {
+  //     file.layout = "post.html"
+  //     file.formattedDate = moment(file.date).format("ll")
+  //   }
+  // })
 
   m.use(markdown())
 
-  m.use(permalinks({pattern: ":title/"}))
+  m.use(permalinks())
 
   // HOME PAGE PAGINATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  m.use(pagination({
-    "collections.posts": {
-      perPage: 9,
-      first: "index.html",
-      layout: "post-list.html",
-      path: "page:num/index.html",
-    },
-  }))
+  // TODO add a new home page
+  // m.use(pagination({
+  //   "collections.posts": {
+  //     perPage: 9,
+  //     first: "index.html",
+  //     layout: "post-list.html",
+  //     path: "page:num/index.html",
+  //   },
+  // }))
 
   // Don"t duplicate the first page
-  m.use(files => delete files["page1/index.html"])
+  // m.use(files => delete files["page1/index.html"])
 
   m.use(files => {
     for (const filename in files) {

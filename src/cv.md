@@ -1,6 +1,5 @@
 ---
 title: CV
-permalink: /cv/
 ---
 
 # David Moody - Web developer
