@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Notes on Elm
 date: 2016-08-14
 tags: Elm

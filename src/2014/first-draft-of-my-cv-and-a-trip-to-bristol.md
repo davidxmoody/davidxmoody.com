@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: First draft of my CV and a trip to Bristol
 date: 2014-10-20
 tags: bristol

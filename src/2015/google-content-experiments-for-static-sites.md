@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Google Content Experiments for static sites
 date: 2015-09-17
 tags: featured

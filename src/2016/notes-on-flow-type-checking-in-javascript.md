@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Notes on Flow type checking in JavaScript
 date: 2016-07-22
 tags: JavaScript, Flow

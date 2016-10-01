@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Big list of blogs I like
 date: 2014-10-06
 tags: featured

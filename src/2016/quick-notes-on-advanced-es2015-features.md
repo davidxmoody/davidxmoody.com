@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Quick notes on advanced ES2015 features
 date: 2016-01-07
 tags: JavaScript

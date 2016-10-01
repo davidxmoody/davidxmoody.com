@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: CloudFlare and hashed CSS
 date: 2015-02-02
 tags: featured

@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: My experiences playing croquet
 date: 2014-10-24
 tags: croquet

@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Lessons learned from a three year programming project (part 2)
 date: 2014-10-22
 tags: featured

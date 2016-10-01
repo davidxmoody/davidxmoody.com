@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: "100 push ups: The ultimate slow gains experiment"
 date: 2014-09-29
 tags: habits

@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: "The Pomodoro Technique: What I wish I'd known"
 date: 2014-09-18
 tags: pomodoro

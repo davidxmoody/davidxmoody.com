@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Creating a style for this blog
 date: 2014-08-13
 tags: featured

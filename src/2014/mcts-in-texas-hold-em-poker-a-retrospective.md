@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: "MCTS in Texas Hold 'em Poker: A retrospective"
 date: 2014-10-29
 tags: featured

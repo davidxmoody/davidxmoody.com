@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: "Book notes: Influence"
 date: 2016-06-09
 tags: blinkist, book-review

@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: "Book notes: Pragmatic Thinking and Learning"
 date: 2016-09-27
 tags: 

@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Wordsearch game
 date: 2014-08-18
 tags: featured

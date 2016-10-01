@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: My 10 best Tenerife photos
 date: 2014-10-31
 tags: featured

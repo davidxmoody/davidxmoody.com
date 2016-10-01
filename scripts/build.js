@@ -4,11 +4,9 @@ const moment = require("moment")
 const Metalsmith = require("metalsmith")
 const autoprefixer = require("metalsmith-autoprefixer")
 const blc = require("metalsmith-broken-link-checker")
-const collections = require("metalsmith-collections")
 const drafts = require("metalsmith-drafts")
 const feed = require("metalsmith-feed")
 const layouts = require("metalsmith-layouts")
-const pagination = require("metalsmith-pagination")
 const permalinks = require("metalsmith-permalinks")
 const sass = require("metalsmith-sass")
 const sitemap = require("metalsmith-sitemap")
@@ -37,32 +35,20 @@ module.exports = (options = {}, callback) => {
   //   },
   // }))
 
-  // TODO add a layout to each individual post
-  // m.use((files, metalsmith) => {
-  //   for (const file of metalsmith.metadata().posts) {
-  //     file.layout = "post.html"
-  //     file.formattedDate = moment(file.date).format("ll")
-  //   }
-  // })
+  // TODO could also do this in templates...
+  m.use(files => {
+    Object.keys(files).forEach(file => {
+      if (file.date) {
+        file.formattedDate = moment(file.date).format("ll")
+      }
+    })
+  })
 
   m.use(markdown())
 
   m.use(permalinks())
 
   // HOME PAGE PAGINATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  // TODO add a new home page
-  // m.use(pagination({
-  //   "collections.posts": {
-  //     perPage: 9,
-  //     first: "index.html",
-  //     layout: "post-list.html",
-  //     path: "page:num/index.html",
-  //   },
-  // }))
-
-  // Don"t duplicate the first page
-  // m.use(files => delete files["page1/index.html"])
 
   m.use(files => {
     for (const filename in files) {
@@ -86,7 +72,6 @@ module.exports = (options = {}, callback) => {
   m.use(layouts({
     engine: "nunjucks",
     pattern: "**/*.html",
-    default: "page.html",
   }))
 
   // PRODUCTION ONLY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

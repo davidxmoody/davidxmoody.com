@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Writing before breakfast
 date: 2014-10-09
 tags: habits, writing

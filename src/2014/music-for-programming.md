@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Music for programming
 date: 2014-09-01
 tags: featured

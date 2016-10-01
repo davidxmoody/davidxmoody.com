@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Namecheap, GitHub Pages and apex domains
 date: 2014-08-20
 tags: namecheap, github pages

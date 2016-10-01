@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Permanent Bash aliases
 date: 2014-09-03
 tags: bash, featured

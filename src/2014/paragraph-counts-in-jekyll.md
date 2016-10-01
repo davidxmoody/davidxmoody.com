@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Paragraph counts in jekyll
 date: 2014-08-15
 tags: featured

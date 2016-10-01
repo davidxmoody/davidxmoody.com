@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Selling my childhood toys on eBay and Amazon
 date: 2014-10-17
 tags: selling

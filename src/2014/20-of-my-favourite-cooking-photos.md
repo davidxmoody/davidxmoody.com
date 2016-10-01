@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: 20 of my favourite cooking photos
 date: 2014-11-07
 tags: featured

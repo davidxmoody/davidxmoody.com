@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Notes on Polymer Web Components
 date: 2016-01-26
 tags: polymer

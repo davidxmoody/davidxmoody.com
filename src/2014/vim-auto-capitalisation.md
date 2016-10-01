@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Vim auto-capitalisation
 date: 2014-08-29
 tags: vim, featured

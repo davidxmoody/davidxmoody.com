@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Building a blog with Metalsmith
 date: 2015-02-11
 tags: metalsmith, javascript, featured

@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Publishing my first npm package
 date: 2015-05-26
 tags: featured

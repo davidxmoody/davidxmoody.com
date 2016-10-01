@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: My password generation scheme
 date: 2014-08-25
 tags: featured

@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Word frequency analysis with command line tools
 date: 2015-02-20
 tags: featured

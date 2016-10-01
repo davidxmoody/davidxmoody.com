@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: A third attempt at Anki
 date: 2014-08-22
 tags: anki

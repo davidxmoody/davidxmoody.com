@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Three months of blogging
 date: 2014-11-10
 tags: review

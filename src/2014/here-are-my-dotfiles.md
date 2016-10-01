@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Here are my dotfiles
 date: 2014-11-05
 tags: bash, featured

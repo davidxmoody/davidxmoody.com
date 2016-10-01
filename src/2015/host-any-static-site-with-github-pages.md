@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: Host any static site with GitHub Pages
 date: 2015-01-26
 tags: featured

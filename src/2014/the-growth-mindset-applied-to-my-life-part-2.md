@@ -1,4 +1,5 @@
 ---
+layout: post.html
 title: "The growth mindset applied to my life (part 2)"
 date: 2014-09-25
 tags: featured
