@@ -7,10 +7,10 @@ const blc = require("metalsmith-broken-link-checker")
 const drafts = require("metalsmith-drafts")
 const feed = require("metalsmith-feed")
 const layouts = require("metalsmith-layouts")
-const permalinks = require("metalsmith-permalinks")
 const sass = require("metalsmith-sass")
 const sitemap = require("metalsmith-sitemap")
 
+const prettyUrls = require("./plugins/pretty-urls")
 const excerpts = require("./plugins/excerpts")
 const markdown = require("./plugins/markdown")
 
@@ -18,107 +18,62 @@ const SITE_URL = "https://davidxmoody.com/"
 
 module.exports = (options = {}, callback) => {
 
-  const m = Metalsmith(path.resolve(__dirname, ".."))
+  const prodOnly = plugin => options.production ? plugin : () => undefined
 
-  // POSTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Metalsmith(path.resolve(__dirname, ".."))
 
-  if (options.production) {
-    m.use(drafts())
-  }
+    .use(prodOnly(drafts()))
+    .use(markdown())
+    .use(prettyUrls())
 
-  // TODO add back some kind of collections
-  // m.use(collections({
-  //   posts: {
-  //     pattern: "posts/*.md",
-  //     sortBy: "date",
-  //     reverse: true,
-  //   },
-  // }))
+    .use(files => {
+      Object.keys(files).forEach(filename => {
+        const file = files[filename]
 
-  // TODO could also do this in templates...
-  m.use(files => {
-    Object.keys(files).forEach(file => {
-      if (file.date) {
-        file.formattedDate = moment(file.date).format("ll")
-      }
+        file.relativeURL = "/" + filename.replace(/index.html$/, "")
+        file.canonicalURL = SITE_URL + filename.replace(/index.html$/, "")
+
+        if (file.date) {
+          file.formattedDate = moment(file.date).format("ll")
+        }
+      })
     })
-  })
 
-  m.use(markdown())
+    .use(excerpts())
 
-  m.use(permalinks())
+    .use(sass())
+    .use(autoprefixer())
 
-  // HOME PAGE PAGINATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    .use(layouts({
+      engine: "nunjucks",
+      pattern: "**/*.html",
+    }))
 
-  m.use(files => {
-    for (const filename in files) {
-      const file = files[filename]
-      file.relativeURL = "/" + filename.replace(/index.html$/, "")
-      file.canonicalURL = SITE_URL + filename.replace(/index.html$/, "")
-    }
-  })
-
-  // EXCERPTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  m.use(excerpts())
-
-  // CSS AND FINGERPRINTING ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  m.use(sass())
-  m.use(autoprefixer())
-
-  // LAYOUTS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  m.use(layouts({
-    engine: "nunjucks",
-    pattern: "**/*.html",
-  }))
-
-  // PRODUCTION ONLY ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  if (options.production) {
-
-    // SITEMAP ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    m.use(sitemap({
+    .use(prodOnly(sitemap({
       ignoreFiles: [/^CNAME$/, /\.css$/, /\.js$/, /\.jpg$/, /\.png$/],
       output: "sitemap.xml",
       urlProperty: "canonicalURL",
       hostname: SITE_URL,
       modifiedProperty: "modified",
-      defaults: {
-        priority: 0.5,
-        changefreq: "daily",
-      },
-    }))
+      defaults: {priority: 0.5, changefreq: "daily"},
+    })))
 
-    // RSS FEED ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-    m.use(feed({
+    .use(prodOnly(feed({
       collection: "posts",
       limit: 100,
       destination: "feed.xml",
       title: "David Moody's blog",
       site_url: SITE_URL,
       description: "A blog about programming",
-    }))
-
-    // Make all relative links and images into absolute links and images
-    m.use(files => {
+    })))
+    .use(prodOnly(files => {
       const file = files["feed.xml"]
       file.contents = new Buffer(
         file.contents.toString().replace(/(src|href)="\//g, "$1=\"" + SITE_URL)
       )
-    })
+    }))
 
-    // BROKEN LINK CHECKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    .use(prodOnly(blc()))
 
-    m.use(blc())
-
-  }
-
-  // BUILD ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  m.build(callback)
-
+    .build(callback)
 }
