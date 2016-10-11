@@ -6,13 +6,13 @@
     "build": "gulp build"
   },
   "dependencies": {
-    "browser-sync": "^2.16.0",
+    "browser-sync": "^2.17.2",
     "gulp": "^3.9.0",
     "highlight.js": "^9.7.0",
     "marked": "^0.3.5",
     "metalsmith": "^2.1.0",
     "metalsmith-autoprefixer": "^1.1.0",
-    "metalsmith-broken-link-checker": "^0.1.8",
+    "metalsmith-broken-link-checker": "^0.1.11",
     "metalsmith-drafts": "0.0.1",
     "metalsmith-feed": "^0.2.0",
     "metalsmith-layouts": "^1.6.5",
