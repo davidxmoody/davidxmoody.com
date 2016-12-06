@@ -1,0 +1,16 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+  {% for file in collections.posts %}
+    <article>
+      <header>
+        <h1>{{ file.title }}</h1>
+        <p><em>{{ file.formattedDate }}</em></p>
+      </header>
+
+      {{ file.excerpt | safe }}
+    </article>
+  {% endfor %}
+
+{% endblock %}

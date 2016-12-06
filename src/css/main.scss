@@ -87,29 +87,6 @@ html {
   overflow-y: scroll;
 }
 
-// Pagination
-.pagination {
-  margin-top: $computed-line-height * 2;
-  text-align: center;
-}
-
-.pagination__link, .pagination__disabled {
-  padding-left: 1em;
-  padding-right: 1em;
-}
-
-.pagination__ellipsis {
-  padding-left: -1em;
-  padding-right: -1em;
-}
-.pagination__ellipsis::before {
-  content: "...";
-}
-
-.pagination__separator::before {
-  content: "|";
-}
-
 // Blockquotes
 blockquote {
   margin-left: 5%;

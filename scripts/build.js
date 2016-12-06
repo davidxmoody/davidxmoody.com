@@ -4,6 +4,7 @@ const moment = require("moment")
 const Metalsmith = require("metalsmith")
 const autoprefixer = require("metalsmith-autoprefixer")
 const blc = require("metalsmith-broken-link-checker")
+const collections = require("metalsmith-collections")
 const drafts = require("metalsmith-drafts")
 const feed = require("metalsmith-feed")
 const layouts = require("metalsmith-layouts")
@@ -26,7 +27,7 @@ module.exports = (options = {}, callback) => {
     .use(markdown())
     .use(prettyUrls())
 
-    .use(files => {
+    .use((files, metalsmith) => {
       Object.keys(files).forEach(filename => {
         const file = files[filename]
 
@@ -40,6 +41,14 @@ module.exports = (options = {}, callback) => {
     })
 
     .use(excerpts())
+
+    .use(collections({
+      posts: {
+        pattern: "2???/*/index.html", // Hacky
+        sortBy: "date",
+        reverse: true,
+      },
+    }))
 
     .use(sass())
     .use(autoprefixer())

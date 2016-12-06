@@ -28,4 +28,3 @@
 - Better archive page
 - Custom 404 page, maybe with a helpful index of all posts
 - Better header with more links to important pages (not hamburger menu)
-- Alternate home page pagination style
