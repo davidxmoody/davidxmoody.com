@@ -8,7 +8,10 @@ let serverStarted = false
 function refresh(cb) {
   return (...args) => {
     if (!serverStarted) {
-      browserSync({server: {baseDir: "./build"}})
+      browserSync({
+        notify: false,
+        server: {baseDir: "./build"},
+      })
       serverStarted = true
     } else {
       browserSync.reload()
