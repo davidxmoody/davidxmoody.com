@@ -20,15 +20,15 @@ function refresh(cb) {
   }
 }
 
-gulp.task("build", cb => {
+gulp.task("build", (cb) => {
   build({production: true}, cb)
 })
 
-gulp.task("dev-build", cb => {
+gulp.task("dev-build", (cb) => {
   build({production: false}, refresh(cb))
 })
 
-gulp.task("watch", ["dev-build"], cb => {
+gulp.task("watch", ["dev-build"], (cb) => {
   gulp.watch("src/**/*", ["dev-build"])
   gulp.watch("layouts/**/*", ["dev-build"])
 })

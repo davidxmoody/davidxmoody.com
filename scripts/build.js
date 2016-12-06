@@ -19,7 +19,7 @@ const SITE_URL = "https://davidxmoody.com/"
 
 module.exports = (options = {}, callback) => {
 
-  const prodOnly = plugin => options.production ? plugin : () => undefined
+  const prodOnly = (plugin) => options.production ? plugin : () => undefined
 
   Metalsmith(path.resolve(__dirname, ".."))
 
@@ -28,7 +28,7 @@ module.exports = (options = {}, callback) => {
     .use(prettyUrls())
 
     .use((files) => {
-      Object.keys(files).forEach(filename => {
+      Object.keys(files).forEach((filename) => {
         const file = files[filename]
 
         file.relativeURL = "/" + filename.replace(/index.html$/, "")

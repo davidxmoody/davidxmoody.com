@@ -16,8 +16,8 @@ function getReadMoreText(text) {
   return `Read ${remainingCount} remaining paragraphs...`
 }
 
-module.exports = () => files => {
-  Object.keys(files).forEach(filename => {
+module.exports = () => (files) => {
+  Object.keys(files).forEach((filename) => {
     const file = files[filename]
 
     const [before, after] = file.contents.toString().split(excerptSeparator, 2)

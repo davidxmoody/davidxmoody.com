@@ -1,5 +1,5 @@
-module.exports = () => files => {
-  Object.keys(files).forEach(filename => {
+module.exports = () => (files) => {
+  Object.keys(files).forEach((filename) => {
     const newFilename = filename.replace(/([^/]+)\.html$/, (match, slug) => {
       return slug === "index" ? "index.html" : `${slug}/index.html`
     })
