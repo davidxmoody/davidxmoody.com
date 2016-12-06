@@ -33,6 +33,7 @@ module.exports = (options = {}, callback) => {
 
         file.relativeURL = "/" + filename.replace(/index.html$/, "")
         file.canonicalURL = SITE_URL + filename.replace(/index.html$/, "")
+        file.url = file.canonicalURL // For feeds plugin
 
         if (file.date) {
           file.formattedDate = moment(file.date).format("ll")

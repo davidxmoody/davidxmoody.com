@@ -1,4 +1,4 @@
 ---
 layout: home.html
-title: "David Moody's Blog"
+title: "David Moody's blog"
 ---
