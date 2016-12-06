@@ -23,9 +23,9 @@ I was very pleasantly surprised with their service. Their "5 minute setup" claim
 
 Using them also has the convenient side effect of eliminating that annoying 302 redirect. Here is a screenshot from <http://www.webpagetest.org/> of this blog's performance before and after switching to CloudFlare's DNS:
 
-![Before: 3.371s first view, 0.088s repeat view](/images/cloudflare-and-hashed-css/before.png)
+![Before: 3.371s first view, 0.088s repeat view](/images/2015/cloudflare-and-hashed-css/before.png)
 
-![After: 0.289s first view, 0.089s repeat view](/images/cloudflare-and-hashed-css/after.png)
+![After: 0.289s first view, 0.089s repeat view](/images/2015/cloudflare-and-hashed-css/after.png)
 
 ## CSS caching 
 

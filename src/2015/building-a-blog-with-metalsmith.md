@@ -15,7 +15,7 @@ This post will not be a full guide on how to use Metalsmith. I'm assuming that a
 
 ## Paragraph count
 
-In one of my very early posts, I wrote about [paragraph counts in Jekyll](/paragraph-counts-in-jekyll/). I like to have links saying *"Read 15 remaining paragraphs..."* at the end of my excerpts. I think it's better than not giving any information on the length of an article and more useful than giving a raw wordcount. 
+In one of my very early posts, I wrote about [paragraph counts in Jekyll](/2014/paragraph-counts-in-jekyll/). I like to have links saying *"Read 15 remaining paragraphs..."* at the end of my excerpts. I think it's better than not giving any information on the length of an article and more useful than giving a raw wordcount. 
 
 Jekyll was rather limited in how it could count paragraphs. I ended up using a pretty awkward Liquid Template hack. Thankfully JavaScript can do much better. Everything after the `<!--more-->` tag is passed through the `paraCount()`  function. It counts everything I feel qualifies as a paragraph including: `<p>`, `<ul>`, `<ol>`, `<pre>` and `<table>` elements.
 
@@ -67,7 +67,7 @@ If you are dead set on using Pygments with Metalsmith then you might want to ref
 ## Misc
 
 - [metalsmith-each](https://github.com/wilsaj/metalsmith-each) and [metalsmith-ignore](https://github.com/segmentio/metalsmith-ignore) are pretty useful
-- I've written about [CSS file hashing](/cloudflare-and-hashed-css/) in a previous post with the [metalsmith-fingerprint](https://github.com/christophercliff/metalsmith-fingerprint) plugin
+- I've written about [CSS file hashing](/2015/cloudflare-and-hashed-css/) in a previous post with the [metalsmith-fingerprint](https://github.com/christophercliff/metalsmith-fingerprint) plugin
 - I have implemented a basic pagination setup and basic archive page, I plan on doing a better job and writing a full post on them later
 - [metalsmith-serve](https://github.com/mayo/metalsmith-serve) is a quick and convenient way to serve your site when testing
 - Unfortunately metalsmith-serve doesn't work with [metalsmith-watch](https://github.com/FWeinb/metalsmith-watch) so I use [nodemon](https://github.com/remy/nodemon) to watch for changes and rebuild the site
@@ -79,4 +79,4 @@ Overall, Metalsmith is great. It's *supposed* to be extremely simple and rely on
 
 My only complaint is that it doesn't do incremental builds. A small change in one post causes a full rebuild with my current setup. It's understandable why Metalsmith doesn't include this (it would be really complex). I may try to implement a custom solution where each individual post is only updated when that post changes but all other files are regenerated every time. 
 
-*[Edit: I recently created created and published my first Metalsmith plugin. It's a plugin to check files for internal broken links. See [this blog post](/publishing-my-first-npm-package/) for how I did it or go straight to the [npm package](https://www.npmjs.com/package/metalsmith-broken-link-checker).]*
+*[Edit: I recently created created and published my first Metalsmith plugin. It's a plugin to check files for internal broken links. See [this blog post](/2015/publishing-my-first-npm-package/) for how I did it or go straight to the [npm package](https://www.npmjs.com/package/metalsmith-broken-link-checker).]*

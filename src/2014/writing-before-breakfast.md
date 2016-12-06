@@ -5,7 +5,7 @@ date: 2014-10-09
 tags: habits, writing
 ---
 
-**I want to become a better writer.** According to the [growth mindset](/the-growth-mindset-applied-to-my-life-part-1/), I know that this is achievable through *hard work and practice*. I have to consistently put in the time and effort and I will slowly get better. 
+**I want to become a better writer.** According to the [growth mindset](/2014/the-growth-mindset-applied-to-my-life-part-1/), I know that this is achievable through *hard work and practice*. I have to consistently put in the time and effort and I will slowly get better. 
 
 I knew that when I first started this blog. I set myself a schedule for publishing blog posts and have stuck to it ever since. *This has worked brilliantly.* But, it also has a few problems. Although I've never missed a post, I have procrastinated more than I would like. This last week in particular, my writing has suffered because of it.
 
@@ -13,7 +13,7 @@ I knew that when I first started this blog. I set myself a schedule for publishi
 
 ## How to beat procrastination
 
-Last week, I wrote about [forming the habit of doing push ups in the morning](/100-push-ups-the-ultimate-slow-gains-experiment/). Although I have only been doing it for 11 days, I'm very pleased with how well it has been going. 
+Last week, I wrote about [forming the habit of doing push ups in the morning](/2014/100-push-ups-the-ultimate-slow-gains-experiment/). Although I have only been doing it for 11 days, I'm very pleased with how well it has been going. 
 
 I put a reminder on my task list but I haven't needed it. Every single morning without fail, it has been the first thing in my mind after waking up. This has been pleasantly surprising. I was expecting to forget occasionally but it hasn't happened so far. 
 

@@ -5,7 +5,7 @@ date: 2015-02-20
 tags: featured
 ---
 
-I have previously written about [writing speeds](/writing-speeds/). I think one of the best ways to improve is to utilise [abbreviations](/better-vim-abbreviations/) and other [tricks](/vim-auto-capitalisation/). 
+I have previously written about [writing speeds](/2014/writing-speeds/). I think one of the best ways to improve is to utilise [abbreviations](/2014/better-vim-abbreviations/) and other [tricks](/2014/vim-auto-capitalisation/). 
 
 I recently looked into a shorthand system called [EasyScript](http://www.easyscript.com/). The most important part I took from it is to develop a set of short abbreviations for the most common words. They give a set of suggested abbreviations but I wasn't happy with them. Instead, I wanted to analyse my own writing to find my most commonly used words and phrases. 
 

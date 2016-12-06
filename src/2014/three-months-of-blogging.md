@@ -11,7 +11,7 @@ This will be my third monthly review. Yet again, I am going to look back at the 
 
 ## A better spread of topics
 
-For the first month of this blog, I wrote mostly about programming topics. For the second month, I switched to writing mostly about personal topics. In [my previous monthly review](/two-months-of-blogging/), I noticed this. I set myself a more specific schedule in order to focus my writing on *a better spread of topics*.
+For the first month of this blog, I wrote mostly about programming topics. For the second month, I switched to writing mostly about personal topics. In [my previous monthly review](/2014/two-months-of-blogging/), I noticed this. I set myself a more specific schedule in order to focus my writing on *a better spread of topics*.
 
 I'm very pleased with every post I've written over the last month. I notice that most of them were about the major experiences of my life so far. The reason for that is that I was in the process of writing my CV and realised I had no *evidence* to support my claims. Most of what I've written this month was written to support the main points of [my CV](/cv/). 
 

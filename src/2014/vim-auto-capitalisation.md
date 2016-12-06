@@ -5,7 +5,7 @@ date: 2014-08-29
 tags: vim, featured
 ---
 
-Continuing in the same theme as my [last post](/better-vim-abbreviations/), I am going to write about another awesome Vim tip I found recently. That is: automatic capitalisation of the first letter of each sentence. 
+Continuing in the same theme as my [last post](/2014/better-vim-abbreviations/), I am going to write about another awesome Vim tip I found recently. That is: automatic capitalisation of the first letter of each sentence. 
 
 Many word processors already include this. For some reason, Vim and other text editors don't usually have the option. I don't know why. I feel that a lot of unnecessary key-strokes are wasted on the shift keys. It also stresses the little fingers and twists the wrists.
 

@@ -19,7 +19,7 @@ In the rest of this post, I am going to highlight a few of the most interesting 
 
 ## `mkalias`
 
-I have [already written a blog post on this function](/permanent-bash-aliases/) which you should check out. The gist of it is that it takes too long to open up your `.bash_aliases` file just to create a new alias. My simple Bash function works just like the normal `alias` command except it makes the alias "permanent" by placing it into your aliases file. 
+I have [already written a blog post on this function](/2014/permanent-bash-aliases/) which you should check out. The gist of it is that it takes too long to open up your `.bash_aliases` file just to create a new alias. My simple Bash function works just like the normal `alias` command except it makes the alias "permanent" by placing it into your aliases file. 
 
 ```bash
 mkalias() {
@@ -77,7 +77,7 @@ for word, count in word_tallies.most_common(2000):
 
 ## Vim writing tricks
 
-Again, I have already written about [Vim auto-capitalisation](/vim-auto-capitalisation/) and [better Vim abbreviations](/better-vim-abbreviations/). 
+Again, I have already written about [Vim auto-capitalisation](/2014/vim-auto-capitalisation/) and [better Vim abbreviations](/2014/better-vim-abbreviations/). 
 
 Two months later, I still love them both. They both save me several minutes daily. Not having to press the shift key so much also makes my little fingers very happy. 
 

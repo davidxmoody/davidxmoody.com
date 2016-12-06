@@ -25,22 +25,22 @@ I would also like to be able to offer a more experience-based opinion on certain
 
 For my own benefit, here is a list of every post on this blog, with the number of days between the date it was finished and the date it was published. 
 
-- [Hello world](/hello-world/) (10 days)
-- [Creating a style for this blog](/creating-a-style-for-this-blog/) (4 days)
-- [Paragraph counts in jekyll](/paragraph-counts-in-jekyll/) (6 days)
-- [Wordsearch game](/wordsearch-game/) (13 days)
-- [Namecheap, GitHub Pages and apex domains](/namecheap-github-pages-and-apex-domains/) (2 days)
-- [A third attempt at Anki](/a-third-attempt-at-anki/) (4 days)
-- [My password generation scheme](/my-password-generation-scheme/) (13 days)
-- [Better Vim abbreviations](/better-vim-abbreviations/) (0 days)
-- [Vim auto-capitalisation](/vim-auto-capitalisation/) (1 day)
-- [Music for programming](/music-for-programming/) (0 days)
-- [Permanent Bash aliases](/permanent-bash-aliases/) (1 day)
-- [One month of blogging](/one-month-of-blogging/) (2 days)
+- [Hello world](/2014/hello-world/) (10 days)
+- [Creating a style for this blog](/2014/creating-a-style-for-this-blog/) (4 days)
+- [Paragraph counts in jekyll](/2014/paragraph-counts-in-jekyll/) (6 days)
+- [Wordsearch game](/2014/wordsearch-game/) (13 days)
+- [Namecheap, GitHub Pages and apex domains](/2014/namecheap-github-pages-and-apex-domains/) (2 days)
+- [A third attempt at Anki](/2014/a-third-attempt-at-anki/) (4 days)
+- [My password generation scheme](/2014/my-password-generation-scheme/) (13 days)
+- [Better Vim abbreviations](/2014/better-vim-abbreviations/) (0 days)
+- [Vim auto-capitalisation](/2014/vim-auto-capitalisation/) (1 day)
+- [Music for programming](/2014/music-for-programming/) (0 days)
+- [Permanent Bash aliases](/2014/permanent-bash-aliases/) (1 day)
+- [One month of blogging](/2014/one-month-of-blogging/) (2 days)
 
 I really wish I'd given myself another couple of days for some of the later ones. Looking back at the Vim posts, there are a lot of small things I would change. 
 
-One specific thing I have noticed is that I tend to talk about myself too much. In the first two paragraphs of the [Vim auto-capitalisation](/vim-auto-capitalisation/) post, I used the pronoun "I" four times when none of them were necessary. 
+One specific thing I have noticed is that I tend to talk about myself too much. In the first two paragraphs of the [Vim auto-capitalisation](/2014/vim-auto-capitalisation/) post, I used the pronoun "I" four times when none of them were necessary. 
 
 It kind of reminds me of [this LessWrong post on Trying to Try](http://lesswrong.com/lw/uh/trying_to_try/). This is my blog, it should be taken as granted that anything written here is my opinion. If I write "Vim is awesome" then that should be interpreted as my opinion of Vim. It's completely unnecessary to write "I think Vim is awesome". It adds more words and makes it feel like I'm not certain of my own opinion. I want to get myself to write "I think" and "I feel" less on this blog. 
 

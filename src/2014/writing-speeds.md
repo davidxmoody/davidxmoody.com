@@ -17,7 +17,7 @@ For my last four blog posts, I have started a new habit. Instead of just startin
 
 ## My current speeds
 
-I wanted to gather some data on my actual writing speeds in different formats. For my first experiment, I typed out the entire text of my [first ever blog post](/hello-world/). 
+I wanted to gather some data on my actual writing speeds in different formats. For my first experiment, I typed out the entire text of my [first ever blog post](/2014/hello-world/). 
 
 - Typing: 3m 54s (**72 wpm**)
 - SwiftKey: 7m 40s (**37 wpm**)
@@ -26,7 +26,7 @@ I wanted to gather some data on my actual writing speeds in different formats. F
 
 Obviously, typing in Dvorak and Vim blows everything else out of the water. With [SwiftKey for Android](https://play.google.com/store/apps/details?id=com.touchtype.swiftkey), I use the Dvorak layout with two thumbs and it's pretty quick. I was surprised at the difference between my "messy handwriting" and "neat handwriting". The first was mostly cursive with no care taken for readability. The second was printed very neatly (i.e. not joined up). 
 
-I wanted to know why the two handwriting speeds were so different. It could have been a difference between cursive and printed or simply due to the amount of care I was taking. I did another test, writing at a fast pace (but not rushed) with both styles. This time I used the first four paragraphs of my [growth mindset post](/the-growth-mindset-applied-to-my-life-part-1/).
+I wanted to know why the two handwriting speeds were so different. It could have been a difference between cursive and printed or simply due to the amount of care I was taking. I did another test, writing at a fast pace (but not rushed) with both styles. This time I used the first four paragraphs of my [growth mindset post](/2014/the-growth-mindset-applied-to-my-life-part-1/).
 
 - Typing: 2m 56s (**72 wpm**)
 - SwiftKey: 5m 19s (**40 wpm**)
@@ -41,7 +41,7 @@ My own personal results can be summed up with the ratio **1:2:3** for typing to 
 
 Typing with Dvorak is pretty good. In the tests above, I was typing at a "comfortable pace". At my fastest, I can consistently score above 90 wpm in [this two minute typing test](http://www.typingtest.com/test.html?minutes=2&textfile=aesop.txt).
 
-Honestly, I don't think I can get much faster with Dvorak alone. I am interested in using Vim scripts and abbreviations to increase my speed. For examples, see my previous posts on [Vim auto-capitalisation](/vim-auto-capitalisation/) and [better Vim abbreviations](/better-vim-abbreviations/). 
+Honestly, I don't think I can get much faster with Dvorak alone. I am interested in using Vim scripts and abbreviations to increase my speed. For examples, see my previous posts on [Vim auto-capitalisation](/2014/vim-auto-capitalisation/) and [better Vim abbreviations](/2014/better-vim-abbreviations/). 
 
 I've also been interested in an [open source steno program called Plover](http://plover.stenoknight.com/). It's a completely different system for typing. Instead of pressing individual letters, you press combinations of keys which correspond to syllables or whole words. From the information on their site, I think I could be typing at 240 wpm in six months with a lot of practice. 
 

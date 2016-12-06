@@ -27,7 +27,7 @@ module.exports = (options = {}, callback) => {
     .use(markdown())
     .use(prettyUrls())
 
-    .use((files, metalsmith) => {
+    .use((files) => {
       Object.keys(files).forEach(filename => {
         const file = files[filename]
 
@@ -75,7 +75,7 @@ module.exports = (options = {}, callback) => {
       site_url: SITE_URL,
       description: "A blog about programming",
     })))
-    .use(prodOnly(files => {
+    .use(prodOnly((files) => {
       const file = files["feed.xml"]
       file.contents = new Buffer(
         file.contents.toString().replace(/(src|href)="\//g, "$1=\"" + SITE_URL)

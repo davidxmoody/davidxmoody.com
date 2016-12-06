@@ -69,6 +69,6 @@ With the faster text wrapping method, my caching was now *slower* than re-wrappi
 
 **Lesson 3:** Premature optimisation is bad.
 
-[Read part 2...](/lessons-learned-from-a-three-year-programming-project-part-2/)
+[Read part 2...](/2014/lessons-learned-from-a-three-year-programming-project-part-2/)
 
 [bash]: http://en.wikipedia.org/wiki/Bash_(Unix_shell)

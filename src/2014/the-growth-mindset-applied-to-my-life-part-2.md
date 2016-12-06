@@ -5,7 +5,7 @@ date: 2014-09-25
 tags: featured
 ---
 
-Continued from [part 1](/the-growth-mindset-applied-to-my-life-part-1/). This part will discuss how the different mindsets affected me after I left university.
+Continued from [part 1](/2014/the-growth-mindset-applied-to-my-life-part-1/). This part will discuss how the different mindsets affected me after I left university.
 
 <!--more-->
 
@@ -25,7 +25,7 @@ For reasons that I can't remember, I started to develop an interest in Linux. I 
 
 One night when I couldn't sleep, I started reading a tutorial on Bash scripting. I was inexperienced with the Linux command line and I was very *curious* about how to use it properly. That curiosity drove me to learn everything I could about Bash. I started playing around. I created scripts for doing all kinds of things. It was a lot of fun. I also started using Vim as my text editor. It was hard to learn but I knew it would be worth it. 
 
-At some point, I realised that Bash wasn't suitable for everything. I switched my attention to Python. I practised on [Project Euler](https://projecteuler.net/) problems. I also started work on a [command line program for organising my personal diary](/lessons-learned-from-a-three-year-programming-project-part-1/). It was a pretty significant project for me. It has over 300 commits and has taken me many hundreds of hours. I feel that it taught me more about software development than any project before it.
+At some point, I realised that Bash wasn't suitable for everything. I switched my attention to Python. I practised on [Project Euler](https://projecteuler.net/) problems. I also started work on a [command line program for organising my personal diary](/2014/lessons-learned-from-a-three-year-programming-project-part-1/). It was a pretty significant project for me. It has over 300 commits and has taken me many hundreds of hours. I feel that it taught me more about software development than any project before it.
 
 All of the above are what I like to think of as **natural growth**. I was very *curious* about these things and that caused me to explore and learn on my own. I feel it also led me to develop a sort of *unconscious growth mindset*. I became very familiar with learning about new technologies. I accepted that I could probably learn anything with enough time and effort. However, I most definitely still had a fixed mindset in many areas.
 
@@ -37,9 +37,9 @@ At the time, the only way I knew how to do this was to use Java applets. I remem
 
 I then set out on an ambitious adventure to learn everything I could about HTML and JavaScript. I created *many* iterations of my first game, a tile sliding puzzle. I spent a long time on it and learned a lot in the process. I refactored it many times. I eventually added an intelligent AI opponent to race against the player (it uses a variation on the [A* search algorithm](http://en.wikipedia.org/wiki/A*_search_algorithm)). You can play the game [right now on the Professor P website](http://professorp.co.uk/games/shuffle/). 
 
-I added [four other games](http://professorp.co.uk/games/), including a [shark attack game](http://professorp.co.uk/games/sharkattack/), a [memory card game](http://professorp.co.uk/games/memory/), a [quiz game](http://professorp.co.uk/games/quiz/) and a [wordsearch game](http://professorp.co.uk/games/wordsearch/) (which I've [already written about](/wordsearch-game/)). Each was challenging in its own way and I learned a lot from all of them. I also spent a long time making [the rest of the website](http://professorp.co.uk/) with a static site generator ([DocPad](http://docpad.org/)). 
+I added [four other games](http://professorp.co.uk/games/), including a [shark attack game](http://professorp.co.uk/games/sharkattack/), a [memory card game](http://professorp.co.uk/games/memory/), a [quiz game](http://professorp.co.uk/games/quiz/) and a [wordsearch game](http://professorp.co.uk/games/wordsearch/) (which I've [already written about](/2014/wordsearch-game/)). Each was challenging in its own way and I learned a lot from all of them. I also spent a long time making [the rest of the website](http://professorp.co.uk/) with a static site generator ([DocPad](http://docpad.org/)). 
 
-The whole thing took me about a year, although I did have a very slow start. I went through intense periods of passion-fuelled work followed by periods of boredom-filled procrastination. [I've written about this before](/the-pomodoro-technique-what-i-wish-i-d-known/) but it slowly got better. I'm very proud of the Professor P website. If I could start again, there are many things I would do differently. However, I feel it represents a lot of growth in my ability. 
+The whole thing took me about a year, although I did have a very slow start. I went through intense periods of passion-fuelled work followed by periods of boredom-filled procrastination. [I've written about this before](/2014/the-pomodoro-technique-what-i-wish-i-d-known/) but it slowly got better. I'm very proud of the Professor P website. If I could start again, there are many things I would do differently. However, I feel it represents a lot of growth in my ability. 
 
 ## This blog
 

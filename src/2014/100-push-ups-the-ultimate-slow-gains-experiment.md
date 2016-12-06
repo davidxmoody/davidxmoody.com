@@ -5,7 +5,7 @@ date: 2014-09-29
 tags: habits
 ---
 
-I have recently written about the [growth mindset](/the-growth-mindset-applied-to-my-life-part-1/). When you have a growth mindset, you believe that your basic abilities can be improved with hard work and practice. 
+I have recently written about the [growth mindset](/2014/the-growth-mindset-applied-to-my-life-part-1/). When you have a growth mindset, you believe that your basic abilities can be improved with hard work and practice. 
 
 There are plenty things in my life I want to improve. However, I'm going to start with exercise. I've previously tried and failed to form exercise habits. None of my attempts have made any lasting improvements. This time I want it to be different. This time I'm going to make it **so easy I can't fail**.
 

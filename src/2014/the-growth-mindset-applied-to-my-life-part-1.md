@@ -41,4 +41,4 @@ In my second year, I switched to Computer Science. My behaviour continued. I lab
 
 The same story continued throughout my third year. I got a 2:1 in the final exams, scoring only slightly above the median. I had worked hard in my supervisions and had been predicted to get a first. That made me complacent, I thought I was "smart enough" to succeed with little further effort. I procrastinated and *literally* did not start revising until two weeks before the exams. 
 
-[Read part 2...](/the-growth-mindset-applied-to-my-life-part-2/)
+[Read part 2...](/2014/the-growth-mindset-applied-to-my-life-part-2/)

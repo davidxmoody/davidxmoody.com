@@ -15,7 +15,7 @@ I wanted to change that. This is the story of how I published my [first npm pack
 
 ## The problem I wanted to solve
 
-I've been using [Metalsmith](http://www.metalsmith.io/) for a while now. It's a very simple static site generator which uses plugins to do most of the hard work. I wrote a blog post on [how I built this blog with it](/building-a-blog-with-metalsmith/). I have also been using it to build a very large static site at my new job (which I will write about later). 
+I've been using [Metalsmith](http://www.metalsmith.io/) for a while now. It's a very simple static site generator which uses plugins to do most of the hard work. I wrote a blog post on [how I built this blog with it](/2015/building-a-blog-with-metalsmith/). I have also been using it to build a very large static site at my new job (which I will write about later). 
 
 Sometimes, you can end up with broken links between the pages of your site. By "broken link", I mean a link to another page on your site which does not exist. They can be caused by simple typos or more complex bugs.
 

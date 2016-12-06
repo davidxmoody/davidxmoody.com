@@ -17,7 +17,7 @@ I did have one slight problem. I had [about 800 commits on my GitHub profile](ht
 
 Thankfully, GitHub provide instructions on how to [change author info in published repositories](https://help.github.com/articles/changing-author-info/). Their instructions were easy to follow and worked perfectly. 
 
-I also made some minor modifications to [my CV](/cv/). Nothing major. I just showed it to my Dad who gave me a few suggestions. I also added some more links to other posts on this blog. [I wrote about croquet on Friday](/my-experiences-playing-croquet/) and added a link to it in the "interests" section. Croquet has been a pretty big part of my life recently. I didn't want to just say that without any *evidence* to back it up. 
+I also made some minor modifications to [my CV](/cv/). Nothing major. I just showed it to my Dad who gave me a few suggestions. I also added some more links to other posts on this blog. [I wrote about croquet on Friday](/2014/my-experiences-playing-croquet/) and added a link to it in the "interests" section. Croquet has been a pretty big part of my life recently. I didn't want to just say that without any *evidence* to back it up. 
 
 Over the next few weeks, I plan to write about my two other major hobbies which I have yet to write about: cooking and photography. I have loads of photos to share (from both) and several interesting stories. 
 

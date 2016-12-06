@@ -13,7 +13,7 @@ I haven't written about it before but I am a very keen croquet player. I thought
 
 My Dad first introduced me to croquet when I was about 15 years old. I started playing in my grandparents' garden with a very basic wooden mallet. 
 
-![Croquet in my grandparents' garden](/images/my-experiences-playing-croquet/croquet-in-garden.jpg)
+![Croquet in my grandparents' garden](/images/2014/my-experiences-playing-croquet/croquet-in-garden.jpg)
 
 ## Abbey Croquet Club
 
@@ -37,7 +37,7 @@ I played in 4 matches that year. Out of my 12 singles games, I won 8, lost 2 and
 
 My second year of matches went very well. Our team practised together *constantly* and we all improved a lot. We won most of our matches and reached the semi-final and then the final. We won the South West Handicap League for the first time ever. In that year, I won 21, lost 11 and drew 4. My handicap dropped to a 4.
 
-[![Abbey winning the Golf Handicap League in Bath](/images/my-experiences-playing-croquet/bath-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Handicap-Final/story-19912247-detail/story.html)
+[![Abbey winning the Golf Handicap League in Bath](/images/2014/my-experiences-playing-croquet/bath-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Handicap-Final/story-19912247-detail/story.html)
 
 ## Association croquet
 
@@ -45,7 +45,7 @@ I should mention that all references to "croquet" so far have referring to "golf
 
 I started playing in matches about half way through the season. I was nervous at the beginning but picked it up very quickly. That year, we won the South West Intermediate League for the first time ever.
 
-[![Abbey winning the AC Intermediate League in Sidmouth](/images/my-experiences-playing-croquet/sidmouth-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-beat-Bath-win-South-West-title/story-19849150-detail/story.html)
+[![Abbey winning the AC Intermediate League in Sidmouth](/images/2014/my-experiences-playing-croquet/sidmouth-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-beat-Bath-win-South-West-title/story-19849150-detail/story.html)
 
 ## Third year of matches
 
@@ -55,11 +55,11 @@ Additionally, there was a new rule that year. It meant that lower handicap playe
 
 Our whole team frequently practised together and we improved even more. We also got a new team member. For the second year in a row, we won the South West Handicap League.
 
-[![Abbey winning the Golf Handicap League in Taunton](/images/my-experiences-playing-croquet/taunton-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-triumph-South-West-Handicap/story-23184624-detail/story.html)
+[![Abbey winning the Golf Handicap League in Taunton](/images/2014/my-experiences-playing-croquet/taunton-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-triumph-South-West-Handicap/story-23184624-detail/story.html)
 
 Our association croquet team also continued to improve. That year, we won the South West Federation League. 
 
-[![Abbey winning the AC Federation League in Taunton](/images/my-experiences-playing-croquet/cheltenham-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Federation/story-23026871-detail/story.html)
+[![Abbey winning the AC Federation League in Taunton](/images/2014/my-experiences-playing-croquet/cheltenham-final.jpg)](http://www.centralsomersetgazette.co.uk/Abbey-Croquet-Club-win-South-West-Federation/story-23026871-detail/story.html)
 
 ## Future plans
 
