@@ -2,6 +2,7 @@
 const gulp = require("gulp")
 const browserSync = require("browser-sync")
 const build = require("./scripts/build")
+const nunjucks = require("nunjucks")
 
 let serverStarted = false
 
@@ -25,6 +26,7 @@ gulp.task("build", (cb) => {
 })
 
 gulp.task("dev-build", (cb) => {
+  nunjucks.configure({watch: true})
   build({production: false}, refresh(cb))
 })
 
