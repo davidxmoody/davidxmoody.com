@@ -1,6 +1,8 @@
 const path = require("path")
 const moment = require("moment")
 
+require("nunjucks").configure({watch: true})
+
 const Metalsmith = require("metalsmith")
 const autoprefixer = require("metalsmith-autoprefixer")
 const blc = require("metalsmith-broken-link-checker")
