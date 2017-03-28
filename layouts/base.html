@@ -4,40 +4,27 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{ title }}</title>
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{% block description %}A blog about programming{% endblock %}">
   <link rel="canonical" href="{{ canonicalURL }}">
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 
-  <div class="wrapper">
-    <header class="site-header">
-      <h1><a href="/">David Moody</a></h1>
-      <p>A blog about programming</p>
-    </header>
+  <header class="site-header">
+    <h1 class="site-header__title">
+      <a href="/">David Moody</a>
+    </h1>
+    <ul class="site-header__links">
+      <li class="site-header__link"><a href="https://github.com/davidxmoody">GitHub</a></li>
+      <li class="site-header__link"><a href="/feed.xml">RSS</a></li>
+      <li class="site-header__link"><a href="mailto:david@davidxmoody.com">Email</a></li>
+    </ul>
+  </header>
 
-    <div class="content">
-      {% block content %}{% endblock %}
-    </div>
-    
-    <div class="push"></div>
+  <div class="site-content">
+    {% block content %}{% endblock %}
   </div>
-
-  <footer class="site-footer">
-    <br>
-    <p>
-      <a href="/feed.xml">RSS</a> | 
-      <a href="https://github.com/davidxmoody">GitHub</a> | 
-      <a href="mailto:david@davidxmoody.com">Email</a>
-    </p>
-    <p>
-      This blog is available under a 
-      <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
-        Creative Commons License
-      </a>
-    </p>
-  </footer>
 
 </body>
 </html>

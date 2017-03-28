@@ -2,7 +2,6 @@
 @import 'rhythm';
 @import 'highlight';
 @import 'typography';
-@import 'stickyfooter';
 
 // Colours from: http://www.paletton.com/#uid=1000u0kleqtbzEKgVuIpcmGtdhZ
 
@@ -21,76 +20,85 @@ $header-shadow-color: $color-dark;
 $link-color: $color-dark;
 $hover-link-color: $color-darker;
 
-// Site header and footer
-
-.site-header, 
-.site-footer {
+.site-header {
   background: $header-background;
   color: $header-color;
   text-align: center;
   text-transform: uppercase;
-
-  p {
-    font-size: 80%;
-    font-weight: bold;
-  }
-
-  a {
-    color: $header-color;
-  }
-}
-
-.site-header {
   padding-top: $computed-line-height;
+  padding-bottom: $computed-line-height;
+
   a, a:hover {
-    text-decoration: none;
     color: $header-color;
-    text-shadow: 2px 2px 0 $header-background, 5px 5px 0 $header-shadow-color;
   }
-  h1 {
-    @include rhythm(4, 0, 0);
+
+  &__title {
+    @include rhythm(4, 0, 1);
+    a {
+      text-shadow: 2px 2px 0 $header-background, 5px 5px 0 $header-shadow-color;
+      text-decoration: none !important;
+    }
   }
-  p {
-    $upper-padding: round($computed-line-height / 3);
-    padding-top: $upper-padding;
-    padding-bottom: $computed-line-height - $upper-padding;
-    margin-bottom: 0;
+
+  &__links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    font-weight: bold;
+    @include rhythm(-1, 0, 0);
+  }
+
+  &__link + &__link {
+    &::before {
+      content: "|";
+      margin-left: 4px;
+      margin-right: 4px;
+    }
   }
 }
 
-.content {
-  max-width: $body-font-size * 33;
+.site-content {
+  max-width: 600px;
   margin: auto;
-  padding: 0 14px;
+  padding-left: 14px;
+  padding-right: 14px;
+
   color: $content-text-color;
+
+  overflow-wrap: break-word; // Fixes long inline code tags making the whole page scroll
+
   h1, h2, h3, h4, h5, h6 {
     color: $content-header-color;
   }
-  padding-bottom: $computed-line-height * 2;
-}
 
-a {
-  color: $link-color;
+  a {
+    color: $link-color;
 
-  &:hover {
-    color: $hover-link-color;
+    &:hover {
+      color: $hover-link-color;
+    }
   }
-}
 
-// Responsive images
-img {
-  max-width: 100%;
+  img {
+    max-width: 100%;
+  }
+
+  blockquote {
+    margin-left: 5%;
+    border-left: 3px solid $color-dark;
+    padding-left: 1em;
+    font-style: italic;
+  }
 }
 
 // Force scrollbars to prevent "centering jumps"
 html {
   overflow-y: scroll;
-}
-
-// Blockquotes
-blockquote {
-  margin-left: 5%;
-  border-left: 3px solid $color-dark;
-  padding-left: 1em;
-  font-style: italic;
 }
