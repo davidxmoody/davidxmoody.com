@@ -2,7 +2,7 @@
 layout: post.html
 title: Vim auto-capitalisation
 date: 2014-08-29
-tags: vim, featured
+tags: programming, featured
 ---
 
 Continuing in the same theme as my [last post](/2014/better-vim-abbreviations/), I am going to write about another awesome Vim tip I found recently. That is: automatic capitalisation of the first letter of each sentence. 

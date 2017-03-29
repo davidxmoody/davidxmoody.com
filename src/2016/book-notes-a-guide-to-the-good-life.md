@@ -2,7 +2,7 @@
 layout: post.html
 title: "Book notes: A Guide to the Good Life"
 date: 2016-06-19
-tags: blinkist, book-review
+tags: books
 ---
 
 This is my review of [A Guide to the Good Life](https://www.blinkist.com/en/books/a-guide-to-the-good-life-en.html) by William B. Irvine. It's a book about Stoicism.

@@ -2,7 +2,7 @@
 layout: post.html
 title: Here are my dotfiles
 date: 2014-11-05
-tags: bash, featured
+tags: programming, featured
 ---
 
 I've recently been uploading a lot of my old projects to GitHub. There is only one left: **my dotfiles**.

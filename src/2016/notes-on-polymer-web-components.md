@@ -2,7 +2,7 @@
 layout: post.html
 title: Notes on Polymer Web Components
 date: 2016-01-26
-tags: polymer
+tags: programming
 ---
 
 *[Note: I found this blog post 5 months after I first wrote it. I didn't get around to publishing it at the time but decided I'd rather publish it now than delete it.]*

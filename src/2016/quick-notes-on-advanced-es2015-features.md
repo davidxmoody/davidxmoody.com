@@ -2,7 +2,7 @@
 layout: post.html
 title: Quick notes on advanced ES2015 features
 date: 2016-01-07
-tags: JavaScript
+tags: programming
 ---
 
 *[Note: I found this blog post 5 months after I first wrote it. It is not finished to the standard that I originally planned but I decided I'd still rather publish it now than delete it.]*

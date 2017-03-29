@@ -2,7 +2,7 @@
 layout: post.html
 title: Notes on Flow type checking in JavaScript
 date: 2016-07-22
-tags: JavaScript, Flow
+tags: programming
 ---
 
 Here are some rough notes I made while setting up [Flow](https://flowtype.org/) and reading through the [official docs](https://flowtype.org/docs/getting-started.html). These notes probably won't be that useful to anyone but me.

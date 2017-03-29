@@ -2,7 +2,7 @@
 layout: post.html
 title: "100 push ups: The ultimate slow gains experiment"
 date: 2014-09-29
-tags: habits
+tags: personal
 ---
 
 I have recently written about the [growth mindset](/2014/the-growth-mindset-applied-to-my-life-part-1/). When you have a growth mindset, you believe that your basic abilities can be improved with hard work and practice. 

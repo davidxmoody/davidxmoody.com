@@ -2,7 +2,7 @@
 layout: post.html
 title: "Book notes: Influence"
 date: 2016-06-09
-tags: blinkist, book-review
+tags: books
 ---
 
 For my third Blinkist book summary, I chose [Influence](https://www.blinkist.com/en/books/influence-en.html) by Robert B. Cialdini. 

@@ -2,7 +2,7 @@
 layout: post.html
 title: First draft of my CV and a trip to Bristol
 date: 2014-10-20
-tags: bristol
+tags: personal
 ---
 
 [Last week](/2014/two-months-of-blogging/), I said that Mondays would be about my job search. Here's what I've done so far.

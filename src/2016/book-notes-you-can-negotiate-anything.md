@@ -2,7 +2,7 @@
 layout: post.html
 title: "Book notes: You Can Negotiate Anything"
 date: 2016-06-14
-tags: blinkist, book-review
+tags: books
 ---
 
 After reading the Influence summary, I decided to jump straight into the recommended next book: [You Can Negotiate Anything](https://app.blinkist.com/blinks/you-can-negotiate-anything-en) by Herb Cohen.

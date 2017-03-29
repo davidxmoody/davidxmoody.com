@@ -2,7 +2,7 @@
 layout: post.html
 title: Notes on Elm
 date: 2016-08-14
-tags: Elm
+tags: programming
 ---
 
 I recently got interested in the Elm programming language. A little while ago I started reading the PureScript docs and then later started learning Haskell. However I'm generally much more focused on frontend development and could never really see myself using either of those languages for much.

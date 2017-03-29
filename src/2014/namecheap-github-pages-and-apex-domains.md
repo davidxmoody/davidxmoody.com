@@ -2,7 +2,7 @@
 layout: post.html
 title: Namecheap, GitHub Pages and apex domains
 date: 2014-08-20
-tags: namecheap, github pages
+tags: programming
 ---
 
 *[Edit: Since writing this post, I have switched to CloudFlare. Using their CNAME flattening, you can pretty much have it all: a fast CDN, an apex domain and no annoying 302 redirect that GitHub pages used to add. See [this post](/2015/cloudflare-and-hashed-css/) for details.]*
