@@ -62,6 +62,9 @@ module.exports = (options = {}, callback) => {
         }
       }).filter(({name}) => name !== "junk")
       tagList.sort((a, b) => {
+        // Put "featured" at the start always
+        if (a.name === "featured") return -1
+        if (b.name === "featured") return 1
         // Put "all" at the end always (super hacky code this is)
         if (a.name === "all") return 1
         if (b.name === "all") return -1
