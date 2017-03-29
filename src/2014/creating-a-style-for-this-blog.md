@@ -19,7 +19,7 @@ I'm reasonably confident in my ability to implement any given design with CSS/HT
 
 It's a trap I've fallen into far too often. I spend twenty minutes implementing some layout, getting all the elements to be perfectly centered or aligned. Then I step back to look at it and realise I don't like it at all. 
 
-For this blog, I'm completely ripping off many design elements from another blog by [Tommy John Creenan](http://tommyjohncreenan.com/). I really liked the header design and simple colour scheme of his site. 
+For this blog, I'm completely ripping off many design elements from another blog by [Tommy John Creenan](http://tommyjohncreenan.com/). I really liked the header design and simple colour scheme of his site. *[Edit: his site has completely changed design since I wrote this.]*
 
 Like his header, mine features my own name in large capitals with a drop shadow and then a subtitle below. 
 
