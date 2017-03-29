@@ -2,15 +2,22 @@
 
 {% block content %}
 
-  {% for file in collections.posts %}
-    <article>
-      <header>
-        <h1>{{ file.title }}</h1>
-        <p><em>{{ file.formattedDate }}</em></p>
-      </header>
-
-      {{ file.excerpt | safe }}
-    </article>
+<div class="tag-list">
+  <span>Tags: </span>
+  {% for tag in tagList %}
+  <a class="tag-link {{ tag.name }}" href="#{{ tag.name }}">{{ tag.name }}</a>&nbsp;({{ tag.count }})
   {% endfor %}
+</div>
+
+{% for file in collections.posts %}
+<article class="post-summary all {{ file.tags | join(' ') }}">
+  <header>
+    <h1>{{ file.title }}</h1>
+    <p><em>{{ file.formattedDate }}</em></p>
+  </header>
+
+  {{ file.excerpt | safe }}
+</article>
+{% endfor %}
 
 {% endblock %}

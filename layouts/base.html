@@ -8,8 +8,46 @@
   <meta name="description" content="{% block description %}A blog about programming{% endblock %}">
   <link rel="canonical" href="{{ canonicalURL }}">
   <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .tag-list {
+      margin-top: 27px;
+      text-align: center;
+    }
+
+    .post-summary { display: none; }
+    .post-summary.featured { display: block; }
+    .tag-link.featured {
+      text-decoration: none;
+      color: #222;
+    }
+    .tag-link.featured:hover {
+      color: #222;
+    }
+
+    {% for tag in allTags %}
+    #{{ tag }}:target ~ .site-content .post-summary.featured {
+      display: none;
+    }
+    #{{ tag }}:target ~ .site-content .post-summary.{{ tag }} {
+      display: block;
+    }
+    #{{ tag }}:target ~ .site-content .tag-link.featured {
+      text-decoration: underline;
+      color: #B52626;
+    }
+    #{{ tag }}:target ~ .site-content .tag-link.{{ tag }} {
+      text-decoration: none;
+      color: #222;
+    }
+    {% endfor %}
+  </style>
 </head>
 <body>
+
+{% for tag in allTags %}
+<div id="{{ tag }}"></div>
+{% endfor %}
 
   <header class="site-header">
     <h1 class="site-header__title">
