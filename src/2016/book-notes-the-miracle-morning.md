@@ -2,7 +2,7 @@
 layout: post.html
 title: "Book notes: The Miracle Morning"
 date: 2016-06-05
-tags: books
+tags: books, personal
 ---
 
 Last week I tried out a new service called [Blinkist](https://www.blinkist.com/en/). They provide 15 minute summaries of non-fiction books. My initial experience has been amazing and I have now subscribed to them.

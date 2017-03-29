@@ -2,7 +2,7 @@
 layout: post.html
 title: Creating a style for this blog
 date: 2014-08-13
-tags: featured
+tags: programming, featured
 ---
 
 I didn't want to use an existing template for this blog. As a web programmer/designer, it would feel wrong not to make my own. 

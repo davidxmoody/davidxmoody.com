@@ -2,7 +2,7 @@
 layout: post.html
 title: Lessons learned from a three year programming project (part 2)
 date: 2014-10-22
-tags: featured
+tags: programming
 ---
 
 Continued from [part 1](/2014/lessons-learned-from-a-three-year-programming-project-part-1/). You can also [view the project on GitHub](https://github.com/davidxmoody/diary).

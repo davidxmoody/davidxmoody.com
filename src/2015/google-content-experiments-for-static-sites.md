@@ -2,7 +2,7 @@
 layout: post.html
 title: Google Content Experiments for static sites
 date: 2015-09-17
-tags: featured
+tags: programming
 ---
 
 AB testing poses some unique problems for *static websites*. In this post, I will describe my particular implementation with [Google Analytics Content Experiments](https://developers.google.com/analytics/solutions/experiments) and what I learned along the way.

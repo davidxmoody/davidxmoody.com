@@ -2,7 +2,7 @@
 layout: post.html
 title: Publishing my first npm package
 date: 2015-05-26
-tags: featured
+tags: programming, featured
 ---
 
 I use a lot of great open source software every day. For both work and side projects. 

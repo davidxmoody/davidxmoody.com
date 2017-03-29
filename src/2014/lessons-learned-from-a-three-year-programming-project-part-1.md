@@ -2,7 +2,7 @@
 layout: post.html
 title: Lessons learned from a three year programming project (part 1)
 date: 2014-10-15
-tags: featured
+tags: programming
 ---
 
 For the last three years, I have been working on a little pet project. It has probably taught me more about software development than my entire time at university. 

@@ -2,7 +2,7 @@
 layout: post.html
 title: "The growth mindset applied to my life (part 2)"
 date: 2014-09-25
-tags: featured
+tags: personal
 ---
 
 Continued from [part 1](/2014/the-growth-mindset-applied-to-my-life-part-1/). This part will discuss how the different mindsets affected me after I left university.

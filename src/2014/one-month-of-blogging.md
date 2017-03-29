@@ -2,7 +2,7 @@
 layout: post.html
 title: One month of blogging
 date: 2014-09-05
-tags: personal
+tags: junk
 ---
 
 I have now published three posts per week for the last four weeks. That's about 7,000 words. 

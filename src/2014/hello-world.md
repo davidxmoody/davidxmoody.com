@@ -2,7 +2,7 @@
 layout: post.html
 title: Hello world
 date: 2014-08-11
-tags: featured
+tags: featured, personal
 ---
 
 *I'm starting a blog.* 

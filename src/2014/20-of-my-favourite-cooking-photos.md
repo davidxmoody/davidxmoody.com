@@ -2,7 +2,7 @@
 layout: post.html
 title: 20 of my favourite cooking photos
 date: 2014-11-07
-tags: featured
+tags: featured, personal
 ---
 
 I started learning to cook in September 2011. I really enjoyed it. I learned from my Mum, from books and from my own mistakes. 

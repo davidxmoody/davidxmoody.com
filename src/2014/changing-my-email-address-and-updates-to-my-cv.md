@@ -2,7 +2,7 @@
 layout: post.html
 title: Changing my email address and updates to my CV
 date: 2014-10-27
-tags: personal
+tags: junk
 ---
 
 I have a *new email address*: <david@davidxmoody.com>

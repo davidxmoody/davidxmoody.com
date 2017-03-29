@@ -2,7 +2,7 @@
 layout: post.html
 title: CloudFlare and hashed CSS
 date: 2015-02-02
-tags: featured
+tags: programming
 ---
 
 One of the main advantages of static sites is supposed to be faster load times. However, I noticed this blog was still taking longer than expected to load. 

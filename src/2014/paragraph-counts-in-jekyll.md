@@ -2,7 +2,7 @@
 layout: post.html
 title: Paragraph counts in jekyll
 date: 2014-08-15
-tags: featured
+tags: programming
 ---
 
 I'm a big fan of [Ars Technica](http://arstechnica.com/). There is one thing I particularly like about their RSS feed. It shows the first few paragraphs of the article followed by a link saying "Read X remaining paragraphs". 

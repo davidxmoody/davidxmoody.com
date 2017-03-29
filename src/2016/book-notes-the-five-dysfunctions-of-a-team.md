@@ -2,7 +2,7 @@
 layout: post.html
 title: "Book notes: The Five Dysfunctions of a Team"
 date: 2016-06-06
-tags: books
+tags: books, featured
 ---
 
 For my second Blinkist book summary, I chose [The Five Dysfunctions of a Team](https://www.blinkist.com/en/books/the-five-dysfunctions-of-a-team-en.html) by Patrick M. Lencioni. 

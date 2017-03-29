@@ -2,7 +2,7 @@
 layout: post.html
 title: Wordsearch game
 date: 2014-08-18
-tags: featured
+tags: programming, featured
 ---
 
 For my first post not about blogging, I thought I would return to my wordsearch game. I made it for the [professorp.co.uk](http://professorp.co.uk/games/wordsearch/) website and I would say it's the game I'm proudest of. I really like the simplicity and style of it. 
