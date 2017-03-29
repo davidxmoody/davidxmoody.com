@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ag "^tags:" "$(git rev-parse --show-toplevel)/src/" | \
+  sed 's/^.*tags: \?//g' | \
+  sed 's/, \?/\n/g' | \
+  sort | \
+  uniq -c | \
+  sort -nr
