@@ -43,7 +43,8 @@ Very interested in new web technologies. Active in the local Bristol tech meetup
 Joined as the sole engineer on a project to redesign a consumer finance website (yourwealth.co.uk).
 
 - Worked in a small team with designers, content writers and a digital marketer for three months
-- Created a **static site** (built with Metalsmith) with content hosted on a cloud-based CMS (Prismic)
+- Created a new **static site** (built with Metalsmith/Gulp/Handlebars) and set up a cloud-based CMS (Prismic)
+- It had 150+ articles, 100+ guides and many other content types
 - Worked on various small financial tools/calculators built in **React**
 - Worked with the designers to create the **Sass** styles for the project
 
@@ -54,12 +55,12 @@ Created a life-insurance quote comparison tool using a third party API.
 
 Created an "investment options tool" for helping first-time investors decide what to do.
 
-- Featuring a force-graph based layout and "zoomable" UI
+- Featuring a force-graph based layout and "zoomable UI"
 - Built with **React**, **Redux**, **SVG** and some basic maths for zooming/panning
 - I later gave a lightning talk on the project at **BristolJS**
 - Learned a lot about high-performance animation techniques
 
-Switched to another team of developers helping to build a larger single-page **Redux** app. It was made to help financial advisers share information with their clients ([Moneyhub Connect](https://www.moneyhub.com/business/)).
+Switched to another team of developers helping to build a large single-page **Redux** app. It was made to help financial advisers share information with their clients ([Moneyhub Connect](https://www.moneyhub.com/business/)).
 
 - My team did significant work to improve the existing Bootstrap UI
 - I introduced two big new technologies into the project: **CSS modules** (to replace Sass) and **React Storybook** (a dev tool)
@@ -110,7 +111,7 @@ I have attended and helped out at a lot of local Bristol tech meetups over the l
 - In July 2016, I gave a full talk at **BristolJS** on Redux
 - Since August 2016, I have been running the [CodeHub Hack Nights](https://www.meetup.com/CodeHub-Bristol/) at the Momentum offices every two weeks
 - We also organised two [Git](https://www.meetup.com/CodeHub-Bristol/events/234099506/) [workshops](https://www.meetup.com/CodeHub-Bristol/events/236997399/)
-- I've been to a lot of other meetups in Bristol including **BristolJS**, **Bristech**, **Bristol Web Perf** and others
+- I've been to a lot of other meetups in Bristol including **BristolJS**, **Bristech**, **Bristol Web Perf** and more
 - I went to the [Simpleweb Future of Chat hack day](https://simpleweb.co.uk/hacking-the-future-of-chat-at-the-simpleweb-challenge-with-twilio-pusher-and-marvel/) (and won a prize for my Slack-based Git chatbot)
 
 I've been to the following conferences over the last two years:
@@ -127,7 +128,7 @@ I've been to the following conferences over the last two years:
 
 - Personal blog documenting some of my past projects
 - 46 posts/36,000 words
-- Simple static website built with **Metalsmith**, **Nunjucks** and **Sass**, hosted on **Netlify**
+- Simple static website built with **Metalsmith**, **Nunjucks** and **Sass**, hosted on **Netlify** (previously GitHub Pages/Cloudflare)
 
 ### [metalsmith-broken-link-checker](https://github.com/davidxmoody/metalsmith-broken-link-checker) (2015 - present)
 
@@ -183,7 +184,7 @@ I've been to the following conferences over the last two years:
 - Second year university group project
 - I was responsible for the Android app part of the project
 
-## Other interests
+## Personal interests
 
 - Running, I regularly run around the Bristol Harbourside and I completed the Great Bristol 10K in [51 minutes](http://www.greatrun.org/myresults/648/13329)
 - I've played a lot of [competitive croquet](https://davidxmoody.com/2014/my-experiences-playing-croquet/)
