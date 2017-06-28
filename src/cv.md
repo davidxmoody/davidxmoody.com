@@ -12,7 +12,7 @@ title: CV
 
 ## About me
 
-An enthusiastic and self-driven web developer. Experienced with front-end React development, also full-stack JavaScript.
+An enthusiastic and self-driven web developer. Lots of experience with front-end React development. Also full-stack JavaScript.
 
 Very interested in new web technologies. Active in the local Bristol tech meetup community. Strong academic background. Looking for work in central Bristol.
 
@@ -45,8 +45,8 @@ Joined as the sole engineer on a project to redesign a consumer finance website 
 - Worked in a small team with designers, content writers and a digital marketer for three months
 - Created a new **static site** (built with Metalsmith/Gulp/Handlebars) and set up a cloud-based CMS (Prismic)
 - It had 150+ articles, 100+ guides and many other content types
-- Worked on various small financial tools/calculators built in **React**
-- Worked with the designers to create the **Sass** styles for the project
+- Worked on various small financial tools/calculators built with **React**
+- Worked with the designers to create the **Sass** styles for the site
 
 Created a life-insurance quote comparison tool using a third party API.
 
@@ -63,24 +63,23 @@ Created an "investment options tool" for helping first-time investors decide wha
 Switched to another team of developers helping to build a large single-page **Redux** app. It was made to help financial advisers share information with their clients ([Moneyhub Connect](https://www.moneyhub.com/business/)).
 
 - My team did significant work to improve the existing Bootstrap UI
-- I introduced two big new technologies into the project: **CSS modules** (to replace Sass) and **React Storybook** (a dev tool)
+- I introduced two big new technologies into the project: **CSS modules** (to replace Sass) and [React Storybook](https://github.com/storybooks/storybook) (a dev tool)
 - We also worked to integrate the search feature of a third party financial adviser database
 
 The company went through a restructure and I temporarily moved back to the original team.
 
-- Migrated **yourwealth.co.uk** to a new domain [momentum.co.uk](https://www.momentum.co.uk/)
+- Migrated **yourwealth.co.uk** to a new domain [momentum.co.uk](https://www.momentum.co.uk/) and updated branding
 - Converted the entire project from CoffeeScript to JavaScript and changed hosting from Amazon S3 to Netlify
 - Also helped hire two new developers
 
-Moved back to the other side of the business to work on the consumer app [Moneyhub](https://www.moneyhub.com/).
+Moved back to the other side of the business to work on the consumer app [Moneyhub](https://www.moneyhub.com/). It was another large single-page **React**/**Flux** app.
 
 - We started off with a 5-day [Design Sprint](http://www.gv.com/sprint/) to try and figure out how to get new users engaged with the app
 - We implemented a major new feature: a new homescreen with "nudges" to give insights about the user's data
 - We spent time implementing new features, improving existing ones and fixing bugs
-- Worked with **React**, **Flux**, **Sass**/**inline-styles** and **canvas**
 - Also spent some time working on our backend code (**Docker**, **Node.js**, **Express**, **Postgres** and **Mongo**)
 - Experience writing **UI tests** (with the PioneerJS framework and Cucumber syntax)
-- Experience with functional programming using **Ramda**
+- Lots of experience with functional programming (using **Ramda**)
 
 The business strategy changed, we switched from selling our app to consumers to selling a white-labelled version of our app to enterprises.
 
@@ -160,8 +159,7 @@ I've been to the following conferences over the last two years:
 - Website for the Professor P series of children's books
 - Includes games and activities for children and details about the books and events
 - Five JavaScript games: [wordsearch](http://professorp.co.uk/games/wordsearch/), [shuffle](http://professorp.co.uk/games/shuffle/), [memory](http://professorp.co.uk/games/memory/), [quiz](http://professorp.co.uk/games/quiz/) and [shark attack](http://professorp.co.uk/games/sharkattack/)
-- Written with **AngularJS**, **jQuery**, **CoffeeScript**, **DocPad**, **Browserify**, **Markdown** and more
-- Basic responsive design with **Bootstrap** and **Sass**
+- Built with **AngularJS**, **jQuery**, **CoffeeScript**, **DocPad**, **Browserify**, **Markdown**, **Bootstrap** and **Sass**
 - I later split the wordsearch game into a [separate repo](https://github.com/davidxmoody/wordsearch) and helped somebody integrate it into their [language learning site](https://www.internetpolyglot.com/word_search_game?lessonId=-2104301155)
 
 ### [Diary program](https://davidxmoody.com/2014/lessons-learned-from-a-three-year-programming-project-part-1/) (2011 - 2014)
@@ -177,7 +175,7 @@ I've been to the following conferences over the last two years:
 ### Edubase web scraper (2011)
 
 - Simple web scraper written in Java using regular expressions
-- It exported contact information for schools, saving a lot of time for a small publishing company
+- It exported school contact information, saving a lot of time for a small publishing company
 
 ### Project Kilo: recognising molecules from photographs (2010)
 

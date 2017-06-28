@@ -1,7 +1,7 @@
 ---
 layout: post.html
 title: Notes on Elm
-date: 2016-08-14
+date: 2016-11-02
 tags: programming, featured
 ---
 
