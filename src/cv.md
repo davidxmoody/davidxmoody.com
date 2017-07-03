@@ -57,14 +57,14 @@ Created an "investment options tool" for helping first-time investors decide wha
 
 - Featuring a force-graph based layout and "zoomable UI"
 - Built with **React**, **Redux**, **SVG** and some basic maths for zooming/panning
-- I later gave a lightning talk on the project at **BristolJS**
 - Learned a lot about high-performance animation techniques
+- I later gave a lightning talk on the project at **BristolJS**, [watch the video here!](https://www.youtube.com/watch?v=6YWRDk3_ATM)
 
 Switched to another team of developers helping to build a large single-page **Redux** app. It was made to help financial advisers share information with their clients ([Moneyhub Connect](https://www.moneyhub.com/business/)).
 
 - My team did significant work to improve the existing Bootstrap UI
 - I introduced two big new technologies into the project: **CSS modules** (to replace Sass) and [React Storybook](https://github.com/storybooks/storybook) (a dev tool)
-- We also worked to integrate the search feature of a third party financial adviser database
+- We also worked to integrate the search feature of a third party financial adviser database, I communicated extensively with their team (over Slack) to figure out requirements
 
 The company went through a restructure and I temporarily moved back to the original team.
 
@@ -106,11 +106,11 @@ I also took an interest in our Git repositories while working at the company.
 
 I have attended and helped out at a lot of local Bristol tech meetups over the last two years:
 
-- In April 2016, I gave a lightening talk at **BristolJS** demonstrating my zoomable investment tool
-- In July 2016, I gave a full talk at **BristolJS** on Redux
+- In April 2016, I gave a lightening talk at **BristolJS** demonstrating my zoomable investment tool ([video](https://www.youtube.com/watch?v=6YWRDk3_ATM))
+- In July 2016, I gave a full talk at **BristolJS** on Redux ([slides](http://slides.com/davidmoody/redux#/))
 - Since August 2016, I have been running the [CodeHub Hack Nights](https://www.meetup.com/CodeHub-Bristol/) at the Momentum offices every two weeks
 - We also organised two [Git](https://www.meetup.com/CodeHub-Bristol/events/234099506/) [workshops](https://www.meetup.com/CodeHub-Bristol/events/236997399/)
-- I've been to a lot of other meetups in Bristol including **BristolJS**, **Bristech**, **Bristol Web Perf** and more
+- I've been to a lot of other meetups in Bristol including **Bristech**, **Bristol Web Perf** and more
 - I went to the [Simpleweb Future of Chat hack day](https://simpleweb.co.uk/hacking-the-future-of-chat-at-the-simpleweb-challenge-with-twilio-pusher-and-marvel/) (and won a prize for my Slack-based Git chatbot)
 
 I've been to the following conferences over the last two years:
