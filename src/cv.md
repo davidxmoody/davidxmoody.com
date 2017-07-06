@@ -79,8 +79,9 @@ Moved back to the other side of the business to work on the consumer app [Moneyh
 - We spent time implementing new features, improving existing ones and fixing bugs
 - Also spent some time working on our backend code (**Docker**, **Node.js**, **Express**, **Postgres** and **Mongo**)
 - I implemented a lightweight server for email verification and password resets (with **Express** and **Nunjucks**)
+- Experience with **functional programming** (using Ramda)
+- Experience with **TDD** (using Mocha)
 - Experience writing **UI tests** (with the PioneerJS framework and Cucumber syntax)
-- Lots of experience with **functional programming** (using Ramda)
 
 The app was previously bundled with Cordova but an effort had already been made to migrate to a lightweight **React Native** wrapper. The iOS build worked but the Android one did not. The project was based on a very old React Native bootstrap project and needed significant work.
 
