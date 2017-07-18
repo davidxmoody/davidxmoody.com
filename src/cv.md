@@ -116,7 +116,7 @@ I've been to the following conferences over the last two years:
 - [FullStack London 2016](https://skillsmatter.com/conferences/7278-fullstack-2016-the-conference-on-javascript-node-and-internet-of-things)
 - [Bristech 2016](http://2016.bris.tech/)
 - [Pixel Pioneers Bristol 2017](https://pixelpioneers.co/events/bristol-2017)
-- [FullStack London 2017](https://skillsmatter.com/conferences/8264-fullstack-2017-the-conference-on-javascript-node-and-internet-of-things) (upcoming, July 12)
+- [FullStack London 2017](https://skillsmatter.com/conferences/8264-fullstack-2017-the-conference-on-javascript-node-and-internet-of-things)
 
 ## Projects
 
