@@ -11,6 +11,7 @@ const PORT = 3033
 
 const options = {
   base: `http://localhost:${PORT}`,
+  format: "A4",
 }
 
 const html = fs.readFileSync(source).toString()
