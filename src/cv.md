@@ -19,7 +19,7 @@ Very interested in new web technologies. Active in the local Bristol tech meetup
 ## Technical skills
 
 - Languages: **JavaScript** (**Node.js**/**ES6**), **Python**, **Bash**, **CoffeeScript** and **Java**
-- Front-end: **React**, **Redux**, **CSS modules**, **Sass**, **Webpack**, **Babel**, **jQuery** and some **React Native**
+- Front-end: **React**, **Redux**, **Sass**, **CSS modules**, **Webpack**, **Babel**, **jQuery** and some **React Native**
 - Other tools: **Git**, **Vim**, **tmux** and many other **Unix command line tools**
 
 ## Education
@@ -40,11 +40,9 @@ Very interested in new web technologies. Active in the local Bristol tech meetup
 
 ### Software Engineer at Momentum Financial Technology (March 2015 - present)
 
-Joined as the sole engineer on a project to redesign a consumer finance website (yourwealth.co.uk).
+Joined as the sole engineer on a project to redesign a consumer finance website (yourwealth.co.uk). Worked in an agile cross-functional team for 3 months.
 
-- Worked in a small team with designers, content writers and a digital marketer for three months
-- Created a new **static site** (built with Metalsmith/Gulp/Handlebars) and set up a cloud-based CMS (Prismic)
-- It had 150+ articles, 100+ guides and many other content types
+- Created a new **static site** (built with Metalsmith/Gulp/Handlebars) and set up a cloud-based CMS (Prismic), it had 250+ articles and guides
 - Worked on various small financial tools/calculators built with **React**
 - Worked with the designers to create the **Sass** styles for the site
 
@@ -55,15 +53,15 @@ Created a life-insurance quote comparison tool using a third party API.
 
 Created an "investment options tool" for helping first-time investors decide what to do.
 
+- I later gave a lightning talk on the project at **BristolJS**, [watch the video here!](https://www.youtube.com/watch?v=6YWRDk3_ATM)
 - Featuring a force-graph based layout and "zoomable UI"
 - Built with **React**, **Redux**, **SVG** and some basic maths for zooming/panning
 - Learned a lot about high-performance animation techniques
-- I later gave a lightning talk on the project at **BristolJS**, [watch the video here!](https://www.youtube.com/watch?v=6YWRDk3_ATM)
 
-Switched to another team of developers helping to build a large single-page **Redux** app. It was made to help financial advisers share information with their clients ([Moneyhub Connect](https://www.moneyhub.com/business/)).
+Switched to a larger team of developers helping to build a single-page **Redux** app. It was made to help financial advisers share information with their clients ([Moneyhub Connect](https://www.moneyhub.com/business/)).
 
 - My team did significant work to improve the existing Bootstrap UI
-- I introduced two big new technologies into the project: **CSS modules** (to replace Sass) and [React Storybook](https://github.com/storybooks/storybook) (a dev tool)
+- I introduced two big new technologies into the project: **CSS modules** (to replace Sass) and [React Storybook](https://github.com/storybooks/storybook) (a tool for developing components in isolation)
 - We also worked to integrate the search feature of a third party financial adviser database, I communicated extensively with their team (over Slack) to figure out requirements
 
 The company went through a restructure and I temporarily moved back to the original team.
@@ -76,8 +74,7 @@ Moved back to the other side of the business to work on the consumer app [Moneyh
 
 - We started off with a 5-day [Design Sprint](http://www.gv.com/sprint/) to try and figure out how to get new users engaged with the app
 - We implemented a major new feature: a new animated homescreen with "nudges" to give insights about the user's data
-- We spent time implementing new features, improving existing ones and fixing bugs
-- Also spent some time working on our backend code (**Docker**, **Node.js**, **Express**, **Postgres** and **Mongo**)
+- Experience with a **microservices** architecture (**Docker**, **Node.js**, **Express**, **Postgres** and **Mongo**)
 - I implemented a lightweight server for email verification and password resets (with **Express** and **Nunjucks**)
 - Experience with **functional programming** (using Ramda)
 - Experience with **TDD** (using Mocha)
@@ -86,7 +83,7 @@ Moved back to the other side of the business to work on the consumer app [Moneyh
 The app was previously bundled with Cordova but an effort had already been made to migrate to a lightweight **React Native** wrapper. The iOS build worked but the Android one did not. The project was based on a very old React Native bootstrap project and needed significant work.
 
 - I got it working and released it to the Google Play Store
-- Implemented a system for building the Android app in multiple different white-labelled versions
+- Implemented a system for building the Android app in multiple different white-labelled versions (with Gradle)
 - Integrated the AppsFlyer SDK (an analytics platform) and added server-side event tracking
 
 I went with five other people from the company to take part in the 2-day [Pensions Dashboard Techsprint](https://twitter.com/MoneyhubEnterpr/status/852439989791150080) event in London (run by the HM Treasury).
@@ -130,7 +127,7 @@ I've been to the following conferences over the last two years:
 
 - Plugin for the static site generator **Metalsmith**
 - Aims to check all internal links for references to files that do not exist
-- Is moderately well used by other people, has received 6 pull requests and 14 stars on GitHub
+- Has received 6 pull requests and 14 stars on GitHub
 
 ### [My dotfiles](https://github.com/davidxmoody/dotfiles) (2011 - present)
 
