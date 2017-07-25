@@ -3,7 +3,7 @@ layout: page.html
 title: CV
 ---
 
-# David Moody - Web developer
+# David Moody - JavaScript developer
 
 - Email: <david@davidxmoody.com>
 - GitHub: [github.com/davidxmoody](https://github.com/davidxmoody)
@@ -36,9 +36,11 @@ Very interested in new web technologies. Active in the local Bristol tech meetup
 - Chemistry (A)
 - Biology (A)
 
+<div class="page-break"></div>
+
 ## Experience
 
-### Software Engineer at Momentum Financial Technology (March 2015 - present)
+### Software Engineer at Momentum Financial Technology (March&nbsp;2015 - present)
 
 Joined as the sole engineer on a project to redesign a consumer finance website (yourwealth.co.uk). Worked in an agile cross-functional team for 3 months.
 
@@ -95,6 +97,8 @@ I also took an interest in our Git repositories while working at the company.
 
 - I created a project that gathered all of the package.json files from all of our repos (using BitBucket's API) and could tell you which projects depended on which other ones
 - I introduced [fit-commit](https://github.com/m1foley/fit-commit) to the team (a Ruby tool for validating Git commit messages) and later ported it to JavaScript so that it could be more easily automated (using an npm Git hook tool called [husky](https://github.com/typicode/husky))
+
+<div class="page-break"></div>
 
 ## Meetups and conferences
 

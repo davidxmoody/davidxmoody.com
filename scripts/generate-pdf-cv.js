@@ -5,12 +5,14 @@ const httpServer = require("http-server")
 
 const pathPrefix = path.join(__dirname, "../build")
 const source = path.join(pathPrefix, "cv/index.html")
-const target = path.join(pathPrefix, "cv/david-moody-cv.pdf")
+const target = path.join(pathPrefix, "david-moody-cv.pdf")
 
 const PORT = 3033
 
 const options = {
   base: `http://localhost:${PORT}`,
+  format: "A4",
+  border: "1cm",
 }
 
 const html = fs.readFileSync(source).toString()
