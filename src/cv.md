@@ -178,9 +178,11 @@ I've been to these conferences:
 - We created an Android app that could take a photo of a diagram of a molecule and tell you what it was (e.g. water or caffeine)
 - I did most of the Android development for the project
 
+<div class="page-break"></div>
+
 ## Personal interests
 
-- Running (I recently ran in the [Great Bristol 10K](http://www.greatrun.org/myresults/648/13329))
+- Running around the Bristol Harbourside
 - [Competitive croquet](https://davidxmoody.com/2014/my-experiences-playing-croquet/)
 - [Photography](https://davidxmoody.com/2014/my-10-best-tenerife-photos/)
 - [Cooking](https://davidxmoody.com/2014/20-of-my-favourite-cooking-photos/)
