@@ -15,8 +15,6 @@ Honestly, it was easier than I thought it would be. It took me 8 Pomodoros (3 ho
 
 I ended up having more to put on than I thought. However, I'm still anxious that I don't have *enough* to show for my three years at home. Compared to any other recent graduate, I think I should look very good. However, compared to someone who graduated three years ago, I'm not so sure. 
 
-Anyway, [here is a link to my CV](/cv/).
-
 ## A trip to Bristol
 
 It's been a while since I've done any travelling by myself. Whenever I go anywhere, I'm usually with someone who knows what they are doing. Applying for jobs is probably going to involve getting to a lot of interviews. I thought it would be a good idea to re-familiarise myself with travelling by bus. 
