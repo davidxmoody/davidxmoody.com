@@ -29,8 +29,7 @@ gulp.task("dev-build", (cb) => {
   build({production: false}, refresh(cb))
 })
 
-gulp.task("watch", ["dev-build"], (cb) => {
+gulp.task("watch", gulp.series("dev-build", (cb) => {
   nunjucks.configure({watch: true})
-  gulp.watch("src/**/*", ["dev-build"])
-  gulp.watch("layouts/**/*", ["dev-build"])
-})
+  gulp.watch("{src, layouts}/**/*", gulp.parallel("dev-build"))
+}))
