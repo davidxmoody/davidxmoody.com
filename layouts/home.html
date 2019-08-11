@@ -2,13 +2,6 @@
 
 {% block content %}
 
-<div class="tag-list">
-  <span>Tags: </span>
-  {% for tag in tagList %}
-  <a class="tag-link {{ tag.name }}" href="#{{ tag.name }}">{{ tag.name }}</a>&nbsp;({{ tag.count }})
-  {% endfor %}
-</div>
-
 {% for file in collections.posts %}
 <article class="post-summary all {{ file.tags | join(' ') }}">
   <header>

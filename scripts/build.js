@@ -27,9 +27,7 @@ module.exports = (options = {}, callback) => {
     .use(markdown())
     .use(prettyUrls())
 
-    .use((files, metalsmith) => {
-      const tagCounts = {}
-
+    .use((files) => {
       Object.keys(files).forEach((filename) => {
         const file = files[filename]
 
@@ -39,43 +37,11 @@ module.exports = (options = {}, callback) => {
 
         file.tags = file.tags || []
         file.tags = typeof file.tags === "string" ? file.tags.split(/, ?/g) : file.tags
-        for (const tag of file.tags) {
-          if (tag === "all") continue
-          tagCounts[tag] = (tagCounts[tag] || 0) + 1
-        }
-        if (file.layout === "post.html") {
-          // Very hacky temporary stuff...
-          tagCounts.all = (tagCounts.all || 0) + 1
-        }
 
         if (file.date) {
           file.formattedDate = moment(file.date).format("ll")
         }
       })
-
-      // Hacky code because I don't know if I want to keep this yet
-      metalsmith.metadata().allTags = Object.keys(tagCounts).concat(["all"])
-      const tagList = Object.keys(tagCounts).map((tag) => {
-        return {
-          name: tag,
-          count: tagCounts[tag],
-        }
-      }).filter(({name}) => name !== "junk")
-      tagList.sort((a, b) => {
-        // Put "featured" at the start always
-        if (a.name === "featured") return -1
-        if (b.name === "featured") return 1
-        // Put "all" at the end always (super hacky code this is)
-        if (a.name === "all") return 1
-        if (b.name === "all") return -1
-        // Sort in descending count order, subsort by ascending name
-        if (a.count > b.count) return -1
-        if (a.count < b.count) return 1
-        if (a.name < b.name) return -1
-        if (a.name > b.name) return 1
-        return 0
-      })
-      metalsmith.metadata().tagList = tagList
     })
 
     .use(excerpts())
